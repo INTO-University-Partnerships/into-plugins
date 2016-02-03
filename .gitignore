@@ -1,0 +1,13 @@
+.idea
+.vagrant
+*.pyc
+*.log
+settings.py
+staticfiles/
+mediafiles/
+/.cache/
+locale/
+moodle/
+moodledata/
+phpu_moodledata/
+*~

@@ -1,0 +1,11 @@
+mock
+selenium
+pytest-django
+pytest-sugar
+pytest-cache
+coverage
+psycopg2
+pep8
+yolk3k
+httpie
+pip-tools
