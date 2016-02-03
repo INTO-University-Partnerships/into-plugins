@@ -53,8 +53,11 @@ WSGI_APPLICATION = 'plugins.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': u'plugins_django',
+        'HOST': u'localhost',
+        'USER': u'root',
+        'PASSWORD': u'W0mb4t666!',
     }
 }
 

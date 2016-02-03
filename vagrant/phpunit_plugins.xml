@@ -1,0 +1,31 @@
+<phpunit bootstrap="lib/phpunit/bootstrap.php"
+         colors="true"
+         backupGlobals="false"
+         printerClass="Hint_ResultPrinter">
+    <testsuites>
+        <testsuite name="auth_oauth">
+            <directory suffix="_test.php">auth/oauth</directory>
+        </testsuite>
+        <testsuite name="block_activity_tree">
+            <directory suffix="_test.php">blocks/activity_tree/tests</directory>
+        </testsuite>
+        <testsuite name="local_activity_bookmark">
+            <directory suffix="_test.php">local/activity_bookmark/tests</directory>
+        </testsuite>
+        <testsuite name="mod_communitywall">
+            <directory suffix="_test.php">mod/communitywall/tests</directory>
+        </testsuite>
+        <testsuite name="mod_dragdrop">
+            <directory suffix="_test.php">mod/dragdrop/tests</directory>
+        </testsuite>
+        <testsuite name="mod_talkpoint">
+            <directory suffix="_test.php">mod/talkpoint/tests</directory>
+        </testsuite>
+        <testsuite name="mod_videoquanda">
+            <directory suffix="_test.php">mod/videoquanda/tests</directory>
+        </testsuite>
+        <testsuite name="mod_vocabcards">
+            <directory suffix="_test.php">mod/vocabcards/tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

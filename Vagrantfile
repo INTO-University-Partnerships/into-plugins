@@ -52,6 +52,8 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "vagrant/000-default.conf", destination: "000-default.conf"
     config.vm.provision "file", source: "vagrant/vagrant_settings.py", destination: "settings.py"
     config.vm.provision "file", source: "vagrant/vagrant_config.php", destination: "config.php"
+    config.vm.provision "file", source: "vagrant/phpunit_plugins.xml", destination: "phpunit_plugins.xml"
+    config.vm.provision "file", source: "vagrant/composer.json", destination: "composer.json"
 
     # provisioning scripts
     config.vm.provision "shell", path: "vagrant/provision_as_root.sh"

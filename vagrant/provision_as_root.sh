@@ -35,6 +35,11 @@ else
     echo "Apache DocumentRoot already points to /vagrant/moodle"
 fi
 
+# composer.json and phpunit_plugins.xml
+mv /home/vagrant/composer.json /vagrant/moodle/
+mv /home/vagrant/phpunit_plugins.xml /vagrant/moodle/
+rm /vagrant/moodle/composer.lock
+
 # Composer
 export COMPOSER_DISABLE_XDEBUG_WARN='1'
 cd /vagrant/moodle
@@ -64,6 +69,16 @@ grep -q -F "Vagrant provision script" $MYCNF || printf "$COMMENT" >> $MYCNF
 # my.cnf
 UTF8="[mysqld]\ncollation-server = utf8_unicode_ci\ninit-connect='SET NAMES utf8'\ncharacter-set-server = utf8\n"
 grep -q -F "collation-server = utf8_unicode_ci" $MYCNF || printf "$UTF8" >> $MYCNF
+
+# Create (empty) MySQL databases
+SHOW=`echo "show databases" | mysql -uroot -p"$MYSQL_DB_PASSWORD" | grep plugins_django`
+if [ "$SHOW" != "plugins_django" ]; then
+    echo "create database plugins_django" | mysql -uroot -p"$MYSQL_DB_PASSWORD"
+fi
+SHOW=`echo "show databases" | mysql -uroot -p"$MYSQL_DB_PASSWORD" | grep plugins_moodle`
+if [ "$SHOW" != "plugins_moodle" ]; then
+    echo "create database plugins_moodle" | mysql -uroot -p"$MYSQL_DB_PASSWORD"
+fi
 
 # PostgreSQL server
 PGSQL_DB_PASSWORD="W0mb4t666!"
