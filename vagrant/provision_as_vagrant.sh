@@ -86,3 +86,61 @@ if [ ! -f /vagrant/moodle/config.php ]; then
 else
     rm /home/vagrant/config.php
 fi
+
+# https://github.com/INTO-University-Partnerships/django-into-oauth
+cd /vagrant
+echo "Installing django-into-oauth ..."
+if [ ! -d into_oauth ]; then
+    git clone https://github.com/INTO-University-Partnerships/django-into-oauth into_oauth
+else
+    echo "Django plugin/app django-into-oauth is already installed."
+fi
+cd ~
+echo "Done."
+
+# https://github.com/INTO-University-Partnerships/auth-oauth
+cd /vagrant/moodle/auth
+echo "Installing auth-oauth ..."
+if [ ! -d oauth ]; then
+    git clone https://github.com/INTO-University-Partnerships/auth-oauth oauth
+else
+    echo "Moodle plugin auth-oauth is already installed."
+fi
+cd ~
+echo "Done."
+
+# https://github.com/INTO-University-Partnerships/block-activity-tree
+cd /vagrant/moodle/blocks
+echo "Installing block-activity-tree ..."
+if [ ! -d activity_tree ]; then
+    git clone https://github.com/INTO-University-Partnerships/block-activity-tree activity_tree
+else
+    echo "Moodle plugin block-activity-tree is already installed."
+fi
+cd ~
+echo "Done."
+
+# https://github.com/INTO-University-Partnerships/local-activity-bookmark
+cd /vagrant/moodle/local
+echo "Installing local-activity-bookmark ..."
+if [ ! -d activity_bookmark ]; then
+    git clone https://github.com/INTO-University-Partnerships/local-activity-bookmark activity_bookmark
+else
+    echo "Moodle plugin local-activity-bookmark is already installed."
+fi
+cd ~
+echo "Done."
+
+# https://github.com/INTO-University-Partnerships/mod-*
+cd /vagrant/moodle/mod
+MODS=(dragdrop vocabcards videoquanda communitywall talkpoint)
+for mod in "${MODS[@]}"; do
+    echo "Installing $mod ..."
+    if [ ! -d "$mod" ]; then
+        git clone https://github.com/INTO-University-Partnerships/mod-$mod $mod
+    else
+        echo "Moodle plugin $mod is already installed."
+    fi
+    echo "Done."
+done
+cd ~

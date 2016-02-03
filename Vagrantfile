@@ -58,4 +58,5 @@ Vagrant.configure("2") do |config|
     # provisioning scripts
     config.vm.provision "shell", path: "vagrant/provision_as_root.sh"
     config.vm.provision "shell", path: "vagrant/provision_as_vagrant.sh", privileged: false
+    config.vm.provision "shell", path: "vagrant/provision_databases.sh"
 end
