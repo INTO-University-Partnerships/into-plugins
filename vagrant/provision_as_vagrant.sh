@@ -138,6 +138,11 @@ for mod in "${MODS[@]}"; do
     echo "Installing $mod ..."
     if [ ! -d "$mod" ]; then
         git clone https://github.com/INTO-University-Partnerships/mod-$mod $mod
+        cd $mod
+        if [ -f "bower.json" ]; then
+            bower install
+        fi
+        cd ..
     else
         echo "Moodle plugin $mod is already installed."
     fi
