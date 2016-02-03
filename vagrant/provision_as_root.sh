@@ -40,6 +40,9 @@ mv /home/vagrant/composer.json /vagrant/moodle/
 mv /home/vagrant/phpunit_plugins.xml /vagrant/moodle/
 rm /vagrant/moodle/composer.lock
 
+# Comment-out a line in lib/phpunit/bootstrap.php
+sed -i 's/\$CFG->wwwroot   = '\''http:\/\/www\.example\.com\/moodle'\'';/# line removed to prevent web tests breaking/' /vagrant/moodle/lib/phpunit/bootstrap.php
+
 # Composer
 export COMPOSER_DISABLE_XDEBUG_WARN='1'
 cd /vagrant/moodle
