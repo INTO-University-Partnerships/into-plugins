@@ -82,5 +82,7 @@ sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with passw
 apt-get install -y python-pip python-dev python3-dev postgresql-server-dev-9.3 libmysqlclient-dev libffi-dev libjpeg-dev
 pip install -q virtualenv virtualenvwrapper
 
-# Restart Apache
+# Restart services
 service apache2 restart
+service mysql restart
+service postgresql restart

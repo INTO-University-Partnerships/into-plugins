@@ -23,6 +23,7 @@ $CFG->dataroot = '/vagrant/moodledata';
 $CFG->admin    = 'admin';
 
 $CFG->directorypermissions = 0777;
+$CFG->noemailever = true;
 
 $CFG->phpunit_prefix = 'phpu_';
 $CFG->phpunit_dataroot = '/vagrant/phpu_moodledata';
