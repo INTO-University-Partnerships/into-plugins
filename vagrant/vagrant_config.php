@@ -4,17 +4,17 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'mysqli';
+$CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = 'localhost';
 $CFG->dbname    = 'plugins_moodle';
-$CFG->dbuser    = 'root';
+$CFG->dbuser    = 'postgres';
 $CFG->dbpass    = 'W0mb4t666!';
 $CFG->prefix    = 'mdl_';
 
 $CFG->dboptions = [
     'dbpersist' => 0,
-    'dbport'    => '',
+    'dbport'    => '5432',
     'dbsocket'  => '',
 ];
 

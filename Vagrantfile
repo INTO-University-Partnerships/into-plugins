@@ -54,8 +54,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "vagrant/vagrant_config.php", destination: "config.php"
     config.vm.provision "file", source: "vagrant/phpunit_plugins.xml", destination: "phpunit_plugins.xml"
     config.vm.provision "file", source: "vagrant/composer.json", destination: "composer.json"
-    config.vm.provision "file", source: "vagrant/django.sql", destination: "django.sql"
-    config.vm.provision "file", source: "vagrant/moodle.sql", destination: "moodle.sql"
 
     # provisioning scripts
     config.vm.provision "shell", path: "vagrant/provision_as_root.sh"
