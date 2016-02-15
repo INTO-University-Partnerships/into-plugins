@@ -77,14 +77,10 @@ fi
 
 # settings.py and config.php
 if [ ! -f /vagrant/plugins/settings.py ]; then
-    mv /home/vagrant/settings.py /vagrant/plugins/
-else
-    rm /home/vagrant/settings.py
+    cp /vagrant/vagrant/vagrant_settings.py /vagrant/plugins/settings.py
 fi
 if [ ! -f /vagrant/moodle/config.php ]; then
-    mv /home/vagrant/config.php /vagrant/moodle/
-else
-    rm /home/vagrant/config.php
+    cp /vagrant/vagrant/vagrant_config.php /vagrant/moodle/config.php
 fi
 
 # https://github.com/INTO-University-Partnerships/django-into-oauth
