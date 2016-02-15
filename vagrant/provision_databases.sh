@@ -10,7 +10,7 @@ if [ "$SHOW" != "plugins_django" ]; then
     sudo -u postgres psql -c "create database plugins_django"
     echo "Done."
     echo "Restoring Django database ..."
-    sudo -u postgres psql plugins_django < /vagrant/vagrant/django.pgsql
+    sudo -u postgres psql plugins_django < /vagrant/vagrant/django.pgsql > /dev/null 2>&1
     echo "Done."
 else
     echo "PostgreSQL Django database already exists."
@@ -23,7 +23,7 @@ if [ "$SHOW" != "plugins_moodle" ]; then
     sudo -u postgres psql -c "create database plugins_moodle"
     echo "Done."
     echo "Restoring Moodle database ..."
-    sudo -u postgres psql plugins_moodle < /vagrant/vagrant/moodle.pgsql
+    sudo -u postgres psql plugins_moodle < /vagrant/vagrant/moodle.pgsql > /dev/null 2>&1
     echo "Done."
 else
     echo "PostgreSQL Moodle database already exists."
