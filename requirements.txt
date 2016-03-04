@@ -4,11 +4,11 @@
 #
 #    pip-compile requirements.in
 #
-cffi==1.5.0               # via cryptography
-cryptography==1.2.2       # via pyopenssl
+cffi==1.5.2               # via cryptography
+cryptography==1.2.3       # via pyopenssl
 django-braces==1.8.1      # via django-oauth-toolkit
 django-oauth-toolkit==0.9.0
-django==1.8.9
+django==1.8.10
 djangocms-admin-style==1.1.0
 djangorestframework==3.3.2
 enum34==1.1.2             # via cryptography
