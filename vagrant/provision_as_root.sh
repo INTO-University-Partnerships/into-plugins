@@ -4,7 +4,7 @@ date >> /etc/vagrant_provisioned_at
 
 # Essentials
 apt-get update -qq
-apt-get install -y vim git htop
+apt-get install -y vim git htop nfs-kernel-server
 
 # Apache and PHP
 apt-get install -y apache2

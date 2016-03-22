@@ -40,6 +40,12 @@ Vagrant.configure("2") do |config|
         group: "www-data",
         mount_options: ["dmode=775,fmode=764"]
 
+    # NFS synced folders
+    # config.vm.synced_folder ".", "/vagrant", type: "nfs"
+    # config.vm.synced_folder "../moodle/", "/vagrant/moodle", type: "nfs"
+    # config.vm.synced_folder "../moodledata/", "/vagrant/moodledata", type: "nfs"
+    # config.vm.synced_folder "../phpu_moodledata/", "/vagrant/phpu_moodledata", type: "nfs"
+
     # static IP
     config.vm.network "private_network", ip: "10.0.0.10"
 
