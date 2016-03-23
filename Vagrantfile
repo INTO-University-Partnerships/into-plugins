@@ -27,24 +27,25 @@ Vagrant.configure("2") do |config|
     end
 
     # synced folders
-    config.vm.synced_folder "../moodle/", "/vagrant/moodle",
-        owner: "vagrant",
-        group: "www-data",
-        mount_options: ["dmode=775,fmode=764"]
-    config.vm.synced_folder "../moodledata/", "/vagrant/moodledata",
-        owner: "vagrant",
-        group: "www-data",
-        mount_options: ["dmode=775,fmode=764"]
-    config.vm.synced_folder "../phpu_moodledata/", "/vagrant/phpu_moodledata",
-        owner: "vagrant",
-        group: "www-data",
-        mount_options: ["dmode=775,fmode=764"]
-
-    # NFS synced folders
-    # config.vm.synced_folder ".", "/vagrant", type: "nfs"
-    # config.vm.synced_folder "../moodle/", "/vagrant/moodle", type: "nfs"
-    # config.vm.synced_folder "../moodledata/", "/vagrant/moodledata", type: "nfs"
-    # config.vm.synced_folder "../phpu_moodledata/", "/vagrant/phpu_moodledata", type: "nfs"
+    if ENV["VAGRANT_SYNC"] == "nfs"
+        config.vm.synced_folder ".", "/vagrant", type: "nfs"
+        config.vm.synced_folder "../moodle/", "/vagrant/moodle", type: "nfs"
+        config.vm.synced_folder "../moodledata/", "/vagrant/moodledata", type: "nfs"
+        config.vm.synced_folder "../phpu_moodledata/", "/vagrant/phpu_moodledata", type: "nfs"
+    else
+        config.vm.synced_folder "../moodle/", "/vagrant/moodle",
+            owner: "vagrant",
+            group: "www-data",
+            mount_options: ["dmode=775,fmode=764"]
+        config.vm.synced_folder "../moodledata/", "/vagrant/moodledata",
+            owner: "vagrant",
+            group: "www-data",
+            mount_options: ["dmode=775,fmode=764"]
+        config.vm.synced_folder "../phpu_moodledata/", "/vagrant/phpu_moodledata",
+            owner: "vagrant",
+            group: "www-data",
+            mount_options: ["dmode=775,fmode=764"]
+    end
 
     # static IP
     config.vm.network "private_network", ip: "10.0.0.10"
