@@ -62,7 +62,7 @@ echo "Done."
 MYSQL_DB_PASSWORD="W0mb4t666!"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $MYSQL_DB_PASSWORD"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $MYSQL_DB_PASSWORD"
-apt-get install -y mysql-server
+apt-get install -y mysql-server-5.6
 
 # add comment to end of /etc/mysql/my.cnf
 MYCNF="/etc/mysql/my.cnf"

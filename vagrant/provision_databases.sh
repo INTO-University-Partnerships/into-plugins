@@ -57,3 +57,8 @@ if [ "$SHOW" != "plugins_moodle" ]; then
 else
     echo "MySQL Moodle database already exists."
 fi
+
+# migrate databases
+/home/vagrant/.virtualenvs/plugins_py2/bin/python2.7 /vagrant/manage.py migrate
+cd /vagrant/moodle
+php admin/cli/upgrade.php --non-interactive

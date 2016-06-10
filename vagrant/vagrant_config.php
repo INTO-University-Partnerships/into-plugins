@@ -4,11 +4,14 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = 'pgsql';
+# $CFG->dbtype    = 'pgsql';
+$CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = 'localhost';
+# $CFG->dbport    = 5432;
 $CFG->dbname    = 'plugins_moodle';
-$CFG->dbuser    = 'postgres';
+# $CFG->dbuser    = 'postgres';
+$CFG->dbuser    = 'root';
 $CFG->dbpass    = 'W0mb4t666!';
 $CFG->prefix    = 'mdl_';
 
