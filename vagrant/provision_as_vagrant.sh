@@ -64,10 +64,14 @@ if [ ! -d /home/vagrant/.nvm ]; then
     source $PROFILE
     nvm install 4.1.1 > /dev/null 2>&1
     nvm alias default 4.1.1
-    npm install -g bower npm-check-updates gulp@3.9.0 eslint@1.10.3 eslint-plugin-react@3.15.0
+    echo "Done."
 else
     echo "Node is already installed."
 fi
+
+# global npm packages
+echo "Installing global npm packages ..."
+npm install -g bower npm-check-updates gulp@3.9.1 eslint@2.11.1 eslint-plugin-react@5.1.1
 echo "Done."
 
 # .pgpass
