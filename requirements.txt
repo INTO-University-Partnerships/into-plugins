@@ -5,24 +5,24 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 
-cffi==1.6.0               # via cryptography
-cryptography==1.3.2       # via pyopenssl
-django-braces==1.8.1      # via django-oauth-toolkit
+cffi==1.7.0               # via cryptography
+cryptography==1.4         # via pyopenssl
+django-braces==1.9.0      # via django-oauth-toolkit
 django-oauth-toolkit==0.9.0
-django==1.8.13
-djangocms-admin-style==1.1.1
+django==1.8.14
+djangocms-admin-style==1.2.3
 djangorestframework==3.3.3
 enum34==1.1.6             # via cryptography
 idna==2.1                 # via cryptography
 ipaddress==1.0.16         # via cryptography
 mysqlclient==1.3.7
-ndg-httpsclient==0.4.0
+ndg-httpsclient==0.4.2
 oauthlib==1.0.1           # via django-oauth-toolkit
-psycopg2==2.6.1
+psycopg2==2.6.2
 pyasn1==0.1.9             # via cryptography
 pycparser==2.14           # via cffi
 pyopenssl==16.0.0         # via ndg-httpsclient
-six==1.10.0               # via cryptography, django-braces, django-oauth-toolkit, pyopenssl
+six==1.10.0               # via cryptography, django-oauth-toolkit, pyopenssl
 
 # The following packages are commented out because they are
 # considered to be unsafe in a requirements file:

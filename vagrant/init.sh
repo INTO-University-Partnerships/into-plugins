@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MOODLE_VERSION="v2.9.6"
+MOODLE_VERSION="v2.9.7"
 
 if [ ! -f vagrant/init.sh ]; then
     echo "Please run this script from the Django diectory."
