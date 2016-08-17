@@ -1,0 +1,141 @@
+---
+- hosts: all
+
+  environment:
+    LC_ALL: "C.UTF-8"
+    LANG: "C.UTF-8"
+
+  vars:
+    dot_profile: "/home/vagrant/.profile"
+    dot_bashrc: "/home/vagrant/.bashrc"
+    pip_version: "8.1.2"
+    pip_tools_version: "1.7.0"
+    venv_py2: "/home/vagrant/.virtualenvs/py2"
+    venv_py3: "/home/vagrant/.virtualenvs/py3"
+    nvm_dir: "/home/vagrant/.nvm"
+    nvm_version: "v0.30.2"
+    node_version: "4.1.1"
+
+  tasks:
+    - name: Configure Python not to write bytecode (i.e. .pyc files)
+      lineinfile: dest={{ dot_profile }} line="export PYTHONDONTWRITEBYTECODE='1'" state=present
+
+    - name: Configure Composer not to spam warnings about Xdebug
+      lineinfile: dest={{ dot_profile }} line="export COMPOSER_DISABLE_XDEBUG_WARN='1'" state=present
+
+    - name: Avoid having to specify MySQL root password
+      lineinfile: dest={{ dot_profile }} line="export MYSQL_PWD='W0mb4t666!'" state=present
+
+    - name: Enable virtualenvwrapper
+      lineinfile: dest={{ dot_bashrc }} line="source /usr/local/bin/virtualenvwrapper.sh" state=present
+
+    - name: Enable colour prompt in bash
+      replace: dest={{ dot_bashrc }} regexp="^\#force_color_prompt\=yes$" replace="force_color_prompt=yes"
+
+    - name: Create Py2 virtualenv
+      pip: virtualenv={{ venv_py2 }} virtualenv_python=python2.7 name={{ item.name }} version={{ item.version }}
+      with_items:
+        - { name: "pip", version: "{{ pip_version }}" }
+        - { name: "pip-tools", version: "{{ pip_tools_version }}" }
+
+    - name: Sync Py2 virtualenv
+      command: "chdir=/vagrant {{ venv_py2 }}/bin/pip-sync"
+
+    - name: Install additional Py2 packages
+      pip: requirements=/vagrant/requirements/local.in virtualenv={{ venv_py2 }}
+
+    - name: Set Py2 virtualenv project directory
+      copy:
+        content: "/vagrant"
+        dest: "{{ venv_py2 }}/.project"
+        force: no
+
+    - name: Create Py3 virtualenv
+      pip: virtualenv={{ venv_py3 }} virtualenv_python=python3.4 name={{ item.name }} version={{ item.version }}
+      with_items:
+        - { name: "pip", version: "{{ pip_version }}" }
+        - { name: "pip-tools", version: "{{ pip_tools_version }}" }
+
+    - name: Sync Py3 virtualenv
+      command: "chdir=/vagrant {{ venv_py3 }}/bin/pip-sync"
+
+    - name: Install additional Py3 packages
+      pip: requirements=/vagrant/requirements/local.in virtualenv={{ venv_py3 }}
+
+    - name: Set Py3 virtualenv project directory
+      copy:
+        content: "/vagrant"
+        dest: "{{ venv_py3 }}/.project"
+        force: no
+
+    - name: Clone nvm repo
+      git: repo=https://github.com/creationix/nvm dest={{ nvm_dir }} version={{ nvm_version }} update=no
+
+    - name: Load nvm automatically
+      lineinfile: dest={{ dot_profile }} line="source {{ nvm_dir }}/nvm.sh"
+
+    - name: Stat Node.js
+      stat: path={{ nvm_dir }}/versions/node/v{{ node_version }}
+      register: node_js
+
+    - name: Install nvm
+      shell: |
+        source {{ nvm_dir }}/nvm.sh
+        nvm install {{ node_version }}
+        nvm alias default {{ node_version }}
+      args:
+        executable: /bin/bash
+      when: node_js.stat.isdir is not defined or node_js.stat.isdir == False
+
+    - name: Install global npm packages
+      shell: |
+        source {{ nvm_dir }}/nvm.sh
+        npm install -g bower npm-check-updates gulp@3.9.1 eslint@2.11.1 eslint-plugin-react@5.1.1
+      args:
+        executable: /bin/bash
+
+    - name: Protect .pgpass
+      file: path=/home/vagrant/.pgpass mode=0600 state=file
+
+    - name: Stat Django's settings.py
+      stat: path=/vagrant/plugins/settings.py
+      register: django_settings
+
+    - name: Provision settings.py
+      copy: src=/vagrant/vagrant/vagrant_settings.py dest=/vagrant/plugins/settings.py
+      when: django_settings.stat.exists == False
+
+    - name: Stat Moodle's config.php
+      stat: path=/vagrant/moodle/config.php
+      register: moodle_config
+
+    - name: Provision config.php
+      copy: src=/vagrant/vagrant/vagrant_config.php dest=/vagrant/moodle/config.php
+      when: moodle_config.stat.exists == False
+
+    - name: Setup Django cron
+      cron: user=vagrant name="Django" job="{{ venv_py2 }}/bin/python /vagrant/manage.py runcrons > /tmp/cron-django.txt" minute="5,15,25,35,45,55" state=present
+
+    - name: Setup Moodle cron
+      cron: user=vagrant name="Moodle" job="/usr/bin/php /vagrant/moodle/admin/cli/cron.php > /tmp/cron-moodle.txt" minute="0,10,20,30,40,50" state=present
+
+    - name: Clone repos
+      git: repo="https://github.com/INTO-University-Partnerships/{{ item.repo }}" dest="/vagrant/{{ item.dest }}" version=master
+      with_items:
+        - { repo: "django-into-oauth", dest: "into_oauth" }
+        - { repo: "auth-oauth", dest: "moodle/auth/oauth" }
+        - { repo: "block-activity-tree", dest: "moodle/blocks/activity_tree" }
+        - { repo: "local-activity-bookmark", dest: "moodle/local/activity_bookmark" }
+        - { repo: "mod-dragdrop", dest: "moodle/mod/dragdrop" }
+        - { repo: "mod-vocabcards", dest: "moodle/mod/vocabcards" }
+        - { repo: "mod-videoquanda", dest: "moodle/mod/videoquanda" }
+        - { repo: "mod-communitywall", dest: "moodle/mod/communitywall" }
+        - { repo: "mod-talkpoint", dest: "moodle/mod/talkpoint" }
+
+    - name: Install Bower components
+      command: "chdir=/vagrant/moodle/mod/{{ item }} bower install"
+      with_items:
+        - dragdrop
+        - vocabcards
+        - communitywall
+        - talkpoint

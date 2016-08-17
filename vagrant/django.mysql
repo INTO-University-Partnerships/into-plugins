@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$20000$ZlLUZ4RzEbAU$0FEaLCmCOf7l9t+Cn93A/T2P8JSzXekjwp2K9IG8GZU=','2016-02-03 15:30:36',1,'admin','','','admin@intoglobal.com',1,1,'2016-02-03 14:08:35'),(2,'pbkdf2_sha256$20000$fc98yU7Y2VpH$PMGLClX9KCX/f2yRl/pHvLF3X9EHUG52TCMLtrgSpzg=','2016-02-03 15:36:33',0,'tyrion.lannister','Tyrion','Lannister','tyrion.lannister@intoglobal.com',0,1,'2016-02-03 14:30:54');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$20000$ZlLUZ4RzEbAU$0FEaLCmCOf7l9t+Cn93A/T2P8JSzXekjwp2K9IG8GZU=','2016-08-18 14:56:18',1,'admin','','','admin@intoglobal.com',1,1,'2016-02-03 14:08:35'),(2,'pbkdf2_sha256$20000$fc98yU7Y2VpH$PMGLClX9KCX/f2yRl/pHvLF3X9EHUG52TCMLtrgSpzg=','2016-08-18 14:56:46',0,'tyrion.lannister','Tyrion','Lannister','tyrion.lannister@intoglobal.com',0,1,'2016-02-03 14:30:54');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,7 +293,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('wpjh9i49od5ynpjdj26mom37waxa54lx','Zjk5NmZmNDJkMDQzMTllODQxYzE0ZDEzNWUxZmRlOTY0MTQ0OWJkYTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTA4NDhhODgyM2M4Zjk3NWMwY2FiODA1MmI0YTNiMzA1ZDc2MDliOCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2016-02-17 15:30:36');
+INSERT INTO `django_session` VALUES ('7fzqk6ajlpx9t2thfsxmdnxcu1opbgbv','N2E5ZTBmZWE5NDliMjMyN2IyYTk5ODdkODA1MDEyMTU5NzhiMDhlOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjRjMzQwZmI0NDBhNzhmNDQyNTA0MmVhMTMxZWQ5NzE2OTJmODM0MTMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=','2016-09-01 14:56:46'),('wpjh9i49od5ynpjdj26mom37waxa54lx','Zjk5NmZmNDJkMDQzMTllODQxYzE0ZDEzNWUxZmRlOTY0MTQ0OWJkYTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTA4NDhhODgyM2M4Zjk3NWMwY2FiODA1MmI0YTNiMzA1ZDc2MDliOCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2016-02-17 15:30:36');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,7 +344,7 @@ CREATE TABLE `oauth2_provider_accesstoken` (
   KEY `oauth2_provider_accesst_user_id_5e2f004fdebea22d_fk_auth_user_id` (`user_id`),
   CONSTRAINT `D5ac3019ee1c474fd85718b015e3d3a1` FOREIGN KEY (`application_id`) REFERENCES `oauth2_provider_application` (`id`),
   CONSTRAINT `oauth2_provider_accesst_user_id_5e2f004fdebea22d_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,7 +353,7 @@ CREATE TABLE `oauth2_provider_accesstoken` (
 
 LOCK TABLES `oauth2_provider_accesstoken` WRITE;
 /*!40000 ALTER TABLE `oauth2_provider_accesstoken` DISABLE KEYS */;
-INSERT INTO `oauth2_provider_accesstoken` VALUES (1,'5rJDYudvJail8Kr5A700uDC7fBYKcl','2016-02-04 00:34:53','read write',1,2),(2,'p1lQ1csqGJZifMcVPsqFW3VqhU1WFk','2016-02-04 01:19:14','read write',1,2),(3,'h94EvG5BeXNmopdaX7jk3SS0x78MrW','2016-02-04 01:20:57','read write',1,2),(4,'OQejJlGmkEwV8pmzoUuTKMdT4pm4Py','2016-02-04 01:23:37','read write',1,2),(5,'Yf5LbAWKdLIp60mWU7w2Z9KmNFtH8j','2016-02-04 01:26:58','read write',1,2),(6,'hKmNLWMr5zulDg6I2LdqBt1VMsOnti','2016-02-04 01:33:13','read write',1,2),(7,'EbHLG72mkdpcWRItlrgbt7K9NEhrHH','2016-02-04 01:34:13','read write',1,2),(8,'xgtteyuDO5JFbSgohOChoNhL44UCmt','2016-02-04 01:36:45','read write',1,2);
+INSERT INTO `oauth2_provider_accesstoken` VALUES (1,'5rJDYudvJail8Kr5A700uDC7fBYKcl','2016-02-04 00:34:53','read write',1,2),(2,'p1lQ1csqGJZifMcVPsqFW3VqhU1WFk','2016-02-04 01:19:14','read write',1,2),(3,'h94EvG5BeXNmopdaX7jk3SS0x78MrW','2016-02-04 01:20:57','read write',1,2),(4,'OQejJlGmkEwV8pmzoUuTKMdT4pm4Py','2016-02-04 01:23:37','read write',1,2),(5,'Yf5LbAWKdLIp60mWU7w2Z9KmNFtH8j','2016-02-04 01:26:58','read write',1,2),(6,'hKmNLWMr5zulDg6I2LdqBt1VMsOnti','2016-02-04 01:33:13','read write',1,2),(7,'EbHLG72mkdpcWRItlrgbt7K9NEhrHH','2016-02-04 01:34:13','read write',1,2),(8,'xgtteyuDO5JFbSgohOChoNhL44UCmt','2016-02-04 01:36:45','read write',1,2),(9,'mVz3T47qQybUjmI8DS3Cp4Ftqg5dYB','2016-08-19 00:56:46','read write',1,2);
 /*!40000 ALTER TABLE `oauth2_provider_accesstoken` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -413,7 +413,7 @@ CREATE TABLE `oauth2_provider_grant` (
   KEY `oauth2_provider_grant_c1336794` (`code`),
   CONSTRAINT `D6b2a4f1402d4f338b690c38b795830a` FOREIGN KEY (`application_id`) REFERENCES `oauth2_provider_application` (`id`),
   CONSTRAINT `oauth2_provider_grant_user_id_3111344894d452da_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -447,7 +447,7 @@ CREATE TABLE `oauth2_provider_refreshtoken` (
   CONSTRAINT `b58d9cb3b93afb36b11b7741bf1bcc1a` FOREIGN KEY (`access_token_id`) REFERENCES `oauth2_provider_accesstoken` (`id`),
   CONSTRAINT `d3e264ceec355cabed6ff9976fc42a06` FOREIGN KEY (`application_id`) REFERENCES `oauth2_provider_application` (`id`),
   CONSTRAINT `oauth2_provider_refresh_user_id_3f695b639cfbc9a3_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +456,7 @@ CREATE TABLE `oauth2_provider_refreshtoken` (
 
 LOCK TABLES `oauth2_provider_refreshtoken` WRITE;
 /*!40000 ALTER TABLE `oauth2_provider_refreshtoken` DISABLE KEYS */;
-INSERT INTO `oauth2_provider_refreshtoken` VALUES (1,'hznwI8anuAgBI1r0kcS3HZfOvdgVvF',1,1,2),(2,'hgZryPpSa4CFP1GnHl3oMZcvxpKvSk',2,1,2),(3,'7WFD90ZSoPlTVzcCxdSTeM5K3DAhvC',3,1,2),(4,'i9Npkh1nZgwwzdR0Cq3uhkEfPI4mLB',4,1,2),(5,'F28gufhf0Qh2B077PYJS8yRmTvkRq2',5,1,2),(6,'XSOtOAub9xZhJNv020MoPo8ZtooSIf',6,1,2),(7,'zl9jbffarEOnAzNI35eGC9EhlkE51R',7,1,2),(8,'BM3ZjS18qzbbDpLET4TRh8aPJFPRsF',8,1,2);
+INSERT INTO `oauth2_provider_refreshtoken` VALUES (1,'hznwI8anuAgBI1r0kcS3HZfOvdgVvF',1,1,2),(2,'hgZryPpSa4CFP1GnHl3oMZcvxpKvSk',2,1,2),(3,'7WFD90ZSoPlTVzcCxdSTeM5K3DAhvC',3,1,2),(4,'i9Npkh1nZgwwzdR0Cq3uhkEfPI4mLB',4,1,2),(5,'F28gufhf0Qh2B077PYJS8yRmTvkRq2',5,1,2),(6,'XSOtOAub9xZhJNv020MoPo8ZtooSIf',6,1,2),(7,'zl9jbffarEOnAzNI35eGC9EhlkE51R',7,1,2),(8,'BM3ZjS18qzbbDpLET4TRh8aPJFPRsF',8,1,2),(9,'AGFDnyrDTjQ9Chy2hvLJMPr5q768mf',9,1,2);
 /*!40000 ALTER TABLE `oauth2_provider_refreshtoken` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -469,4 +469,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-29 12:39:00
+-- Dump completed on 2016-08-18 14:57:28

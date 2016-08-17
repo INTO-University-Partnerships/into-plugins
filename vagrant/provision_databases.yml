@@ -1,0 +1,80 @@
+---
+- hosts: all
+
+  environment:
+    MYSQL_PWD: "W0mb4t666!"
+
+  vars:
+    venv_py2: "/home/vagrant/.virtualenvs/py2"
+    django_db_name: "plugins_django"
+    moodle_db_name: "plugins_moodle"
+
+  tasks:
+    - name: Copy PostgreSQL database files to temporary directory
+      command: cp /vagrant/vagrant/{{ item }} /tmp/
+      with_items:
+        - django.pgsql
+        - moodle.pgsql
+
+    - name: Ensure PostgreSQL user can read database files
+      file: path=/tmp/{{ item }} owner=postgres group=postgres mode=0666 state=file
+      with_items:
+        - django.pgsql
+        - moodle.pgsql
+
+    - name: Create Django MySQL database
+      mysql_db: name={{ django_db_name }} encoding=utf8 state=present
+      register: django_mysql_dbr
+
+    - name: Restore Django MySQL database
+      shell: mysql -uroot {{ django_db_name }} < /vagrant/vagrant/django.mysql
+      args:
+        executable: /bin/bash
+      when: django_mysql_dbr.changed
+
+    - name: Create Django PostgreSQL database
+      postgresql_db: name={{ django_db_name }} login_user="postgres" encoding="UTF-8" state=present
+      register: django_pgsql_dbr
+      become: true
+      become_user: postgres
+
+    - name: Restore Django PostgreSQL database
+      shell: psql -U postgres {{ django_db_name }} < /tmp/django.pgsql
+      args:
+        executable: /bin/bash
+      become: true
+      become_user: postgres
+      when: django_pgsql_dbr.changed
+
+    - name: Create Moodle MySQL database
+      mysql_db: name={{ moodle_db_name }} encoding=utf8 state=present
+      register: moodle_mysql_dbr
+
+    - name: Restore Moodle MySQL database
+      shell: mysql -uroot {{ moodle_db_name }} < /vagrant/vagrant/moodle.mysql
+      args:
+        executable: /bin/bash
+      when: moodle_mysql_dbr.changed
+
+    - name: Create Moodle PostgreSQL database
+      postgresql_db: name={{ moodle_db_name }} login_user="postgres" encoding="UTF-8" state=present
+      register: moodle_pgsql_dbr
+      become: true
+      become_user: postgres
+
+    - name: Restore Moodle PostgreSQL database
+      shell: psql -U postgres {{ moodle_db_name }} < /tmp/moodle.pgsql
+      args:
+        executable: /bin/bash
+      become: true
+      become_user: postgres
+      when: moodle_pgsql_dbr.changed
+
+    - name: Migrate Django database
+      command: "{{ venv_py2 }}/bin/python2.7 /vagrant/manage.py migrate"
+
+    - name: Migrate Moodle database and purge Moodle caches
+      command: "chdir=/vagrant/moodle /usr/bin/php admin/cli/{{ item }}"
+      with_items:
+        - "upgrade.php --non-interactive"
+        - "purge_caches.php"

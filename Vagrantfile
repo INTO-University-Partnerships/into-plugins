@@ -14,7 +14,7 @@
 #
 
 Vagrant.configure("2") do |config|
-    config.vm.define "INTO github plugins" do |foo|
+    config.vm.define "INTO-github-plugins" do |foo|
     end
 
     # base box
@@ -61,7 +61,21 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "vagrant/composer.json", destination: "composer.json"
 
     # provisioning scripts
-    config.vm.provision "shell", path: "vagrant/provision_as_root.sh"
-    config.vm.provision "shell", path: "vagrant/provision_as_vagrant.sh", privileged: false
-    config.vm.provision "shell", path: "vagrant/provision_databases.sh"
+    config.vm.provision :ansible_local do |ansible|
+        ansible.provisioning_path = "/vagrant/vagrant"
+        ansible.playbook = "provision_as_root.yml"
+        ansible.sudo = true
+        ansible.limit = "all"
+    end
+    config.vm.provision :ansible_local do |ansible|
+        ansible.provisioning_path = "/vagrant/vagrant"
+        ansible.playbook = "provision_as_vagrant.yml"
+        ansible.limit = "all"
+    end
+    config.vm.provision :ansible_local do |ansible|
+        ansible.provisioning_path = "/vagrant/vagrant"
+        ansible.playbook = "provision_databases.yml"
+        ansible.sudo = true
+        ansible.limit = "all"
+    end
 end

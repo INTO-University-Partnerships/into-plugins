@@ -1,0 +1,157 @@
+---
+- hosts: all
+
+  environment:
+    COMPOSER_DISABLE_XDEBUG_WARN: 1
+
+  vars:
+    dbpw: "W0mb4t666!"
+
+  pre_tasks:
+    - name: Timestamp provision
+      shell: date >> /etc/vagrant_provisioned_at
+      args:
+        executable: /bin/bash
+      changed_when: False
+
+    - name: Update apt cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Preset MySQL database password
+      shell: debconf-set-selections <<< "mysql-server mysql-server/root_password{{ item }} password {{ dbpw }}"
+      with_items:
+        - ""
+        - "_again"
+      args:
+        executable: /bin/bash
+      changed_when: False
+
+  tasks:
+    - name: Install apt packages
+      apt: name={{ item }} state=present
+      with_items:
+        - git
+        - htop
+        - vim
+        - nfs-kernel-server
+        - apache2
+        - php5-cli
+        - php5-common
+        - php5-curl
+        - php5-gd
+        - php5-intl
+        - php5-json
+        - php5-mysql
+        - php5-pgsql
+        - php5-readline
+        - php5-xdebug
+        - php5-xmlrpc
+        - libapache2-mod-php5
+        - mysql-server-5.6
+        - postgresql
+        - python-pip
+        - python-dev
+        - python3-dev
+        - python-psycopg2
+        - python-mysqldb
+        - postgresql-server-dev-9.3
+        - libmysqlclient-dev
+        - libffi-dev
+        - libjpeg-dev
+
+    - name: Enable Apache modules
+      apache2_module: name={{ item }} state=present
+      with_items:
+        - php5
+        - rewrite
+
+    - name: Enable Xdebug
+      ini_file: dest=/etc/php5/apache2/php.ini
+                section=xdebug option={{ item.key }}
+                value={{ item.value }}
+                state=present
+                backup=yes
+      with_items:
+        - { key: "xdebug.remote_enable", value: "on" }
+        - { key: "xdebug.remote_connect_back", value: "on" }
+
+    - name: Move provisioned Apache vhost file
+      command: mv /home/vagrant/000-default.conf /etc/apache2/sites-available/
+      changed_when: False
+
+    - name: Stat Apache html directory
+      stat: path=/var/www/html
+      register: apache_html
+
+    - name: Remove Apache html directory
+      file: path=/var/www/html state=absent
+      when: apache_html.stat.isdir is defined and apache_html.stat.isdir
+
+    - name: Symlink Apache document root to Moodle
+      file: src=/vagrant/moodle dest=/var/www/html state=link
+      when: apache_html.stat.islnk is not defined or apache_html.stat.islnk == False
+
+    - name: Move Composer and PHPUnit files
+      command: "{{ item }}"
+      with_items:
+        - mv /home/vagrant/composer.json /vagrant/moodle/
+        - mv /home/vagrant/phpunit_plugins.xml /vagrant/moodle/
+        - touch /vagrant/moodle/composer.json
+        - touch /vagrant/moodle/phpunit_plugins.xml
+
+    - name: Remove Composer lock file
+      file: path=/vagrant/moodle/composer.lock state=absent
+
+    - name: Prevent web tests breaking
+      replace: dest=/vagrant/moodle/lib/phpunit/bootstrap.php regexp="\\$CFG\\-\\>wwwroot\\ \\ \\ \\=\\ \\'http\\:\\/\\/www\\.example\\.com\\/moodle\\'\\;" replace="# line removed to prevent web tests breaking"
+
+    - name: Stat Composer
+      stat: path=/vagrant/moodle/composer.phar
+      register: composer_phar
+
+    - name: Install Composer
+      get_url: url=https://getcomposer.org/composer.phar dest=/vagrant/moodle mode=0777
+      when: composer_phar.stat.exists == False
+
+    - name: Install Composer packages
+      command: "chdir=/vagrant/moodle {{ item }}"
+      with_items:
+        - rm -rf vendor
+        - ./composer.phar install -q
+      when: composer_phar.stat.exists == False
+
+    - name: Update Composer packages
+      command: "chdir=/vagrant/moodle {{ item }}"
+      with_items:
+        - ./composer.phar self-update
+        - ./composer.phar update -q
+      when: composer_phar.stat.exists
+
+    - name: Ensure MySQL is configured for UTF-8
+      ini_file: dest=/etc/mysql/my.cnf
+                section=mysqld option={{ item.key }}
+                value={{ item.value }}
+                state=present
+                backup=yes
+      with_items:
+        - { key: "collation-server", value: "utf8_unicode_ci" }
+        - { key: "init-connect", value: "'SET NAMES utf8'" }
+        - { key: "character-set-server", value: "utf8" }
+
+    - name: Set PostgreSQL database password
+      command: psql -U postgres -d postgres -c "alter user postgres with password '{{ dbpw }}';"
+      become_user: postgres
+      changed_when: False
+
+    - name: Install pip packages
+      pip: name={{ item }} state=present
+      with_items:
+        - virtualenv
+        - virtualenvwrapper
+
+    - name: Restart services
+      service: name={{ item }} state=restarted
+      with_items:
+        - apache2
+        - mysql
+        - postgresql

@@ -864,8 +864,8 @@ SELECT pg_catalog.setval('auth_permission_id_seq', 33, true);
 --
 
 COPY auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$20000$LMrbVKg5ARBQ$4pQi1YiYA4eagf6NPX1nhLhcNBWFFJIF3/nb/RSLAyc=	2016-02-14 07:47:58.391554+00	t	admin			admin@intoglobal.com	t	t	2016-02-14 07:04:18+00
-2	pbkdf2_sha256$20000$4k4q54pCZ5J9$Cp/pN0Kc7xQMwNj3P51L76aXN4D9RHcoie5iBWzhAbw=	2016-02-14 09:00:49.818426+00	f	tyrion.lannister	Tyrion	Lannister	tyrion.lannister@intoglobal.com	f	t	2016-02-14 07:22:04+00
+1	pbkdf2_sha256$20000$LMrbVKg5ARBQ$4pQi1YiYA4eagf6NPX1nhLhcNBWFFJIF3/nb/RSLAyc=	2016-08-18 14:50:27.98777+00	t	admin			admin@intoglobal.com	t	t	2016-02-14 07:04:18+00
+2	pbkdf2_sha256$20000$4k4q54pCZ5J9$Cp/pN0Kc7xQMwNj3P51L76aXN4D9RHcoie5iBWzhAbw=	2016-08-18 14:52:52.774289+00	f	tyrion.lannister	Tyrion	Lannister	tyrion.lannister@intoglobal.com	f	t	2016-02-14 07:22:04+00
 \.
 
 
@@ -1015,6 +1015,7 @@ COPY oauth2_provider_accesstoken (id, token, expires, scope, application_id, use
 1	xOy6TGIkyFOO87VjNXCm4C77zM5pVK	2016-02-14 17:48:43.260772+00	write read	1	1
 2	WeyzXUCICS13vjXSCjClXHjKlIXS9f	2016-02-14 17:49:09.016249+00	write read	1	2
 3	oTK5seTm9ME0URUGWpeW0xzbkalLd2	2016-02-14 19:00:52.428173+00	write read	1	2
+4	xElLBD5xR0K3NtGyHMxoXq380aSNM4	2016-08-19 00:52:53.336984+00	read write	1	2
 \.
 
 
@@ -1022,7 +1023,7 @@ COPY oauth2_provider_accesstoken (id, token, expires, scope, application_id, use
 -- Name: oauth2_provider_accesstoken_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('oauth2_provider_accesstoken_id_seq', 3, true);
+SELECT pg_catalog.setval('oauth2_provider_accesstoken_id_seq', 4, true);
 
 
 --
@@ -1060,7 +1061,7 @@ COPY oauth2_provider_grant (id, code, expires, redirect_uri, scope, application_
 -- Name: oauth2_provider_grant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('oauth2_provider_grant_id_seq', 10, true);
+SELECT pg_catalog.setval('oauth2_provider_grant_id_seq', 11, true);
 
 
 --
@@ -1071,6 +1072,7 @@ COPY oauth2_provider_refreshtoken (id, token, access_token_id, application_id, u
 1	zzsGOsKHk5OfTRU6tyhGGbtgCvKqWY	1	1	1
 2	6b5CwnyjlfC5Bw614QTsp35rh4sHrl	2	1	2
 3	DeAndawWEi1GfnClQUcVeJAbd4IY62	3	1	2
+4	WmlvLmFVFxsRQUnpOm13YTlVQSPCzA	4	1	2
 \.
 
 
@@ -1078,7 +1080,7 @@ COPY oauth2_provider_refreshtoken (id, token, access_token_id, application_id, u
 -- Name: oauth2_provider_refreshtoken_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('oauth2_provider_refreshtoken_id_seq', 3, true);
+SELECT pg_catalog.setval('oauth2_provider_refreshtoken_id_seq', 4, true);
 
 
 --
