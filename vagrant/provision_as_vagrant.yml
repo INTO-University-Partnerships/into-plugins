@@ -26,6 +26,9 @@
     - name: Avoid having to specify MySQL root password
       lineinfile: dest={{ dot_profile }} line="export MYSQL_PWD='W0mb4t666!'" state=present
 
+    - name: Turn on Python warnings
+      lineinfile: dest={{ dot_profile }} line="export PYTHONWARNINGS='d'" state=present
+
     - name: Enable virtualenvwrapper
       lineinfile: dest={{ dot_bashrc }} line="source /usr/local/bin/virtualenvwrapper.sh" state=present
 
