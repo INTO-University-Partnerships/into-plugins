@@ -97,6 +97,19 @@
       args:
         executable: /bin/bash
 
+    - name: Stat node_modules
+      stat: path=/vagrant/node_modules
+      register: node_modules
+
+    - name: Install local npm packages
+      shell: |
+        source {{ nvm_dir }}/nvm.sh
+        npm install
+      args:
+        executable: /bin/bash
+        chdir: /vagrant
+      when: node_modules.stat.isdir is not defined or node_modules.stat.isdir == False
+
     - name: Protect .pgpass
       file: path=/home/vagrant/.pgpass mode=0600 state=file
 
@@ -126,9 +139,12 @@
       git: repo="https://github.com/INTO-University-Partnerships/{{ item.repo }}" dest="/vagrant/{{ item.dest }}" version=master
       with_items:
         - { repo: "django-into-oauth", dest: "into_oauth" }
+        - { repo: "django-messaging-messaging", dest: "messaging" }
+        - { repo: "django-messaging-vle", dest: "vle" }
         - { repo: "auth-oauth", dest: "moodle/auth/oauth" }
         - { repo: "block-activity-tree", dest: "moodle/blocks/activity_tree" }
         - { repo: "local-activity-bookmark", dest: "moodle/local/activity_bookmark" }
+        - { repo: "local-messaging", dest: "moodle/local/messaging" }
         - { repo: "mod-dragdrop", dest: "moodle/mod/dragdrop" }
         - { repo: "mod-vocabcards", dest: "moodle/mod/vocabcards" }
         - { repo: "mod-videoquanda", dest: "moodle/mod/videoquanda" }
@@ -136,9 +152,15 @@
         - { repo: "mod-talkpoint", dest: "moodle/mod/talkpoint" }
 
     - name: Install Bower components
-      command: "chdir=/vagrant/moodle/mod/{{ item }} bower install"
+      command: "chdir=/vagrant/{{ item }} bower install"
       with_items:
-        - dragdrop
-        - vocabcards
-        - communitywall
-        - talkpoint
+        - ""
+        - messaging
+        - moodle/mod/dragdrop
+        - moodle/mod/vocabcards
+        - moodle/mod/communitywall
+        - moodle/mod/talkpoint
+
+    - name: Patch Moodle
+      command: "warn=False chdir=/vagrant/moodle git apply /vagrant/vagrant/moodle.diff"
+      ignore_errors: yes

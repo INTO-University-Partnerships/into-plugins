@@ -3,12 +3,16 @@
 *.pyc
 *.log
 settings.py
+node_modules/
 staticfiles/
 mediafiles/
 /.cache/
 locale/
+static/js/components/
 moodle/
 moodledata/
 phpu_moodledata/
 *~
-into_oauth/
+/into_oauth/
+/messaging/
+/vle/

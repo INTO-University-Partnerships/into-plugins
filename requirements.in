@@ -1,7 +1,15 @@
-Django>=1.8,<1.9
+django>=1.8,<1.9
+django-cms>=3.3,<3.4
 djangorestframework>=3.3,<3.4
 django-oauth-toolkit==0.9.0
-djangocms-admin-style
+django-reversion==1.9.3
 mysqlclient
 psycopg2
+djangocms-style
+djangocms-text-ckeditor
+unipath
+django-cron
+requests
 ndg-httpsclient
+django-js-reverse
+django-mptt

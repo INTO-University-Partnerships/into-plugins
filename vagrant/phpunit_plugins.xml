@@ -12,6 +12,9 @@
         <testsuite name="local_activity_bookmark">
             <directory suffix="_test.php">local/activity_bookmark/tests</directory>
         </testsuite>
+        <testsuite name="local_messaging">
+            <directory suffix="_test.php">local/messaging/tests</directory>
+        </testsuite>
         <testsuite name="mod_communitywall">
             <directory suffix="_test.php">mod/communitywall/tests</directory>
         </testsuite>

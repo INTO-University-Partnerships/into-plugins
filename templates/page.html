@@ -1,0 +1,18 @@
+{% load cms_tags sekizai_tags %}
+<html>
+    <head>
+        <title>{% page_attribute 'page_title' %}</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}js/components/bootstrap/dist/css/bootstrap.min.css">
+        {% render_block 'css' %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% placeholder content %}
+        {% block content %}{% endblock %}
+        <script src="{% url 'js_reverse' %}"></script>
+        <script src="{% url 'js_i18n' %}"></script>
+        <script src="{{ STATIC_URL }}js/components/jquery/dist/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}js/components/bootstrap/dist/js/bootstrap.min.js"></script>
+        {% render_block 'js' %}
+    </body>
+</html>

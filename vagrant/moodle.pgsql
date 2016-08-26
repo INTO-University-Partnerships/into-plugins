@@ -46014,7 +46014,7 @@ COPY mdl_block (id, name, cron, lastcron, visible) FROM stdin;
 41	tags	0	0	1
 42	globalsearch	0	0	1
 43	lp	0	0	1
-32	rss_client	300	1471531802	1
+32	rss_client	300	1472568003	1
 \.
 
 
@@ -46210,8 +46210,8 @@ SELECT pg_catalog.setval('mdl_cache_filters_id_seq', 1, false);
 --
 
 COPY mdl_cache_flags (id, flagtype, name, timemodified, value, expiry) FROM stdin;
-5	userpreferenceschanged	2	1471531852	1	1471539052
-6	userpreferenceschanged	3	1471531973	1	1471539173
+7	userpreferenceschanged	2	1472567960	1	1472575160
+8	accesslib/dirtycontexts	/1/3/24	1472567960	1	1472575160
 \.
 
 
@@ -46219,7 +46219,7 @@ COPY mdl_cache_flags (id, flagtype, name, timemodified, value, expiry) FROM stdi
 -- Name: mdl_cache_flags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_cache_flags_id_seq', 6, true);
+SELECT pg_catalog.setval('mdl_cache_flags_id_seq', 8, true);
 
 
 --
@@ -47407,7 +47407,6 @@ COPY mdl_config (id, name, value) FROM stdin;
 3	auth	oauth
 122	grade_report_user_showgrade	1
 255	calendar_customexport	1
-23	themerev	1469792210
 27	version	2016052301
 123	grade_report_user_showfeedback	1
 124	grade_report_user_showrange	1
@@ -47653,10 +47652,6 @@ COPY mdl_config (id, name, value) FROM stdin;
 379	chat_old_ping	35
 380	chat_refresh_room	5
 381	chat_normal_updatemode	jsupdate
-366	release	3.1.1 (Build: 20160711)
-370	allversionshash	418e31fd349b005b48ee83b7c04eb4ae1f3cda0f
-367	branch	31
-369	scheduledtaskreset	1469792211
 382	chat_serverhost	10.0.0.10
 383	chat_serverip	127.0.0.1
 384	chat_serverport	9111
@@ -47664,6 +47659,7 @@ COPY mdl_config (id, name, value) FROM stdin;
 386	data_enablerssfeeds	0
 387	feedback_allowfullanonymous	0
 388	forum_displaymode	3
+370	allversionshash	055b97c97919ef104f7b32d4484f3d45dd422485
 389	forum_replytouser	1
 390	forum_shortpost	300
 391	forum_longpost	600
@@ -47741,17 +47737,25 @@ COPY mdl_config (id, name, value) FROM stdin;
 258	calendar_exportsalt	mut9RO1DQLHmpOhXHjFebcnCXgEHHLaMwCoG4qvPxB5QiCoLFvIG8xk37Vyd
 472	timezone	Europe/London
 473	registerauth	
-14	filterall	0
-24	jsrev	1469792210
 475	antiviruses	
 476	upgrade_letterboundarycourses	1
-148	langrev	1469792210
-368	localcachedirpurged	1469792210
 477	enableglobalsearch	0
 478	allowaccountssameemail	0
 479	smtpauthtype	LOGIN
 480	searchengine	solr
 481	pathtounoconv	/usr/bin/unoconv
+366	release	3.1.1 (Build: 20160711)
+367	branch	31
+14	filterall	0
+24	jsrev	1472566951
+23	themerev	1472566952
+148	langrev	1472566952
+368	localcachedirpurged	1472566952
+369	scheduledtaskreset	1472566952
+483	fileslastcleanup	1472567408
+484	scorm_updatetimelast	1472567411
+485	digestmailtimelast	0
+486	forum_lastreadclean	1472567414
 \.
 
 
@@ -47759,7 +47763,7 @@ COPY mdl_config (id, name, value) FROM stdin;
 -- Name: mdl_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_config_id_seq', 481, true);
+SELECT pg_catalog.setval('mdl_config_id_seq', 486, true);
 
 
 --
@@ -50048,15 +50052,20 @@ COPY mdl_config_plugins (id, plugin, name, value) FROM stdin;
 1320	theme_clean	sitename	1
 1321	theme_more	smalllogo	
 1322	theme_more	sitename	1
-1323	enrol_manual	expirynotifylast	1471531203
-1324	enrol_manual	lastcron	1471531203
-1325	enrol_self	expirynotifylast	1471531203
-1326	enrol_self	lastcron	1471531203
-1327	workshopallocation_scheduled	lastcron	1471531803
-1328	repository_dropbox	lastcron	1471531803
-1329	repository_filesystem	lastcron	1471531803
 1114	auth/oauth	oauth_redirect	1
 1115	auth/oauth	oauth_provider	{"client_id":"LrQTuK5NuLNDwTb9rHpOtkON1XdPPAI9a4CiWXmN","client_secret":"FSKDqyRIySpknKoqOceKyGFFU57T5DFLANSPZBT5Nbypr3Kfv1ZrfQEg5Xy35VbgLJ14eEBayoNMKqORPShF2x3x9EIo3aEwxKkwnB07KQUeDMBvXsR9IhI4eVbLo3mo","authorize_url":"http:\\/\\/10.0.0.10:8000\\/o\\/authorize\\/","token_url":"http:\\/\\/10.0.0.10:8000\\/o\\/token\\/","api_user_get":"http:\\/\\/10.0.0.10:8000\\/o\\/user\\/","logout_url":"http:\\/\\/10.0.0.10:8000\\/o\\/logout\\/"}
+1330	local_messaging	version	2014081800
+1331	core_plugin	recentfetch	1472567407
+1332	core_plugin	recentresponse	{"status":"OK","provider":"https:\\/\\/download.moodle.org\\/api\\/1.3\\/updates.php","apiver":"1.3","timegenerated":1472567407,"ticket":"JUM5JTkxZSVGQjQlODklN0Z6JUUxJUM0JURFJUQ0JUI0NCUxOSVFNkQlQ0QlQzglQTJXZiVDOHJ5JUIwJUFFSiUzQiVBRCUyRlolOEElMUUlMUIlODUlN0IlOEMlODlM","forbranch":"3.1","forversion":"2016052301","updates":{"core":[{"version":2016052301.09,"release":"3.1.1+ (Build: 20160825)","branch":"3.1","maturity":200,"url":"https:\\/\\/download.moodle.org","download":"https:\\/\\/download.moodle.org\\/download.php\\/direct\\/stable31\\/moodle-latest-31.zip"},{"version":2016082500.01,"release":"3.2dev (Build: 20160825)","branch":"3.2","maturity":50,"url":"https:\\/\\/download.moodle.org","download":"https:\\/\\/download.moodle.org\\/download.php\\/direct\\/moodle\\/moodle-latest.zip"}]}}
+1323	enrol_manual	expirynotifylast	1472567409
+1324	enrol_manual	lastcron	1472567409
+1325	enrol_self	expirynotifylast	1472567409
+1326	enrol_self	lastcron	1472567409
+1333	enrol_cohort	lastcron	1472567409
+1334	quiz_statistics	lastcron	1472567411
+1327	workshopallocation_scheduled	lastcron	1472568003
+1328	repository_dropbox	lastcron	1472568003
+1329	repository_filesystem	lastcron	1472568003
 \.
 
 
@@ -50064,7 +50073,7 @@ COPY mdl_config_plugins (id, plugin, name, value) FROM stdin;
 -- Name: mdl_config_plugins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_config_plugins_id_seq', 1329, true);
+SELECT pg_catalog.setval('mdl_config_plugins_id_seq', 1334, true);
 
 
 --
@@ -50137,8 +50146,8 @@ COPY mdl_context_temp (id, path, depth) FROM stdin;
 --
 
 COPY mdl_course (id, category, sortorder, fullname, shortname, idnumber, summary, summaryformat, format, showgrades, newsitems, startdate, marker, maxbytes, legacyfiles, showreports, visible, visibleold, groupmode, groupmodeforce, defaultgroupingid, lang, calendartype, theme, timecreated, timemodified, requested, enablecompletion, completionnotify, cacherev) FROM stdin;
-2	1	10001	Plugins	Plugins			1	topics	1	0	1455494400	0	0	0	0	1	1	0	0	0				1455435801	1455435962	0	0	0	1469792210
-1	0	1	INTO github plugins	INTO github plugins			0	site	1	3	0	0	0	0	0	1	1	0	0	0				1455433685	1455435904	0	0	0	1469792210
+1	0	1	INTO github plugins	INTO github plugins			0	site	1	3	0	0	0	0	0	1	1	0	0	0				1455433685	1455435904	0	0	0	1472566952
+2	1	10001	Plugins	Plugins	plugins		1	topics	1	0	1455494400	0	0	0	0	1	1	0	0	0				1455435801	1472567907	0	0	0	1472567907
 \.
 
 
@@ -50530,7 +50539,6 @@ SELECT pg_catalog.setval('mdl_dragdrop_word_block_id_seq', 1, false);
 --
 
 COPY mdl_editor_atto_autosave (id, elementid, contextid, pagehash, userid, drafttext, draftid, pageinstance, timemodified) FROM stdin;
-19	id_s__auth_instructions	1	53631c84ee5180482d2dc2dff2ac33f38c3dbed5	2		-1	yui_3_17_2_1_1471531950134_131	1471531952
 \.
 
 
@@ -50538,7 +50546,7 @@ COPY mdl_editor_atto_autosave (id, elementid, contextid, pagehash, userid, draft
 -- Name: mdl_editor_atto_autosave_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_editor_atto_autosave_id_seq', 19, true);
+SELECT pg_catalog.setval('mdl_editor_atto_autosave_id_seq', 21, true);
 
 
 --
@@ -52078,6 +52086,7 @@ SELECT pg_catalog.setval('mdl_groupings_id_seq', 1, false);
 --
 
 COPY mdl_groups (id, courseid, idnumber, name, description, descriptionformat, enrolmentkey, picture, hidepicture, timecreated, timemodified) FROM stdin;
+1	2	A	Group A		1		0	0	1472567986	1472567999
 \.
 
 
@@ -52085,7 +52094,7 @@ COPY mdl_groups (id, courseid, idnumber, name, description, descriptionformat, e
 -- Name: mdl_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_groups_id_seq', 1, false);
+SELECT pg_catalog.setval('mdl_groups_id_seq', 1, true);
 
 
 --
@@ -52093,6 +52102,7 @@ SELECT pg_catalog.setval('mdl_groups_id_seq', 1, false);
 --
 
 COPY mdl_groups_members (id, groupid, userid, timeadded, component, itemid) FROM stdin;
+1	1	3	1472567999		0
 \.
 
 
@@ -52100,7 +52110,7 @@ COPY mdl_groups_members (id, groupid, userid, timeadded, component, itemid) FROM
 -- Name: mdl_groups_members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_groups_members_id_seq', 1, false);
+SELECT pg_catalog.setval('mdl_groups_members_id_seq', 1, true);
 
 
 --
@@ -52631,6 +52641,20 @@ COPY mdl_logstore_standard_log (id, eventname, component, action, target, object
 46	\\core\\event\\user_loggedin	core	loggedin	user	user	3	r	0	1	10	0	3	0	\N	0	a:1:{s:8:"username";s:16:"tyrion.lannister";}	1471531973	web	10.0.0.1	\N
 47	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	24	50	2	3	2	\N	0	N;	1471532028	web	10.0.0.1	\N
 48	\\core\\event\\user_loggedout	core	loggedout	user	user	3	r	0	1	10	0	3	0	\N	0	a:1:{s:9:"sessionid";s:26:"n54naa8co7ijp2a6ujbn60o951";}	1471532044	web	10.0.0.1	\N
+49	\\mod_vocabcards\\event\\cron_not_due	mod_vocabcards	not_due	cron	\N	\N	r	0	1	10	0	2	0	\N	0	a:3:{s:4:"hour";i:15;s:17:"window_after_hour";i:1;s:18:"window_before_hour";i:7;}	1472567409	cli	\N	\N
+50	\\core\\event\\user_loggedin	core	loggedin	user	user	2	r	0	1	10	0	2	0	\N	0	a:1:{s:8:"username";s:5:"admin";}	1472567669	web	10.0.0.1	\N
+51	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	24	50	2	2	2	\N	0	N;	1472567727	web	10.0.0.1	\N
+52	\\core\\event\\course_updated	core	updated	course	course	2	u	1	24	50	2	2	2	\N	0	a:3:{s:9:"shortname";s:7:"Plugins";s:17:"old_vle_course_id";s:0:"";s:8:"fullname";s:7:"Plugins";}	1472567907	web	10.0.0.1	\N
+53	\\core\\event\\course_viewed	core	viewed	course	\N	\N	r	2	24	50	2	2	2	\N	0	N;	1472567908	web	10.0.0.1	\N
+54	\\core\\event\\role_unassigned	core	unassigned	role	role	5	d	0	24	50	2	2	2	3	0	a:3:{s:2:"id";s:1:"1";s:9:"component";s:0:"";s:6:"itemid";s:1:"0";}	1472567932	web	10.0.0.1	\N
+55	\\core\\event\\role_assigned	core	assigned	role	role	5	c	0	24	50	2	2	2	3	0	a:3:{s:2:"id";i:2;s:9:"component";s:0:"";s:6:"itemid";i:0;}	1472567935	web	10.0.0.1	\N
+56	\\core\\event\\role_unassigned	core	unassigned	role	role	5	d	0	24	50	2	2	2	3	0	a:3:{s:2:"id";s:1:"2";s:9:"component";s:0:"";s:6:"itemid";s:1:"0";}	1472567951	web	10.0.0.1	\N
+57	\\core\\event\\user_enrolment_deleted	core	deleted	user_enrolment	user_enrolments	1	d	0	24	50	2	2	2	3	0	a:2:{s:13:"userenrolment";a:12:{s:2:"id";s:1:"1";s:6:"status";s:1:"0";s:7:"enrolid";s:1:"1";s:6:"userid";s:1:"3";s:9:"timestart";s:10:"1455408000";s:7:"timeend";s:1:"0";s:10:"modifierid";s:1:"2";s:11:"timecreated";s:10:"1455436252";s:12:"timemodified";s:10:"1455436252";s:8:"courseid";s:1:"2";s:5:"enrol";s:6:"manual";s:9:"lastenrol";b:1;}s:5:"enrol";s:6:"manual";}	1472567951	web	10.0.0.1	\N
+58	\\core\\event\\user_enrolment_created	core	created	user_enrolment	user_enrolments	2	c	0	24	50	2	2	2	3	0	a:1:{s:5:"enrol";s:6:"manual";}	1472567960	web	10.0.0.1	\N
+59	\\core\\event\\role_assigned	core	assigned	role	role	5	c	0	24	50	2	2	2	3	0	a:3:{s:2:"id";i:3;s:9:"component";s:0:"";s:6:"itemid";i:0;}	1472567960	web	10.0.0.1	\N
+60	\\core\\event\\group_created	core	created	group	groups	1	c	0	24	50	2	2	2	\N	0	N;	1472567986	web	10.0.0.1	\N
+61	\\core\\event\\group_member_added	core	added	group_member	groups	1	c	0	24	50	2	2	2	3	0	a:2:{s:9:"component";s:0:"";s:6:"itemid";i:0;}	1472567999	web	10.0.0.1	\N
+62	\\mod_vocabcards\\event\\cron_not_due	mod_vocabcards	not_due	cron	\N	\N	r	0	1	10	0	2	0	\N	0	a:3:{s:4:"hour";i:15;s:17:"window_after_hour";i:1;s:18:"window_before_hour";i:7;}	1472568003	cli	\N	\N
 \.
 
 
@@ -52638,7 +52662,7 @@ COPY mdl_logstore_standard_log (id, eventname, component, action, target, object
 -- Name: mdl_logstore_standard_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_logstore_standard_log_id_seq', 48, true);
+SELECT pg_catalog.setval('mdl_logstore_standard_log_id_seq', 62, true);
 
 
 --
@@ -53211,11 +53235,11 @@ COPY mdl_modules (id, name, cron, lastcron, search, visible) FROM stdin;
 24	videoquanda	0	0		1
 25	vocabcards	3600	0		1
 26	wiki	0	0		1
-1	assign	60	1471531802		1
-4	chat	300	1471531802		1
-18	quiz	60	1471531802		1
-20	scorm	300	1471531802		1
-27	workshop	60	1471531802		1
+1	assign	60	1472568003		1
+4	chat	300	1472568003		1
+18	quiz	60	1472568003		1
+20	scorm	300	1472568003		1
+27	workshop	60	1472568003		1
 \.
 
 
@@ -54273,7 +54297,7 @@ SELECT pg_catalog.setval('mdl_role_allow_switch_id_seq', 9, true);
 --
 
 COPY mdl_role_assignments (id, roleid, contextid, userid, timemodified, modifierid, component, itemid, sortorder) FROM stdin;
-1	5	24	3	1455436253	2		0	0
+3	5	24	3	1472567960	2		0	0
 \.
 
 
@@ -54281,7 +54305,7 @@ COPY mdl_role_assignments (id, roleid, contextid, userid, timemodified, modifier
 -- Name: mdl_role_assignments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_role_assignments_id_seq', 1, true);
+SELECT pg_catalog.setval('mdl_role_assignments_id_seq', 3, true);
 
 
 --
@@ -55875,7 +55899,7 @@ SELECT pg_catalog.setval('mdl_scorm_seq_ruleconds_id_seq', 1, false);
 --
 
 COPY mdl_sessions (id, state, sid, userid, sessdata, timecreated, timemodified, firstip, lastip) FROM stdin;
-14	0	v6o1updkglcd7qn9eeq3c9ina2	0	\N	1471532044	1471532044	10.0.0.1	10.0.0.1
+17	0	7r7ocbh0n7b8nnsi7gbpmo3q07	2	\N	1472567669	1472567995	10.0.0.1	10.0.0.1
 \.
 
 
@@ -55883,7 +55907,7 @@ COPY mdl_sessions (id, state, sid, userid, sessdata, timecreated, timemodified, 
 -- Name: mdl_sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_sessions_id_seq', 14, true);
+SELECT pg_catalog.setval('mdl_sessions_id_seq', 17, true);
 
 
 --
@@ -56285,52 +56309,52 @@ COPY mdl_task_scheduled (id, component, classname, lastruntime, nextruntime, blo
 48	enrol_lti	\\enrol_lti\\task\\sync_grades	0	1469793600	0	*/30	*	*	*	*	0	0	0
 49	enrol_lti	\\enrol_lti\\task\\sync_members	0	1469793600	0	*/30	*	*	*	*	0	0	0
 37	logstore_legacy	\\logstore_legacy\\task\\cleanup_task	0	1469851980	0	13	5	*	*	*	0	0	0
-2	moodle	\\core\\task\\delete_unconfirmed_users_task	1471531203	1471532400	0	0	*	*	*	*	0	0	0
-3	moodle	\\core\\task\\delete_incomplete_users_task	1471531203	1471532700	0	5	*	*	*	*	0	0	0
-4	moodle	\\core\\task\\backup_cleanup_task	1471531203	1471533000	0	10	*	*	*	*	0	0	0
-5	moodle	\\core\\task\\tag_cron_task	1471531203	1471572000	0	0	3	*	*	*	0	0	0
-6	moodle	\\core\\task\\context_cleanup_task	1471531203	1471533900	0	25	*	*	*	*	0	0	0
-7	moodle	\\core\\task\\cache_cleanup_task	1471531203	1471534200	0	30	*	*	*	*	0	0	0
-8	moodle	\\core\\task\\messaging_cleanup_task	1471531203	1471534500	0	35	*	*	*	*	0	0	0
-33	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	1471531206	1471576080	0	8	4	*	*	*	0	0	0
-35	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	1471531206	1471568100	0	55	1	*	*	*	0	0	0
-38	logstore_standard	\\logstore_standard\\task\\cleanup_task	1471531206	1471576680	0	18	4	*	*	*	0	0	0
-40	moodle	\\core\\task\\completion_daily_task	1471531206	1471597800	0	10	10	*	*	*	0	0	0
-41	moodle	\\core\\task\\search_index_task	1471531206	1471532400	0	*/30	*	*	*	*	0	0	0
-42	moodle	\\core\\task\\search_optimize_task	1471531206	1471562100	0	15	*/12	*	*	*	0	0	0
-43	moodle	\\core\\task\\complete_plans_task	1471531206	1471533600	0	20	*	*	*	*	0	0	0
-44	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	1471531206	1471532640	0	4	*	*	*	*	0	0	0
-50	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	1471531206	1471532580	0	3	*	*	*	*	0	0	0
-51	tool_monitor	\\tool_monitor\\task\\check_subscriptions	1471531206	1471594140	0	9	9	*	*	*	0	0	0
-52	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	1471531206	1471532400	0	*/30	*	*	*	*	0	0	0
-53	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	1471531206	1471532400	0	*/30	*	*	*	*	0	0	0
-1	moodle	\\core\\task\\session_cleanup_task	1471531802	1471531860	0	*	*	*	*	*	0	0	0
-9	moodle	\\core\\task\\send_new_user_passwords_task	1471531802	1471531860	0	*	*	*	*	*	0	0	0
-34	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	1471531804	1471531860	0	*	*	*	*	*	0	0	0
-36	tool_monitor	\\tool_monitor\\task\\clean_events	1471531804	1471531860	0	*	*	*	*	*	0	0	0
-39	moodle	\\core\\task\\completion_regular_task	1471531804	1471531860	0	*	*	*	*	*	0	0	0
-54	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	1471531804	1471532400	0	*/15	*	*	*	*	0	0	0
-11	moodle	\\core\\task\\create_contexts_task	1471531203	1471561200	1	0	0	*	*	*	0	0	0
-21	moodle	\\core\\task\\registration_cron_task	1471531205	1472073300	0	15	22	*	*	3	0	0	0
-22	moodle	\\core\\task\\check_for_updates_task	1471531205	1471532400	0	0	*/2	*	*	*	0	0	0
-26	moodle	\\core\\task\\file_temp_cleanup_task	1471531205	1471542900	0	55	*/6	*	*	*	0	0	0
-27	moodle	\\core\\task\\file_trash_cleanup_task	1471531205	1471542900	0	55	*/6	*	*	*	0	0	0
-28	moodle	\\core\\task\\stats_cron_task	1471531205	1471532400	0	0	*	*	*	*	0	0	0
-29	moodle	\\core\\task\\password_reset_cleanup_task	1471531205	1471539600	0	0	*/6	*	*	*	0	0	0
-32	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	1471531205	1471609200	0	20	13	*	*	5	0	0	0
-10	moodle	\\core\\task\\send_failed_login_notifications_task	1471531802	1471531860	0	*	*	*	*	*	0	0	0
-12	moodle	\\core\\task\\legacy_plugin_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-13	moodle	\\core\\task\\grade_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-14	moodle	\\core\\task\\events_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-16	moodle	\\core\\task\\portfolio_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-17	moodle	\\core\\task\\plagiarism_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-18	moodle	\\core\\task\\calendar_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-19	moodle	\\core\\task\\blog_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-20	moodle	\\core\\task\\question_cron_task	1471531803	1471531860	0	*	*	*	*	*	0	0	0
-23	moodle	\\core\\task\\cache_cron_task	1471531803	1471535400	0	50	*	*	*	*	0	0	0
-24	moodle	\\core\\task\\automated_backup_task	1471531803	1471535400	0	50	*	*	*	*	0	0	0
-25	moodle	\\core\\task\\badges_cron_task	1471531803	1471532100	0	*/5	*	*	*	*	0	0	0
-30	mod_forum	\\mod_forum\\task\\cron_task	1471531804	1471531860	0	*	*	*	*	*	0	0	0
+2	moodle	\\core\\task\\delete_unconfirmed_users_task	1472567404	1472569200	0	0	*	*	*	*	0	0	0
+3	moodle	\\core\\task\\delete_incomplete_users_task	1472567404	1472569500	0	5	*	*	*	*	0	0	0
+4	moodle	\\core\\task\\backup_cleanup_task	1472567404	1472569800	0	10	*	*	*	*	0	0	0
+5	moodle	\\core\\task\\tag_cron_task	1472567404	1472608800	0	0	3	*	*	*	0	0	0
+6	moodle	\\core\\task\\context_cleanup_task	1472567404	1472570700	0	25	*	*	*	*	0	0	0
+7	moodle	\\core\\task\\cache_cleanup_task	1472567404	1472571000	0	30	*	*	*	*	0	0	0
+16	moodle	\\core\\task\\portfolio_cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+11	moodle	\\core\\task\\create_contexts_task	1472567404	1472598000	1	0	0	*	*	*	0	0	0
+21	moodle	\\core\\task\\registration_cron_task	1472567404	1472678100	0	15	22	*	*	3	0	0	0
+22	moodle	\\core\\task\\check_for_updates_task	1472567408	1472569200	0	0	*/2	*	*	*	0	0	0
+26	moodle	\\core\\task\\file_temp_cleanup_task	1472567408	1472579700	0	55	*/6	*	*	*	0	0	0
+27	moodle	\\core\\task\\file_trash_cleanup_task	1472567408	1472579700	0	55	*/6	*	*	*	0	0	0
+28	moodle	\\core\\task\\stats_cron_task	1472567408	1472569200	0	0	*	*	*	*	0	0	0
+29	moodle	\\core\\task\\password_reset_cleanup_task	1472567408	1472576400	0	0	*/6	*	*	*	0	0	0
+32	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	1472567408	1472818800	0	20	13	*	*	5	0	0	0
+33	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	1472567408	1472612880	0	8	4	*	*	*	0	0	0
+35	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	1472567408	1472604900	0	55	1	*	*	*	0	0	0
+38	logstore_standard	\\logstore_standard\\task\\cleanup_task	1472567408	1472613480	0	18	4	*	*	*	0	0	0
+40	moodle	\\core\\task\\completion_daily_task	1472567408	1472634600	0	10	10	*	*	*	0	0	0
+41	moodle	\\core\\task\\search_index_task	1472567408	1472569200	0	*/30	*	*	*	*	0	0	0
+42	moodle	\\core\\task\\search_optimize_task	1472567408	1472598900	0	15	*/12	*	*	*	0	0	0
+43	moodle	\\core\\task\\complete_plans_task	1472567408	1472570400	0	20	*	*	*	*	0	0	0
+44	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	1472567409	1472569440	0	4	*	*	*	*	0	0	0
+17	moodle	\\core\\task\\plagiarism_cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+18	moodle	\\core\\task\\calendar_cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+19	moodle	\\core\\task\\blog_cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+23	moodle	\\core\\task\\cache_cron_task	1472567412	1472568600	0	50	*	*	*	*	0	0	0
+24	moodle	\\core\\task\\automated_backup_task	1472567412	1472568600	0	50	*	*	*	*	0	0	0
+54	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	1472567414	1472568300	0	*/15	*	*	*	*	0	0	0
+8	moodle	\\core\\task\\messaging_cleanup_task	1472568002	1472571300	0	35	*	*	*	*	0	0	0
+12	moodle	\\core\\task\\legacy_plugin_cron_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
+13	moodle	\\core\\task\\grade_cron_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
+14	moodle	\\core\\task\\events_cron_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
+20	moodle	\\core\\task\\question_cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+25	moodle	\\core\\task\\badges_cron_task	1472568004	1472568300	0	*/5	*	*	*	*	0	0	0
+30	mod_forum	\\mod_forum\\task\\cron_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+34	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+36	tool_monitor	\\tool_monitor\\task\\clean_events	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+39	moodle	\\core\\task\\completion_regular_task	1472568004	1472568060	0	*	*	*	*	*	0	0	0
+50	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	1472567409	1472569380	0	3	*	*	*	*	0	0	0
+51	tool_monitor	\\tool_monitor\\task\\check_subscriptions	1472567409	1472630940	0	9	9	*	*	*	0	0	0
+52	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	1472567409	1472569200	0	*/30	*	*	*	*	0	0	0
+53	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	1472567409	1472569200	0	*/30	*	*	*	*	0	0	0
+1	moodle	\\core\\task\\session_cleanup_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
+9	moodle	\\core\\task\\send_new_user_passwords_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
+10	moodle	\\core\\task\\send_failed_login_notifications_task	1472568003	1472568060	0	*	*	*	*	*	0	0	0
 \.
 
 
@@ -58788,6 +58812,9 @@ COPY mdl_upgrade_log (id, type, plugin, version, targetversion, info, details, b
 2305	0	logstore_standard	2016041200	2016052300	Upgrade savepoint reached	\N		0	1469792209
 2306	0	logstore_standard	2016052300	2016052300	Upgrade savepoint reached	\N		0	1469792209
 2307	0	logstore_standard	2016052300	2016052300	Plugin upgraded	\N		0	1469792209
+2308	0	local_messaging	\N	2014081800	Starting plugin installation	\N		0	1472566950
+2309	0	local_messaging	2014081800	2014081800	Upgrade savepoint reached	\N		0	1472566950
+2310	0	local_messaging	2014081800	2014081800	Plugin installed	\N		0	1472566950
 \.
 
 
@@ -58795,7 +58822,7 @@ COPY mdl_upgrade_log (id, type, plugin, version, targetversion, info, details, b
 -- Name: mdl_upgrade_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_upgrade_log_id_seq', 2307, true);
+SELECT pg_catalog.setval('mdl_upgrade_log_id_seq', 2310, true);
 
 
 --
@@ -58819,8 +58846,8 @@ SELECT pg_catalog.setval('mdl_url_id_seq', 1, false);
 
 COPY mdl_user (id, auth, confirmed, policyagreed, deleted, suspended, mnethostid, username, password, idnumber, firstname, lastname, email, emailstop, icq, skype, yahoo, aim, msn, phone1, phone2, institution, department, address, city, country, lang, calendartype, theme, timezone, firstaccess, lastaccess, lastlogin, currentlogin, lastip, secret, picture, url, description, descriptionformat, mailformat, maildigest, maildisplay, autosubscribe, trackforums, timecreated, timemodified, trustbitmask, imagealt, lastnamephonetic, firstnamephonetic, middlename, alternatename) FROM stdin;
 1	manual	1	0	0	0	1	guest	$2y$10$BVQRaQXj/67VyRNQRaUazOW6K4D.iE9Xltfm0IoOO3P9VOCM14PR6		Guest user	 	root@localhost	0													en	gregorian		99	0	0	0	0			0		This user is a special user that allows read-only access to some courses.	1	1	0	2	1	0	0	1455433687	0	\N	\N	\N	\N	\N
-2	manual	1	0	0	0	1	admin	$2y$10$HQWPsoUuv.xOe0qhCHrWw.CQyhyZsTrukINk02sk7boyLzeeZG1m6		Admin	User	admin@intoglobal.com	0													en	gregorian		99	1455434620	1471531933	1455436197	1471531852	10.0.0.1		0		\N	1	1	0	1	1	0	0	1455434669	0					
 3	oauth	1	0	0	0	1	tyrion.lannister	not cached		Tyrion	Lannister	tyrion.lannister@intoglobal.com	0													en	gregorian		99	1455436149	1471532041	1455440453	1471531973	10.0.0.1		0			1	1	0	2	1	0	1455436149	1455436149	0	\N	\N	\N	\N	\N
+2	manual	1	0	0	0	1	admin	$2y$10$HQWPsoUuv.xOe0qhCHrWw.CQyhyZsTrukINk02sk7boyLzeeZG1m6		Admin	User	admin@intoglobal.com	0													en	gregorian		99	1455434620	1472567955	1471531852	1472567669	10.0.0.1		0		\N	1	1	0	1	1	0	0	1455434669	0					
 \.
 
 
@@ -58844,7 +58871,7 @@ SELECT pg_catalog.setval('mdl_user_devices_id_seq', 1, false);
 --
 
 COPY mdl_user_enrolments (id, status, enrolid, userid, timestart, timeend, modifierid, timecreated, timemodified) FROM stdin;
-1	0	1	3	1455408000	0	2	1455436252	1455436252
+2	0	1	3	1472511600	0	2	1472567960	1472567960
 \.
 
 
@@ -58852,7 +58879,7 @@ COPY mdl_user_enrolments (id, status, enrolid, userid, timestart, timeend, modif
 -- Name: mdl_user_enrolments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_user_enrolments_id_seq', 1, true);
+SELECT pg_catalog.setval('mdl_user_enrolments_id_seq', 2, true);
 
 
 --
@@ -58912,8 +58939,7 @@ SELECT pg_catalog.setval('mdl_user_info_field_id_seq', 1, false);
 --
 
 COPY mdl_user_lastaccess (id, userid, courseid, timeaccess) FROM stdin;
-1	2	2	1455440373
-2	3	2	1471532027
+1	2	2	1472567955
 \.
 
 
@@ -58962,6 +58988,9 @@ COPY mdl_user_preferences (id, userid, name, value) FROM stdin;
 1	2	email_bounce_count	1
 2	2	email_send_count	1
 3	2	login_failed_count_since_success	1
+4	2	userselector_preserveselected	0
+5	2	userselector_autoselectunique	0
+6	2	userselector_searchanywhere	0
 \.
 
 
@@ -58969,7 +58998,7 @@ COPY mdl_user_preferences (id, userid, name, value) FROM stdin;
 -- Name: mdl_user_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('mdl_user_preferences_id_seq', 3, true);
+SELECT pg_catalog.setval('mdl_user_preferences_id_seq', 6, true);
 
 
 --
@@ -61257,7 +61286,7 @@ COPY phpu_config (id, name, value) FROM stdin;
 5	enrol_plugins_enabled	manual,guest,self,cohort
 6	theme	clean
 7	filter_multilang_converted	1
-8	siteidentifier	7iNFladzWqE19BJ4Oi2KAF37REflZu3G10.0.0.10
+8	siteidentifier	0E9CVkTWkieuVZDmk8X3ChkCzdQbAQZx10.0.0.10
 9	backup_version	2008111700
 10	backup_release	2.0 dev
 11	mnet_dispatcher_mode	off
@@ -61274,18 +61303,18 @@ COPY phpu_config (id, name, value) FROM stdin;
 22	mnet_all_hosts_id	2
 23	siteguest	1
 24	siteadmins	2
-25	themerev	1471529408
-26	jsrev	1471529408
+25	themerev	1472545772
+26	jsrev	1472545772
 27	gdversion	2
 28	licenses	unknown,allrightsreserved,public,cc,cc-nd,cc-nc-nd,cc-nc,cc-nc-sa,cc-sa
 29	version	2016052301
 30	release	3.1.1 (Build: 20160711)
 31	branch	31
-32	phpunittest	418e31fd349b005b48ee83b7c04eb4ae1f3cda0f
-33	langrev	1471529474
-34	localcachedirpurged	1471529408
-35	scheduledtaskreset	1471529408
-36	allversionshash	418e31fd349b005b48ee83b7c04eb4ae1f3cda0f
+32	phpunittest	055b97c97919ef104f7b32d4484f3d45dd422485
+33	langrev	1472545845
+34	localcachedirpurged	1472545772
+35	scheduledtaskreset	1472545772
+36	allversionshash	055b97c97919ef104f7b32d4484f3d45dd422485
 37	enableoutcomes	0
 38	usecomments	1
 39	usetags	1
@@ -61399,7 +61428,7 @@ COPY phpu_config (id, name, value) FROM stdin;
 147	grade_report_user_showcontributiontocoursetotal	1
 148	badges_defaultissuername	
 149	badges_defaultissuercontact	
-150	badges_badgesalt	badges1471529330
+150	badges_badgesalt	badges1472545679
 151	badges_allowexternalbackpack	1
 152	badges_allowcoursebadges	1
 153	timezone	Australia/Perth
@@ -61589,7 +61618,7 @@ COPY phpu_config (id, name, value) FROM stdin;
 337	calendar_customexport	1
 338	calendar_exportlookahead	365
 339	calendar_exportlookback	5
-340	calendar_exportsalt	HXNwyAXQBJwIJEJLt8twNU31on62azVQYiZLEy5aMDL1Plaa1UvWMeo4AwLA
+340	calendar_exportsalt	yWZ9MkGxqvbcG9dd31YaFPh6SfmHlMET1blvKieJHiOAAoxN5ed6Xd2ZfCHF
 341	calendar_showicalsource	1
 342	useblogassociations	1
 343	bloglevel	4
@@ -61720,7 +61749,7 @@ COPY phpu_config (id, name, value) FROM stdin;
 -- Name: phpu_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_config_id_seq', 168000, false);
+SELECT pg_catalog.setval('phpu_config_id_seq', 100000, false);
 
 
 --
@@ -61728,1019 +61757,1019 @@ SELECT pg_catalog.setval('phpu_config_id_seq', 168000, false);
 --
 
 COPY phpu_config_log (id, userid, timemodified, plugin, name, value, oldvalue) FROM stdin;
-1	0	1471529370	activitynames	filter_active	1	
-2	0	1471529370	mathjaxloader	filter_active	1	
-3	0	1471529371	mediaplugin	filter_active	1	
-4	2	1471529432	\N	enableoutcomes	0	\N
-5	2	1471529432	\N	usecomments	1	\N
-6	2	1471529432	\N	usetags	1	\N
-7	2	1471529432	\N	enablenotes	1	\N
-8	2	1471529432	\N	enableportfolios	0	\N
-9	2	1471529432	\N	enablewebservices	0	\N
-10	2	1471529432	\N	messaging	1	\N
-11	2	1471529432	\N	messaginghidereadnotifications	0	\N
-12	2	1471529432	\N	messagingdeletereadnotificationsdelay	604800	\N
-13	2	1471529432	\N	messagingallowemailoverride	0	\N
-14	2	1471529432	\N	enablestats	0	\N
-15	2	1471529432	\N	enablerssfeeds	0	\N
-16	2	1471529432	\N	enableblogs	1	\N
-17	2	1471529432	\N	enablecompletion	1	\N
-18	2	1471529432	\N	completiondefault	1	\N
-19	2	1471529432	\N	enableavailability	1	\N
-20	2	1471529432	\N	enableplagiarism	0	\N
-21	2	1471529432	\N	enablebadges	1	\N
-22	2	1471529432	\N	enableglobalsearch	0	\N
-23	2	1471529432	\N	defaultpreference_maildisplay	2	\N
-24	2	1471529432	\N	defaultpreference_mailformat	1	\N
-25	2	1471529432	\N	defaultpreference_maildigest	0	\N
-26	2	1471529432	\N	defaultpreference_autosubscribe	1	\N
-27	2	1471529432	\N	defaultpreference_trackforums	0	\N
-28	2	1471529432	\N	notloggedinroleid	6	\N
-29	2	1471529432	\N	guestroleid	6	\N
-30	2	1471529432	\N	defaultuserroleid	7	\N
-31	2	1471529432	\N	creatornewroleid	3	\N
-32	2	1471529432	\N	restorernewroleid	3	\N
-33	2	1471529432	\N	autologinguests	0	\N
-34	2	1471529432	\N	hiddenuserfields		\N
-35	2	1471529432	\N	showuseridentity	email	\N
-36	2	1471529432	\N	fullnamedisplay	language	\N
-37	2	1471529432	\N	alternativefullnameformat	language	\N
-38	2	1471529432	\N	maxusersperpage	100	\N
-39	2	1471529432	\N	enablegravatar	0	\N
-40	2	1471529432	\N	gravatardefaulturl	mm	\N
-41	2	1471529432	moodlecourse	visible	1	\N
-42	2	1471529432	moodlecourse	format	weeks	\N
-43	2	1471529432	moodlecourse	maxsections	52	\N
-44	2	1471529432	moodlecourse	numsections	10	\N
-45	2	1471529432	moodlecourse	hiddensections	0	\N
-46	2	1471529432	moodlecourse	coursedisplay	0	\N
-47	2	1471529432	moodlecourse	lang		\N
-48	2	1471529432	moodlecourse	newsitems	5	\N
-49	2	1471529432	moodlecourse	showgrades	1	\N
-50	2	1471529432	moodlecourse	showreports	0	\N
-51	2	1471529432	moodlecourse	maxbytes	0	\N
-52	2	1471529432	moodlecourse	enablecompletion	0	\N
-53	2	1471529432	moodlecourse	groupmode	0	\N
-54	2	1471529432	moodlecourse	groupmodeforce	0	\N
-55	2	1471529432	\N	enablecourserequests	0	\N
-56	2	1471529432	\N	defaultrequestcategory	1	\N
-57	2	1471529432	\N	requestcategoryselection	0	\N
-58	2	1471529432	\N	courserequestnotify		\N
-59	2	1471529432	backup	loglifetime	30	\N
-60	2	1471529432	backup	backup_general_users	1	\N
-61	2	1471529432	backup	backup_general_users_locked		\N
-62	2	1471529432	backup	backup_general_anonymize	0	\N
-63	2	1471529432	backup	backup_general_anonymize_locked		\N
-64	2	1471529432	backup	backup_general_role_assignments	1	\N
-65	2	1471529432	backup	backup_general_role_assignments_locked		\N
-66	2	1471529432	backup	backup_general_activities	1	\N
-67	2	1471529432	backup	backup_general_activities_locked		\N
-68	2	1471529432	backup	backup_general_blocks	1	\N
-69	2	1471529432	backup	backup_general_blocks_locked		\N
-70	2	1471529432	backup	backup_general_filters	1	\N
-71	2	1471529432	backup	backup_general_filters_locked		\N
-72	2	1471529432	backup	backup_general_comments	1	\N
-73	2	1471529432	backup	backup_general_comments_locked		\N
-74	2	1471529432	backup	backup_general_badges	1	\N
-75	2	1471529432	backup	backup_general_badges_locked		\N
-76	2	1471529432	backup	backup_general_userscompletion	1	\N
-77	2	1471529433	backup	backup_general_userscompletion_locked		\N
-78	2	1471529433	backup	backup_general_logs	0	\N
-79	2	1471529433	backup	backup_general_logs_locked		\N
-80	2	1471529433	backup	backup_general_histories	0	\N
-81	2	1471529433	backup	backup_general_histories_locked		\N
-82	2	1471529433	backup	backup_general_questionbank	1	\N
-83	2	1471529433	backup	backup_general_questionbank_locked		\N
-84	2	1471529433	backup	backup_general_groups	1	\N
-85	2	1471529433	backup	backup_general_groups_locked		\N
-86	2	1471529433	backup	import_general_maxresults	10	\N
-87	2	1471529433	backup	import_general_duplicate_admin_allowed	0	\N
-88	2	1471529433	backup	backup_auto_active	0	\N
-89	2	1471529433	backup	backup_auto_weekdays	0000000	\N
-90	2	1471529433	backup	backup_auto_hour	0	\N
-91	2	1471529433	backup	backup_auto_minute	0	\N
-92	2	1471529433	backup	backup_auto_storage	0	\N
-93	2	1471529433	backup	backup_auto_destination		\N
-94	2	1471529433	backup	backup_auto_max_kept	1	\N
-95	2	1471529433	backup	backup_auto_delete_days	0	\N
-96	2	1471529433	backup	backup_auto_min_kept	0	\N
-97	2	1471529433	backup	backup_shortname	0	\N
-98	2	1471529433	backup	backup_auto_skip_hidden	1	\N
-99	2	1471529433	backup	backup_auto_skip_modif_days	30	\N
-100	2	1471529433	backup	backup_auto_skip_modif_prev	0	\N
-101	2	1471529433	backup	backup_auto_users	1	\N
-102	2	1471529433	backup	backup_auto_role_assignments	1	\N
-103	2	1471529433	backup	backup_auto_activities	1	\N
-104	2	1471529433	backup	backup_auto_blocks	1	\N
-105	2	1471529433	backup	backup_auto_filters	1	\N
-106	2	1471529433	backup	backup_auto_comments	1	\N
-107	2	1471529433	backup	backup_auto_badges	1	\N
-108	2	1471529433	backup	backup_auto_userscompletion	1	\N
-109	2	1471529433	backup	backup_auto_logs	0	\N
-110	2	1471529433	backup	backup_auto_histories	0	\N
-111	2	1471529433	backup	backup_auto_questionbank	1	\N
-112	2	1471529433	backup	backup_auto_groups	1	\N
-113	2	1471529433	\N	gradebookroles	5	\N
-114	2	1471529433	\N	grade_profilereport	user	\N
-115	2	1471529433	\N	grade_aggregationposition	1	\N
-116	2	1471529433	\N	grade_includescalesinaggregation	1	\N
-117	2	1471529433	\N	grade_hiddenasdate	0	\N
-118	2	1471529433	\N	gradepublishing	0	\N
-119	2	1471529433	\N	grade_export_displaytype	1	\N
-120	2	1471529433	\N	grade_export_decimalpoints	2	\N
-121	2	1471529433	\N	grade_navmethod	0	\N
-122	2	1471529433	\N	grade_export_userprofilefields	firstname,lastname,idnumber,institution,department,email	\N
-123	2	1471529433	\N	grade_export_customprofilefields		\N
-124	2	1471529433	\N	recovergradesdefault	0	\N
-125	2	1471529433	\N	gradeexport		\N
-126	2	1471529433	\N	unlimitedgrades	0	\N
-127	2	1471529433	\N	grade_report_showmin	1	\N
-128	2	1471529433	\N	gradepointmax	100	\N
-129	2	1471529433	\N	gradepointdefault	100	\N
-130	2	1471529433	\N	grade_minmaxtouse	1	\N
-131	2	1471529433	\N	grade_mygrades_report	overview	\N
-132	2	1471529433	\N	gradereport_mygradeurl		\N
-133	2	1471529433	\N	grade_hideforcedsettings	1	\N
-134	2	1471529433	\N	grade_aggregation	13	\N
-135	2	1471529433	\N	grade_aggregation_flag	0	\N
-136	2	1471529433	\N	grade_aggregations_visible	13	\N
-137	2	1471529433	\N	grade_aggregateonlygraded	1	\N
-138	2	1471529433	\N	grade_aggregateonlygraded_flag	2	\N
-139	2	1471529433	\N	grade_aggregateoutcomes	0	\N
-140	2	1471529433	\N	grade_aggregateoutcomes_flag	2	\N
-141	2	1471529433	\N	grade_keephigh	0	\N
-142	2	1471529433	\N	grade_keephigh_flag	3	\N
-143	2	1471529433	\N	grade_droplow	0	\N
-144	2	1471529433	\N	grade_droplow_flag	2	\N
-145	2	1471529433	\N	grade_overridecat	1	\N
-146	2	1471529433	\N	grade_displaytype	1	\N
-147	2	1471529433	\N	grade_decimalpoints	2	\N
-148	2	1471529433	\N	grade_item_advanced	iteminfo,idnumber,gradepass,plusfactor,multfactor,display,decimals,hiddenuntil,locktime	\N
-149	2	1471529433	\N	grade_report_studentsperpage	100	\N
-150	2	1471529433	\N	grade_report_showonlyactiveenrol	1	\N
-151	2	1471529433	\N	grade_report_quickgrading	1	\N
-152	2	1471529433	\N	grade_report_showquickfeedback	0	\N
-153	2	1471529433	\N	grade_report_meanselection	1	\N
-154	2	1471529434	\N	grade_report_enableajax	0	\N
-155	2	1471529434	\N	grade_report_showcalculations	1	\N
-156	2	1471529434	\N	grade_report_showeyecons	0	\N
-157	2	1471529434	\N	grade_report_showaverages	1	\N
-158	2	1471529434	\N	grade_report_showlocks	0	\N
-159	2	1471529434	\N	grade_report_showranges	0	\N
-160	2	1471529434	\N	grade_report_showanalysisicon	1	\N
-161	2	1471529434	\N	grade_report_showuserimage	1	\N
-162	2	1471529434	\N	grade_report_showactivityicons	1	\N
-163	2	1471529434	\N	grade_report_shownumberofgrades	0	\N
-164	2	1471529434	\N	grade_report_averagesdisplaytype	inherit	\N
-165	2	1471529434	\N	grade_report_rangesdisplaytype	inherit	\N
-166	2	1471529434	\N	grade_report_averagesdecimalpoints	inherit	\N
-167	2	1471529434	\N	grade_report_rangesdecimalpoints	inherit	\N
-168	2	1471529434	\N	grade_report_historyperpage	50	\N
-169	2	1471529434	\N	grade_report_overview_showrank	0	\N
-170	2	1471529434	\N	grade_report_overview_showtotalsifcontainhidden	0	\N
-171	2	1471529434	\N	grade_report_user_showrank	0	\N
-172	2	1471529434	\N	grade_report_user_showpercentage	1	\N
-173	2	1471529434	\N	grade_report_user_showgrade	1	\N
-174	2	1471529434	\N	grade_report_user_showfeedback	1	\N
-175	2	1471529434	\N	grade_report_user_showrange	1	\N
-176	2	1471529434	\N	grade_report_user_showweight	1	\N
-177	2	1471529434	\N	grade_report_user_showaverage	0	\N
-178	2	1471529434	\N	grade_report_user_showlettergrade	0	\N
-179	2	1471529434	\N	grade_report_user_rangedecimals	0	\N
-180	2	1471529434	\N	grade_report_user_showhiddenitems	1	\N
-181	2	1471529434	\N	grade_report_user_showtotalsifcontainhidden	0	\N
-182	2	1471529434	\N	grade_report_user_showcontributiontocoursetotal	1	\N
-183	2	1471529434	core_competency	enabled	1	\N
-184	2	1471529434	core_competency	pushcourseratingstouserplans	1	\N
-185	2	1471529434	\N	badges_defaultissuername		\N
-186	2	1471529434	\N	badges_defaultissuercontact		\N
-187	2	1471529434	\N	badges_badgesalt	badges1471529330	\N
-188	2	1471529434	\N	badges_allowexternalbackpack	1	\N
-189	2	1471529434	\N	badges_allowcoursebadges	1	\N
-190	2	1471529436	\N	timezone	Australia/Perth	\N
-191	2	1471529437	\N	forcetimezone	99	\N
-192	2	1471529437	\N	country	0	\N
-193	2	1471529437	\N	defaultcity		\N
-194	2	1471529437	\N	geoipfile	/vagrant/phpu_moodledata/geoip/GeoLiteCity.dat	\N
-195	2	1471529437	\N	googlemapkey3		\N
-196	2	1471529437	\N	allcountrycodes		\N
-197	2	1471529437	\N	autolang	1	\N
-198	2	1471529437	\N	lang	en	\N
-199	2	1471529437	\N	langmenu	1	\N
-200	2	1471529437	\N	langlist		\N
-201	2	1471529437	\N	langcache	1	\N
-202	2	1471529437	\N	langstringcache	1	\N
-203	2	1471529437	\N	locale		\N
-204	2	1471529437	\N	latinexcelexport	0	\N
-205	2	1471529437	\N	requiremodintro	0	\N
-206	2	1471529437	assign	feedback_plugin_for_gradebook	assignfeedback_comments	\N
-207	2	1471529437	assign	showrecentsubmissions	0	\N
-208	2	1471529437	assign	submissionreceipts	1	\N
-209	2	1471529437	assign	submissionstatement	This assignment is my own work, except where I have acknowledged the use of the works of other people.	\N
-210	2	1471529437	assign	maxperpage	-1	\N
-211	2	1471529437	assign	alwaysshowdescription	1	\N
-212	2	1471529437	assign	alwaysshowdescription_adv		\N
-213	2	1471529437	assign	alwaysshowdescription_locked		\N
-214	2	1471529437	assign	allowsubmissionsfromdate	0	\N
-215	2	1471529438	assign	allowsubmissionsfromdate_enabled	1	\N
-216	2	1471529438	assign	allowsubmissionsfromdate_adv		\N
-217	2	1471529438	assign	duedate	604800	\N
-218	2	1471529438	assign	duedate_enabled	1	\N
-219	2	1471529438	assign	duedate_adv		\N
-220	2	1471529438	assign	cutoffdate	1209600	\N
-221	2	1471529438	assign	cutoffdate_enabled		\N
-222	2	1471529438	assign	cutoffdate_adv		\N
-223	2	1471529438	assign	submissiondrafts	0	\N
-224	2	1471529438	assign	submissiondrafts_adv		\N
-225	2	1471529438	assign	submissiondrafts_locked		\N
-226	2	1471529438	assign	requiresubmissionstatement	0	\N
-227	2	1471529438	assign	requiresubmissionstatement_adv		\N
-228	2	1471529438	assign	requiresubmissionstatement_locked		\N
-229	2	1471529438	assign	attemptreopenmethod	none	\N
-230	2	1471529438	assign	attemptreopenmethod_adv		\N
-231	2	1471529438	assign	attemptreopenmethod_locked		\N
-232	2	1471529438	assign	maxattempts	-1	\N
-233	2	1471529438	assign	maxattempts_adv		\N
-234	2	1471529438	assign	maxattempts_locked		\N
-235	2	1471529438	assign	teamsubmission	0	\N
-236	2	1471529438	assign	teamsubmission_adv		\N
-237	2	1471529438	assign	teamsubmission_locked		\N
-238	2	1471529438	assign	preventsubmissionnotingroup	0	\N
-239	2	1471529438	assign	preventsubmissionnotingroup_adv		\N
-240	2	1471529438	assign	preventsubmissionnotingroup_locked		\N
-241	2	1471529438	assign	requireallteammemberssubmit	0	\N
-242	2	1471529438	assign	requireallteammemberssubmit_adv		\N
-243	2	1471529438	assign	requireallteammemberssubmit_locked		\N
-244	2	1471529438	assign	teamsubmissiongroupingid		\N
-245	2	1471529438	assign	teamsubmissiongroupingid_adv		\N
-246	2	1471529438	assign	sendnotifications	0	\N
-247	2	1471529438	assign	sendnotifications_adv		\N
-248	2	1471529438	assign	sendnotifications_locked		\N
-249	2	1471529438	assign	sendlatenotifications	0	\N
-250	2	1471529438	assign	sendlatenotifications_adv		\N
-251	2	1471529438	assign	sendlatenotifications_locked		\N
-252	2	1471529438	assign	sendstudentnotifications	1	\N
-253	2	1471529438	assign	sendstudentnotifications_adv		\N
-254	2	1471529438	assign	sendstudentnotifications_locked		\N
-255	2	1471529438	assign	blindmarking	0	\N
-256	2	1471529438	assign	blindmarking_adv		\N
-257	2	1471529438	assign	blindmarking_locked		\N
-258	2	1471529438	assign	markingworkflow	0	\N
-259	2	1471529438	assign	markingworkflow_adv		\N
-260	2	1471529438	assign	markingworkflow_locked		\N
-261	2	1471529438	assign	markingallocation	0	\N
-262	2	1471529438	assign	markingallocation_adv		\N
-263	2	1471529438	assign	markingallocation_locked		\N
-264	2	1471529438	assignsubmission_file	default	1	\N
-265	2	1471529438	assignsubmission_file	maxfiles	20	\N
-266	2	1471529438	assignsubmission_onlinetext	default	0	\N
-267	2	1471529438	assignfeedback_comments	default	1	\N
-268	2	1471529438	assignfeedback_comments	inline	0	\N
-269	2	1471529438	assignfeedback_comments	inline_adv		\N
-270	2	1471529438	assignfeedback_comments	inline_locked		\N
-271	2	1471529438	assignfeedback_editpdf	stamps		\N
-272	2	1471529438	assignfeedback_file	default	0	\N
-273	2	1471529438	assignfeedback_offline	default	0	\N
-274	2	1471529438	book	numberingoptions	0,1,2,3	\N
-275	2	1471529438	book	navoptions	0,1,2	\N
-276	2	1471529438	book	numbering	1	\N
-277	2	1471529438	book	navstyle	1	\N
-278	2	1471529438	\N	chat_method	ajax	\N
-279	2	1471529438	\N	chat_refresh_userlist	10	\N
-280	2	1471529438	\N	chat_old_ping	35	\N
-281	2	1471529438	\N	chat_refresh_room	5	\N
-282	2	1471529438	\N	chat_normal_updatemode	jsupdate	\N
-283	2	1471529438	\N	chat_serverhost	10.0.0.10	\N
-284	2	1471529438	\N	chat_serverip	127.0.0.1	\N
-285	2	1471529438	\N	chat_serverport	9111	\N
-286	2	1471529438	\N	chat_servermax	100	\N
-287	2	1471529438	\N	data_enablerssfeeds	0	\N
-288	2	1471529438	\N	feedback_allowfullanonymous	0	\N
-289	2	1471529438	folder	showexpanded	1	\N
-290	2	1471529438	folder	maxsizetodownload	0	\N
-291	2	1471529438	\N	forum_displaymode	3	\N
-292	2	1471529438	\N	forum_replytouser	1	\N
-293	2	1471529438	\N	forum_shortpost	300	\N
-294	2	1471529438	\N	forum_longpost	600	\N
-295	2	1471529438	\N	forum_manydiscussions	100	\N
-296	2	1471529438	\N	forum_maxattachments	9	\N
-297	2	1471529439	\N	forum_trackingtype	1	\N
-298	2	1471529439	\N	forum_trackreadposts	1	\N
-299	2	1471529439	\N	forum_allowforcedreadtracking	0	\N
-300	2	1471529439	\N	forum_oldpostdays	14	\N
-301	2	1471529439	\N	forum_usermarksread	0	\N
-302	2	1471529439	\N	forum_cleanreadtime	2	\N
-303	2	1471529439	\N	digestmailtime	17	\N
-304	2	1471529439	\N	forum_enablerssfeeds	0	\N
-305	2	1471529439	\N	forum_enabletimedposts	1	\N
-306	2	1471529439	\N	glossary_entbypage	10	\N
-307	2	1471529439	\N	glossary_dupentries	0	\N
-308	2	1471529439	\N	glossary_allowcomments	0	\N
-309	2	1471529439	\N	glossary_linkbydefault	1	\N
-310	2	1471529439	\N	glossary_defaultapproval	1	\N
-311	2	1471529439	\N	glossary_enablerssfeeds	0	\N
-312	2	1471529439	\N	glossary_linkentries	0	\N
-313	2	1471529439	\N	glossary_casesensitive	0	\N
-314	2	1471529439	\N	glossary_fullmatch	0	\N
-315	2	1471529439	imscp	keepold	1	\N
-316	2	1471529439	imscp	keepold_adv		\N
-317	2	1471529439	label	dndmedia	1	\N
-318	2	1471529439	label	dndresizewidth	400	\N
-319	2	1471529439	label	dndresizeheight	400	\N
-320	2	1471529439	mod_lesson	mediafile		\N
-321	2	1471529439	mod_lesson	mediafile_adv	1	\N
-322	2	1471529439	mod_lesson	mediawidth	640	\N
-323	2	1471529439	mod_lesson	mediaheight	480	\N
-324	2	1471529439	mod_lesson	mediaclose	0	\N
-325	2	1471529439	mod_lesson	progressbar	0	\N
-326	2	1471529439	mod_lesson	progressbar_adv		\N
-327	2	1471529439	mod_lesson	ongoing	0	\N
-328	2	1471529439	mod_lesson	ongoing_adv	1	\N
-329	2	1471529439	mod_lesson	displayleftmenu	0	\N
-330	2	1471529439	mod_lesson	displayleftmenu_adv		\N
-331	2	1471529439	mod_lesson	displayleftif	0	\N
-332	2	1471529439	mod_lesson	displayleftif_adv	1	\N
-333	2	1471529439	mod_lesson	slideshow	0	\N
-334	2	1471529439	mod_lesson	slideshow_adv	1	\N
-335	2	1471529439	mod_lesson	slideshowwidth	640	\N
-336	2	1471529439	mod_lesson	slideshowheight	480	\N
-337	2	1471529439	mod_lesson	slideshowbgcolor	#FFFFFF	\N
-338	2	1471529439	mod_lesson	maxanswers	5	\N
-339	2	1471529439	mod_lesson	maxanswers_adv	1	\N
-340	2	1471529439	mod_lesson	defaultfeedback	0	\N
-341	2	1471529439	mod_lesson	defaultfeedback_adv	1	\N
-342	2	1471529439	mod_lesson	activitylink		\N
-343	2	1471529439	mod_lesson	activitylink_adv	1	\N
-344	2	1471529439	mod_lesson	timelimit	0	\N
-345	2	1471529439	mod_lesson	timelimit_adv		\N
-346	2	1471529439	mod_lesson	password	0	\N
-347	2	1471529439	mod_lesson	password_adv	1	\N
-348	2	1471529439	mod_lesson	modattempts	0	\N
-349	2	1471529439	mod_lesson	modattempts_adv		\N
-350	2	1471529439	mod_lesson	displayreview	0	\N
-351	2	1471529439	mod_lesson	displayreview_adv		\N
-352	2	1471529439	mod_lesson	maximumnumberofattempts	1	\N
-353	2	1471529439	mod_lesson	maximumnumberofattempts_adv		\N
-354	2	1471529439	mod_lesson	defaultnextpage	0	\N
-355	2	1471529439	mod_lesson	defaultnextpage_adv	1	\N
-356	2	1471529439	mod_lesson	numberofpagestoshow	1	\N
-357	2	1471529439	mod_lesson	numberofpagestoshow_adv	1	\N
-358	2	1471529439	mod_lesson	practice	0	\N
-359	2	1471529439	mod_lesson	practice_adv		\N
-360	2	1471529439	mod_lesson	customscoring	1	\N
-361	2	1471529439	mod_lesson	customscoring_adv	1	\N
-362	2	1471529439	mod_lesson	retakesallowed	0	\N
-363	2	1471529439	mod_lesson	retakesallowed_adv		\N
-364	2	1471529439	mod_lesson	handlingofretakes	0	\N
-365	2	1471529439	mod_lesson	handlingofretakes_adv	1	\N
-366	2	1471529439	mod_lesson	minimumnumberofquestions	0	\N
-367	2	1471529439	mod_lesson	minimumnumberofquestions_adv	1	\N
-368	2	1471529439	page	displayoptions	5	\N
-369	2	1471529439	page	printheading	1	\N
-370	2	1471529439	page	printintro	0	\N
-371	2	1471529439	page	display	5	\N
-372	2	1471529439	page	popupwidth	620	\N
-373	2	1471529439	page	popupheight	450	\N
-374	2	1471529439	quiz	timelimit	0	\N
-375	2	1471529439	quiz	timelimit_adv		\N
-376	2	1471529439	quiz	overduehandling	autosubmit	\N
-377	2	1471529439	quiz	overduehandling_adv		\N
-378	2	1471529439	quiz	graceperiod	86400	\N
-379	2	1471529439	quiz	graceperiod_adv		\N
-380	2	1471529439	quiz	graceperiodmin	60	\N
-381	2	1471529440	quiz	attempts	0	\N
-382	2	1471529440	quiz	attempts_adv		\N
-383	2	1471529440	quiz	grademethod	1	\N
-384	2	1471529440	quiz	grademethod_adv		\N
-385	2	1471529440	quiz	maximumgrade	10	\N
-386	2	1471529440	quiz	questionsperpage	1	\N
-387	2	1471529440	quiz	questionsperpage_adv		\N
-388	2	1471529440	quiz	navmethod	free	\N
-389	2	1471529440	quiz	navmethod_adv	1	\N
-390	2	1471529440	quiz	shuffleanswers	1	\N
-391	2	1471529440	quiz	shuffleanswers_adv		\N
-392	2	1471529440	quiz	preferredbehaviour	deferredfeedback	\N
-393	2	1471529440	quiz	canredoquestions	0	\N
-394	2	1471529440	quiz	canredoquestions_adv	1	\N
-395	2	1471529440	quiz	attemptonlast	0	\N
-396	2	1471529440	quiz	attemptonlast_adv	1	\N
-397	2	1471529440	quiz	reviewattempt	69904	\N
-398	2	1471529440	quiz	reviewcorrectness	69904	\N
-399	2	1471529440	quiz	reviewmarks	69904	\N
-400	2	1471529440	quiz	reviewspecificfeedback	69904	\N
-401	2	1471529440	quiz	reviewgeneralfeedback	69904	\N
-402	2	1471529440	quiz	reviewrightanswer	69904	\N
-403	2	1471529440	quiz	reviewoverallfeedback	4368	\N
-404	2	1471529440	quiz	showuserpicture	0	\N
-405	2	1471529440	quiz	showuserpicture_adv		\N
-406	2	1471529440	quiz	decimalpoints	2	\N
-407	2	1471529440	quiz	decimalpoints_adv		\N
-408	2	1471529440	quiz	questiondecimalpoints	-1	\N
-409	2	1471529440	quiz	questiondecimalpoints_adv	1	\N
-410	2	1471529440	quiz	showblocks	0	\N
-411	2	1471529440	quiz	showblocks_adv	1	\N
-412	2	1471529440	quiz	password		\N
-413	2	1471529440	quiz	password_adv		\N
-414	2	1471529440	quiz	subnet		\N
-415	2	1471529440	quiz	subnet_adv	1	\N
-416	2	1471529440	quiz	delay1	0	\N
-417	2	1471529440	quiz	delay1_adv	1	\N
-418	2	1471529440	quiz	delay2	0	\N
-419	2	1471529440	quiz	delay2_adv	1	\N
-420	2	1471529440	quiz	browsersecurity	-	\N
-421	2	1471529440	quiz	browsersecurity_adv	1	\N
-422	2	1471529440	quiz	initialnumfeedbacks	2	\N
-423	2	1471529440	quiz	autosaveperiod	60	\N
-424	2	1471529440	resource	framesize	130	\N
-425	2	1471529440	resource	displayoptions	0,1,4,5,6	\N
-426	2	1471529440	resource	printintro	1	\N
-427	2	1471529440	resource	display	0	\N
-428	2	1471529440	resource	showsize	0	\N
-429	2	1471529440	resource	showtype	0	\N
-430	2	1471529440	resource	showdate	0	\N
-431	2	1471529440	resource	popupwidth	620	\N
-432	2	1471529440	resource	popupheight	450	\N
-433	2	1471529440	resource	filterfiles	0	\N
-434	2	1471529440	scorm	displaycoursestructure	0	\N
-435	2	1471529440	scorm	displaycoursestructure_adv		\N
-436	2	1471529440	scorm	popup	0	\N
-437	2	1471529440	scorm	popup_adv		\N
-438	2	1471529440	scorm	displayactivityname	1	\N
-439	2	1471529440	scorm	framewidth	100	\N
-440	2	1471529440	scorm	framewidth_adv	1	\N
-441	2	1471529440	scorm	frameheight	500	\N
-442	2	1471529440	scorm	frameheight_adv	1	\N
-443	2	1471529440	scorm	winoptgrp_adv	1	\N
-444	2	1471529440	scorm	scrollbars	0	\N
-445	2	1471529440	scorm	directories	0	\N
-446	2	1471529440	scorm	location	0	\N
-447	2	1471529440	scorm	menubar	0	\N
-448	2	1471529440	scorm	toolbar	0	\N
-449	2	1471529440	scorm	status	0	\N
-450	2	1471529440	scorm	skipview	0	\N
-451	2	1471529440	scorm	skipview_adv	1	\N
-452	2	1471529440	scorm	hidebrowse	0	\N
-453	2	1471529440	scorm	hidebrowse_adv	1	\N
-454	2	1471529440	scorm	hidetoc	0	\N
-455	2	1471529441	scorm	hidetoc_adv	1	\N
-456	2	1471529441	scorm	nav	1	\N
-457	2	1471529441	scorm	nav_adv	1	\N
-458	2	1471529441	scorm	navpositionleft	-100	\N
-459	2	1471529441	scorm	navpositionleft_adv	1	\N
-460	2	1471529441	scorm	navpositiontop	-100	\N
-461	2	1471529441	scorm	navpositiontop_adv	1	\N
-462	2	1471529441	scorm	collapsetocwinsize	767	\N
-463	2	1471529441	scorm	collapsetocwinsize_adv	1	\N
-464	2	1471529441	scorm	displayattemptstatus	1	\N
-465	2	1471529441	scorm	displayattemptstatus_adv		\N
-466	2	1471529441	scorm	grademethod	1	\N
-467	2	1471529441	scorm	maxgrade	100	\N
-468	2	1471529441	scorm	maxattempt	0	\N
-469	2	1471529441	scorm	whatgrade	0	\N
-470	2	1471529441	scorm	forcecompleted	0	\N
-471	2	1471529441	scorm	forcenewattempt	0	\N
-472	2	1471529441	scorm	autocommit	0	\N
-473	2	1471529441	scorm	masteryoverride	1	\N
-474	2	1471529441	scorm	lastattemptlock	0	\N
-475	2	1471529441	scorm	auto	0	\N
-476	2	1471529441	scorm	updatefreq	0	\N
-477	2	1471529441	scorm	scorm12standard	1	\N
-478	2	1471529441	scorm	allowtypeexternal	0	\N
-479	2	1471529441	scorm	allowtypelocalsync	0	\N
-480	2	1471529441	scorm	allowtypeexternalaicc	0	\N
-481	2	1471529441	scorm	allowaicchacp	0	\N
-482	2	1471529441	scorm	aicchacptimeout	30	\N
-483	2	1471529441	scorm	aicchacpkeepsessiondata	1	\N
-484	2	1471529441	scorm	aiccuserid	1	\N
-485	2	1471529441	scorm	forcejavascript	1	\N
-486	2	1471529441	scorm	allowapidebug	0	\N
-487	2	1471529441	scorm	apidebugmask	.*	\N
-488	2	1471529441	scorm	protectpackagedownloads	0	\N
-489	2	1471529441	url	framesize	130	\N
-490	2	1471529441	url	secretphrase		\N
-491	2	1471529441	url	rolesinparams	0	\N
-492	2	1471529441	url	displayoptions	0,1,5,6	\N
-493	2	1471529441	url	printintro	1	\N
-494	2	1471529441	url	display	0	\N
-495	2	1471529441	url	popupwidth	620	\N
-496	2	1471529441	url	popupheight	450	\N
-497	2	1471529441	workshop	grade	80	\N
-498	2	1471529441	workshop	gradinggrade	20	\N
-499	2	1471529441	workshop	gradedecimals	0	\N
-500	2	1471529441	workshop	strategy	accumulative	\N
-501	2	1471529441	workshop	examplesmode	0	\N
-502	2	1471529441	workshopallocation_random	numofreviews	5	\N
-503	2	1471529441	workshopform_numerrors	grade0	No	\N
-504	2	1471529441	workshopform_numerrors	grade1	Yes	\N
-505	2	1471529441	workshopeval_best	comparison	5	\N
-506	2	1471529441	tool_recyclebin	coursebinenable	1	\N
-507	2	1471529441	tool_recyclebin	coursebinexpiry	604800	\N
-508	2	1471529441	tool_recyclebin	categorybinenable	1	\N
-509	2	1471529441	tool_recyclebin	categorybinexpiry	604800	\N
-510	2	1471529441	tool_recyclebin	autohide	1	\N
-511	2	1471529441	antivirus_clamav	pathtoclam		\N
-512	2	1471529441	antivirus_clamav	quarantinedir		\N
-513	2	1471529441	antivirus_clamav	clamfailureonupload	donothing	\N
-514	2	1471529441	\N	registerauth		\N
-515	2	1471529441	\N	authloginviaemail	0	\N
-516	2	1471529441	\N	allowaccountssameemail	0	\N
-517	2	1471529441	\N	authpreventaccountcreation	0	\N
-518	2	1471529441	\N	loginpageautofocus	0	\N
-519	2	1471529441	\N	guestloginbutton	1	\N
-520	2	1471529441	\N	limitconcurrentlogins	0	\N
-521	2	1471529441	\N	alternateloginurl		\N
-522	2	1471529441	\N	forgottenpasswordurl		\N
-523	2	1471529441	\N	auth_instructions		\N
-524	2	1471529441	\N	allowemailaddresses		\N
-525	2	1471529441	\N	denyemailaddresses		\N
-526	2	1471529441	\N	verifychangedemail	1	\N
-527	2	1471529441	\N	recaptchapublickey		\N
-528	2	1471529441	\N	recaptchaprivatekey		\N
-529	2	1471529441	\N	block_course_list_adminview	all	\N
-530	2	1471529441	\N	block_course_list_hideallcourseslink	0	\N
-531	2	1471529441	block_course_overview	defaultmaxcourses	10	\N
-532	2	1471529441	block_course_overview	forcedefaultmaxcourses	0	\N
-533	2	1471529441	block_course_overview	showchildren	0	\N
-534	2	1471529441	block_course_overview	showwelcomearea	0	\N
-535	2	1471529441	block_course_overview	showcategories	0	\N
-536	2	1471529441	\N	block_html_allowcssclasses	0	\N
-537	2	1471529441	\N	block_online_users_timetosee	5	\N
-538	2	1471529441	\N	block_rss_client_num_entries	5	\N
-539	2	1471529442	\N	block_rss_client_timeout	30	\N
-540	2	1471529442	block_section_links	numsections1	22	\N
-541	2	1471529442	block_section_links	incby1	2	\N
-542	2	1471529442	block_section_links	numsections2	40	\N
-543	2	1471529442	block_section_links	incby2	5	\N
-544	2	1471529442	block_tag_youtube	apikey		\N
-545	2	1471529442	cachestore_memcache	testservers		\N
-546	2	1471529442	cachestore_memcached	testservers		\N
-547	2	1471529442	cachestore_mongodb	testserver		\N
-548	2	1471529442	format_singleactivity	activitytype	forum	\N
-549	2	1471529442	enrol_cohort	roleid	5	\N
-550	2	1471529442	enrol_cohort	unenrolaction	0	\N
-551	2	1471529442	enrol_database	dbtype		\N
-552	2	1471529442	enrol_database	dbhost	localhost	\N
-553	2	1471529442	enrol_database	dbuser		\N
-554	2	1471529442	enrol_database	dbpass		\N
-555	2	1471529442	enrol_database	dbname		\N
-556	2	1471529442	enrol_database	dbencoding	utf-8	\N
-557	2	1471529442	enrol_database	dbsetupsql		\N
-558	2	1471529442	enrol_database	dbsybasequoting	0	\N
-559	2	1471529442	enrol_database	debugdb	0	\N
-560	2	1471529442	enrol_database	localcoursefield	idnumber	\N
-561	2	1471529442	enrol_database	localuserfield	idnumber	\N
-562	2	1471529442	enrol_database	localrolefield	shortname	\N
-563	2	1471529442	enrol_database	localcategoryfield	id	\N
-564	2	1471529442	enrol_database	remoteenroltable		\N
-565	2	1471529442	enrol_database	remotecoursefield		\N
-566	2	1471529442	enrol_database	remoteuserfield		\N
-567	2	1471529442	enrol_database	remoterolefield		\N
-568	2	1471529442	enrol_database	remoteotheruserfield		\N
-569	2	1471529442	enrol_database	defaultrole	5	\N
-570	2	1471529442	enrol_database	ignorehiddencourses	0	\N
-571	2	1471529442	enrol_database	unenrolaction	0	\N
-572	2	1471529442	enrol_database	newcoursetable		\N
-573	2	1471529442	enrol_database	newcoursefullname	fullname	\N
-574	2	1471529442	enrol_database	newcourseshortname	shortname	\N
-575	2	1471529442	enrol_database	newcourseidnumber	idnumber	\N
-576	2	1471529442	enrol_database	newcoursecategory		\N
-577	2	1471529442	enrol_database	defaultcategory	1	\N
-578	2	1471529442	enrol_database	templatecourse		\N
-579	2	1471529442	enrol_flatfile	location		\N
-580	2	1471529442	enrol_flatfile	encoding	UTF-8	\N
-581	2	1471529442	enrol_flatfile	mailstudents	0	\N
-582	2	1471529442	enrol_flatfile	mailteachers	0	\N
-583	2	1471529442	enrol_flatfile	mailadmins	0	\N
-584	2	1471529442	enrol_flatfile	unenrolaction	3	\N
-585	2	1471529442	enrol_flatfile	expiredaction	3	\N
-586	2	1471529442	enrol_guest	requirepassword	0	\N
-587	2	1471529442	enrol_guest	usepasswordpolicy	0	\N
-588	2	1471529442	enrol_guest	showhint	0	\N
-589	2	1471529442	enrol_guest	defaultenrol	1	\N
-590	2	1471529442	enrol_guest	status	1	\N
-591	2	1471529442	enrol_guest	status_adv		\N
-592	2	1471529442	enrol_imsenterprise	imsfilelocation		\N
-593	2	1471529442	enrol_imsenterprise	logtolocation		\N
-594	2	1471529442	enrol_imsenterprise	mailadmins	0	\N
-595	2	1471529442	enrol_imsenterprise	createnewusers	0	\N
-596	2	1471529442	enrol_imsenterprise	imsdeleteusers	0	\N
-597	2	1471529442	enrol_imsenterprise	fixcaseusernames	0	\N
-598	2	1471529442	enrol_imsenterprise	fixcasepersonalnames	0	\N
-599	2	1471529442	enrol_imsenterprise	imssourcedidfallback	0	\N
-600	2	1471529442	enrol_imsenterprise	imsrolemap01	5	\N
-601	2	1471529442	enrol_imsenterprise	imsrolemap02	3	\N
-602	2	1471529442	enrol_imsenterprise	imsrolemap03	3	\N
-603	2	1471529442	enrol_imsenterprise	imsrolemap04	5	\N
-604	2	1471529442	enrol_imsenterprise	imsrolemap05	0	\N
-605	2	1471529443	enrol_imsenterprise	imsrolemap06	4	\N
-606	2	1471529443	enrol_imsenterprise	imsrolemap07	0	\N
-607	2	1471529443	enrol_imsenterprise	imsrolemap08	4	\N
-608	2	1471529443	enrol_imsenterprise	truncatecoursecodes	0	\N
-609	2	1471529443	enrol_imsenterprise	createnewcourses	0	\N
-610	2	1471529443	enrol_imsenterprise	createnewcategories	0	\N
-611	2	1471529443	enrol_imsenterprise	imsunenrol	0	\N
-612	2	1471529443	enrol_imsenterprise	imscoursemapshortname	coursecode	\N
-613	2	1471529443	enrol_imsenterprise	imscoursemapfullname	short	\N
-614	2	1471529443	enrol_imsenterprise	imscoursemapsummary	ignore	\N
-615	2	1471529443	enrol_imsenterprise	imsrestricttarget		\N
-616	2	1471529443	enrol_imsenterprise	imscapitafix	0	\N
-617	2	1471529443	enrol_lti	emaildisplay	2	\N
-618	2	1471529443	enrol_lti	city		\N
-619	2	1471529443	enrol_lti	country		\N
-620	2	1471529443	enrol_lti	timezone	99	\N
-621	2	1471529443	enrol_lti	lang	en	\N
-622	2	1471529443	enrol_lti	institution		\N
-623	2	1471529443	enrol_manual	expiredaction	1	\N
-624	2	1471529443	enrol_manual	expirynotifyhour	6	\N
-625	2	1471529443	enrol_manual	defaultenrol	1	\N
-626	2	1471529443	enrol_manual	status	0	\N
-627	2	1471529443	enrol_manual	roleid	5	\N
-628	2	1471529443	enrol_manual	enrolstart	4	\N
-629	2	1471529443	enrol_manual	enrolperiod	0	\N
-630	2	1471529443	enrol_manual	expirynotify	0	\N
-631	2	1471529443	enrol_manual	expirythreshold	86400	\N
-632	2	1471529443	enrol_meta	nosyncroleids		\N
-633	2	1471529443	enrol_meta	syncall	1	\N
-634	2	1471529443	enrol_meta	unenrolaction	3	\N
-635	2	1471529443	enrol_meta	coursesort	sortorder	\N
-636	2	1471529443	enrol_mnet	roleid	5	\N
-637	2	1471529443	enrol_mnet	roleid_adv	1	\N
-638	2	1471529443	enrol_paypal	paypalbusiness		\N
-639	2	1471529443	enrol_paypal	mailstudents	0	\N
-640	2	1471529443	enrol_paypal	mailteachers	0	\N
-641	2	1471529443	enrol_paypal	mailadmins	0	\N
-642	2	1471529443	enrol_paypal	expiredaction	3	\N
-643	2	1471529443	enrol_paypal	status	1	\N
-644	2	1471529443	enrol_paypal	cost	0	\N
-645	2	1471529443	enrol_paypal	currency	USD	\N
-646	2	1471529443	enrol_paypal	roleid	5	\N
-647	2	1471529443	enrol_paypal	enrolperiod	0	\N
-648	2	1471529443	enrol_self	requirepassword	0	\N
-649	2	1471529443	enrol_self	usepasswordpolicy	0	\N
-650	2	1471529443	enrol_self	showhint	0	\N
-651	2	1471529443	enrol_self	expiredaction	1	\N
-652	2	1471529443	enrol_self	expirynotifyhour	6	\N
-653	2	1471529443	enrol_self	defaultenrol	1	\N
-654	2	1471529443	enrol_self	status	1	\N
-655	2	1471529443	enrol_self	newenrols	1	\N
-656	2	1471529443	enrol_self	groupkey	0	\N
-657	2	1471529443	enrol_self	roleid	5	\N
-658	2	1471529443	enrol_self	enrolperiod	0	\N
-659	2	1471529443	enrol_self	expirynotify	0	\N
-660	2	1471529443	enrol_self	expirythreshold	86400	\N
-661	2	1471529443	enrol_self	longtimenosee	0	\N
-662	2	1471529443	enrol_self	maxenrolled	0	\N
-663	2	1471529443	enrol_self	sendcoursewelcomemessage	1	\N
-664	2	1471529443	\N	filteruploadedfiles	0	\N
-665	2	1471529443	\N	filtermatchoneperpage	0	\N
-666	2	1471529443	\N	filtermatchonepertext	0	\N
-667	2	1471529443	\N	filter_censor_badwords		\N
-668	2	1471529443	filter_emoticon	formats	1,4,0	\N
-669	2	1471529443	filter_mathjaxloader	httpurl	http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js	\N
-670	2	1471529443	filter_mathjaxloader	httpsurl	https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js	\N
-671	2	1471529443	filter_mathjaxloader	texfiltercompatibility	0	\N
-672	2	1471529443	filter_mathjaxloader	mathjaxconfig	\nMathJax.Hub.Config({\n    config: ["Accessible.js", "Safe.js"],\n    errorSettings: { message: ["!"] },\n    skipStartupTypeset: true,\n    messageStyle: "none"\n});\n	\N
-673	2	1471529443	filter_mathjaxloader	additionaldelimiters		\N
-674	2	1471529443	\N	filter_multilang_force_old	0	\N
-675	2	1471529443	filter_tex	latexpreamble	\\usepackage[latin1]{inputenc}\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\RequirePackage{amsmath,amssymb,latexsym}\n	\N
-676	2	1471529443	filter_tex	latexbackground	#FFFFFF	\N
-677	2	1471529443	filter_tex	density	120	\N
-678	2	1471529443	filter_tex	pathlatex	/usr/bin/latex	\N
-679	2	1471529443	filter_tex	pathdvips	/usr/bin/dvips	\N
-680	2	1471529443	filter_tex	pathconvert	/usr/bin/convert	\N
-681	2	1471529443	filter_tex	pathdvisvgm	/usr/bin/dvisvgm	\N
-682	2	1471529443	filter_tex	pathmimetex		\N
-683	2	1471529443	filter_tex	convertformat	gif	\N
-684	2	1471529443	filter_urltolink	formats	0	\N
-685	2	1471529443	filter_urltolink	embedimages	1	\N
-686	2	1471529443	\N	sitedefaultlicense	allrightsreserved	\N
-687	2	1471529443	logstore_database	dbdriver		\N
-688	2	1471529443	logstore_database	dbhost		\N
-689	2	1471529443	logstore_database	dbuser		\N
-690	2	1471529443	logstore_database	dbpass		\N
-691	2	1471529443	logstore_database	dbname		\N
-692	2	1471529443	logstore_database	dbtable		\N
-693	2	1471529443	logstore_database	dbpersist	0	\N
-694	2	1471529443	logstore_database	dbsocket		\N
-695	2	1471529443	logstore_database	dbport		\N
-696	2	1471529443	logstore_database	dbschema		\N
-697	2	1471529443	logstore_database	dbcollation		\N
-698	2	1471529443	logstore_database	buffersize	50	\N
-699	2	1471529443	logstore_database	logguests	0	\N
-700	2	1471529443	logstore_database	includelevels	1,2,0	\N
-701	2	1471529443	logstore_database	includeactions	c,r,u,d	\N
-702	2	1471529444	logstore_legacy	loglegacy	0	\N
-703	2	1471529444	\N	logguests	1	\N
-704	2	1471529444	\N	loglifetime	0	\N
-705	2	1471529444	logstore_standard	logguests	1	\N
-706	2	1471529444	logstore_standard	loglifetime	0	\N
-707	2	1471529444	logstore_standard	buffersize	50	\N
-708	2	1471529444	\N	airnotifierurl	https://messages.moodle.net	\N
-709	2	1471529444	\N	airnotifierport	443	\N
-710	2	1471529444	\N	airnotifiermobileappname	com.moodle.moodlemobile	\N
-711	2	1471529444	\N	airnotifierappname	commoodlemoodlemobile	\N
-712	2	1471529444	\N	airnotifieraccesskey		\N
-713	2	1471529444	\N	smtphosts		\N
-714	2	1471529444	\N	smtpsecure		\N
-715	2	1471529444	\N	smtpauthtype	LOGIN	\N
-716	2	1471529444	\N	smtpuser		\N
-717	2	1471529444	\N	smtppass		\N
-718	2	1471529444	\N	smtpmaxbulk	1	\N
-719	2	1471529444	\N	noreplyaddress	noreply@10.0.0.10	\N
-720	2	1471529444	\N	emailonlyfromnoreplyaddress	0	\N
-721	2	1471529444	\N	sitemailcharset	0	\N
-722	2	1471529444	\N	allowusermailcharset	0	\N
-723	2	1471529444	\N	allowattachments	1	\N
-724	2	1471529444	\N	mailnewline	LF	\N
-725	2	1471529444	\N	jabberhost		\N
-726	2	1471529444	\N	jabberserver		\N
-727	2	1471529444	\N	jabberusername		\N
-728	2	1471529444	\N	jabberpassword		\N
-729	2	1471529444	\N	jabberport	5222	\N
-730	2	1471529444	\N	portfolio_moderate_filesize_threshold	1048576	\N
-731	2	1471529444	\N	portfolio_high_filesize_threshold	5242880	\N
-732	2	1471529444	\N	portfolio_moderate_db_threshold	20	\N
-733	2	1471529444	\N	portfolio_high_db_threshold	50	\N
-734	2	1471529444	question_preview	behaviour	deferredfeedback	\N
-735	2	1471529444	question_preview	correctness	1	\N
-736	2	1471529444	question_preview	marks	2	\N
-737	2	1471529444	question_preview	markdp	2	\N
-738	2	1471529444	question_preview	feedback	1	\N
-739	2	1471529444	question_preview	generalfeedback	1	\N
-740	2	1471529444	question_preview	rightanswer	1	\N
-741	2	1471529444	question_preview	history	0	\N
-742	2	1471529444	\N	repositorycacheexpire	120	\N
-743	2	1471529444	\N	repositorygetfiletimeout	30	\N
-744	2	1471529444	\N	repositorysyncfiletimeout	1	\N
-745	2	1471529444	\N	repositorysyncimagetimeout	3	\N
-746	2	1471529444	\N	repositoryallowexternallinks	1	\N
-747	2	1471529444	\N	legacyfilesinnewcourses	0	\N
-748	2	1471529444	\N	legacyfilesaddallowed	1	\N
-749	2	1471529444	\N	searchengine	solr	\N
-750	2	1471529444	mod_assign	search_activity_enabled	1	\N
-751	2	1471529444	mod_book	search_activity_enabled	1	\N
-752	2	1471529444	mod_book	search_chapter_enabled	1	\N
-753	2	1471529444	mod_chat	search_activity_enabled	1	\N
-754	2	1471529444	mod_choice	search_activity_enabled	1	\N
-755	2	1471529444	mod_data	search_activity_enabled	1	\N
-756	2	1471529444	mod_feedback	search_activity_enabled	1	\N
-757	2	1471529444	mod_folder	search_activity_enabled	1	\N
-758	2	1471529444	mod_forum	search_activity_enabled	1	\N
-759	2	1471529444	mod_forum	search_post_enabled	1	\N
-760	2	1471529444	mod_glossary	search_activity_enabled	1	\N
-761	2	1471529444	mod_glossary	search_entry_enabled	1	\N
-762	2	1471529444	mod_imscp	search_activity_enabled	1	\N
-763	2	1471529444	mod_label	search_activity_enabled	1	\N
-764	2	1471529444	mod_lesson	search_activity_enabled	1	\N
-765	2	1471529444	mod_lti	search_activity_enabled	1	\N
-766	2	1471529444	mod_page	search_activity_enabled	1	\N
-767	2	1471529444	mod_quiz	search_activity_enabled	1	\N
-768	2	1471529444	mod_resource	search_activity_enabled	1	\N
-769	2	1471529444	mod_scorm	search_activity_enabled	1	\N
-770	2	1471529444	mod_survey	search_activity_enabled	1	\N
-771	2	1471529444	mod_url	search_activity_enabled	1	\N
-772	2	1471529444	mod_wiki	search_activity_enabled	1	\N
-773	2	1471529444	mod_wiki	search_collaborative_page_enabled	1	\N
-774	2	1471529444	mod_workshop	search_activity_enabled	1	\N
-775	2	1471529444	core_search	core_course_mycourse_enabled	1	\N
-776	2	1471529444	editor_atto	toolbar	collapse = collapse\nstyle1 = title, bold, italic\nlist = unorderedlist, orderedlist\nlinks = link\nfiles = image, media, managefiles\nstyle2 = underline, strike, subscript, superscript\nalign = align\nindent = indent\ninsert = equation, charmap, table, clear\nundo = undo\naccessibility = accessibilitychecker, accessibilityhelper\nother = html	\N
-777	2	1471529444	editor_atto	autosavefrequency	60	\N
-778	2	1471529444	atto_collapse	showgroups	5	\N
-779	2	1471529444	atto_equation	librarygroup1	\n\\cdot\n\\times\n\\ast\n\\div\n\\diamond\n\\pm\n\\mp\n\\oplus\n\\ominus\n\\otimes\n\\oslash\n\\odot\n\\circ\n\\bullet\n\\asymp\n\\equiv\n\\subseteq\n\\supseteq\n\\leq\n\\geq\n\\preceq\n\\succeq\n\\sim\n\\simeq\n\\approx\n\\subset\n\\supset\n\\ll\n\\gg\n\\prec\n\\succ\n\\infty\n\\in\n\\ni\n\\forall\n\\exists\n\\neq\n	\N
-780	2	1471529444	atto_equation	librarygroup2	\n\\leftarrow\n\\rightarrow\n\\uparrow\n\\downarrow\n\\leftrightarrow\n\\nearrow\n\\searrow\n\\swarrow\n\\nwarrow\n\\Leftarrow\n\\Rightarrow\n\\Uparrow\n\\Downarrow\n\\Leftrightarrow\n	\N
-781	2	1471529444	atto_equation	librarygroup3	\n\\alpha\n\\beta\n\\gamma\n\\delta\n\\epsilon\n\\zeta\n\\eta\n\\theta\n\\iota\n\\kappa\n\\lambda\n\\mu\n\\nu\n\\xi\n\\pi\n\\rho\n\\sigma\n\\tau\n\\upsilon\n\\phi\n\\chi\n\\psi\n\\omega\n\\Gamma\n\\Delta\n\\Theta\n\\Lambda\n\\Xi\n\\Pi\n\\Sigma\n\\Upsilon\n\\Phi\n\\Psi\n\\Omega\n	\N
-782	2	1471529444	atto_equation	librarygroup4	\n\\sum{a,b}\n\\sqrt[a]{b+c}\n\\int_{a}^{b}{c}\n\\iint_{a}^{b}{c}\n\\iiint_{a}^{b}{c}\n\\oint{a}\n(a)\n[a]\n\\lbrace{a}\\rbrace\n\\left| \\begin{matrix} a_1 & a_2 \\ a_3 & a_4 \\end{matrix} \\right|\n\\frac{a}{b+c}\n\\vec{a}\n\\binom {a} {b}\n{a \\brack b}\n{a \\brace b}\n	\N
-783	2	1471529445	atto_table	allowborders	0	\N
-784	2	1471529445	atto_table	allowbackgroundcolour	0	\N
-785	2	1471529445	atto_table	allowwidth	0	\N
-786	2	1471529445	editor_tinymce	customtoolbar	wrap,formatselect,wrap,bold,italic,wrap,bullist,numlist,wrap,link,unlink,wrap,image\n\nundo,redo,wrap,underline,strikethrough,sub,sup,wrap,justifyleft,justifycenter,justifyright,wrap,outdent,indent,wrap,forecolor,backcolor,wrap,ltr,rtl\n\nfontselect,fontsizeselect,wrap,code,search,replace,wrap,nonbreaking,charmap,table,wrap,cleanup,removeformat,pastetext,pasteword,wrap,fullscreen	\N
-884	2	1471529446	\N	calendar_exportlookahead	365	\N
-885	2	1471529446	\N	calendar_exportlookback	5	\N
-787	2	1471529445	editor_tinymce	fontselectlist	Trebuchet=Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,arial,helvetica,sans-serif;Impact=impact;Wingdings=wingdings	\N
-788	2	1471529445	editor_tinymce	customconfig		\N
-789	2	1471529445	tinymce_moodleemoticon	requireemoticon	1	\N
-790	2	1471529445	tinymce_spellchecker	spellengine		\N
-791	2	1471529445	tinymce_spellchecker	spelllanguagelist	+English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Polish=pl,Portuguese=pt,Spanish=es,Swedish=sv	\N
-792	2	1471529445	\N	enablemobilewebservice	0	\N
-793	2	1471529445	\N	mobilecssurl		\N
-794	2	1471529445	\N	enablewsdocumentation	0	\N
-795	2	1471529445	\N	allowbeforeblock	0	\N
-796	2	1471529445	\N	allowedip		\N
-797	2	1471529445	\N	blockedip		\N
-798	2	1471529445	\N	protectusernames	1	\N
-799	2	1471529445	\N	forcelogin	0	\N
-800	2	1471529445	\N	forceloginforprofiles	1	\N
-801	2	1471529445	\N	forceloginforprofileimage	0	\N
-802	2	1471529445	\N	opentogoogle	0	\N
-803	2	1471529445	\N	profileroles	5,4,3	\N
-804	2	1471529445	\N	maxbytes	0	\N
-805	2	1471529445	\N	userquota	104857600	\N
-806	2	1471529445	\N	allowobjectembed	0	\N
-807	2	1471529445	\N	enabletrusttext	0	\N
-808	2	1471529445	\N	maxeditingtime	1800	\N
-809	2	1471529445	\N	extendedusernamechars	0	\N
-810	2	1471529445	\N	sitepolicy		\N
-811	2	1471529445	\N	sitepolicyguest		\N
-812	2	1471529445	\N	keeptagnamecase	1	\N
-813	2	1471529445	\N	profilesforenrolledusersonly	1	\N
-814	2	1471529445	\N	cronclionly	1	\N
-815	2	1471529445	\N	cronremotepassword		\N
-816	2	1471529445	\N	lockoutthreshold	0	\N
-817	2	1471529445	\N	lockoutwindow	1800	\N
-818	2	1471529445	\N	lockoutduration	1800	\N
-819	2	1471529445	\N	passwordpolicy	1	\N
-820	2	1471529445	\N	minpasswordlength	8	\N
-821	2	1471529445	\N	minpassworddigits	1	\N
-822	2	1471529445	\N	minpasswordlower	1	\N
-823	2	1471529445	\N	minpasswordupper	1	\N
-824	2	1471529445	\N	minpasswordnonalphanum	1	\N
-825	2	1471529445	\N	maxconsecutiveidentchars	0	\N
-826	2	1471529445	\N	passwordreuselimit	0	\N
-827	2	1471529445	\N	pwresettime	1800	\N
-828	2	1471529445	\N	passwordchangelogout	0	\N
-829	2	1471529445	\N	groupenrolmentkeypolicy	1	\N
-830	2	1471529445	\N	disableuserimages	0	\N
-831	2	1471529445	\N	emailchangeconfirmation	1	\N
-832	2	1471529445	\N	rememberusername	2	\N
-833	2	1471529445	\N	strictformsrequired	0	\N
-834	2	1471529445	\N	loginhttps	0	\N
-835	2	1471529445	\N	cookiesecure	0	\N
-836	2	1471529445	\N	cookiehttponly	0	\N
-837	2	1471529445	\N	allowframembedding	0	\N
-838	2	1471529445	\N	loginpasswordautocomplete	0	\N
-839	2	1471529445	\N	displayloginfailures	0	\N
-840	2	1471529445	\N	notifyloginfailures		\N
-841	2	1471529445	\N	notifyloginthreshold	10	\N
-842	2	1471529445	\N	themelist		\N
-843	2	1471529445	\N	themedesignermode	0	\N
-844	2	1471529445	\N	allowuserthemes	0	\N
-845	2	1471529445	\N	allowcoursethemes	0	\N
-846	2	1471529445	\N	allowcategorythemes	0	\N
-847	2	1471529445	\N	allowthemechangeonurl	0	\N
-848	2	1471529445	\N	allowuserblockhiding	1	\N
-849	2	1471529446	\N	allowblockstodock	1	\N
-850	2	1471529446	\N	custommenuitems		\N
-851	2	1471529446	\N	customusermenuitems	grades,grades|/grade/report/mygrades.php|grades\nmessages,message|/message/index.php|message\npreferences,moodle|/user/preferences.php|preferences	\N
-852	2	1471529446	\N	enabledevicedetection	1	\N
-853	2	1471529446	\N	devicedetectregex	[]	\N
-854	2	1471529446	theme_clean	invert	0	\N
-855	2	1471529446	theme_clean	logo		\N
-856	2	1471529446	theme_clean	smalllogo		\N
-857	2	1471529446	theme_clean	sitename	1	\N
-858	2	1471529446	theme_clean	customcss		\N
-859	2	1471529446	theme_clean	footnote		\N
-860	2	1471529446	theme_more	textcolor	#333366	\N
-861	2	1471529446	theme_more	linkcolor	#FF6500	\N
-862	2	1471529446	theme_more	bodybackground		\N
-863	2	1471529446	theme_more	backgroundimage		\N
-864	2	1471529446	theme_more	backgroundrepeat	repeat	\N
-865	2	1471529446	theme_more	backgroundposition	0	\N
-866	2	1471529446	theme_more	backgroundfixed	0	\N
-867	2	1471529446	theme_more	contentbackground	#FFFFFF	\N
-868	2	1471529446	theme_more	secondarybackground	#FFFFFF	\N
-869	2	1471529446	theme_more	invert	1	\N
-870	2	1471529446	theme_more	logo		\N
-871	2	1471529446	theme_more	smalllogo		\N
-872	2	1471529446	theme_more	sitename	1	\N
-873	2	1471529446	theme_more	customcss		\N
-874	2	1471529446	theme_more	footnote		\N
-875	2	1471529446	\N	calendartype	gregorian	\N
-876	2	1471529446	\N	calendar_adminseesall	0	\N
-877	2	1471529446	\N	calendar_site_timeformat	0	\N
-878	2	1471529446	\N	calendar_startwday	1	\N
-879	2	1471529446	\N	calendar_weekend	65	\N
-880	2	1471529446	\N	calendar_lookahead	21	\N
-881	2	1471529446	\N	calendar_maxevents	10	\N
-882	2	1471529446	\N	enablecalendarexport	1	\N
-883	2	1471529446	\N	calendar_customexport	1	\N
-886	2	1471529446	\N	calendar_exportsalt	Yqnzr2j87bBRj6pKAdDz0jmBmnoqHLmAorqJ45yUoKjPDLS6U7xmePKmBgvn	\N
-887	2	1471529446	\N	calendar_showicalsource	1	\N
-888	2	1471529446	\N	useblogassociations	1	\N
-889	2	1471529446	\N	bloglevel	4	\N
-890	2	1471529446	\N	useexternalblogs	1	\N
-891	2	1471529446	\N	externalblogcrontime	86400	\N
-892	2	1471529446	\N	maxexternalblogsperuser	1	\N
-893	2	1471529446	\N	blogusecomments	1	\N
-894	2	1471529446	\N	blogshowcommentscount	1	\N
-895	2	1471529446	\N	defaulthomepage	1	\N
-896	2	1471529446	\N	allowguestmymoodle	1	\N
-897	2	1471529446	\N	navshowfullcoursenames	0	\N
-898	2	1471529446	\N	navshowcategories	1	\N
-899	2	1471529446	\N	navshowmycoursecategories	0	\N
-900	2	1471529446	\N	navshowallcourses	0	\N
-901	2	1471529446	\N	navexpandmycourses	1	\N
-902	2	1471529446	\N	navsortmycoursessort	sortorder	\N
-903	2	1471529446	\N	navcourselimit	20	\N
-904	2	1471529446	\N	usesitenameforsitepages	0	\N
-905	2	1471529446	\N	linkadmincategories	0	\N
-906	2	1471529446	\N	linkcoursesections	0	\N
-907	2	1471529446	\N	navshowfrontpagemods	1	\N
-908	2	1471529446	\N	navadduserpostslinks	1	\N
-909	2	1471529446	\N	formatstringstriptags	1	\N
-910	2	1471529446	\N	emoticons	[{"text":":-)","imagename":"s\\/smiley","imagecomponent":"core","altidentifier":"smiley","altcomponent":"core_pix"},{"text":":)","imagename":"s\\/smiley","imagecomponent":"core","altidentifier":"smiley","altcomponent":"core_pix"},{"text":":-D","imagename":"s\\/biggrin","imagecomponent":"core","altidentifier":"biggrin","altcomponent":"core_pix"},{"text":";-)","imagename":"s\\/wink","imagecomponent":"core","altidentifier":"wink","altcomponent":"core_pix"},{"text":":-\\/","imagename":"s\\/mixed","imagecomponent":"core","altidentifier":"mixed","altcomponent":"core_pix"},{"text":"V-.","imagename":"s\\/thoughtful","imagecomponent":"core","altidentifier":"thoughtful","altcomponent":"core_pix"},{"text":":-P","imagename":"s\\/tongueout","imagecomponent":"core","altidentifier":"tongueout","altcomponent":"core_pix"},{"text":":-p","imagename":"s\\/tongueout","imagecomponent":"core","altidentifier":"tongueout","altcomponent":"core_pix"},{"text":"B-)","imagename":"s\\/cool","imagecomponent":"core","altidentifier":"cool","altcomponent":"core_pix"},{"text":"^-)","imagename":"s\\/approve","imagecomponent":"core","altidentifier":"approve","altcomponent":"core_pix"},{"text":"8-)","imagename":"s\\/wideeyes","imagecomponent":"core","altidentifier":"wideeyes","altcomponent":"core_pix"},{"text":":o)","imagename":"s\\/clown","imagecomponent":"core","altidentifier":"clown","altcomponent":"core_pix"},{"text":":-(","imagename":"s\\/sad","imagecomponent":"core","altidentifier":"sad","altcomponent":"core_pix"},{"text":":(","imagename":"s\\/sad","imagecomponent":"core","altidentifier":"sad","altcomponent":"core_pix"},{"text":"8-.","imagename":"s\\/shy","imagecomponent":"core","altidentifier":"shy","altcomponent":"core_pix"},{"text":":-I","imagename":"s\\/blush","imagecomponent":"core","altidentifier":"blush","altcomponent":"core_pix"},{"text":":-X","imagename":"s\\/kiss","imagecomponent":"core","altidentifier":"kiss","altcomponent":"core_pix"},{"text":"8-o","imagename":"s\\/surprise","imagecomponent":"core","altidentifier":"surprise","altcomponent":"core_pix"},{"text":"P-|","imagename":"s\\/blackeye","imagecomponent":"core","altidentifier":"blackeye","altcomponent":"core_pix"},{"text":"8-[","imagename":"s\\/angry","imagecomponent":"core","altidentifier":"angry","altcomponent":"core_pix"},{"text":"(grr)","imagename":"s\\/angry","imagecomponent":"core","altidentifier":"angry","altcomponent":"core_pix"},{"text":"xx-P","imagename":"s\\/dead","imagecomponent":"core","altidentifier":"dead","altcomponent":"core_pix"},{"text":"|-.","imagename":"s\\/sleepy","imagecomponent":"core","altidentifier":"sleepy","altcomponent":"core_pix"},{"text":"}-]","imagename":"s\\/evil","imagecomponent":"core","altidentifier":"evil","altcomponent":"core_pix"},{"text":"(h)","imagename":"s\\/heart","imagecomponent":"core","altidentifier":"heart","altcomponent":"core_pix"},{"text":"(heart)","imagename":"s\\/heart","imagecomponent":"core","altidentifier":"heart","altcomponent":"core_pix"},{"text":"(y)","imagename":"s\\/yes","imagecomponent":"core","altidentifier":"yes","altcomponent":"core"},{"text":"(n)","imagename":"s\\/no","imagecomponent":"core","altidentifier":"no","altcomponent":"core"},{"text":"(martin)","imagename":"s\\/martin","imagecomponent":"core","altidentifier":"martin","altcomponent":"core_pix"},{"text":"( )","imagename":"s\\/egg","imagecomponent":"core","altidentifier":"egg","altcomponent":"core_pix"}]	\N
-911	2	1471529446	\N	core_media_enable_youtube	1	\N
-912	2	1471529446	\N	core_media_enable_vimeo	0	\N
-913	2	1471529446	\N	core_media_enable_mp3	1	\N
-914	2	1471529446	\N	core_media_enable_flv	1	\N
-915	2	1471529446	\N	core_media_enable_swf	1	\N
-916	2	1471529446	\N	core_media_enable_html5audio	1	\N
-917	2	1471529446	\N	core_media_enable_html5video	1	\N
-918	2	1471529446	\N	core_media_enable_qt	1	\N
-919	2	1471529446	\N	core_media_enable_wmp	1	\N
-920	2	1471529446	\N	core_media_enable_rm	1	\N
-921	2	1471529446	\N	docroot	http://docs.moodle.org	\N
-922	2	1471529446	\N	doclang		\N
-923	2	1471529447	\N	doctonewwindow	0	\N
-924	2	1471529447	\N	coursecontact	3	\N
-925	2	1471529447	\N	courselistshortnames	0	\N
-926	2	1471529447	\N	coursesperpage	20	\N
-927	2	1471529447	\N	courseswithsummarieslimit	10	\N
-928	2	1471529447	\N	courseoverviewfileslimit	1	\N
-929	2	1471529447	\N	courseoverviewfilesext	.jpg,.gif,.png	\N
-930	2	1471529447	\N	useexternalyui	0	\N
-931	2	1471529447	\N	yuicomboloading	1	\N
-932	2	1471529447	\N	cachejs	1	\N
-933	2	1471529447	\N	modchooserdefault	1	\N
-934	2	1471529447	\N	modeditingmenu	1	\N
-935	2	1471529447	\N	blockeditingmenu	1	\N
-936	2	1471529447	\N	additionalhtmlhead		\N
-937	2	1471529447	\N	additionalhtmltopofbody		\N
-938	2	1471529447	\N	additionalhtmlfooter		\N
-939	2	1471529447	\N	frontpage	6	\N
-940	2	1471529447	\N	frontpageloggedin	6	\N
-941	2	1471529447	\N	maxcategorydepth	2	\N
-942	2	1471529447	\N	frontpagecourselimit	200	\N
-943	2	1471529447	\N	commentsperpage	15	\N
-944	2	1471529447	\N	defaultfrontpageroleid	8	\N
-945	2	1471529447	\N	pathtodu		\N
-946	2	1471529447	\N	aspellpath		\N
-947	2	1471529447	\N	pathtodot		\N
-948	2	1471529447	\N	pathtogs	/usr/bin/gs	\N
-949	2	1471529447	\N	pathtounoconv	/usr/bin/unoconv	\N
-950	2	1471529447	\N	supportname	Admin User	\N
-951	2	1471529447	\N	supportemail		\N
-952	2	1471529447	\N	supportpage		\N
-953	2	1471529447	\N	dbsessions	0	\N
-954	2	1471529447	\N	sessioncookie		\N
-955	2	1471529447	\N	sessioncookiepath		\N
-956	2	1471529447	\N	sessioncookiedomain		\N
-957	2	1471529447	\N	statsfirstrun	none	\N
-958	2	1471529447	\N	statsmaxruntime	0	\N
-959	2	1471529447	\N	statsruntimedays	31	\N
-960	2	1471529447	\N	statsruntimestarthour	0	\N
-961	2	1471529447	\N	statsruntimestartminute	0	\N
-962	2	1471529447	\N	statsuserthreshold	0	\N
-963	2	1471529447	\N	slasharguments	1	\N
-964	2	1471529447	\N	getremoteaddrconf	0	\N
-965	2	1471529447	\N	proxyhost		\N
-966	2	1471529447	\N	proxyport	0	\N
-967	2	1471529447	\N	proxytype	HTTP	\N
-968	2	1471529447	\N	proxyuser		\N
-969	2	1471529447	\N	proxypassword		\N
-970	2	1471529447	\N	proxybypass	localhost, 127.0.0.1	\N
-971	2	1471529447	\N	maintenance_enabled	0	\N
-972	2	1471529447	\N	maintenance_message		\N
-973	2	1471529447	\N	deleteunconfirmed	168	\N
-974	2	1471529448	\N	deleteincompleteusers	0	\N
-975	2	1471529448	\N	disablegradehistory	0	\N
-976	2	1471529448	\N	gradehistorylifetime	0	\N
-977	2	1471529448	\N	tempdatafoldercleanup	168	\N
-978	2	1471529448	\N	extramemorylimit	512M	\N
-979	2	1471529448	\N	maxtimelimit	0	\N
-980	2	1471529448	\N	curlcache	120	\N
-981	2	1471529448	\N	curltimeoutkbitrate	56	\N
-982	2	1471529448	\N	updateautocheck	1	\N
-983	2	1471529448	\N	updateminmaturity	200	\N
-984	2	1471529448	\N	updatenotifybuilds	0	\N
-985	2	1471529448	\N	messageinbound_enabled	0	\N
-986	2	1471529448	\N	messageinbound_mailbox		\N
-987	2	1471529448	\N	messageinbound_domain		\N
-988	2	1471529448	\N	messageinbound_host		\N
-989	2	1471529448	\N	messageinbound_hostssl	ssl	\N
-990	2	1471529448	\N	messageinbound_hostuser		\N
-991	2	1471529448	\N	messageinbound_hostpass		\N
-992	2	1471529448	\N	enablesafebrowserintegration	0	\N
-993	2	1471529448	\N	dndallowtextandlinks	0	\N
-994	2	1471529448	\N	enablecssoptimiser	0	\N
-995	2	1471529448	\N	debug	0	32767
-996	2	1471529448	\N	debugsmtp	0	\N
-997	2	1471529448	\N	perfdebug	7	\N
-998	2	1471529448	\N	debugstringids	0	\N
-999	2	1471529448	\N	debugvalidators	0	\N
-1000	2	1471529448	\N	debugpageinfo	0	\N
-1001	2	1471529448	\N	profilingenabled	0	\N
-1002	2	1471529448	\N	profilingincluded		\N
-1003	2	1471529448	\N	profilingexcluded		\N
-1004	2	1471529448	\N	profilingautofrec	0	\N
-1005	2	1471529448	\N	profilingallowme	0	\N
-1006	2	1471529448	\N	profilingallowall	0	\N
-1007	2	1471529448	\N	profilinglifetime	1440	\N
-1008	2	1471529448	\N	profilingimportprefix	(I)	\N
-1009	2	1471529474	assignsubmission_file	maxbytes	1048576	\N
-1010	2	1471529475	\N	forum_maxbytes	512000	\N
-1011	2	1471529476	workshop	maxbytes	0	\N
-1012	2	1471529478	\N	calendar_exportsalt	HXNwyAXQBJwIJEJLt8twNU31on62azVQYiZLEy5aMDL1Plaa1UvWMeo4AwLA	Yqnzr2j87bBRj6pKAdDz0jmBmnoqHLmAorqJ45yUoKjPDLS6U7xmePKmBgvn
-1013	2	1471529479	\N	debug	0	32767
+1	0	1472545726	activitynames	filter_active	1	
+2	0	1472545727	mathjaxloader	filter_active	1	
+3	0	1472545727	mediaplugin	filter_active	1	
+4	2	1472545796	\N	enableoutcomes	0	\N
+5	2	1472545796	\N	usecomments	1	\N
+6	2	1472545796	\N	usetags	1	\N
+7	2	1472545796	\N	enablenotes	1	\N
+8	2	1472545797	\N	enableportfolios	0	\N
+9	2	1472545797	\N	enablewebservices	0	\N
+10	2	1472545797	\N	messaging	1	\N
+11	2	1472545797	\N	messaginghidereadnotifications	0	\N
+12	2	1472545797	\N	messagingdeletereadnotificationsdelay	604800	\N
+13	2	1472545797	\N	messagingallowemailoverride	0	\N
+14	2	1472545797	\N	enablestats	0	\N
+15	2	1472545797	\N	enablerssfeeds	0	\N
+16	2	1472545797	\N	enableblogs	1	\N
+17	2	1472545797	\N	enablecompletion	1	\N
+18	2	1472545797	\N	completiondefault	1	\N
+19	2	1472545797	\N	enableavailability	1	\N
+20	2	1472545797	\N	enableplagiarism	0	\N
+21	2	1472545797	\N	enablebadges	1	\N
+22	2	1472545797	\N	enableglobalsearch	0	\N
+23	2	1472545797	\N	defaultpreference_maildisplay	2	\N
+24	2	1472545797	\N	defaultpreference_mailformat	1	\N
+25	2	1472545797	\N	defaultpreference_maildigest	0	\N
+26	2	1472545797	\N	defaultpreference_autosubscribe	1	\N
+27	2	1472545797	\N	defaultpreference_trackforums	0	\N
+28	2	1472545797	\N	notloggedinroleid	6	\N
+29	2	1472545797	\N	guestroleid	6	\N
+30	2	1472545797	\N	defaultuserroleid	7	\N
+31	2	1472545797	\N	creatornewroleid	3	\N
+32	2	1472545797	\N	restorernewroleid	3	\N
+33	2	1472545797	\N	autologinguests	0	\N
+34	2	1472545797	\N	hiddenuserfields		\N
+35	2	1472545797	\N	showuseridentity	email	\N
+36	2	1472545797	\N	fullnamedisplay	language	\N
+37	2	1472545797	\N	alternativefullnameformat	language	\N
+38	2	1472545797	\N	maxusersperpage	100	\N
+39	2	1472545797	\N	enablegravatar	0	\N
+40	2	1472545797	\N	gravatardefaulturl	mm	\N
+41	2	1472545797	moodlecourse	visible	1	\N
+42	2	1472545797	moodlecourse	format	weeks	\N
+43	2	1472545797	moodlecourse	maxsections	52	\N
+44	2	1472545797	moodlecourse	numsections	10	\N
+45	2	1472545797	moodlecourse	hiddensections	0	\N
+46	2	1472545797	moodlecourse	coursedisplay	0	\N
+47	2	1472545797	moodlecourse	lang		\N
+48	2	1472545797	moodlecourse	newsitems	5	\N
+49	2	1472545797	moodlecourse	showgrades	1	\N
+50	2	1472545797	moodlecourse	showreports	0	\N
+51	2	1472545797	moodlecourse	maxbytes	0	\N
+52	2	1472545797	moodlecourse	enablecompletion	0	\N
+53	2	1472545797	moodlecourse	groupmode	0	\N
+54	2	1472545797	moodlecourse	groupmodeforce	0	\N
+55	2	1472545797	\N	enablecourserequests	0	\N
+56	2	1472545797	\N	defaultrequestcategory	1	\N
+57	2	1472545797	\N	requestcategoryselection	0	\N
+58	2	1472545797	\N	courserequestnotify		\N
+59	2	1472545797	backup	loglifetime	30	\N
+60	2	1472545797	backup	backup_general_users	1	\N
+61	2	1472545797	backup	backup_general_users_locked		\N
+62	2	1472545797	backup	backup_general_anonymize	0	\N
+63	2	1472545797	backup	backup_general_anonymize_locked		\N
+64	2	1472545797	backup	backup_general_role_assignments	1	\N
+65	2	1472545797	backup	backup_general_role_assignments_locked		\N
+66	2	1472545797	backup	backup_general_activities	1	\N
+67	2	1472545797	backup	backup_general_activities_locked		\N
+68	2	1472545797	backup	backup_general_blocks	1	\N
+69	2	1472545797	backup	backup_general_blocks_locked		\N
+70	2	1472545797	backup	backup_general_filters	1	\N
+71	2	1472545797	backup	backup_general_filters_locked		\N
+72	2	1472545797	backup	backup_general_comments	1	\N
+73	2	1472545797	backup	backup_general_comments_locked		\N
+74	2	1472545797	backup	backup_general_badges	1	\N
+75	2	1472545797	backup	backup_general_badges_locked		\N
+76	2	1472545797	backup	backup_general_userscompletion	1	\N
+77	2	1472545797	backup	backup_general_userscompletion_locked		\N
+78	2	1472545797	backup	backup_general_logs	0	\N
+79	2	1472545797	backup	backup_general_logs_locked		\N
+80	2	1472545797	backup	backup_general_histories	0	\N
+81	2	1472545797	backup	backup_general_histories_locked		\N
+82	2	1472545797	backup	backup_general_questionbank	1	\N
+83	2	1472545797	backup	backup_general_questionbank_locked		\N
+84	2	1472545797	backup	backup_general_groups	1	\N
+85	2	1472545797	backup	backup_general_groups_locked		\N
+86	2	1472545797	backup	import_general_maxresults	10	\N
+87	2	1472545797	backup	import_general_duplicate_admin_allowed	0	\N
+88	2	1472545797	backup	backup_auto_active	0	\N
+89	2	1472545798	backup	backup_auto_weekdays	0000000	\N
+90	2	1472545798	backup	backup_auto_hour	0	\N
+91	2	1472545798	backup	backup_auto_minute	0	\N
+92	2	1472545798	backup	backup_auto_storage	0	\N
+93	2	1472545798	backup	backup_auto_destination		\N
+94	2	1472545798	backup	backup_auto_max_kept	1	\N
+95	2	1472545798	backup	backup_auto_delete_days	0	\N
+96	2	1472545798	backup	backup_auto_min_kept	0	\N
+97	2	1472545798	backup	backup_shortname	0	\N
+98	2	1472545798	backup	backup_auto_skip_hidden	1	\N
+99	2	1472545798	backup	backup_auto_skip_modif_days	30	\N
+100	2	1472545798	backup	backup_auto_skip_modif_prev	0	\N
+101	2	1472545798	backup	backup_auto_users	1	\N
+102	2	1472545798	backup	backup_auto_role_assignments	1	\N
+103	2	1472545798	backup	backup_auto_activities	1	\N
+104	2	1472545798	backup	backup_auto_blocks	1	\N
+105	2	1472545798	backup	backup_auto_filters	1	\N
+106	2	1472545798	backup	backup_auto_comments	1	\N
+107	2	1472545798	backup	backup_auto_badges	1	\N
+108	2	1472545798	backup	backup_auto_userscompletion	1	\N
+109	2	1472545798	backup	backup_auto_logs	0	\N
+110	2	1472545798	backup	backup_auto_histories	0	\N
+111	2	1472545798	backup	backup_auto_questionbank	1	\N
+112	2	1472545798	backup	backup_auto_groups	1	\N
+113	2	1472545798	\N	gradebookroles	5	\N
+114	2	1472545798	\N	grade_profilereport	user	\N
+115	2	1472545798	\N	grade_aggregationposition	1	\N
+116	2	1472545798	\N	grade_includescalesinaggregation	1	\N
+117	2	1472545798	\N	grade_hiddenasdate	0	\N
+118	2	1472545798	\N	gradepublishing	0	\N
+119	2	1472545798	\N	grade_export_displaytype	1	\N
+120	2	1472545798	\N	grade_export_decimalpoints	2	\N
+121	2	1472545798	\N	grade_navmethod	0	\N
+122	2	1472545798	\N	grade_export_userprofilefields	firstname,lastname,idnumber,institution,department,email	\N
+123	2	1472545798	\N	grade_export_customprofilefields		\N
+124	2	1472545798	\N	recovergradesdefault	0	\N
+125	2	1472545798	\N	gradeexport		\N
+126	2	1472545798	\N	unlimitedgrades	0	\N
+127	2	1472545798	\N	grade_report_showmin	1	\N
+128	2	1472545798	\N	gradepointmax	100	\N
+129	2	1472545798	\N	gradepointdefault	100	\N
+130	2	1472545798	\N	grade_minmaxtouse	1	\N
+131	2	1472545798	\N	grade_mygrades_report	overview	\N
+132	2	1472545798	\N	gradereport_mygradeurl		\N
+133	2	1472545798	\N	grade_hideforcedsettings	1	\N
+134	2	1472545798	\N	grade_aggregation	13	\N
+135	2	1472545798	\N	grade_aggregation_flag	0	\N
+136	2	1472545798	\N	grade_aggregations_visible	13	\N
+137	2	1472545798	\N	grade_aggregateonlygraded	1	\N
+138	2	1472545798	\N	grade_aggregateonlygraded_flag	2	\N
+139	2	1472545798	\N	grade_aggregateoutcomes	0	\N
+140	2	1472545798	\N	grade_aggregateoutcomes_flag	2	\N
+141	2	1472545798	\N	grade_keephigh	0	\N
+142	2	1472545798	\N	grade_keephigh_flag	3	\N
+143	2	1472545798	\N	grade_droplow	0	\N
+144	2	1472545798	\N	grade_droplow_flag	2	\N
+145	2	1472545798	\N	grade_overridecat	1	\N
+146	2	1472545798	\N	grade_displaytype	1	\N
+147	2	1472545798	\N	grade_decimalpoints	2	\N
+148	2	1472545798	\N	grade_item_advanced	iteminfo,idnumber,gradepass,plusfactor,multfactor,display,decimals,hiddenuntil,locktime	\N
+149	2	1472545798	\N	grade_report_studentsperpage	100	\N
+150	2	1472545798	\N	grade_report_showonlyactiveenrol	1	\N
+151	2	1472545798	\N	grade_report_quickgrading	1	\N
+152	2	1472545798	\N	grade_report_showquickfeedback	0	\N
+153	2	1472545798	\N	grade_report_meanselection	1	\N
+154	2	1472545798	\N	grade_report_enableajax	0	\N
+155	2	1472545798	\N	grade_report_showcalculations	1	\N
+156	2	1472545798	\N	grade_report_showeyecons	0	\N
+157	2	1472545798	\N	grade_report_showaverages	1	\N
+158	2	1472545798	\N	grade_report_showlocks	0	\N
+159	2	1472545798	\N	grade_report_showranges	0	\N
+160	2	1472545798	\N	grade_report_showanalysisicon	1	\N
+161	2	1472545799	\N	grade_report_showuserimage	1	\N
+162	2	1472545799	\N	grade_report_showactivityicons	1	\N
+163	2	1472545799	\N	grade_report_shownumberofgrades	0	\N
+164	2	1472545799	\N	grade_report_averagesdisplaytype	inherit	\N
+165	2	1472545799	\N	grade_report_rangesdisplaytype	inherit	\N
+166	2	1472545799	\N	grade_report_averagesdecimalpoints	inherit	\N
+167	2	1472545799	\N	grade_report_rangesdecimalpoints	inherit	\N
+168	2	1472545799	\N	grade_report_historyperpage	50	\N
+169	2	1472545799	\N	grade_report_overview_showrank	0	\N
+170	2	1472545799	\N	grade_report_overview_showtotalsifcontainhidden	0	\N
+171	2	1472545799	\N	grade_report_user_showrank	0	\N
+172	2	1472545799	\N	grade_report_user_showpercentage	1	\N
+173	2	1472545799	\N	grade_report_user_showgrade	1	\N
+174	2	1472545799	\N	grade_report_user_showfeedback	1	\N
+175	2	1472545799	\N	grade_report_user_showrange	1	\N
+176	2	1472545799	\N	grade_report_user_showweight	1	\N
+177	2	1472545799	\N	grade_report_user_showaverage	0	\N
+178	2	1472545799	\N	grade_report_user_showlettergrade	0	\N
+179	2	1472545799	\N	grade_report_user_rangedecimals	0	\N
+180	2	1472545799	\N	grade_report_user_showhiddenitems	1	\N
+181	2	1472545799	\N	grade_report_user_showtotalsifcontainhidden	0	\N
+182	2	1472545799	\N	grade_report_user_showcontributiontocoursetotal	1	\N
+183	2	1472545799	core_competency	enabled	1	\N
+184	2	1472545799	core_competency	pushcourseratingstouserplans	1	\N
+185	2	1472545799	\N	badges_defaultissuername		\N
+186	2	1472545799	\N	badges_defaultissuercontact		\N
+187	2	1472545799	\N	badges_badgesalt	badges1472545679	\N
+188	2	1472545799	\N	badges_allowexternalbackpack	1	\N
+189	2	1472545799	\N	badges_allowcoursebadges	1	\N
+190	2	1472545801	\N	timezone	Australia/Perth	\N
+191	2	1472545804	\N	forcetimezone	99	\N
+192	2	1472545804	\N	country	0	\N
+193	2	1472545804	\N	defaultcity		\N
+194	2	1472545804	\N	geoipfile	/vagrant/phpu_moodledata/geoip/GeoLiteCity.dat	\N
+195	2	1472545804	\N	googlemapkey3		\N
+196	2	1472545804	\N	allcountrycodes		\N
+197	2	1472545804	\N	autolang	1	\N
+198	2	1472545804	\N	lang	en	\N
+199	2	1472545804	\N	langmenu	1	\N
+200	2	1472545804	\N	langlist		\N
+201	2	1472545804	\N	langcache	1	\N
+202	2	1472545804	\N	langstringcache	1	\N
+203	2	1472545804	\N	locale		\N
+204	2	1472545804	\N	latinexcelexport	0	\N
+205	2	1472545804	\N	requiremodintro	0	\N
+206	2	1472545804	assign	feedback_plugin_for_gradebook	assignfeedback_comments	\N
+207	2	1472545804	assign	showrecentsubmissions	0	\N
+208	2	1472545804	assign	submissionreceipts	1	\N
+209	2	1472545804	assign	submissionstatement	This assignment is my own work, except where I have acknowledged the use of the works of other people.	\N
+210	2	1472545804	assign	maxperpage	-1	\N
+211	2	1472545805	assign	alwaysshowdescription	1	\N
+212	2	1472545805	assign	alwaysshowdescription_adv		\N
+213	2	1472545805	assign	alwaysshowdescription_locked		\N
+214	2	1472545805	assign	allowsubmissionsfromdate	0	\N
+215	2	1472545805	assign	allowsubmissionsfromdate_enabled	1	\N
+216	2	1472545805	assign	allowsubmissionsfromdate_adv		\N
+217	2	1472545805	assign	duedate	604800	\N
+218	2	1472545805	assign	duedate_enabled	1	\N
+219	2	1472545805	assign	duedate_adv		\N
+220	2	1472545805	assign	cutoffdate	1209600	\N
+221	2	1472545805	assign	cutoffdate_enabled		\N
+222	2	1472545805	assign	cutoffdate_adv		\N
+223	2	1472545805	assign	submissiondrafts	0	\N
+224	2	1472545805	assign	submissiondrafts_adv		\N
+225	2	1472545805	assign	submissiondrafts_locked		\N
+226	2	1472545805	assign	requiresubmissionstatement	0	\N
+227	2	1472545805	assign	requiresubmissionstatement_adv		\N
+228	2	1472545805	assign	requiresubmissionstatement_locked		\N
+229	2	1472545805	assign	attemptreopenmethod	none	\N
+230	2	1472545805	assign	attemptreopenmethod_adv		\N
+231	2	1472545805	assign	attemptreopenmethod_locked		\N
+232	2	1472545805	assign	maxattempts	-1	\N
+233	2	1472545805	assign	maxattempts_adv		\N
+234	2	1472545805	assign	maxattempts_locked		\N
+235	2	1472545805	assign	teamsubmission	0	\N
+236	2	1472545805	assign	teamsubmission_adv		\N
+237	2	1472545805	assign	teamsubmission_locked		\N
+238	2	1472545805	assign	preventsubmissionnotingroup	0	\N
+239	2	1472545805	assign	preventsubmissionnotingroup_adv		\N
+240	2	1472545805	assign	preventsubmissionnotingroup_locked		\N
+241	2	1472545805	assign	requireallteammemberssubmit	0	\N
+242	2	1472545805	assign	requireallteammemberssubmit_adv		\N
+243	2	1472545805	assign	requireallteammemberssubmit_locked		\N
+244	2	1472545805	assign	teamsubmissiongroupingid		\N
+245	2	1472545805	assign	teamsubmissiongroupingid_adv		\N
+246	2	1472545805	assign	sendnotifications	0	\N
+247	2	1472545805	assign	sendnotifications_adv		\N
+248	2	1472545805	assign	sendnotifications_locked		\N
+249	2	1472545805	assign	sendlatenotifications	0	\N
+250	2	1472545805	assign	sendlatenotifications_adv		\N
+251	2	1472545805	assign	sendlatenotifications_locked		\N
+252	2	1472545805	assign	sendstudentnotifications	1	\N
+253	2	1472545805	assign	sendstudentnotifications_adv		\N
+254	2	1472545805	assign	sendstudentnotifications_locked		\N
+255	2	1472545805	assign	blindmarking	0	\N
+256	2	1472545805	assign	blindmarking_adv		\N
+257	2	1472545805	assign	blindmarking_locked		\N
+258	2	1472545805	assign	markingworkflow	0	\N
+259	2	1472545805	assign	markingworkflow_adv		\N
+260	2	1472545805	assign	markingworkflow_locked		\N
+261	2	1472545805	assign	markingallocation	0	\N
+262	2	1472545805	assign	markingallocation_adv		\N
+263	2	1472545805	assign	markingallocation_locked		\N
+264	2	1472545806	assignsubmission_file	default	1	\N
+265	2	1472545806	assignsubmission_file	maxfiles	20	\N
+266	2	1472545806	assignsubmission_onlinetext	default	0	\N
+267	2	1472545806	assignfeedback_comments	default	1	\N
+268	2	1472545806	assignfeedback_comments	inline	0	\N
+269	2	1472545806	assignfeedback_comments	inline_adv		\N
+270	2	1472545806	assignfeedback_comments	inline_locked		\N
+271	2	1472545806	assignfeedback_editpdf	stamps		\N
+272	2	1472545806	assignfeedback_file	default	0	\N
+273	2	1472545806	assignfeedback_offline	default	0	\N
+274	2	1472545806	book	numberingoptions	0,1,2,3	\N
+275	2	1472545806	book	navoptions	0,1,2	\N
+276	2	1472545806	book	numbering	1	\N
+277	2	1472545806	book	navstyle	1	\N
+278	2	1472545806	\N	chat_method	ajax	\N
+279	2	1472545806	\N	chat_refresh_userlist	10	\N
+280	2	1472545806	\N	chat_old_ping	35	\N
+281	2	1472545806	\N	chat_refresh_room	5	\N
+282	2	1472545806	\N	chat_normal_updatemode	jsupdate	\N
+283	2	1472545806	\N	chat_serverhost	10.0.0.10	\N
+284	2	1472545806	\N	chat_serverip	127.0.0.1	\N
+285	2	1472545806	\N	chat_serverport	9111	\N
+286	2	1472545806	\N	chat_servermax	100	\N
+287	2	1472545806	\N	data_enablerssfeeds	0	\N
+288	2	1472545806	\N	feedback_allowfullanonymous	0	\N
+289	2	1472545806	folder	showexpanded	1	\N
+290	2	1472545806	folder	maxsizetodownload	0	\N
+291	2	1472545806	\N	forum_displaymode	3	\N
+292	2	1472545806	\N	forum_replytouser	1	\N
+293	2	1472545806	\N	forum_shortpost	300	\N
+294	2	1472545806	\N	forum_longpost	600	\N
+295	2	1472545806	\N	forum_manydiscussions	100	\N
+296	2	1472545806	\N	forum_maxattachments	9	\N
+297	2	1472545806	\N	forum_trackingtype	1	\N
+298	2	1472545806	\N	forum_trackreadposts	1	\N
+299	2	1472545806	\N	forum_allowforcedreadtracking	0	\N
+300	2	1472545806	\N	forum_oldpostdays	14	\N
+301	2	1472545806	\N	forum_usermarksread	0	\N
+302	2	1472545806	\N	forum_cleanreadtime	2	\N
+303	2	1472545806	\N	digestmailtime	17	\N
+304	2	1472545806	\N	forum_enablerssfeeds	0	\N
+305	2	1472545806	\N	forum_enabletimedposts	1	\N
+306	2	1472545806	\N	glossary_entbypage	10	\N
+307	2	1472545806	\N	glossary_dupentries	0	\N
+308	2	1472545806	\N	glossary_allowcomments	0	\N
+309	2	1472545806	\N	glossary_linkbydefault	1	\N
+310	2	1472545806	\N	glossary_defaultapproval	1	\N
+311	2	1472545806	\N	glossary_enablerssfeeds	0	\N
+312	2	1472545806	\N	glossary_linkentries	0	\N
+313	2	1472545806	\N	glossary_casesensitive	0	\N
+314	2	1472545806	\N	glossary_fullmatch	0	\N
+315	2	1472545806	imscp	keepold	1	\N
+316	2	1472545806	imscp	keepold_adv		\N
+317	2	1472545806	label	dndmedia	1	\N
+318	2	1472545806	label	dndresizewidth	400	\N
+319	2	1472545806	label	dndresizeheight	400	\N
+320	2	1472545806	mod_lesson	mediafile		\N
+321	2	1472545806	mod_lesson	mediafile_adv	1	\N
+322	2	1472545806	mod_lesson	mediawidth	640	\N
+323	2	1472545806	mod_lesson	mediaheight	480	\N
+324	2	1472545806	mod_lesson	mediaclose	0	\N
+325	2	1472545806	mod_lesson	progressbar	0	\N
+326	2	1472545806	mod_lesson	progressbar_adv		\N
+327	2	1472545806	mod_lesson	ongoing	0	\N
+328	2	1472545807	mod_lesson	ongoing_adv	1	\N
+329	2	1472545807	mod_lesson	displayleftmenu	0	\N
+330	2	1472545807	mod_lesson	displayleftmenu_adv		\N
+331	2	1472545807	mod_lesson	displayleftif	0	\N
+332	2	1472545807	mod_lesson	displayleftif_adv	1	\N
+333	2	1472545807	mod_lesson	slideshow	0	\N
+334	2	1472545807	mod_lesson	slideshow_adv	1	\N
+335	2	1472545807	mod_lesson	slideshowwidth	640	\N
+336	2	1472545807	mod_lesson	slideshowheight	480	\N
+337	2	1472545807	mod_lesson	slideshowbgcolor	#FFFFFF	\N
+338	2	1472545807	mod_lesson	maxanswers	5	\N
+339	2	1472545807	mod_lesson	maxanswers_adv	1	\N
+340	2	1472545807	mod_lesson	defaultfeedback	0	\N
+341	2	1472545807	mod_lesson	defaultfeedback_adv	1	\N
+342	2	1472545807	mod_lesson	activitylink		\N
+343	2	1472545807	mod_lesson	activitylink_adv	1	\N
+344	2	1472545807	mod_lesson	timelimit	0	\N
+345	2	1472545807	mod_lesson	timelimit_adv		\N
+346	2	1472545807	mod_lesson	password	0	\N
+347	2	1472545807	mod_lesson	password_adv	1	\N
+348	2	1472545807	mod_lesson	modattempts	0	\N
+349	2	1472545807	mod_lesson	modattempts_adv		\N
+350	2	1472545807	mod_lesson	displayreview	0	\N
+351	2	1472545807	mod_lesson	displayreview_adv		\N
+352	2	1472545807	mod_lesson	maximumnumberofattempts	1	\N
+353	2	1472545807	mod_lesson	maximumnumberofattempts_adv		\N
+354	2	1472545807	mod_lesson	defaultnextpage	0	\N
+355	2	1472545807	mod_lesson	defaultnextpage_adv	1	\N
+356	2	1472545807	mod_lesson	numberofpagestoshow	1	\N
+357	2	1472545807	mod_lesson	numberofpagestoshow_adv	1	\N
+358	2	1472545807	mod_lesson	practice	0	\N
+359	2	1472545807	mod_lesson	practice_adv		\N
+360	2	1472545807	mod_lesson	customscoring	1	\N
+361	2	1472545807	mod_lesson	customscoring_adv	1	\N
+362	2	1472545807	mod_lesson	retakesallowed	0	\N
+363	2	1472545807	mod_lesson	retakesallowed_adv		\N
+364	2	1472545807	mod_lesson	handlingofretakes	0	\N
+365	2	1472545807	mod_lesson	handlingofretakes_adv	1	\N
+366	2	1472545807	mod_lesson	minimumnumberofquestions	0	\N
+367	2	1472545807	mod_lesson	minimumnumberofquestions_adv	1	\N
+368	2	1472545807	page	displayoptions	5	\N
+369	2	1472545807	page	printheading	1	\N
+370	2	1472545807	page	printintro	0	\N
+371	2	1472545807	page	display	5	\N
+372	2	1472545807	page	popupwidth	620	\N
+373	2	1472545807	page	popupheight	450	\N
+374	2	1472545807	quiz	timelimit	0	\N
+375	2	1472545807	quiz	timelimit_adv		\N
+376	2	1472545807	quiz	overduehandling	autosubmit	\N
+377	2	1472545807	quiz	overduehandling_adv		\N
+378	2	1472545807	quiz	graceperiod	86400	\N
+379	2	1472545807	quiz	graceperiod_adv		\N
+380	2	1472545807	quiz	graceperiodmin	60	\N
+381	2	1472545807	quiz	attempts	0	\N
+382	2	1472545807	quiz	attempts_adv		\N
+383	2	1472545807	quiz	grademethod	1	\N
+384	2	1472545807	quiz	grademethod_adv		\N
+385	2	1472545807	quiz	maximumgrade	10	\N
+386	2	1472545807	quiz	questionsperpage	1	\N
+387	2	1472545807	quiz	questionsperpage_adv		\N
+388	2	1472545807	quiz	navmethod	free	\N
+389	2	1472545807	quiz	navmethod_adv	1	\N
+390	2	1472545807	quiz	shuffleanswers	1	\N
+391	2	1472545807	quiz	shuffleanswers_adv		\N
+392	2	1472545807	quiz	preferredbehaviour	deferredfeedback	\N
+393	2	1472545807	quiz	canredoquestions	0	\N
+394	2	1472545807	quiz	canredoquestions_adv	1	\N
+395	2	1472545808	quiz	attemptonlast	0	\N
+396	2	1472545808	quiz	attemptonlast_adv	1	\N
+397	2	1472545808	quiz	reviewattempt	69904	\N
+398	2	1472545808	quiz	reviewcorrectness	69904	\N
+399	2	1472545808	quiz	reviewmarks	69904	\N
+400	2	1472545808	quiz	reviewspecificfeedback	69904	\N
+401	2	1472545808	quiz	reviewgeneralfeedback	69904	\N
+402	2	1472545808	quiz	reviewrightanswer	69904	\N
+403	2	1472545808	quiz	reviewoverallfeedback	4368	\N
+404	2	1472545808	quiz	showuserpicture	0	\N
+405	2	1472545808	quiz	showuserpicture_adv		\N
+406	2	1472545808	quiz	decimalpoints	2	\N
+407	2	1472545808	quiz	decimalpoints_adv		\N
+408	2	1472545808	quiz	questiondecimalpoints	-1	\N
+409	2	1472545808	quiz	questiondecimalpoints_adv	1	\N
+410	2	1472545808	quiz	showblocks	0	\N
+411	2	1472545808	quiz	showblocks_adv	1	\N
+412	2	1472545808	quiz	password		\N
+413	2	1472545808	quiz	password_adv		\N
+414	2	1472545808	quiz	subnet		\N
+415	2	1472545808	quiz	subnet_adv	1	\N
+416	2	1472545808	quiz	delay1	0	\N
+417	2	1472545808	quiz	delay1_adv	1	\N
+418	2	1472545808	quiz	delay2	0	\N
+419	2	1472545808	quiz	delay2_adv	1	\N
+420	2	1472545808	quiz	browsersecurity	-	\N
+421	2	1472545808	quiz	browsersecurity_adv	1	\N
+422	2	1472545808	quiz	initialnumfeedbacks	2	\N
+423	2	1472545808	quiz	autosaveperiod	60	\N
+424	2	1472545808	resource	framesize	130	\N
+425	2	1472545808	resource	displayoptions	0,1,4,5,6	\N
+426	2	1472545808	resource	printintro	1	\N
+427	2	1472545808	resource	display	0	\N
+428	2	1472545808	resource	showsize	0	\N
+429	2	1472545808	resource	showtype	0	\N
+430	2	1472545808	resource	showdate	0	\N
+431	2	1472545808	resource	popupwidth	620	\N
+432	2	1472545808	resource	popupheight	450	\N
+433	2	1472545808	resource	filterfiles	0	\N
+434	2	1472545808	scorm	displaycoursestructure	0	\N
+435	2	1472545808	scorm	displaycoursestructure_adv		\N
+436	2	1472545808	scorm	popup	0	\N
+437	2	1472545808	scorm	popup_adv		\N
+438	2	1472545808	scorm	displayactivityname	1	\N
+439	2	1472545808	scorm	framewidth	100	\N
+440	2	1472545808	scorm	framewidth_adv	1	\N
+441	2	1472545808	scorm	frameheight	500	\N
+442	2	1472545808	scorm	frameheight_adv	1	\N
+443	2	1472545808	scorm	winoptgrp_adv	1	\N
+444	2	1472545808	scorm	scrollbars	0	\N
+445	2	1472545808	scorm	directories	0	\N
+446	2	1472545808	scorm	location	0	\N
+447	2	1472545808	scorm	menubar	0	\N
+448	2	1472545808	scorm	toolbar	0	\N
+449	2	1472545808	scorm	status	0	\N
+450	2	1472545808	scorm	skipview	0	\N
+451	2	1472545808	scorm	skipview_adv	1	\N
+452	2	1472545808	scorm	hidebrowse	0	\N
+453	2	1472545808	scorm	hidebrowse_adv	1	\N
+454	2	1472545808	scorm	hidetoc	0	\N
+455	2	1472545808	scorm	hidetoc_adv	1	\N
+456	2	1472545808	scorm	nav	1	\N
+457	2	1472545808	scorm	nav_adv	1	\N
+458	2	1472545808	scorm	navpositionleft	-100	\N
+459	2	1472545808	scorm	navpositionleft_adv	1	\N
+460	2	1472545808	scorm	navpositiontop	-100	\N
+461	2	1472545808	scorm	navpositiontop_adv	1	\N
+462	2	1472545808	scorm	collapsetocwinsize	767	\N
+463	2	1472545808	scorm	collapsetocwinsize_adv	1	\N
+464	2	1472545808	scorm	displayattemptstatus	1	\N
+465	2	1472545808	scorm	displayattemptstatus_adv		\N
+466	2	1472545808	scorm	grademethod	1	\N
+467	2	1472545808	scorm	maxgrade	100	\N
+468	2	1472545808	scorm	maxattempt	0	\N
+469	2	1472545808	scorm	whatgrade	0	\N
+470	2	1472545809	scorm	forcecompleted	0	\N
+471	2	1472545809	scorm	forcenewattempt	0	\N
+472	2	1472545809	scorm	autocommit	0	\N
+473	2	1472545809	scorm	masteryoverride	1	\N
+474	2	1472545809	scorm	lastattemptlock	0	\N
+475	2	1472545809	scorm	auto	0	\N
+476	2	1472545809	scorm	updatefreq	0	\N
+477	2	1472545809	scorm	scorm12standard	1	\N
+478	2	1472545809	scorm	allowtypeexternal	0	\N
+479	2	1472545809	scorm	allowtypelocalsync	0	\N
+480	2	1472545809	scorm	allowtypeexternalaicc	0	\N
+481	2	1472545809	scorm	allowaicchacp	0	\N
+482	2	1472545809	scorm	aicchacptimeout	30	\N
+483	2	1472545809	scorm	aicchacpkeepsessiondata	1	\N
+484	2	1472545809	scorm	aiccuserid	1	\N
+485	2	1472545809	scorm	forcejavascript	1	\N
+486	2	1472545809	scorm	allowapidebug	0	\N
+487	2	1472545809	scorm	apidebugmask	.*	\N
+488	2	1472545809	scorm	protectpackagedownloads	0	\N
+489	2	1472545809	url	framesize	130	\N
+490	2	1472545809	url	secretphrase		\N
+491	2	1472545809	url	rolesinparams	0	\N
+492	2	1472545809	url	displayoptions	0,1,5,6	\N
+493	2	1472545809	url	printintro	1	\N
+494	2	1472545809	url	display	0	\N
+495	2	1472545809	url	popupwidth	620	\N
+496	2	1472545809	url	popupheight	450	\N
+497	2	1472545809	workshop	grade	80	\N
+498	2	1472545809	workshop	gradinggrade	20	\N
+499	2	1472545809	workshop	gradedecimals	0	\N
+500	2	1472545809	workshop	strategy	accumulative	\N
+501	2	1472545809	workshop	examplesmode	0	\N
+502	2	1472545809	workshopallocation_random	numofreviews	5	\N
+503	2	1472545809	workshopform_numerrors	grade0	No	\N
+504	2	1472545809	workshopform_numerrors	grade1	Yes	\N
+505	2	1472545809	workshopeval_best	comparison	5	\N
+506	2	1472545809	tool_recyclebin	coursebinenable	1	\N
+507	2	1472545809	tool_recyclebin	coursebinexpiry	604800	\N
+508	2	1472545809	tool_recyclebin	categorybinenable	1	\N
+509	2	1472545809	tool_recyclebin	categorybinexpiry	604800	\N
+510	2	1472545809	tool_recyclebin	autohide	1	\N
+511	2	1472545809	antivirus_clamav	pathtoclam		\N
+512	2	1472545809	antivirus_clamav	quarantinedir		\N
+513	2	1472545809	antivirus_clamav	clamfailureonupload	donothing	\N
+514	2	1472545809	\N	registerauth		\N
+515	2	1472545809	\N	authloginviaemail	0	\N
+516	2	1472545809	\N	allowaccountssameemail	0	\N
+517	2	1472545809	\N	authpreventaccountcreation	0	\N
+518	2	1472545809	\N	loginpageautofocus	0	\N
+519	2	1472545809	\N	guestloginbutton	1	\N
+520	2	1472545809	\N	limitconcurrentlogins	0	\N
+521	2	1472545809	\N	alternateloginurl		\N
+522	2	1472545809	\N	forgottenpasswordurl		\N
+523	2	1472545809	\N	auth_instructions		\N
+524	2	1472545809	\N	allowemailaddresses		\N
+525	2	1472545809	\N	denyemailaddresses		\N
+526	2	1472545809	\N	verifychangedemail	1	\N
+527	2	1472545809	\N	recaptchapublickey		\N
+528	2	1472545809	\N	recaptchaprivatekey		\N
+529	2	1472545809	\N	block_course_list_adminview	all	\N
+530	2	1472545809	\N	block_course_list_hideallcourseslink	0	\N
+531	2	1472545809	block_course_overview	defaultmaxcourses	10	\N
+532	2	1472545809	block_course_overview	forcedefaultmaxcourses	0	\N
+533	2	1472545809	block_course_overview	showchildren	0	\N
+534	2	1472545809	block_course_overview	showwelcomearea	0	\N
+535	2	1472545809	block_course_overview	showcategories	0	\N
+536	2	1472545809	\N	block_html_allowcssclasses	0	\N
+537	2	1472545809	\N	block_online_users_timetosee	5	\N
+538	2	1472545809	\N	block_rss_client_num_entries	5	\N
+539	2	1472545810	\N	block_rss_client_timeout	30	\N
+540	2	1472545810	block_section_links	numsections1	22	\N
+541	2	1472545810	block_section_links	incby1	2	\N
+542	2	1472545810	block_section_links	numsections2	40	\N
+543	2	1472545810	block_section_links	incby2	5	\N
+544	2	1472545810	block_tag_youtube	apikey		\N
+545	2	1472545810	cachestore_memcache	testservers		\N
+546	2	1472545810	cachestore_memcached	testservers		\N
+547	2	1472545810	cachestore_mongodb	testserver		\N
+548	2	1472545810	format_singleactivity	activitytype	forum	\N
+549	2	1472545810	enrol_cohort	roleid	5	\N
+550	2	1472545810	enrol_cohort	unenrolaction	0	\N
+551	2	1472545810	enrol_database	dbtype		\N
+552	2	1472545810	enrol_database	dbhost	localhost	\N
+553	2	1472545810	enrol_database	dbuser		\N
+554	2	1472545810	enrol_database	dbpass		\N
+555	2	1472545810	enrol_database	dbname		\N
+556	2	1472545810	enrol_database	dbencoding	utf-8	\N
+557	2	1472545810	enrol_database	dbsetupsql		\N
+558	2	1472545810	enrol_database	dbsybasequoting	0	\N
+559	2	1472545810	enrol_database	debugdb	0	\N
+560	2	1472545810	enrol_database	localcoursefield	idnumber	\N
+561	2	1472545810	enrol_database	localuserfield	idnumber	\N
+562	2	1472545810	enrol_database	localrolefield	shortname	\N
+563	2	1472545810	enrol_database	localcategoryfield	id	\N
+564	2	1472545810	enrol_database	remoteenroltable		\N
+565	2	1472545810	enrol_database	remotecoursefield		\N
+566	2	1472545810	enrol_database	remoteuserfield		\N
+567	2	1472545810	enrol_database	remoterolefield		\N
+568	2	1472545810	enrol_database	remoteotheruserfield		\N
+569	2	1472545810	enrol_database	defaultrole	5	\N
+570	2	1472545810	enrol_database	ignorehiddencourses	0	\N
+571	2	1472545810	enrol_database	unenrolaction	0	\N
+572	2	1472545810	enrol_database	newcoursetable		\N
+573	2	1472545810	enrol_database	newcoursefullname	fullname	\N
+574	2	1472545810	enrol_database	newcourseshortname	shortname	\N
+575	2	1472545810	enrol_database	newcourseidnumber	idnumber	\N
+576	2	1472545810	enrol_database	newcoursecategory		\N
+577	2	1472545810	enrol_database	defaultcategory	1	\N
+578	2	1472545810	enrol_database	templatecourse		\N
+579	2	1472545810	enrol_flatfile	location		\N
+580	2	1472545810	enrol_flatfile	encoding	UTF-8	\N
+581	2	1472545810	enrol_flatfile	mailstudents	0	\N
+582	2	1472545810	enrol_flatfile	mailteachers	0	\N
+583	2	1472545810	enrol_flatfile	mailadmins	0	\N
+584	2	1472545810	enrol_flatfile	unenrolaction	3	\N
+585	2	1472545811	enrol_flatfile	expiredaction	3	\N
+586	2	1472545811	enrol_guest	requirepassword	0	\N
+587	2	1472545811	enrol_guest	usepasswordpolicy	0	\N
+588	2	1472545811	enrol_guest	showhint	0	\N
+589	2	1472545811	enrol_guest	defaultenrol	1	\N
+590	2	1472545811	enrol_guest	status	1	\N
+591	2	1472545811	enrol_guest	status_adv		\N
+592	2	1472545811	enrol_imsenterprise	imsfilelocation		\N
+593	2	1472545811	enrol_imsenterprise	logtolocation		\N
+594	2	1472545811	enrol_imsenterprise	mailadmins	0	\N
+595	2	1472545811	enrol_imsenterprise	createnewusers	0	\N
+596	2	1472545811	enrol_imsenterprise	imsdeleteusers	0	\N
+597	2	1472545811	enrol_imsenterprise	fixcaseusernames	0	\N
+598	2	1472545811	enrol_imsenterprise	fixcasepersonalnames	0	\N
+599	2	1472545811	enrol_imsenterprise	imssourcedidfallback	0	\N
+600	2	1472545811	enrol_imsenterprise	imsrolemap01	5	\N
+601	2	1472545811	enrol_imsenterprise	imsrolemap02	3	\N
+602	2	1472545811	enrol_imsenterprise	imsrolemap03	3	\N
+603	2	1472545811	enrol_imsenterprise	imsrolemap04	5	\N
+604	2	1472545811	enrol_imsenterprise	imsrolemap05	0	\N
+605	2	1472545811	enrol_imsenterprise	imsrolemap06	4	\N
+606	2	1472545811	enrol_imsenterprise	imsrolemap07	0	\N
+607	2	1472545811	enrol_imsenterprise	imsrolemap08	4	\N
+608	2	1472545811	enrol_imsenterprise	truncatecoursecodes	0	\N
+609	2	1472545811	enrol_imsenterprise	createnewcourses	0	\N
+610	2	1472545811	enrol_imsenterprise	createnewcategories	0	\N
+611	2	1472545811	enrol_imsenterprise	imsunenrol	0	\N
+612	2	1472545811	enrol_imsenterprise	imscoursemapshortname	coursecode	\N
+613	2	1472545811	enrol_imsenterprise	imscoursemapfullname	short	\N
+614	2	1472545811	enrol_imsenterprise	imscoursemapsummary	ignore	\N
+615	2	1472545811	enrol_imsenterprise	imsrestricttarget		\N
+616	2	1472545811	enrol_imsenterprise	imscapitafix	0	\N
+617	2	1472545811	enrol_lti	emaildisplay	2	\N
+618	2	1472545811	enrol_lti	city		\N
+619	2	1472545811	enrol_lti	country		\N
+620	2	1472545811	enrol_lti	timezone	99	\N
+621	2	1472545811	enrol_lti	lang	en	\N
+622	2	1472545811	enrol_lti	institution		\N
+623	2	1472545811	enrol_manual	expiredaction	1	\N
+624	2	1472545811	enrol_manual	expirynotifyhour	6	\N
+625	2	1472545811	enrol_manual	defaultenrol	1	\N
+626	2	1472545811	enrol_manual	status	0	\N
+627	2	1472545811	enrol_manual	roleid	5	\N
+628	2	1472545811	enrol_manual	enrolstart	4	\N
+629	2	1472545811	enrol_manual	enrolperiod	0	\N
+630	2	1472545811	enrol_manual	expirynotify	0	\N
+631	2	1472545811	enrol_manual	expirythreshold	86400	\N
+632	2	1472545811	enrol_meta	nosyncroleids		\N
+633	2	1472545811	enrol_meta	syncall	1	\N
+634	2	1472545811	enrol_meta	unenrolaction	3	\N
+635	2	1472545811	enrol_meta	coursesort	sortorder	\N
+636	2	1472545811	enrol_mnet	roleid	5	\N
+637	2	1472545811	enrol_mnet	roleid_adv	1	\N
+638	2	1472545811	enrol_paypal	paypalbusiness		\N
+639	2	1472545811	enrol_paypal	mailstudents	0	\N
+640	2	1472545811	enrol_paypal	mailteachers	0	\N
+641	2	1472545811	enrol_paypal	mailadmins	0	\N
+642	2	1472545811	enrol_paypal	expiredaction	3	\N
+643	2	1472545811	enrol_paypal	status	1	\N
+644	2	1472545811	enrol_paypal	cost	0	\N
+645	2	1472545811	enrol_paypal	currency	USD	\N
+646	2	1472545811	enrol_paypal	roleid	5	\N
+647	2	1472545811	enrol_paypal	enrolperiod	0	\N
+648	2	1472545811	enrol_self	requirepassword	0	\N
+649	2	1472545811	enrol_self	usepasswordpolicy	0	\N
+650	2	1472545811	enrol_self	showhint	0	\N
+651	2	1472545811	enrol_self	expiredaction	1	\N
+652	2	1472545811	enrol_self	expirynotifyhour	6	\N
+653	2	1472545811	enrol_self	defaultenrol	1	\N
+654	2	1472545811	enrol_self	status	1	\N
+655	2	1472545811	enrol_self	newenrols	1	\N
+656	2	1472545811	enrol_self	groupkey	0	\N
+657	2	1472545811	enrol_self	roleid	5	\N
+658	2	1472545811	enrol_self	enrolperiod	0	\N
+659	2	1472545811	enrol_self	expirynotify	0	\N
+660	2	1472545811	enrol_self	expirythreshold	86400	\N
+661	2	1472545811	enrol_self	longtimenosee	0	\N
+662	2	1472545811	enrol_self	maxenrolled	0	\N
+663	2	1472545811	enrol_self	sendcoursewelcomemessage	1	\N
+664	2	1472545812	\N	filteruploadedfiles	0	\N
+665	2	1472545812	\N	filtermatchoneperpage	0	\N
+666	2	1472545812	\N	filtermatchonepertext	0	\N
+667	2	1472545812	\N	filter_censor_badwords		\N
+668	2	1472545812	filter_emoticon	formats	1,4,0	\N
+669	2	1472545812	filter_mathjaxloader	httpurl	http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js	\N
+670	2	1472545812	filter_mathjaxloader	httpsurl	https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js	\N
+671	2	1472545812	filter_mathjaxloader	texfiltercompatibility	0	\N
+672	2	1472545812	filter_mathjaxloader	mathjaxconfig	\nMathJax.Hub.Config({\n    config: ["Accessible.js", "Safe.js"],\n    errorSettings: { message: ["!"] },\n    skipStartupTypeset: true,\n    messageStyle: "none"\n});\n	\N
+673	2	1472545812	filter_mathjaxloader	additionaldelimiters		\N
+674	2	1472545812	\N	filter_multilang_force_old	0	\N
+675	2	1472545812	filter_tex	latexpreamble	\\usepackage[latin1]{inputenc}\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\RequirePackage{amsmath,amssymb,latexsym}\n	\N
+676	2	1472545812	filter_tex	latexbackground	#FFFFFF	\N
+677	2	1472545812	filter_tex	density	120	\N
+678	2	1472545812	filter_tex	pathlatex	/usr/bin/latex	\N
+679	2	1472545812	filter_tex	pathdvips	/usr/bin/dvips	\N
+680	2	1472545812	filter_tex	pathconvert	/usr/bin/convert	\N
+681	2	1472545812	filter_tex	pathdvisvgm	/usr/bin/dvisvgm	\N
+682	2	1472545812	filter_tex	pathmimetex		\N
+683	2	1472545812	filter_tex	convertformat	gif	\N
+684	2	1472545812	filter_urltolink	formats	0	\N
+685	2	1472545812	filter_urltolink	embedimages	1	\N
+686	2	1472545812	\N	sitedefaultlicense	allrightsreserved	\N
+687	2	1472545812	logstore_database	dbdriver		\N
+688	2	1472545812	logstore_database	dbhost		\N
+689	2	1472545812	logstore_database	dbuser		\N
+690	2	1472545812	logstore_database	dbpass		\N
+691	2	1472545812	logstore_database	dbname		\N
+692	2	1472545812	logstore_database	dbtable		\N
+693	2	1472545812	logstore_database	dbpersist	0	\N
+694	2	1472545812	logstore_database	dbsocket		\N
+695	2	1472545812	logstore_database	dbport		\N
+696	2	1472545812	logstore_database	dbschema		\N
+697	2	1472545812	logstore_database	dbcollation		\N
+698	2	1472545812	logstore_database	buffersize	50	\N
+699	2	1472545812	logstore_database	logguests	0	\N
+700	2	1472545812	logstore_database	includelevels	1,2,0	\N
+701	2	1472545812	logstore_database	includeactions	c,r,u,d	\N
+702	2	1472545812	logstore_legacy	loglegacy	0	\N
+703	2	1472545812	\N	logguests	1	\N
+704	2	1472545812	\N	loglifetime	0	\N
+705	2	1472545812	logstore_standard	logguests	1	\N
+706	2	1472545812	logstore_standard	loglifetime	0	\N
+707	2	1472545812	logstore_standard	buffersize	50	\N
+708	2	1472545812	\N	airnotifierurl	https://messages.moodle.net	\N
+709	2	1472545812	\N	airnotifierport	443	\N
+710	2	1472545812	\N	airnotifiermobileappname	com.moodle.moodlemobile	\N
+711	2	1472545812	\N	airnotifierappname	commoodlemoodlemobile	\N
+712	2	1472545812	\N	airnotifieraccesskey		\N
+713	2	1472545812	\N	smtphosts		\N
+714	2	1472545812	\N	smtpsecure		\N
+715	2	1472545812	\N	smtpauthtype	LOGIN	\N
+716	2	1472545812	\N	smtpuser		\N
+717	2	1472545812	\N	smtppass		\N
+718	2	1472545812	\N	smtpmaxbulk	1	\N
+719	2	1472545812	\N	noreplyaddress	noreply@10.0.0.10	\N
+720	2	1472545812	\N	emailonlyfromnoreplyaddress	0	\N
+721	2	1472545812	\N	sitemailcharset	0	\N
+722	2	1472545812	\N	allowusermailcharset	0	\N
+723	2	1472545812	\N	allowattachments	1	\N
+724	2	1472545812	\N	mailnewline	LF	\N
+725	2	1472545812	\N	jabberhost		\N
+726	2	1472545812	\N	jabberserver		\N
+727	2	1472545812	\N	jabberusername		\N
+728	2	1472545812	\N	jabberpassword		\N
+729	2	1472545812	\N	jabberport	5222	\N
+730	2	1472545812	\N	portfolio_moderate_filesize_threshold	1048576	\N
+731	2	1472545812	\N	portfolio_high_filesize_threshold	5242880	\N
+732	2	1472545812	\N	portfolio_moderate_db_threshold	20	\N
+733	2	1472545812	\N	portfolio_high_db_threshold	50	\N
+734	2	1472545812	question_preview	behaviour	deferredfeedback	\N
+735	2	1472545812	question_preview	correctness	1	\N
+736	2	1472545812	question_preview	marks	2	\N
+737	2	1472545812	question_preview	markdp	2	\N
+738	2	1472545812	question_preview	feedback	1	\N
+739	2	1472545812	question_preview	generalfeedback	1	\N
+740	2	1472545812	question_preview	rightanswer	1	\N
+741	2	1472545813	question_preview	history	0	\N
+742	2	1472545813	\N	repositorycacheexpire	120	\N
+743	2	1472545813	\N	repositorygetfiletimeout	30	\N
+744	2	1472545813	\N	repositorysyncfiletimeout	1	\N
+745	2	1472545813	\N	repositorysyncimagetimeout	3	\N
+746	2	1472545813	\N	repositoryallowexternallinks	1	\N
+747	2	1472545813	\N	legacyfilesinnewcourses	0	\N
+748	2	1472545813	\N	legacyfilesaddallowed	1	\N
+749	2	1472545813	\N	searchengine	solr	\N
+750	2	1472545813	mod_assign	search_activity_enabled	1	\N
+751	2	1472545813	mod_book	search_activity_enabled	1	\N
+752	2	1472545813	mod_book	search_chapter_enabled	1	\N
+753	2	1472545813	mod_chat	search_activity_enabled	1	\N
+754	2	1472545813	mod_choice	search_activity_enabled	1	\N
+755	2	1472545813	mod_data	search_activity_enabled	1	\N
+756	2	1472545813	mod_feedback	search_activity_enabled	1	\N
+757	2	1472545813	mod_folder	search_activity_enabled	1	\N
+758	2	1472545813	mod_forum	search_activity_enabled	1	\N
+759	2	1472545813	mod_forum	search_post_enabled	1	\N
+760	2	1472545813	mod_glossary	search_activity_enabled	1	\N
+761	2	1472545813	mod_glossary	search_entry_enabled	1	\N
+762	2	1472545813	mod_imscp	search_activity_enabled	1	\N
+763	2	1472545813	mod_label	search_activity_enabled	1	\N
+764	2	1472545813	mod_lesson	search_activity_enabled	1	\N
+765	2	1472545813	mod_lti	search_activity_enabled	1	\N
+766	2	1472545813	mod_page	search_activity_enabled	1	\N
+767	2	1472545813	mod_quiz	search_activity_enabled	1	\N
+768	2	1472545813	mod_resource	search_activity_enabled	1	\N
+769	2	1472545813	mod_scorm	search_activity_enabled	1	\N
+770	2	1472545813	mod_survey	search_activity_enabled	1	\N
+771	2	1472545813	mod_url	search_activity_enabled	1	\N
+772	2	1472545813	mod_wiki	search_activity_enabled	1	\N
+773	2	1472545813	mod_wiki	search_collaborative_page_enabled	1	\N
+774	2	1472545813	mod_workshop	search_activity_enabled	1	\N
+775	2	1472545813	core_search	core_course_mycourse_enabled	1	\N
+776	2	1472545813	editor_atto	toolbar	collapse = collapse\nstyle1 = title, bold, italic\nlist = unorderedlist, orderedlist\nlinks = link\nfiles = image, media, managefiles\nstyle2 = underline, strike, subscript, superscript\nalign = align\nindent = indent\ninsert = equation, charmap, table, clear\nundo = undo\naccessibility = accessibilitychecker, accessibilityhelper\nother = html	\N
+777	2	1472545813	editor_atto	autosavefrequency	60	\N
+778	2	1472545813	atto_collapse	showgroups	5	\N
+779	2	1472545813	atto_equation	librarygroup1	\n\\cdot\n\\times\n\\ast\n\\div\n\\diamond\n\\pm\n\\mp\n\\oplus\n\\ominus\n\\otimes\n\\oslash\n\\odot\n\\circ\n\\bullet\n\\asymp\n\\equiv\n\\subseteq\n\\supseteq\n\\leq\n\\geq\n\\preceq\n\\succeq\n\\sim\n\\simeq\n\\approx\n\\subset\n\\supset\n\\ll\n\\gg\n\\prec\n\\succ\n\\infty\n\\in\n\\ni\n\\forall\n\\exists\n\\neq\n	\N
+780	2	1472545813	atto_equation	librarygroup2	\n\\leftarrow\n\\rightarrow\n\\uparrow\n\\downarrow\n\\leftrightarrow\n\\nearrow\n\\searrow\n\\swarrow\n\\nwarrow\n\\Leftarrow\n\\Rightarrow\n\\Uparrow\n\\Downarrow\n\\Leftrightarrow\n	\N
+781	2	1472545813	atto_equation	librarygroup3	\n\\alpha\n\\beta\n\\gamma\n\\delta\n\\epsilon\n\\zeta\n\\eta\n\\theta\n\\iota\n\\kappa\n\\lambda\n\\mu\n\\nu\n\\xi\n\\pi\n\\rho\n\\sigma\n\\tau\n\\upsilon\n\\phi\n\\chi\n\\psi\n\\omega\n\\Gamma\n\\Delta\n\\Theta\n\\Lambda\n\\Xi\n\\Pi\n\\Sigma\n\\Upsilon\n\\Phi\n\\Psi\n\\Omega\n	\N
+782	2	1472545813	atto_equation	librarygroup4	\n\\sum{a,b}\n\\sqrt[a]{b+c}\n\\int_{a}^{b}{c}\n\\iint_{a}^{b}{c}\n\\iiint_{a}^{b}{c}\n\\oint{a}\n(a)\n[a]\n\\lbrace{a}\\rbrace\n\\left| \\begin{matrix} a_1 & a_2 \\ a_3 & a_4 \\end{matrix} \\right|\n\\frac{a}{b+c}\n\\vec{a}\n\\binom {a} {b}\n{a \\brack b}\n{a \\brace b}\n	\N
+783	2	1472545813	atto_table	allowborders	0	\N
+784	2	1472545813	atto_table	allowbackgroundcolour	0	\N
+785	2	1472545813	atto_table	allowwidth	0	\N
+786	2	1472545813	editor_tinymce	customtoolbar	wrap,formatselect,wrap,bold,italic,wrap,bullist,numlist,wrap,link,unlink,wrap,image\n\nundo,redo,wrap,underline,strikethrough,sub,sup,wrap,justifyleft,justifycenter,justifyright,wrap,outdent,indent,wrap,forecolor,backcolor,wrap,ltr,rtl\n\nfontselect,fontsizeselect,wrap,code,search,replace,wrap,nonbreaking,charmap,table,wrap,cleanup,removeformat,pastetext,pasteword,wrap,fullscreen	\N
+884	2	1472545815	\N	calendar_exportlookahead	365	\N
+885	2	1472545815	\N	calendar_exportlookback	5	\N
+787	2	1472545813	editor_tinymce	fontselectlist	Trebuchet=Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,arial,helvetica,sans-serif;Impact=impact;Wingdings=wingdings	\N
+788	2	1472545813	editor_tinymce	customconfig		\N
+789	2	1472545813	tinymce_moodleemoticon	requireemoticon	1	\N
+790	2	1472545813	tinymce_spellchecker	spellengine		\N
+791	2	1472545813	tinymce_spellchecker	spelllanguagelist	+English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Polish=pl,Portuguese=pt,Spanish=es,Swedish=sv	\N
+792	2	1472545813	\N	enablemobilewebservice	0	\N
+793	2	1472545813	\N	mobilecssurl		\N
+794	2	1472545813	\N	enablewsdocumentation	0	\N
+795	2	1472545813	\N	allowbeforeblock	0	\N
+796	2	1472545813	\N	allowedip		\N
+797	2	1472545813	\N	blockedip		\N
+798	2	1472545813	\N	protectusernames	1	\N
+799	2	1472545813	\N	forcelogin	0	\N
+800	2	1472545813	\N	forceloginforprofiles	1	\N
+801	2	1472545813	\N	forceloginforprofileimage	0	\N
+802	2	1472545813	\N	opentogoogle	0	\N
+803	2	1472545813	\N	profileroles	5,4,3	\N
+804	2	1472545813	\N	maxbytes	0	\N
+805	2	1472545814	\N	userquota	104857600	\N
+806	2	1472545814	\N	allowobjectembed	0	\N
+807	2	1472545814	\N	enabletrusttext	0	\N
+808	2	1472545814	\N	maxeditingtime	1800	\N
+809	2	1472545814	\N	extendedusernamechars	0	\N
+810	2	1472545814	\N	sitepolicy		\N
+811	2	1472545814	\N	sitepolicyguest		\N
+812	2	1472545814	\N	keeptagnamecase	1	\N
+813	2	1472545814	\N	profilesforenrolledusersonly	1	\N
+814	2	1472545814	\N	cronclionly	1	\N
+815	2	1472545814	\N	cronremotepassword		\N
+816	2	1472545814	\N	lockoutthreshold	0	\N
+817	2	1472545814	\N	lockoutwindow	1800	\N
+818	2	1472545814	\N	lockoutduration	1800	\N
+819	2	1472545814	\N	passwordpolicy	1	\N
+820	2	1472545814	\N	minpasswordlength	8	\N
+821	2	1472545814	\N	minpassworddigits	1	\N
+822	2	1472545814	\N	minpasswordlower	1	\N
+823	2	1472545814	\N	minpasswordupper	1	\N
+824	2	1472545814	\N	minpasswordnonalphanum	1	\N
+825	2	1472545814	\N	maxconsecutiveidentchars	0	\N
+826	2	1472545814	\N	passwordreuselimit	0	\N
+827	2	1472545814	\N	pwresettime	1800	\N
+828	2	1472545814	\N	passwordchangelogout	0	\N
+829	2	1472545814	\N	groupenrolmentkeypolicy	1	\N
+830	2	1472545814	\N	disableuserimages	0	\N
+831	2	1472545814	\N	emailchangeconfirmation	1	\N
+832	2	1472545814	\N	rememberusername	2	\N
+833	2	1472545814	\N	strictformsrequired	0	\N
+834	2	1472545814	\N	loginhttps	0	\N
+835	2	1472545814	\N	cookiesecure	0	\N
+836	2	1472545814	\N	cookiehttponly	0	\N
+837	2	1472545814	\N	allowframembedding	0	\N
+838	2	1472545814	\N	loginpasswordautocomplete	0	\N
+839	2	1472545814	\N	displayloginfailures	0	\N
+840	2	1472545814	\N	notifyloginfailures		\N
+841	2	1472545814	\N	notifyloginthreshold	10	\N
+842	2	1472545814	\N	themelist		\N
+843	2	1472545814	\N	themedesignermode	0	\N
+844	2	1472545814	\N	allowuserthemes	0	\N
+845	2	1472545814	\N	allowcoursethemes	0	\N
+846	2	1472545814	\N	allowcategorythemes	0	\N
+847	2	1472545814	\N	allowthemechangeonurl	0	\N
+848	2	1472545814	\N	allowuserblockhiding	1	\N
+849	2	1472545814	\N	allowblockstodock	1	\N
+850	2	1472545814	\N	custommenuitems		\N
+851	2	1472545814	\N	customusermenuitems	grades,grades|/grade/report/mygrades.php|grades\nmessages,message|/message/index.php|message\npreferences,moodle|/user/preferences.php|preferences	\N
+852	2	1472545814	\N	enabledevicedetection	1	\N
+853	2	1472545814	\N	devicedetectregex	[]	\N
+854	2	1472545814	theme_clean	invert	0	\N
+855	2	1472545814	theme_clean	logo		\N
+856	2	1472545814	theme_clean	smalllogo		\N
+857	2	1472545814	theme_clean	sitename	1	\N
+858	2	1472545814	theme_clean	customcss		\N
+859	2	1472545814	theme_clean	footnote		\N
+860	2	1472545814	theme_more	textcolor	#333366	\N
+861	2	1472545814	theme_more	linkcolor	#FF6500	\N
+862	2	1472545814	theme_more	bodybackground		\N
+863	2	1472545814	theme_more	backgroundimage		\N
+864	2	1472545814	theme_more	backgroundrepeat	repeat	\N
+865	2	1472545814	theme_more	backgroundposition	0	\N
+866	2	1472545814	theme_more	backgroundfixed	0	\N
+867	2	1472545814	theme_more	contentbackground	#FFFFFF	\N
+868	2	1472545814	theme_more	secondarybackground	#FFFFFF	\N
+869	2	1472545814	theme_more	invert	1	\N
+870	2	1472545814	theme_more	logo		\N
+871	2	1472545814	theme_more	smalllogo		\N
+872	2	1472545815	theme_more	sitename	1	\N
+873	2	1472545815	theme_more	customcss		\N
+874	2	1472545815	theme_more	footnote		\N
+875	2	1472545815	\N	calendartype	gregorian	\N
+876	2	1472545815	\N	calendar_adminseesall	0	\N
+877	2	1472545815	\N	calendar_site_timeformat	0	\N
+878	2	1472545815	\N	calendar_startwday	1	\N
+879	2	1472545815	\N	calendar_weekend	65	\N
+880	2	1472545815	\N	calendar_lookahead	21	\N
+881	2	1472545815	\N	calendar_maxevents	10	\N
+882	2	1472545815	\N	enablecalendarexport	1	\N
+883	2	1472545815	\N	calendar_customexport	1	\N
+886	2	1472545815	\N	calendar_exportsalt	VwrFht1uS7cUS6OkX8ZAaLZleMCIVUt8WAmPra8rSuaDvsEnTBoYKqme2xGX	\N
+887	2	1472545815	\N	calendar_showicalsource	1	\N
+888	2	1472545815	\N	useblogassociations	1	\N
+889	2	1472545815	\N	bloglevel	4	\N
+890	2	1472545815	\N	useexternalblogs	1	\N
+891	2	1472545815	\N	externalblogcrontime	86400	\N
+892	2	1472545815	\N	maxexternalblogsperuser	1	\N
+893	2	1472545815	\N	blogusecomments	1	\N
+894	2	1472545815	\N	blogshowcommentscount	1	\N
+895	2	1472545815	\N	defaulthomepage	1	\N
+896	2	1472545815	\N	allowguestmymoodle	1	\N
+897	2	1472545815	\N	navshowfullcoursenames	0	\N
+898	2	1472545815	\N	navshowcategories	1	\N
+899	2	1472545815	\N	navshowmycoursecategories	0	\N
+900	2	1472545815	\N	navshowallcourses	0	\N
+901	2	1472545815	\N	navexpandmycourses	1	\N
+902	2	1472545815	\N	navsortmycoursessort	sortorder	\N
+903	2	1472545815	\N	navcourselimit	20	\N
+904	2	1472545815	\N	usesitenameforsitepages	0	\N
+905	2	1472545815	\N	linkadmincategories	0	\N
+906	2	1472545815	\N	linkcoursesections	0	\N
+907	2	1472545815	\N	navshowfrontpagemods	1	\N
+908	2	1472545815	\N	navadduserpostslinks	1	\N
+909	2	1472545815	\N	formatstringstriptags	1	\N
+910	2	1472545815	\N	emoticons	[{"text":":-)","imagename":"s\\/smiley","imagecomponent":"core","altidentifier":"smiley","altcomponent":"core_pix"},{"text":":)","imagename":"s\\/smiley","imagecomponent":"core","altidentifier":"smiley","altcomponent":"core_pix"},{"text":":-D","imagename":"s\\/biggrin","imagecomponent":"core","altidentifier":"biggrin","altcomponent":"core_pix"},{"text":";-)","imagename":"s\\/wink","imagecomponent":"core","altidentifier":"wink","altcomponent":"core_pix"},{"text":":-\\/","imagename":"s\\/mixed","imagecomponent":"core","altidentifier":"mixed","altcomponent":"core_pix"},{"text":"V-.","imagename":"s\\/thoughtful","imagecomponent":"core","altidentifier":"thoughtful","altcomponent":"core_pix"},{"text":":-P","imagename":"s\\/tongueout","imagecomponent":"core","altidentifier":"tongueout","altcomponent":"core_pix"},{"text":":-p","imagename":"s\\/tongueout","imagecomponent":"core","altidentifier":"tongueout","altcomponent":"core_pix"},{"text":"B-)","imagename":"s\\/cool","imagecomponent":"core","altidentifier":"cool","altcomponent":"core_pix"},{"text":"^-)","imagename":"s\\/approve","imagecomponent":"core","altidentifier":"approve","altcomponent":"core_pix"},{"text":"8-)","imagename":"s\\/wideeyes","imagecomponent":"core","altidentifier":"wideeyes","altcomponent":"core_pix"},{"text":":o)","imagename":"s\\/clown","imagecomponent":"core","altidentifier":"clown","altcomponent":"core_pix"},{"text":":-(","imagename":"s\\/sad","imagecomponent":"core","altidentifier":"sad","altcomponent":"core_pix"},{"text":":(","imagename":"s\\/sad","imagecomponent":"core","altidentifier":"sad","altcomponent":"core_pix"},{"text":"8-.","imagename":"s\\/shy","imagecomponent":"core","altidentifier":"shy","altcomponent":"core_pix"},{"text":":-I","imagename":"s\\/blush","imagecomponent":"core","altidentifier":"blush","altcomponent":"core_pix"},{"text":":-X","imagename":"s\\/kiss","imagecomponent":"core","altidentifier":"kiss","altcomponent":"core_pix"},{"text":"8-o","imagename":"s\\/surprise","imagecomponent":"core","altidentifier":"surprise","altcomponent":"core_pix"},{"text":"P-|","imagename":"s\\/blackeye","imagecomponent":"core","altidentifier":"blackeye","altcomponent":"core_pix"},{"text":"8-[","imagename":"s\\/angry","imagecomponent":"core","altidentifier":"angry","altcomponent":"core_pix"},{"text":"(grr)","imagename":"s\\/angry","imagecomponent":"core","altidentifier":"angry","altcomponent":"core_pix"},{"text":"xx-P","imagename":"s\\/dead","imagecomponent":"core","altidentifier":"dead","altcomponent":"core_pix"},{"text":"|-.","imagename":"s\\/sleepy","imagecomponent":"core","altidentifier":"sleepy","altcomponent":"core_pix"},{"text":"}-]","imagename":"s\\/evil","imagecomponent":"core","altidentifier":"evil","altcomponent":"core_pix"},{"text":"(h)","imagename":"s\\/heart","imagecomponent":"core","altidentifier":"heart","altcomponent":"core_pix"},{"text":"(heart)","imagename":"s\\/heart","imagecomponent":"core","altidentifier":"heart","altcomponent":"core_pix"},{"text":"(y)","imagename":"s\\/yes","imagecomponent":"core","altidentifier":"yes","altcomponent":"core"},{"text":"(n)","imagename":"s\\/no","imagecomponent":"core","altidentifier":"no","altcomponent":"core"},{"text":"(martin)","imagename":"s\\/martin","imagecomponent":"core","altidentifier":"martin","altcomponent":"core_pix"},{"text":"( )","imagename":"s\\/egg","imagecomponent":"core","altidentifier":"egg","altcomponent":"core_pix"}]	\N
+911	2	1472545815	\N	core_media_enable_youtube	1	\N
+912	2	1472545815	\N	core_media_enable_vimeo	0	\N
+913	2	1472545815	\N	core_media_enable_mp3	1	\N
+914	2	1472545815	\N	core_media_enable_flv	1	\N
+915	2	1472545815	\N	core_media_enable_swf	1	\N
+916	2	1472545815	\N	core_media_enable_html5audio	1	\N
+917	2	1472545815	\N	core_media_enable_html5video	1	\N
+918	2	1472545815	\N	core_media_enable_qt	1	\N
+919	2	1472545815	\N	core_media_enable_wmp	1	\N
+920	2	1472545815	\N	core_media_enable_rm	1	\N
+921	2	1472545815	\N	docroot	http://docs.moodle.org	\N
+922	2	1472545815	\N	doclang		\N
+923	2	1472545815	\N	doctonewwindow	0	\N
+924	2	1472545815	\N	coursecontact	3	\N
+925	2	1472545815	\N	courselistshortnames	0	\N
+926	2	1472545815	\N	coursesperpage	20	\N
+927	2	1472545815	\N	courseswithsummarieslimit	10	\N
+928	2	1472545815	\N	courseoverviewfileslimit	1	\N
+929	2	1472545815	\N	courseoverviewfilesext	.jpg,.gif,.png	\N
+930	2	1472545816	\N	useexternalyui	0	\N
+931	2	1472545816	\N	yuicomboloading	1	\N
+932	2	1472545816	\N	cachejs	1	\N
+933	2	1472545816	\N	modchooserdefault	1	\N
+934	2	1472545816	\N	modeditingmenu	1	\N
+935	2	1472545816	\N	blockeditingmenu	1	\N
+936	2	1472545816	\N	additionalhtmlhead		\N
+937	2	1472545816	\N	additionalhtmltopofbody		\N
+938	2	1472545816	\N	additionalhtmlfooter		\N
+939	2	1472545816	\N	frontpage	6	\N
+940	2	1472545816	\N	frontpageloggedin	6	\N
+941	2	1472545816	\N	maxcategorydepth	2	\N
+942	2	1472545816	\N	frontpagecourselimit	200	\N
+943	2	1472545816	\N	commentsperpage	15	\N
+944	2	1472545816	\N	defaultfrontpageroleid	8	\N
+945	2	1472545816	\N	pathtodu		\N
+946	2	1472545816	\N	aspellpath		\N
+947	2	1472545816	\N	pathtodot		\N
+948	2	1472545816	\N	pathtogs	/usr/bin/gs	\N
+949	2	1472545816	\N	pathtounoconv	/usr/bin/unoconv	\N
+950	2	1472545816	\N	supportname	Admin User	\N
+951	2	1472545816	\N	supportemail		\N
+952	2	1472545816	\N	supportpage		\N
+953	2	1472545816	\N	dbsessions	0	\N
+954	2	1472545816	\N	sessioncookie		\N
+955	2	1472545816	\N	sessioncookiepath		\N
+956	2	1472545816	\N	sessioncookiedomain		\N
+957	2	1472545816	\N	statsfirstrun	none	\N
+958	2	1472545816	\N	statsmaxruntime	0	\N
+959	2	1472545816	\N	statsruntimedays	31	\N
+960	2	1472545816	\N	statsruntimestarthour	0	\N
+961	2	1472545816	\N	statsruntimestartminute	0	\N
+962	2	1472545816	\N	statsuserthreshold	0	\N
+963	2	1472545816	\N	slasharguments	1	\N
+964	2	1472545816	\N	getremoteaddrconf	0	\N
+965	2	1472545816	\N	proxyhost		\N
+966	2	1472545816	\N	proxyport	0	\N
+967	2	1472545816	\N	proxytype	HTTP	\N
+968	2	1472545816	\N	proxyuser		\N
+969	2	1472545816	\N	proxypassword		\N
+970	2	1472545816	\N	proxybypass	localhost, 127.0.0.1	\N
+971	2	1472545816	\N	maintenance_enabled	0	\N
+972	2	1472545816	\N	maintenance_message		\N
+973	2	1472545816	\N	deleteunconfirmed	168	\N
+974	2	1472545816	\N	deleteincompleteusers	0	\N
+975	2	1472545816	\N	disablegradehistory	0	\N
+976	2	1472545816	\N	gradehistorylifetime	0	\N
+977	2	1472545816	\N	tempdatafoldercleanup	168	\N
+978	2	1472545816	\N	extramemorylimit	512M	\N
+979	2	1472545817	\N	maxtimelimit	0	\N
+980	2	1472545817	\N	curlcache	120	\N
+981	2	1472545817	\N	curltimeoutkbitrate	56	\N
+982	2	1472545817	\N	updateautocheck	1	\N
+983	2	1472545817	\N	updateminmaturity	200	\N
+984	2	1472545817	\N	updatenotifybuilds	0	\N
+985	2	1472545817	\N	messageinbound_enabled	0	\N
+986	2	1472545817	\N	messageinbound_mailbox		\N
+987	2	1472545817	\N	messageinbound_domain		\N
+988	2	1472545817	\N	messageinbound_host		\N
+989	2	1472545817	\N	messageinbound_hostssl	ssl	\N
+990	2	1472545817	\N	messageinbound_hostuser		\N
+991	2	1472545817	\N	messageinbound_hostpass		\N
+992	2	1472545817	\N	enablesafebrowserintegration	0	\N
+993	2	1472545817	\N	dndallowtextandlinks	0	\N
+994	2	1472545817	\N	enablecssoptimiser	0	\N
+995	2	1472545817	\N	debug	0	32767
+996	2	1472545817	\N	debugsmtp	0	\N
+997	2	1472545817	\N	perfdebug	7	\N
+998	2	1472545817	\N	debugstringids	0	\N
+999	2	1472545817	\N	debugvalidators	0	\N
+1000	2	1472545817	\N	debugpageinfo	0	\N
+1001	2	1472545817	\N	profilingenabled	0	\N
+1002	2	1472545817	\N	profilingincluded		\N
+1003	2	1472545817	\N	profilingexcluded		\N
+1004	2	1472545817	\N	profilingautofrec	0	\N
+1005	2	1472545817	\N	profilingallowme	0	\N
+1006	2	1472545817	\N	profilingallowall	0	\N
+1007	2	1472545817	\N	profilinglifetime	1440	\N
+1008	2	1472545817	\N	profilingimportprefix	(I)	\N
+1009	2	1472545845	assignsubmission_file	maxbytes	1048576	\N
+1010	2	1472545846	\N	forum_maxbytes	512000	\N
+1011	2	1472545846	workshop	maxbytes	0	\N
+1012	2	1472545849	\N	calendar_exportsalt	yWZ9MkGxqvbcG9dd31YaFPh6SfmHlMET1blvKieJHiOAAoxN5ed6Xd2ZfCHF	VwrFht1uS7cUS6OkX8ZAaLZleMCIVUt8WAmPra8rSuaDvsEnTBoYKqme2xGX
+1013	2	1472545850	\N	debug	0	32767
 \.
 
 
@@ -62892,7 +62921,6 @@ COPY phpu_config_plugins (id, plugin, name, value) FROM stdin;
 164	message	email_provider_enrol_manual_expiry_notification_permitted	permitted
 165	message	message_provider_enrol_manual_expiry_notification_loggedin	email
 166	message	message_provider_enrol_manual_expiry_notification_loggedoff	email
-334	block_selfcompletion	version	2016052300
 167	message	email_provider_enrol_paypal_paypal_enrolment_permitted	permitted
 168	message	message_provider_enrol_paypal_paypal_enrolment_loggedin	email
 169	message	message_provider_enrol_paypal_paypal_enrolment_loggedoff	email
@@ -63056,6 +63084,7 @@ COPY phpu_config_plugins (id, plugin, name, value) FROM stdin;
 331	block_rss_client	version	2016052300
 332	block_search_forums	version	2016052300
 333	block_section_links	version	2016052300
+334	block_selfcompletion	version	2016052300
 335	block_settings	version	2016052300
 336	block_site_main_menu	version	2016052300
 337	block_social_activities	version	2016052300
@@ -63364,587 +63393,588 @@ COPY phpu_config_plugins (id, plugin, name, value) FROM stdin;
 681	logstore_legacy	version	2016052300
 682	logstore_standard	version	2016052300
 683	local_activity_bookmark	version	2015070800
-684	moodlecourse	visible	1
-685	moodlecourse	format	weeks
-686	moodlecourse	maxsections	52
-687	moodlecourse	numsections	10
-688	moodlecourse	hiddensections	0
-689	moodlecourse	coursedisplay	0
-690	moodlecourse	lang	
-691	moodlecourse	newsitems	5
-692	moodlecourse	showgrades	1
-693	moodlecourse	showreports	0
-694	moodlecourse	maxbytes	0
-695	moodlecourse	enablecompletion	0
-696	moodlecourse	groupmode	0
-697	moodlecourse	groupmodeforce	0
-698	backup	loglifetime	30
-699	backup	backup_general_users	1
-700	backup	backup_general_users_locked	
-701	backup	backup_general_anonymize	0
-702	backup	backup_general_anonymize_locked	
-703	backup	backup_general_role_assignments	1
-704	backup	backup_general_role_assignments_locked	
-705	backup	backup_general_activities	1
-706	backup	backup_general_activities_locked	
-707	backup	backup_general_blocks	1
-708	backup	backup_general_blocks_locked	
-709	backup	backup_general_filters	1
-710	backup	backup_general_filters_locked	
-711	backup	backup_general_comments	1
-712	backup	backup_general_comments_locked	
-713	backup	backup_general_badges	1
-714	backup	backup_general_badges_locked	
-715	backup	backup_general_userscompletion	1
-716	backup	backup_general_userscompletion_locked	
-717	backup	backup_general_logs	0
-718	backup	backup_general_logs_locked	
-719	backup	backup_general_histories	0
-720	backup	backup_general_histories_locked	
-721	backup	backup_general_questionbank	1
-722	backup	backup_general_questionbank_locked	
-723	backup	backup_general_groups	1
-724	backup	backup_general_groups_locked	
-725	backup	import_general_maxresults	10
-726	backup	import_general_duplicate_admin_allowed	0
-727	backup	backup_auto_active	0
-728	backup	backup_auto_weekdays	0000000
-729	backup	backup_auto_hour	0
-730	backup	backup_auto_minute	0
-731	backup	backup_auto_storage	0
-732	backup	backup_auto_destination	
-733	backup	backup_auto_max_kept	1
-734	backup	backup_auto_delete_days	0
-735	backup	backup_auto_min_kept	0
-736	backup	backup_shortname	0
-737	backup	backup_auto_skip_hidden	1
-738	backup	backup_auto_skip_modif_days	30
-739	backup	backup_auto_skip_modif_prev	0
-740	backup	backup_auto_users	1
-741	backup	backup_auto_role_assignments	1
-742	backup	backup_auto_activities	1
-743	backup	backup_auto_blocks	1
-744	backup	backup_auto_filters	1
-745	backup	backup_auto_comments	1
-746	backup	backup_auto_badges	1
-747	backup	backup_auto_userscompletion	1
-748	backup	backup_auto_logs	0
-749	backup	backup_auto_histories	0
-750	backup	backup_auto_questionbank	1
-751	backup	backup_auto_groups	1
-752	core_competency	enabled	1
-753	core_competency	pushcourseratingstouserplans	1
-754	assign	feedback_plugin_for_gradebook	assignfeedback_comments
-755	assign	showrecentsubmissions	0
-756	assign	submissionreceipts	1
-757	assign	submissionstatement	This assignment is my own work, except where I have acknowledged the use of the works of other people.
-758	assign	maxperpage	-1
-759	assign	alwaysshowdescription	1
-760	assign	alwaysshowdescription_adv	
-761	assign	alwaysshowdescription_locked	
-762	assign	allowsubmissionsfromdate	0
-763	assign	allowsubmissionsfromdate_enabled	1
-764	assign	allowsubmissionsfromdate_adv	
-765	assign	duedate	604800
-766	assign	duedate_enabled	1
-767	assign	duedate_adv	
-768	assign	cutoffdate	1209600
-769	assign	cutoffdate_enabled	
-770	assign	cutoffdate_adv	
-771	assign	submissiondrafts	0
-772	assign	submissiondrafts_adv	
-773	assign	submissiondrafts_locked	
-774	assign	requiresubmissionstatement	0
-775	assign	requiresubmissionstatement_adv	
-776	assign	requiresubmissionstatement_locked	
-777	assign	attemptreopenmethod	none
-778	assign	attemptreopenmethod_adv	
-779	assign	attemptreopenmethod_locked	
-780	assign	maxattempts	-1
-781	assign	maxattempts_adv	
-782	assign	maxattempts_locked	
-783	assign	teamsubmission	0
-784	assign	teamsubmission_adv	
-785	assign	teamsubmission_locked	
-786	assign	preventsubmissionnotingroup	0
-787	assign	preventsubmissionnotingroup_adv	
-788	assign	preventsubmissionnotingroup_locked	
-789	assign	requireallteammemberssubmit	0
-790	assign	requireallteammemberssubmit_adv	
-791	assign	requireallteammemberssubmit_locked	
-792	assign	teamsubmissiongroupingid	
-793	assign	teamsubmissiongroupingid_adv	
-794	assign	sendnotifications	0
-795	assign	sendnotifications_adv	
-796	assign	sendnotifications_locked	
-797	assign	sendlatenotifications	0
-798	assign	sendlatenotifications_adv	
-799	assign	sendlatenotifications_locked	
-800	assign	sendstudentnotifications	1
-801	assign	sendstudentnotifications_adv	
-802	assign	sendstudentnotifications_locked	
-803	assign	blindmarking	0
-804	assign	blindmarking_adv	
-805	assign	blindmarking_locked	
-806	assign	markingworkflow	0
-807	assign	markingworkflow_adv	
-808	assign	markingworkflow_locked	
-809	assign	markingallocation	0
-810	assign	markingallocation_adv	
-811	assign	markingallocation_locked	
-812	assignsubmission_file	default	1
-813	assignsubmission_file	maxfiles	20
-814	assignsubmission_onlinetext	default	0
-815	assignfeedback_comments	default	1
-816	assignfeedback_comments	inline	0
-817	assignfeedback_comments	inline_adv	
-818	assignfeedback_comments	inline_locked	
-819	assignfeedback_editpdf	stamps	
-820	assignfeedback_file	default	0
-821	assignfeedback_offline	default	0
-822	book	numberingoptions	0,1,2,3
-823	book	navoptions	0,1,2
-824	book	numbering	1
-825	book	navstyle	1
-826	folder	showexpanded	1
-827	folder	maxsizetodownload	0
-828	imscp	keepold	1
-829	imscp	keepold_adv	
-830	label	dndmedia	1
-831	label	dndresizewidth	400
-832	label	dndresizeheight	400
-833	mod_lesson	mediafile	
-834	mod_lesson	mediafile_adv	1
-835	mod_lesson	mediawidth	640
-836	mod_lesson	mediaheight	480
-837	mod_lesson	mediaclose	0
-838	mod_lesson	progressbar	0
-839	mod_lesson	progressbar_adv	
-840	mod_lesson	ongoing	0
-841	mod_lesson	ongoing_adv	1
-842	mod_lesson	displayleftmenu	0
-843	mod_lesson	displayleftmenu_adv	
-844	mod_lesson	displayleftif	0
-845	mod_lesson	displayleftif_adv	1
-846	mod_lesson	slideshow	0
-847	mod_lesson	slideshow_adv	1
-848	mod_lesson	slideshowwidth	640
-849	mod_lesson	slideshowheight	480
-850	mod_lesson	slideshowbgcolor	#FFFFFF
-851	mod_lesson	maxanswers	5
-852	mod_lesson	maxanswers_adv	1
-853	mod_lesson	defaultfeedback	0
-854	mod_lesson	defaultfeedback_adv	1
-855	mod_lesson	activitylink	
-856	mod_lesson	activitylink_adv	1
-857	mod_lesson	timelimit	0
-858	mod_lesson	timelimit_adv	
-859	mod_lesson	password	0
-860	mod_lesson	password_adv	1
-861	mod_lesson	modattempts	0
-862	mod_lesson	modattempts_adv	
-863	mod_lesson	displayreview	0
-864	mod_lesson	displayreview_adv	
-865	mod_lesson	maximumnumberofattempts	1
-866	mod_lesson	maximumnumberofattempts_adv	
-867	mod_lesson	defaultnextpage	0
-868	mod_lesson	defaultnextpage_adv	1
-869	mod_lesson	numberofpagestoshow	1
-870	mod_lesson	numberofpagestoshow_adv	1
-871	mod_lesson	practice	0
-872	mod_lesson	practice_adv	
-873	mod_lesson	customscoring	1
-874	mod_lesson	customscoring_adv	1
-875	mod_lesson	retakesallowed	0
-876	mod_lesson	retakesallowed_adv	
-877	mod_lesson	handlingofretakes	0
-878	mod_lesson	handlingofretakes_adv	1
-879	mod_lesson	minimumnumberofquestions	0
-880	mod_lesson	minimumnumberofquestions_adv	1
-881	page	displayoptions	5
-882	page	printheading	1
-883	page	printintro	0
-884	page	display	5
-885	page	popupwidth	620
-886	page	popupheight	450
-887	quiz	timelimit	0
-888	quiz	timelimit_adv	
-889	quiz	overduehandling	autosubmit
-890	quiz	overduehandling_adv	
-891	quiz	graceperiod	86400
-892	quiz	graceperiod_adv	
-893	quiz	graceperiodmin	60
-894	quiz	attempts	0
-895	quiz	attempts_adv	
-896	quiz	grademethod	1
-897	quiz	grademethod_adv	
-898	quiz	maximumgrade	10
-899	quiz	questionsperpage	1
-900	quiz	questionsperpage_adv	
-901	quiz	navmethod	free
-902	quiz	navmethod_adv	1
-903	quiz	shuffleanswers	1
-904	quiz	shuffleanswers_adv	
-905	quiz	preferredbehaviour	deferredfeedback
-906	quiz	canredoquestions	0
-907	quiz	canredoquestions_adv	1
-908	quiz	attemptonlast	0
-909	quiz	attemptonlast_adv	1
-910	quiz	reviewattempt	69904
-911	quiz	reviewcorrectness	69904
-912	quiz	reviewmarks	69904
-913	quiz	reviewspecificfeedback	69904
-914	quiz	reviewgeneralfeedback	69904
-915	quiz	reviewrightanswer	69904
-916	quiz	reviewoverallfeedback	4368
-917	quiz	showuserpicture	0
-918	quiz	showuserpicture_adv	
-919	quiz	decimalpoints	2
-920	quiz	decimalpoints_adv	
-921	quiz	questiondecimalpoints	-1
-922	quiz	questiondecimalpoints_adv	1
-923	quiz	showblocks	0
-924	quiz	showblocks_adv	1
-925	quiz	password	
-926	quiz	password_adv	
-927	quiz	subnet	
-928	quiz	subnet_adv	1
-929	quiz	delay1	0
-930	quiz	delay1_adv	1
-931	quiz	delay2	0
-932	quiz	delay2_adv	1
-933	quiz	browsersecurity	-
-934	quiz	browsersecurity_adv	1
-935	quiz	initialnumfeedbacks	2
-936	quiz	autosaveperiod	60
-937	resource	framesize	130
-938	resource	displayoptions	0,1,4,5,6
-939	resource	printintro	1
-940	resource	display	0
-941	resource	showsize	0
-942	resource	showtype	0
-943	resource	showdate	0
-944	resource	popupwidth	620
-945	resource	popupheight	450
-946	resource	filterfiles	0
-947	scorm	displaycoursestructure	0
-948	scorm	displaycoursestructure_adv	
-949	scorm	popup	0
-950	scorm	popup_adv	
-951	scorm	displayactivityname	1
-952	scorm	framewidth	100
-953	scorm	framewidth_adv	1
-954	scorm	frameheight	500
-955	scorm	frameheight_adv	1
-956	scorm	winoptgrp_adv	1
-957	scorm	scrollbars	0
-958	scorm	directories	0
-959	scorm	location	0
-960	scorm	menubar	0
-961	scorm	toolbar	0
-962	scorm	status	0
-963	scorm	skipview	0
-964	scorm	skipview_adv	1
-965	scorm	hidebrowse	0
-966	scorm	hidebrowse_adv	1
-967	scorm	hidetoc	0
-968	scorm	hidetoc_adv	1
-969	scorm	nav	1
-970	scorm	nav_adv	1
-971	scorm	navpositionleft	-100
-972	scorm	navpositionleft_adv	1
-973	scorm	navpositiontop	-100
-974	scorm	navpositiontop_adv	1
-975	scorm	collapsetocwinsize	767
-976	scorm	collapsetocwinsize_adv	1
-977	scorm	displayattemptstatus	1
-978	scorm	displayattemptstatus_adv	
-979	scorm	grademethod	1
-980	scorm	maxgrade	100
-981	scorm	maxattempt	0
-982	scorm	whatgrade	0
-983	scorm	forcecompleted	0
-984	scorm	forcenewattempt	0
-985	scorm	autocommit	0
-986	scorm	masteryoverride	1
-987	scorm	lastattemptlock	0
-988	scorm	auto	0
-989	scorm	updatefreq	0
-990	scorm	scorm12standard	1
-991	scorm	allowtypeexternal	0
-992	scorm	allowtypelocalsync	0
-993	scorm	allowtypeexternalaicc	0
-994	scorm	allowaicchacp	0
-995	scorm	aicchacptimeout	30
-996	scorm	aicchacpkeepsessiondata	1
-997	scorm	aiccuserid	1
-998	scorm	forcejavascript	1
-999	scorm	allowapidebug	0
-1000	scorm	apidebugmask	.*
-1001	scorm	protectpackagedownloads	0
-1002	url	framesize	130
-1003	url	secretphrase	
-1004	url	rolesinparams	0
-1005	url	displayoptions	0,1,5,6
-1006	url	printintro	1
-1007	url	display	0
-1008	url	popupwidth	620
-1009	url	popupheight	450
-1010	workshop	grade	80
-1011	workshop	gradinggrade	20
-1012	workshop	gradedecimals	0
-1013	workshop	strategy	accumulative
-1014	workshop	examplesmode	0
-1015	workshopallocation_random	numofreviews	5
-1016	workshopform_numerrors	grade0	No
-1017	workshopform_numerrors	grade1	Yes
-1018	workshopeval_best	comparison	5
-1019	tool_recyclebin	coursebinenable	1
-1020	tool_recyclebin	coursebinexpiry	604800
-1021	tool_recyclebin	categorybinenable	1
-1022	tool_recyclebin	categorybinexpiry	604800
-1023	tool_recyclebin	autohide	1
-1024	antivirus_clamav	pathtoclam	
-1025	antivirus_clamav	quarantinedir	
-1026	antivirus_clamav	clamfailureonupload	donothing
-1027	block_course_overview	defaultmaxcourses	10
-1028	block_course_overview	forcedefaultmaxcourses	0
-1029	block_course_overview	showchildren	0
-1030	block_course_overview	showwelcomearea	0
-1031	block_course_overview	showcategories	0
-1032	block_section_links	numsections1	22
-1033	block_section_links	incby1	2
-1034	block_section_links	numsections2	40
-1035	block_section_links	incby2	5
-1036	block_tag_youtube	apikey	
-1037	cachestore_memcache	testservers	
-1038	cachestore_memcached	testservers	
-1039	cachestore_mongodb	testserver	
-1040	format_singleactivity	activitytype	forum
-1041	enrol_cohort	roleid	5
-1042	enrol_cohort	unenrolaction	0
-1043	enrol_database	dbtype	
-1044	enrol_database	dbhost	localhost
-1045	enrol_database	dbuser	
-1046	enrol_database	dbpass	
-1047	enrol_database	dbname	
-1048	enrol_database	dbencoding	utf-8
-1049	enrol_database	dbsetupsql	
-1050	enrol_database	dbsybasequoting	0
-1051	enrol_database	debugdb	0
-1052	enrol_database	localcoursefield	idnumber
-1053	enrol_database	localuserfield	idnumber
-1054	enrol_database	localrolefield	shortname
-1055	enrol_database	localcategoryfield	id
-1056	enrol_database	remoteenroltable	
-1057	enrol_database	remotecoursefield	
-1058	enrol_database	remoteuserfield	
-1059	enrol_database	remoterolefield	
-1060	enrol_database	remoteotheruserfield	
-1061	enrol_database	defaultrole	5
-1062	enrol_database	ignorehiddencourses	0
-1063	enrol_database	unenrolaction	0
-1064	enrol_database	newcoursetable	
-1065	enrol_database	newcoursefullname	fullname
-1066	enrol_database	newcourseshortname	shortname
-1067	enrol_database	newcourseidnumber	idnumber
-1068	enrol_database	newcoursecategory	
-1069	enrol_database	defaultcategory	1
-1070	enrol_database	templatecourse	
-1071	enrol_flatfile	location	
-1072	enrol_flatfile	encoding	UTF-8
-1073	enrol_flatfile	mailstudents	0
-1074	enrol_flatfile	mailteachers	0
-1075	enrol_flatfile	mailadmins	0
-1076	enrol_flatfile	unenrolaction	3
-1077	enrol_flatfile	expiredaction	3
-1078	enrol_guest	requirepassword	0
-1079	enrol_guest	usepasswordpolicy	0
-1080	enrol_guest	showhint	0
-1081	enrol_guest	defaultenrol	1
-1082	enrol_guest	status	1
-1083	enrol_guest	status_adv	
-1084	enrol_imsenterprise	imsfilelocation	
-1085	enrol_imsenterprise	logtolocation	
-1086	enrol_imsenterprise	mailadmins	0
-1087	enrol_imsenterprise	createnewusers	0
-1088	enrol_imsenterprise	imsdeleteusers	0
-1089	enrol_imsenterprise	fixcaseusernames	0
-1090	enrol_imsenterprise	fixcasepersonalnames	0
-1091	enrol_imsenterprise	imssourcedidfallback	0
-1092	enrol_imsenterprise	imsrolemap01	5
-1093	enrol_imsenterprise	imsrolemap02	3
-1094	enrol_imsenterprise	imsrolemap03	3
-1095	enrol_imsenterprise	imsrolemap04	5
-1096	enrol_imsenterprise	imsrolemap05	0
-1097	enrol_imsenterprise	imsrolemap06	4
-1098	enrol_imsenterprise	imsrolemap07	0
-1099	enrol_imsenterprise	imsrolemap08	4
-1100	enrol_imsenterprise	truncatecoursecodes	0
-1101	enrol_imsenterprise	createnewcourses	0
-1102	enrol_imsenterprise	createnewcategories	0
-1103	enrol_imsenterprise	imsunenrol	0
-1104	enrol_imsenterprise	imscoursemapshortname	coursecode
-1105	enrol_imsenterprise	imscoursemapfullname	short
-1106	enrol_imsenterprise	imscoursemapsummary	ignore
-1107	enrol_imsenterprise	imsrestricttarget	
-1108	enrol_imsenterprise	imscapitafix	0
-1109	enrol_lti	emaildisplay	2
-1110	enrol_lti	city	
-1111	enrol_lti	country	
-1112	enrol_lti	timezone	99
-1113	enrol_lti	lang	en
-1114	enrol_lti	institution	
-1115	enrol_manual	expiredaction	1
-1116	enrol_manual	expirynotifyhour	6
-1117	enrol_manual	defaultenrol	1
-1118	enrol_manual	status	0
-1119	enrol_manual	roleid	5
-1120	enrol_manual	enrolstart	4
-1121	enrol_manual	enrolperiod	0
-1122	enrol_manual	expirynotify	0
-1123	enrol_manual	expirythreshold	86400
-1124	enrol_meta	nosyncroleids	
-1125	enrol_meta	syncall	1
-1126	enrol_meta	unenrolaction	3
-1127	enrol_meta	coursesort	sortorder
-1128	enrol_mnet	roleid	5
-1129	enrol_mnet	roleid_adv	1
-1130	enrol_paypal	paypalbusiness	
-1131	enrol_paypal	mailstudents	0
-1132	enrol_paypal	mailteachers	0
-1133	enrol_paypal	mailadmins	0
-1134	enrol_paypal	expiredaction	3
-1135	enrol_paypal	status	1
-1136	enrol_paypal	cost	0
-1137	enrol_paypal	currency	USD
-1138	enrol_paypal	roleid	5
-1139	enrol_paypal	enrolperiod	0
-1140	enrol_self	requirepassword	0
-1141	enrol_self	usepasswordpolicy	0
-1142	enrol_self	showhint	0
-1143	enrol_self	expiredaction	1
-1144	enrol_self	expirynotifyhour	6
-1145	enrol_self	defaultenrol	1
-1146	enrol_self	status	1
-1147	enrol_self	newenrols	1
-1148	enrol_self	groupkey	0
-1149	enrol_self	roleid	5
-1150	enrol_self	enrolperiod	0
-1151	enrol_self	expirynotify	0
-1152	enrol_self	expirythreshold	86400
-1153	enrol_self	longtimenosee	0
-1154	enrol_self	maxenrolled	0
-1155	enrol_self	sendcoursewelcomemessage	1
-1156	filter_emoticon	formats	1,4,0
-1157	filter_mathjaxloader	httpurl	http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js
-1158	filter_mathjaxloader	httpsurl	https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js
-1159	filter_mathjaxloader	texfiltercompatibility	0
-1160	filter_mathjaxloader	mathjaxconfig	\nMathJax.Hub.Config({\n    config: ["Accessible.js", "Safe.js"],\n    errorSettings: { message: ["!"] },\n    skipStartupTypeset: true,\n    messageStyle: "none"\n});\n
-1161	filter_mathjaxloader	additionaldelimiters	
-1162	filter_tex	latexpreamble	\\usepackage[latin1]{inputenc}\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\RequirePackage{amsmath,amssymb,latexsym}\n
-1163	filter_tex	latexbackground	#FFFFFF
-1164	filter_tex	density	120
-1165	filter_tex	pathlatex	/usr/bin/latex
-1166	filter_tex	pathdvips	/usr/bin/dvips
-1167	filter_tex	pathconvert	/usr/bin/convert
-1168	filter_tex	pathdvisvgm	/usr/bin/dvisvgm
-1169	filter_tex	pathmimetex	
-1170	filter_tex	convertformat	gif
-1171	filter_urltolink	formats	0
-1172	filter_urltolink	embedimages	1
-1173	logstore_database	dbdriver	
-1174	logstore_database	dbhost	
-1175	logstore_database	dbuser	
-1176	logstore_database	dbpass	
-1177	logstore_database	dbname	
-1178	logstore_database	dbtable	
-1179	logstore_database	dbpersist	0
-1180	logstore_database	dbsocket	
-1181	logstore_database	dbport	
-1182	logstore_database	dbschema	
-1183	logstore_database	dbcollation	
-1184	logstore_database	buffersize	50
-1185	logstore_database	logguests	0
-1186	logstore_database	includelevels	1,2,0
-1187	logstore_database	includeactions	c,r,u,d
-1188	logstore_legacy	loglegacy	0
-1189	logstore_standard	logguests	1
-1190	logstore_standard	loglifetime	0
-1191	logstore_standard	buffersize	50
-1192	question_preview	behaviour	deferredfeedback
-1193	question_preview	correctness	1
-1194	question_preview	marks	2
-1195	question_preview	markdp	2
-1196	question_preview	feedback	1
-1197	question_preview	generalfeedback	1
-1198	question_preview	rightanswer	1
-1199	question_preview	history	0
-1200	mod_assign	search_activity_enabled	1
-1201	mod_book	search_activity_enabled	1
-1202	mod_book	search_chapter_enabled	1
-1203	mod_chat	search_activity_enabled	1
-1204	mod_choice	search_activity_enabled	1
-1205	mod_data	search_activity_enabled	1
-1206	mod_feedback	search_activity_enabled	1
-1207	mod_folder	search_activity_enabled	1
-1208	mod_forum	search_activity_enabled	1
-1209	mod_forum	search_post_enabled	1
-1210	mod_glossary	search_activity_enabled	1
-1211	mod_glossary	search_entry_enabled	1
-1212	mod_imscp	search_activity_enabled	1
-1213	mod_label	search_activity_enabled	1
-1214	mod_lesson	search_activity_enabled	1
-1215	mod_lti	search_activity_enabled	1
-1216	mod_page	search_activity_enabled	1
-1217	mod_quiz	search_activity_enabled	1
-1218	mod_resource	search_activity_enabled	1
-1219	mod_scorm	search_activity_enabled	1
-1220	mod_survey	search_activity_enabled	1
-1221	mod_url	search_activity_enabled	1
-1222	mod_wiki	search_activity_enabled	1
-1223	mod_wiki	search_collaborative_page_enabled	1
-1224	mod_workshop	search_activity_enabled	1
-1225	core_search	core_course_mycourse_enabled	1
-1226	editor_atto	toolbar	collapse = collapse\nstyle1 = title, bold, italic\nlist = unorderedlist, orderedlist\nlinks = link\nfiles = image, media, managefiles\nstyle2 = underline, strike, subscript, superscript\nalign = align\nindent = indent\ninsert = equation, charmap, table, clear\nundo = undo\naccessibility = accessibilitychecker, accessibilityhelper\nother = html
-1227	editor_atto	autosavefrequency	60
-1228	atto_collapse	showgroups	5
-1229	atto_equation	librarygroup1	\n\\cdot\n\\times\n\\ast\n\\div\n\\diamond\n\\pm\n\\mp\n\\oplus\n\\ominus\n\\otimes\n\\oslash\n\\odot\n\\circ\n\\bullet\n\\asymp\n\\equiv\n\\subseteq\n\\supseteq\n\\leq\n\\geq\n\\preceq\n\\succeq\n\\sim\n\\simeq\n\\approx\n\\subset\n\\supset\n\\ll\n\\gg\n\\prec\n\\succ\n\\infty\n\\in\n\\ni\n\\forall\n\\exists\n\\neq\n
-1230	atto_equation	librarygroup2	\n\\leftarrow\n\\rightarrow\n\\uparrow\n\\downarrow\n\\leftrightarrow\n\\nearrow\n\\searrow\n\\swarrow\n\\nwarrow\n\\Leftarrow\n\\Rightarrow\n\\Uparrow\n\\Downarrow\n\\Leftrightarrow\n
-1231	atto_equation	librarygroup3	\n\\alpha\n\\beta\n\\gamma\n\\delta\n\\epsilon\n\\zeta\n\\eta\n\\theta\n\\iota\n\\kappa\n\\lambda\n\\mu\n\\nu\n\\xi\n\\pi\n\\rho\n\\sigma\n\\tau\n\\upsilon\n\\phi\n\\chi\n\\psi\n\\omega\n\\Gamma\n\\Delta\n\\Theta\n\\Lambda\n\\Xi\n\\Pi\n\\Sigma\n\\Upsilon\n\\Phi\n\\Psi\n\\Omega\n
-1232	atto_equation	librarygroup4	\n\\sum{a,b}\n\\sqrt[a]{b+c}\n\\int_{a}^{b}{c}\n\\iint_{a}^{b}{c}\n\\iiint_{a}^{b}{c}\n\\oint{a}\n(a)\n[a]\n\\lbrace{a}\\rbrace\n\\left| \\begin{matrix} a_1 & a_2 \\ a_3 & a_4 \\end{matrix} \\right|\n\\frac{a}{b+c}\n\\vec{a}\n\\binom {a} {b}\n{a \\brack b}\n{a \\brace b}\n
-1233	atto_table	allowborders	0
-1234	atto_table	allowbackgroundcolour	0
-1235	atto_table	allowwidth	0
-1236	editor_tinymce	customtoolbar	wrap,formatselect,wrap,bold,italic,wrap,bullist,numlist,wrap,link,unlink,wrap,image\n\nundo,redo,wrap,underline,strikethrough,sub,sup,wrap,justifyleft,justifycenter,justifyright,wrap,outdent,indent,wrap,forecolor,backcolor,wrap,ltr,rtl\n\nfontselect,fontsizeselect,wrap,code,search,replace,wrap,nonbreaking,charmap,table,wrap,cleanup,removeformat,pastetext,pasteword,wrap,fullscreen
-1237	editor_tinymce	fontselectlist	Trebuchet=Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,arial,helvetica,sans-serif;Impact=impact;Wingdings=wingdings
-1238	editor_tinymce	customconfig	
-1239	tinymce_moodleemoticon	requireemoticon	1
-1240	tinymce_spellchecker	spellengine	
-1241	tinymce_spellchecker	spelllanguagelist	+English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Polish=pl,Portuguese=pt,Spanish=es,Swedish=sv
-1242	theme_clean	invert	0
-1243	theme_clean	logo	
-1244	theme_clean	smalllogo	
-1245	theme_clean	sitename	1
-1246	theme_clean	customcss	
-1247	theme_clean	footnote	
-1248	theme_more	textcolor	#333366
-1249	theme_more	linkcolor	#FF6500
-1250	theme_more	bodybackground	
-1251	theme_more	backgroundimage	
-1252	theme_more	backgroundrepeat	repeat
-1253	theme_more	backgroundposition	0
-1254	theme_more	backgroundfixed	0
-1255	theme_more	contentbackground	#FFFFFF
-1256	theme_more	secondarybackground	#FFFFFF
-1257	theme_more	invert	1
-1258	theme_more	logo	
-1259	theme_more	smalllogo	
-1260	theme_more	sitename	1
-1261	theme_more	customcss	
-1262	theme_more	footnote	
-1263	assignsubmission_file	maxbytes	1048576
-1264	workshop	maxbytes	0
+684	local_messaging	version	2014081800
+685	moodlecourse	visible	1
+686	moodlecourse	format	weeks
+687	moodlecourse	maxsections	52
+688	moodlecourse	numsections	10
+689	moodlecourse	hiddensections	0
+690	moodlecourse	coursedisplay	0
+691	moodlecourse	lang	
+692	moodlecourse	newsitems	5
+693	moodlecourse	showgrades	1
+694	moodlecourse	showreports	0
+695	moodlecourse	maxbytes	0
+696	moodlecourse	enablecompletion	0
+697	moodlecourse	groupmode	0
+698	moodlecourse	groupmodeforce	0
+699	backup	loglifetime	30
+700	backup	backup_general_users	1
+701	backup	backup_general_users_locked	
+702	backup	backup_general_anonymize	0
+703	backup	backup_general_anonymize_locked	
+704	backup	backup_general_role_assignments	1
+705	backup	backup_general_role_assignments_locked	
+706	backup	backup_general_activities	1
+707	backup	backup_general_activities_locked	
+708	backup	backup_general_blocks	1
+709	backup	backup_general_blocks_locked	
+710	backup	backup_general_filters	1
+711	backup	backup_general_filters_locked	
+712	backup	backup_general_comments	1
+713	backup	backup_general_comments_locked	
+714	backup	backup_general_badges	1
+715	backup	backup_general_badges_locked	
+716	backup	backup_general_userscompletion	1
+717	backup	backup_general_userscompletion_locked	
+718	backup	backup_general_logs	0
+719	backup	backup_general_logs_locked	
+720	backup	backup_general_histories	0
+721	backup	backup_general_histories_locked	
+722	backup	backup_general_questionbank	1
+723	backup	backup_general_questionbank_locked	
+724	backup	backup_general_groups	1
+725	backup	backup_general_groups_locked	
+726	backup	import_general_maxresults	10
+727	backup	import_general_duplicate_admin_allowed	0
+728	backup	backup_auto_active	0
+729	backup	backup_auto_weekdays	0000000
+730	backup	backup_auto_hour	0
+731	backup	backup_auto_minute	0
+732	backup	backup_auto_storage	0
+733	backup	backup_auto_destination	
+734	backup	backup_auto_max_kept	1
+735	backup	backup_auto_delete_days	0
+736	backup	backup_auto_min_kept	0
+737	backup	backup_shortname	0
+738	backup	backup_auto_skip_hidden	1
+739	backup	backup_auto_skip_modif_days	30
+740	backup	backup_auto_skip_modif_prev	0
+741	backup	backup_auto_users	1
+742	backup	backup_auto_role_assignments	1
+743	backup	backup_auto_activities	1
+744	backup	backup_auto_blocks	1
+745	backup	backup_auto_filters	1
+746	backup	backup_auto_comments	1
+747	backup	backup_auto_badges	1
+748	backup	backup_auto_userscompletion	1
+749	backup	backup_auto_logs	0
+750	backup	backup_auto_histories	0
+751	backup	backup_auto_questionbank	1
+752	backup	backup_auto_groups	1
+753	core_competency	enabled	1
+754	core_competency	pushcourseratingstouserplans	1
+755	assign	feedback_plugin_for_gradebook	assignfeedback_comments
+756	assign	showrecentsubmissions	0
+757	assign	submissionreceipts	1
+758	assign	submissionstatement	This assignment is my own work, except where I have acknowledged the use of the works of other people.
+759	assign	maxperpage	-1
+760	assign	alwaysshowdescription	1
+761	assign	alwaysshowdescription_adv	
+762	assign	alwaysshowdescription_locked	
+763	assign	allowsubmissionsfromdate	0
+764	assign	allowsubmissionsfromdate_enabled	1
+765	assign	allowsubmissionsfromdate_adv	
+766	assign	duedate	604800
+767	assign	duedate_enabled	1
+768	assign	duedate_adv	
+769	assign	cutoffdate	1209600
+770	assign	cutoffdate_enabled	
+771	assign	cutoffdate_adv	
+772	assign	submissiondrafts	0
+773	assign	submissiondrafts_adv	
+774	assign	submissiondrafts_locked	
+775	assign	requiresubmissionstatement	0
+776	assign	requiresubmissionstatement_adv	
+777	assign	requiresubmissionstatement_locked	
+778	assign	attemptreopenmethod	none
+779	assign	attemptreopenmethod_adv	
+780	assign	attemptreopenmethod_locked	
+781	assign	maxattempts	-1
+782	assign	maxattempts_adv	
+783	assign	maxattempts_locked	
+784	assign	teamsubmission	0
+785	assign	teamsubmission_adv	
+786	assign	teamsubmission_locked	
+787	assign	preventsubmissionnotingroup	0
+788	assign	preventsubmissionnotingroup_adv	
+789	assign	preventsubmissionnotingroup_locked	
+790	assign	requireallteammemberssubmit	0
+791	assign	requireallteammemberssubmit_adv	
+792	assign	requireallteammemberssubmit_locked	
+793	assign	teamsubmissiongroupingid	
+794	assign	teamsubmissiongroupingid_adv	
+795	assign	sendnotifications	0
+796	assign	sendnotifications_adv	
+797	assign	sendnotifications_locked	
+798	assign	sendlatenotifications	0
+799	assign	sendlatenotifications_adv	
+800	assign	sendlatenotifications_locked	
+801	assign	sendstudentnotifications	1
+802	assign	sendstudentnotifications_adv	
+803	assign	sendstudentnotifications_locked	
+804	assign	blindmarking	0
+805	assign	blindmarking_adv	
+806	assign	blindmarking_locked	
+807	assign	markingworkflow	0
+808	assign	markingworkflow_adv	
+809	assign	markingworkflow_locked	
+810	assign	markingallocation	0
+811	assign	markingallocation_adv	
+812	assign	markingallocation_locked	
+813	assignsubmission_file	default	1
+814	assignsubmission_file	maxfiles	20
+815	assignsubmission_onlinetext	default	0
+816	assignfeedback_comments	default	1
+817	assignfeedback_comments	inline	0
+818	assignfeedback_comments	inline_adv	
+819	assignfeedback_comments	inline_locked	
+820	assignfeedback_editpdf	stamps	
+821	assignfeedback_file	default	0
+822	assignfeedback_offline	default	0
+823	book	numberingoptions	0,1,2,3
+824	book	navoptions	0,1,2
+825	book	numbering	1
+826	book	navstyle	1
+827	folder	showexpanded	1
+828	folder	maxsizetodownload	0
+829	imscp	keepold	1
+830	imscp	keepold_adv	
+831	label	dndmedia	1
+832	label	dndresizewidth	400
+833	label	dndresizeheight	400
+834	mod_lesson	mediafile	
+835	mod_lesson	mediafile_adv	1
+836	mod_lesson	mediawidth	640
+837	mod_lesson	mediaheight	480
+838	mod_lesson	mediaclose	0
+839	mod_lesson	progressbar	0
+840	mod_lesson	progressbar_adv	
+841	mod_lesson	ongoing	0
+842	mod_lesson	ongoing_adv	1
+843	mod_lesson	displayleftmenu	0
+844	mod_lesson	displayleftmenu_adv	
+845	mod_lesson	displayleftif	0
+846	mod_lesson	displayleftif_adv	1
+847	mod_lesson	slideshow	0
+848	mod_lesson	slideshow_adv	1
+849	mod_lesson	slideshowwidth	640
+850	mod_lesson	slideshowheight	480
+851	mod_lesson	slideshowbgcolor	#FFFFFF
+852	mod_lesson	maxanswers	5
+853	mod_lesson	maxanswers_adv	1
+854	mod_lesson	defaultfeedback	0
+855	mod_lesson	defaultfeedback_adv	1
+856	mod_lesson	activitylink	
+857	mod_lesson	activitylink_adv	1
+858	mod_lesson	timelimit	0
+859	mod_lesson	timelimit_adv	
+860	mod_lesson	password	0
+861	mod_lesson	password_adv	1
+862	mod_lesson	modattempts	0
+863	mod_lesson	modattempts_adv	
+864	mod_lesson	displayreview	0
+865	mod_lesson	displayreview_adv	
+866	mod_lesson	maximumnumberofattempts	1
+867	mod_lesson	maximumnumberofattempts_adv	
+868	mod_lesson	defaultnextpage	0
+869	mod_lesson	defaultnextpage_adv	1
+870	mod_lesson	numberofpagestoshow	1
+871	mod_lesson	numberofpagestoshow_adv	1
+872	mod_lesson	practice	0
+873	mod_lesson	practice_adv	
+874	mod_lesson	customscoring	1
+875	mod_lesson	customscoring_adv	1
+876	mod_lesson	retakesallowed	0
+877	mod_lesson	retakesallowed_adv	
+878	mod_lesson	handlingofretakes	0
+879	mod_lesson	handlingofretakes_adv	1
+880	mod_lesson	minimumnumberofquestions	0
+881	mod_lesson	minimumnumberofquestions_adv	1
+882	page	displayoptions	5
+883	page	printheading	1
+884	page	printintro	0
+885	page	display	5
+886	page	popupwidth	620
+887	page	popupheight	450
+888	quiz	timelimit	0
+889	quiz	timelimit_adv	
+890	quiz	overduehandling	autosubmit
+891	quiz	overduehandling_adv	
+892	quiz	graceperiod	86400
+893	quiz	graceperiod_adv	
+894	quiz	graceperiodmin	60
+895	quiz	attempts	0
+896	quiz	attempts_adv	
+897	quiz	grademethod	1
+898	quiz	grademethod_adv	
+899	quiz	maximumgrade	10
+900	quiz	questionsperpage	1
+901	quiz	questionsperpage_adv	
+902	quiz	navmethod	free
+903	quiz	navmethod_adv	1
+904	quiz	shuffleanswers	1
+905	quiz	shuffleanswers_adv	
+906	quiz	preferredbehaviour	deferredfeedback
+907	quiz	canredoquestions	0
+908	quiz	canredoquestions_adv	1
+909	quiz	attemptonlast	0
+910	quiz	attemptonlast_adv	1
+911	quiz	reviewattempt	69904
+912	quiz	reviewcorrectness	69904
+913	quiz	reviewmarks	69904
+914	quiz	reviewspecificfeedback	69904
+915	quiz	reviewgeneralfeedback	69904
+916	quiz	reviewrightanswer	69904
+917	quiz	reviewoverallfeedback	4368
+918	quiz	showuserpicture	0
+919	quiz	showuserpicture_adv	
+920	quiz	decimalpoints	2
+921	quiz	decimalpoints_adv	
+922	quiz	questiondecimalpoints	-1
+923	quiz	questiondecimalpoints_adv	1
+924	quiz	showblocks	0
+925	quiz	showblocks_adv	1
+926	quiz	password	
+927	quiz	password_adv	
+928	quiz	subnet	
+929	quiz	subnet_adv	1
+930	quiz	delay1	0
+931	quiz	delay1_adv	1
+932	quiz	delay2	0
+933	quiz	delay2_adv	1
+934	quiz	browsersecurity	-
+935	quiz	browsersecurity_adv	1
+936	quiz	initialnumfeedbacks	2
+937	quiz	autosaveperiod	60
+938	resource	framesize	130
+939	resource	displayoptions	0,1,4,5,6
+940	resource	printintro	1
+941	resource	display	0
+942	resource	showsize	0
+943	resource	showtype	0
+944	resource	showdate	0
+945	resource	popupwidth	620
+946	resource	popupheight	450
+947	resource	filterfiles	0
+948	scorm	displaycoursestructure	0
+949	scorm	displaycoursestructure_adv	
+950	scorm	popup	0
+951	scorm	popup_adv	
+952	scorm	displayactivityname	1
+953	scorm	framewidth	100
+954	scorm	framewidth_adv	1
+955	scorm	frameheight	500
+956	scorm	frameheight_adv	1
+957	scorm	winoptgrp_adv	1
+958	scorm	scrollbars	0
+959	scorm	directories	0
+960	scorm	location	0
+961	scorm	menubar	0
+962	scorm	toolbar	0
+963	scorm	status	0
+964	scorm	skipview	0
+965	scorm	skipview_adv	1
+966	scorm	hidebrowse	0
+967	scorm	hidebrowse_adv	1
+968	scorm	hidetoc	0
+969	scorm	hidetoc_adv	1
+970	scorm	nav	1
+971	scorm	nav_adv	1
+972	scorm	navpositionleft	-100
+973	scorm	navpositionleft_adv	1
+974	scorm	navpositiontop	-100
+975	scorm	navpositiontop_adv	1
+976	scorm	collapsetocwinsize	767
+977	scorm	collapsetocwinsize_adv	1
+978	scorm	displayattemptstatus	1
+979	scorm	displayattemptstatus_adv	
+980	scorm	grademethod	1
+981	scorm	maxgrade	100
+982	scorm	maxattempt	0
+983	scorm	whatgrade	0
+984	scorm	forcecompleted	0
+985	scorm	forcenewattempt	0
+986	scorm	autocommit	0
+987	scorm	masteryoverride	1
+988	scorm	lastattemptlock	0
+989	scorm	auto	0
+990	scorm	updatefreq	0
+991	scorm	scorm12standard	1
+992	scorm	allowtypeexternal	0
+993	scorm	allowtypelocalsync	0
+994	scorm	allowtypeexternalaicc	0
+995	scorm	allowaicchacp	0
+996	scorm	aicchacptimeout	30
+997	scorm	aicchacpkeepsessiondata	1
+998	scorm	aiccuserid	1
+999	scorm	forcejavascript	1
+1000	scorm	allowapidebug	0
+1001	scorm	apidebugmask	.*
+1002	scorm	protectpackagedownloads	0
+1003	url	framesize	130
+1004	url	secretphrase	
+1005	url	rolesinparams	0
+1006	url	displayoptions	0,1,5,6
+1007	url	printintro	1
+1008	url	display	0
+1009	url	popupwidth	620
+1010	url	popupheight	450
+1011	workshop	grade	80
+1012	workshop	gradinggrade	20
+1013	workshop	gradedecimals	0
+1014	workshop	strategy	accumulative
+1015	workshop	examplesmode	0
+1016	workshopallocation_random	numofreviews	5
+1017	workshopform_numerrors	grade0	No
+1018	workshopform_numerrors	grade1	Yes
+1019	workshopeval_best	comparison	5
+1020	tool_recyclebin	coursebinenable	1
+1021	tool_recyclebin	coursebinexpiry	604800
+1022	tool_recyclebin	categorybinenable	1
+1023	tool_recyclebin	categorybinexpiry	604800
+1024	tool_recyclebin	autohide	1
+1025	antivirus_clamav	pathtoclam	
+1026	antivirus_clamav	quarantinedir	
+1027	antivirus_clamav	clamfailureonupload	donothing
+1028	block_course_overview	defaultmaxcourses	10
+1029	block_course_overview	forcedefaultmaxcourses	0
+1030	block_course_overview	showchildren	0
+1031	block_course_overview	showwelcomearea	0
+1032	block_course_overview	showcategories	0
+1033	block_section_links	numsections1	22
+1034	block_section_links	incby1	2
+1035	block_section_links	numsections2	40
+1036	block_section_links	incby2	5
+1037	block_tag_youtube	apikey	
+1038	cachestore_memcache	testservers	
+1039	cachestore_memcached	testservers	
+1040	cachestore_mongodb	testserver	
+1041	format_singleactivity	activitytype	forum
+1042	enrol_cohort	roleid	5
+1043	enrol_cohort	unenrolaction	0
+1044	enrol_database	dbtype	
+1045	enrol_database	dbhost	localhost
+1046	enrol_database	dbuser	
+1047	enrol_database	dbpass	
+1048	enrol_database	dbname	
+1049	enrol_database	dbencoding	utf-8
+1050	enrol_database	dbsetupsql	
+1051	enrol_database	dbsybasequoting	0
+1052	enrol_database	debugdb	0
+1053	enrol_database	localcoursefield	idnumber
+1054	enrol_database	localuserfield	idnumber
+1055	enrol_database	localrolefield	shortname
+1056	enrol_database	localcategoryfield	id
+1057	enrol_database	remoteenroltable	
+1058	enrol_database	remotecoursefield	
+1059	enrol_database	remoteuserfield	
+1060	enrol_database	remoterolefield	
+1061	enrol_database	remoteotheruserfield	
+1062	enrol_database	defaultrole	5
+1063	enrol_database	ignorehiddencourses	0
+1064	enrol_database	unenrolaction	0
+1065	enrol_database	newcoursetable	
+1066	enrol_database	newcoursefullname	fullname
+1067	enrol_database	newcourseshortname	shortname
+1068	enrol_database	newcourseidnumber	idnumber
+1069	enrol_database	newcoursecategory	
+1070	enrol_database	defaultcategory	1
+1071	enrol_database	templatecourse	
+1072	enrol_flatfile	location	
+1073	enrol_flatfile	encoding	UTF-8
+1074	enrol_flatfile	mailstudents	0
+1075	enrol_flatfile	mailteachers	0
+1076	enrol_flatfile	mailadmins	0
+1077	enrol_flatfile	unenrolaction	3
+1078	enrol_flatfile	expiredaction	3
+1079	enrol_guest	requirepassword	0
+1080	enrol_guest	usepasswordpolicy	0
+1081	enrol_guest	showhint	0
+1082	enrol_guest	defaultenrol	1
+1083	enrol_guest	status	1
+1084	enrol_guest	status_adv	
+1085	enrol_imsenterprise	imsfilelocation	
+1086	enrol_imsenterprise	logtolocation	
+1087	enrol_imsenterprise	mailadmins	0
+1088	enrol_imsenterprise	createnewusers	0
+1089	enrol_imsenterprise	imsdeleteusers	0
+1090	enrol_imsenterprise	fixcaseusernames	0
+1091	enrol_imsenterprise	fixcasepersonalnames	0
+1092	enrol_imsenterprise	imssourcedidfallback	0
+1093	enrol_imsenterprise	imsrolemap01	5
+1094	enrol_imsenterprise	imsrolemap02	3
+1095	enrol_imsenterprise	imsrolemap03	3
+1096	enrol_imsenterprise	imsrolemap04	5
+1097	enrol_imsenterprise	imsrolemap05	0
+1098	enrol_imsenterprise	imsrolemap06	4
+1099	enrol_imsenterprise	imsrolemap07	0
+1100	enrol_imsenterprise	imsrolemap08	4
+1101	enrol_imsenterprise	truncatecoursecodes	0
+1102	enrol_imsenterprise	createnewcourses	0
+1103	enrol_imsenterprise	createnewcategories	0
+1104	enrol_imsenterprise	imsunenrol	0
+1105	enrol_imsenterprise	imscoursemapshortname	coursecode
+1106	enrol_imsenterprise	imscoursemapfullname	short
+1107	enrol_imsenterprise	imscoursemapsummary	ignore
+1108	enrol_imsenterprise	imsrestricttarget	
+1109	enrol_imsenterprise	imscapitafix	0
+1110	enrol_lti	emaildisplay	2
+1111	enrol_lti	city	
+1112	enrol_lti	country	
+1113	enrol_lti	timezone	99
+1114	enrol_lti	lang	en
+1115	enrol_lti	institution	
+1116	enrol_manual	expiredaction	1
+1117	enrol_manual	expirynotifyhour	6
+1118	enrol_manual	defaultenrol	1
+1119	enrol_manual	status	0
+1120	enrol_manual	roleid	5
+1121	enrol_manual	enrolstart	4
+1122	enrol_manual	enrolperiod	0
+1123	enrol_manual	expirynotify	0
+1124	enrol_manual	expirythreshold	86400
+1125	enrol_meta	nosyncroleids	
+1126	enrol_meta	syncall	1
+1127	enrol_meta	unenrolaction	3
+1128	enrol_meta	coursesort	sortorder
+1129	enrol_mnet	roleid	5
+1130	enrol_mnet	roleid_adv	1
+1131	enrol_paypal	paypalbusiness	
+1132	enrol_paypal	mailstudents	0
+1133	enrol_paypal	mailteachers	0
+1134	enrol_paypal	mailadmins	0
+1135	enrol_paypal	expiredaction	3
+1136	enrol_paypal	status	1
+1137	enrol_paypal	cost	0
+1138	enrol_paypal	currency	USD
+1139	enrol_paypal	roleid	5
+1140	enrol_paypal	enrolperiod	0
+1141	enrol_self	requirepassword	0
+1142	enrol_self	usepasswordpolicy	0
+1143	enrol_self	showhint	0
+1144	enrol_self	expiredaction	1
+1145	enrol_self	expirynotifyhour	6
+1146	enrol_self	defaultenrol	1
+1147	enrol_self	status	1
+1148	enrol_self	newenrols	1
+1149	enrol_self	groupkey	0
+1150	enrol_self	roleid	5
+1151	enrol_self	enrolperiod	0
+1152	enrol_self	expirynotify	0
+1153	enrol_self	expirythreshold	86400
+1154	enrol_self	longtimenosee	0
+1155	enrol_self	maxenrolled	0
+1156	enrol_self	sendcoursewelcomemessage	1
+1157	filter_emoticon	formats	1,4,0
+1158	filter_mathjaxloader	httpurl	http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js
+1159	filter_mathjaxloader	httpsurl	https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js
+1160	filter_mathjaxloader	texfiltercompatibility	0
+1161	filter_mathjaxloader	mathjaxconfig	\nMathJax.Hub.Config({\n    config: ["Accessible.js", "Safe.js"],\n    errorSettings: { message: ["!"] },\n    skipStartupTypeset: true,\n    messageStyle: "none"\n});\n
+1162	filter_mathjaxloader	additionaldelimiters	
+1163	filter_tex	latexpreamble	\\usepackage[latin1]{inputenc}\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\RequirePackage{amsmath,amssymb,latexsym}\n
+1164	filter_tex	latexbackground	#FFFFFF
+1165	filter_tex	density	120
+1166	filter_tex	pathlatex	/usr/bin/latex
+1167	filter_tex	pathdvips	/usr/bin/dvips
+1168	filter_tex	pathconvert	/usr/bin/convert
+1169	filter_tex	pathdvisvgm	/usr/bin/dvisvgm
+1170	filter_tex	pathmimetex	
+1171	filter_tex	convertformat	gif
+1172	filter_urltolink	formats	0
+1173	filter_urltolink	embedimages	1
+1174	logstore_database	dbdriver	
+1175	logstore_database	dbhost	
+1176	logstore_database	dbuser	
+1177	logstore_database	dbpass	
+1178	logstore_database	dbname	
+1179	logstore_database	dbtable	
+1180	logstore_database	dbpersist	0
+1181	logstore_database	dbsocket	
+1182	logstore_database	dbport	
+1183	logstore_database	dbschema	
+1184	logstore_database	dbcollation	
+1185	logstore_database	buffersize	50
+1186	logstore_database	logguests	0
+1187	logstore_database	includelevels	1,2,0
+1188	logstore_database	includeactions	c,r,u,d
+1189	logstore_legacy	loglegacy	0
+1190	logstore_standard	logguests	1
+1191	logstore_standard	loglifetime	0
+1192	logstore_standard	buffersize	50
+1193	question_preview	behaviour	deferredfeedback
+1194	question_preview	correctness	1
+1195	question_preview	marks	2
+1196	question_preview	markdp	2
+1197	question_preview	feedback	1
+1198	question_preview	generalfeedback	1
+1199	question_preview	rightanswer	1
+1200	question_preview	history	0
+1201	mod_assign	search_activity_enabled	1
+1202	mod_book	search_activity_enabled	1
+1203	mod_book	search_chapter_enabled	1
+1204	mod_chat	search_activity_enabled	1
+1205	mod_choice	search_activity_enabled	1
+1206	mod_data	search_activity_enabled	1
+1207	mod_feedback	search_activity_enabled	1
+1208	mod_folder	search_activity_enabled	1
+1209	mod_forum	search_activity_enabled	1
+1210	mod_forum	search_post_enabled	1
+1211	mod_glossary	search_activity_enabled	1
+1212	mod_glossary	search_entry_enabled	1
+1213	mod_imscp	search_activity_enabled	1
+1214	mod_label	search_activity_enabled	1
+1215	mod_lesson	search_activity_enabled	1
+1216	mod_lti	search_activity_enabled	1
+1217	mod_page	search_activity_enabled	1
+1218	mod_quiz	search_activity_enabled	1
+1219	mod_resource	search_activity_enabled	1
+1220	mod_scorm	search_activity_enabled	1
+1221	mod_survey	search_activity_enabled	1
+1222	mod_url	search_activity_enabled	1
+1223	mod_wiki	search_activity_enabled	1
+1224	mod_wiki	search_collaborative_page_enabled	1
+1225	mod_workshop	search_activity_enabled	1
+1226	core_search	core_course_mycourse_enabled	1
+1227	editor_atto	toolbar	collapse = collapse\nstyle1 = title, bold, italic\nlist = unorderedlist, orderedlist\nlinks = link\nfiles = image, media, managefiles\nstyle2 = underline, strike, subscript, superscript\nalign = align\nindent = indent\ninsert = equation, charmap, table, clear\nundo = undo\naccessibility = accessibilitychecker, accessibilityhelper\nother = html
+1228	editor_atto	autosavefrequency	60
+1229	atto_collapse	showgroups	5
+1230	atto_equation	librarygroup1	\n\\cdot\n\\times\n\\ast\n\\div\n\\diamond\n\\pm\n\\mp\n\\oplus\n\\ominus\n\\otimes\n\\oslash\n\\odot\n\\circ\n\\bullet\n\\asymp\n\\equiv\n\\subseteq\n\\supseteq\n\\leq\n\\geq\n\\preceq\n\\succeq\n\\sim\n\\simeq\n\\approx\n\\subset\n\\supset\n\\ll\n\\gg\n\\prec\n\\succ\n\\infty\n\\in\n\\ni\n\\forall\n\\exists\n\\neq\n
+1231	atto_equation	librarygroup2	\n\\leftarrow\n\\rightarrow\n\\uparrow\n\\downarrow\n\\leftrightarrow\n\\nearrow\n\\searrow\n\\swarrow\n\\nwarrow\n\\Leftarrow\n\\Rightarrow\n\\Uparrow\n\\Downarrow\n\\Leftrightarrow\n
+1232	atto_equation	librarygroup3	\n\\alpha\n\\beta\n\\gamma\n\\delta\n\\epsilon\n\\zeta\n\\eta\n\\theta\n\\iota\n\\kappa\n\\lambda\n\\mu\n\\nu\n\\xi\n\\pi\n\\rho\n\\sigma\n\\tau\n\\upsilon\n\\phi\n\\chi\n\\psi\n\\omega\n\\Gamma\n\\Delta\n\\Theta\n\\Lambda\n\\Xi\n\\Pi\n\\Sigma\n\\Upsilon\n\\Phi\n\\Psi\n\\Omega\n
+1233	atto_equation	librarygroup4	\n\\sum{a,b}\n\\sqrt[a]{b+c}\n\\int_{a}^{b}{c}\n\\iint_{a}^{b}{c}\n\\iiint_{a}^{b}{c}\n\\oint{a}\n(a)\n[a]\n\\lbrace{a}\\rbrace\n\\left| \\begin{matrix} a_1 & a_2 \\ a_3 & a_4 \\end{matrix} \\right|\n\\frac{a}{b+c}\n\\vec{a}\n\\binom {a} {b}\n{a \\brack b}\n{a \\brace b}\n
+1234	atto_table	allowborders	0
+1235	atto_table	allowbackgroundcolour	0
+1236	atto_table	allowwidth	0
+1237	editor_tinymce	customtoolbar	wrap,formatselect,wrap,bold,italic,wrap,bullist,numlist,wrap,link,unlink,wrap,image\n\nundo,redo,wrap,underline,strikethrough,sub,sup,wrap,justifyleft,justifycenter,justifyright,wrap,outdent,indent,wrap,forecolor,backcolor,wrap,ltr,rtl\n\nfontselect,fontsizeselect,wrap,code,search,replace,wrap,nonbreaking,charmap,table,wrap,cleanup,removeformat,pastetext,pasteword,wrap,fullscreen
+1238	editor_tinymce	fontselectlist	Trebuchet=Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,arial,helvetica,sans-serif;Impact=impact;Wingdings=wingdings
+1239	editor_tinymce	customconfig	
+1240	tinymce_moodleemoticon	requireemoticon	1
+1241	tinymce_spellchecker	spellengine	
+1242	tinymce_spellchecker	spelllanguagelist	+English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Polish=pl,Portuguese=pt,Spanish=es,Swedish=sv
+1243	theme_clean	invert	0
+1244	theme_clean	logo	
+1245	theme_clean	smalllogo	
+1246	theme_clean	sitename	1
+1247	theme_clean	customcss	
+1248	theme_clean	footnote	
+1249	theme_more	textcolor	#333366
+1250	theme_more	linkcolor	#FF6500
+1251	theme_more	bodybackground	
+1252	theme_more	backgroundimage	
+1253	theme_more	backgroundrepeat	repeat
+1254	theme_more	backgroundposition	0
+1255	theme_more	backgroundfixed	0
+1256	theme_more	contentbackground	#FFFFFF
+1257	theme_more	secondarybackground	#FFFFFF
+1258	theme_more	invert	1
+1259	theme_more	logo	
+1260	theme_more	smalllogo	
+1261	theme_more	sitename	1
+1262	theme_more	customcss	
+1263	theme_more	footnote	
+1264	assignsubmission_file	maxbytes	1048576
+1265	workshop	maxbytes	0
 \.
 
 
@@ -63985,7 +64015,7 @@ COPY phpu_context (id, contextlevel, instanceid, path, depth) FROM stdin;
 -- Name: phpu_context_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_context_id_seq', 100000, false);
+SELECT pg_catalog.setval('phpu_context_id_seq', 101000, false);
 
 
 --
@@ -64001,7 +64031,7 @@ COPY phpu_context_temp (id, path, depth) FROM stdin;
 --
 
 COPY phpu_course (id, category, sortorder, fullname, shortname, idnumber, summary, summaryformat, format, showgrades, newsitems, startdate, marker, maxbytes, legacyfiles, showreports, visible, visibleold, groupmode, groupmodeforce, defaultgroupingid, lang, calendartype, theme, timecreated, timemodified, requested, enablecompletion, completionnotify, cacherev) FROM stdin;
-1	0	0	PHPUnit test site	phpunit		\N	0	site	1	3	0	0	0	0	0	1	1	0	0	0				1471529330	1471529478	0	0	0	1471529478
+1	0	0	PHPUnit test site	phpunit		\N	0	site	1	3	0	0	0	0	0	1	1	0	0	0				1472545679	1472545850	0	0	0	1472545849
 \.
 
 
@@ -64010,7 +64040,7 @@ COPY phpu_course (id, category, sortorder, fullname, shortname, idnumber, summar
 --
 
 COPY phpu_course_categories (id, name, idnumber, description, descriptionformat, parent, sortorder, coursecount, visible, visibleold, timemodified, depth, path, theme) FROM stdin;
-1	Miscellaneous	\N	\N	0	0	10000	0	1	1	1471529330	1	/1	\N
+1	Miscellaneous	\N	\N	0	0	10000	0	1	1	1472545679	1	/1	\N
 \.
 
 
@@ -64018,7 +64048,7 @@ COPY phpu_course_categories (id, name, idnumber, description, descriptionformat,
 -- Name: phpu_course_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_categories_id_seq', 172000, false);
+SELECT pg_catalog.setval('phpu_course_categories_id_seq', 103000, false);
 
 
 --
@@ -64033,7 +64063,7 @@ COPY phpu_course_completion_aggr_methd (id, course, criteriatype, method, value)
 -- Name: phpu_course_completion_aggr_methd_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_completion_aggr_methd_id_seq', 173000, false);
+SELECT pg_catalog.setval('phpu_course_completion_aggr_methd_id_seq', 168000, false);
 
 
 --
@@ -64048,7 +64078,7 @@ COPY phpu_course_completion_crit_compl (id, userid, course, criteriaid, gradefin
 -- Name: phpu_course_completion_crit_compl_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_completion_crit_compl_id_seq', 174000, false);
+SELECT pg_catalog.setval('phpu_course_completion_crit_compl_id_seq', 169000, false);
 
 
 --
@@ -64063,7 +64093,7 @@ COPY phpu_course_completion_criteria (id, course, criteriatype, module, modulein
 -- Name: phpu_course_completion_criteria_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_completion_criteria_id_seq', 175000, false);
+SELECT pg_catalog.setval('phpu_course_completion_criteria_id_seq', 170000, false);
 
 
 --
@@ -64078,7 +64108,7 @@ COPY phpu_course_completions (id, userid, course, timeenrolled, timestarted, tim
 -- Name: phpu_course_completions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_completions_id_seq', 176000, false);
+SELECT pg_catalog.setval('phpu_course_completions_id_seq', 171000, false);
 
 
 --
@@ -64094,14 +64124,14 @@ COPY phpu_course_format_options (id, courseid, format, sectionid, name, value) F
 -- Name: phpu_course_format_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_format_options_id_seq', 101000, false);
+SELECT pg_catalog.setval('phpu_course_format_options_id_seq', 104000, false);
 
 
 --
 -- Name: phpu_course_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_id_seq', 171000, false);
+SELECT pg_catalog.setval('phpu_course_id_seq', 102000, false);
 
 
 --
@@ -64124,14 +64154,14 @@ COPY phpu_course_modules_completion (id, coursemoduleid, userid, completionstate
 -- Name: phpu_course_modules_completion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_modules_completion_id_seq', 178000, false);
+SELECT pg_catalog.setval('phpu_course_modules_completion_id_seq', 173000, false);
 
 
 --
 -- Name: phpu_course_modules_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_modules_id_seq', 177000, false);
+SELECT pg_catalog.setval('phpu_course_modules_id_seq', 172000, false);
 
 
 --
@@ -64146,7 +64176,7 @@ COPY phpu_course_published (id, huburl, courseid, timepublished, enrollable, hub
 -- Name: phpu_course_published_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_published_id_seq', 179000, false);
+SELECT pg_catalog.setval('phpu_course_published_id_seq', 174000, false);
 
 
 --
@@ -64161,7 +64191,7 @@ COPY phpu_course_request (id, fullname, shortname, summary, summaryformat, categ
 -- Name: phpu_course_request_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_request_id_seq', 180000, false);
+SELECT pg_catalog.setval('phpu_course_request_id_seq', 175000, false);
 
 
 --
@@ -64176,7 +64206,7 @@ COPY phpu_course_sections (id, course, section, name, summary, summaryformat, se
 -- Name: phpu_course_sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_course_sections_id_seq', 181000, false);
+SELECT pg_catalog.setval('phpu_course_sections_id_seq', 176000, false);
 
 
 --
@@ -64199,7 +64229,7 @@ COPY phpu_data_content (id, fieldid, recordid, content, content1, content2, cont
 -- Name: phpu_data_content_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_data_content_id_seq', 183000, false);
+SELECT pg_catalog.setval('phpu_data_content_id_seq', 178000, false);
 
 
 --
@@ -64214,14 +64244,14 @@ COPY phpu_data_fields (id, dataid, type, name, description, required, param1, pa
 -- Name: phpu_data_fields_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_data_fields_id_seq', 184000, false);
+SELECT pg_catalog.setval('phpu_data_fields_id_seq', 179000, false);
 
 
 --
 -- Name: phpu_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_data_id_seq', 182000, false);
+SELECT pg_catalog.setval('phpu_data_id_seq', 177000, false);
 
 
 --
@@ -64236,7 +64266,7 @@ COPY phpu_data_records (id, userid, groupid, dataid, timecreated, timemodified, 
 -- Name: phpu_data_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_data_records_id_seq', 185000, false);
+SELECT pg_catalog.setval('phpu_data_records_id_seq', 180000, false);
 
 
 --
@@ -64259,7 +64289,7 @@ COPY phpu_dragdrop_attempt (id, dragdropid, userid, attempt, sentence, correct, 
 -- Name: phpu_dragdrop_attempt_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_attempt_id_seq', 187000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_attempt_id_seq', 182000, false);
 
 
 --
@@ -64274,7 +64304,7 @@ COPY phpu_dragdrop_comment (id, dragdropid, userid, creatorid, comment, timemodi
 -- Name: phpu_dragdrop_comment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_comment_id_seq', 188000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_comment_id_seq', 183000, false);
 
 
 --
@@ -64289,14 +64319,14 @@ COPY phpu_dragdrop_feedback (id, dragdropid, attempt, feedback, timemodified, ti
 -- Name: phpu_dragdrop_feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_feedback_id_seq', 189000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_feedback_id_seq', 184000, false);
 
 
 --
 -- Name: phpu_dragdrop_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_id_seq', 186000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_id_seq', 181000, false);
 
 
 --
@@ -64311,7 +64341,7 @@ COPY phpu_dragdrop_sentence (id, instanceid, mark, timecreated, timemodified) FR
 -- Name: phpu_dragdrop_sentence_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_sentence_id_seq', 190000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_sentence_id_seq', 185000, false);
 
 
 --
@@ -64326,7 +64356,7 @@ COPY phpu_dragdrop_sentence_word_block (id, wordblockid, sentenceid, "position",
 -- Name: phpu_dragdrop_sentence_word_block_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_sentence_word_block_id_seq', 191000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_sentence_word_block_id_seq', 186000, false);
 
 
 --
@@ -64334,20 +64364,20 @@ SELECT pg_catalog.setval('phpu_dragdrop_sentence_word_block_id_seq', 191000, fal
 --
 
 COPY phpu_dragdrop_tag (id, abbreviation, name, type, timecreated, timemodified) FROM stdin;
-1	n	noun	1	1471529344	1471529344
-2	v	verb	1	1471529344	1471529344
-3	adv	adverb	1	1471529344	1471529344
-4	adj	adjective	1	1471529344	1471529344
-5	pro	pronoun	1	1471529344	1471529344
-6	art	article	1	1471529344	1471529344
-7	prep	preposition	1	1471529344	1471529344
-8	infin	infinitive	1	1471529344	1471529344
-9	ger	gerund	1	1471529344	1471529344
-10	subj	subject	1	1471529344	1471529344
-11	obj	object	1	1471529344	1471529344
-12	conj adv	conjunctive adverb	1	1471529344	1471529344
-13	dep	dependent clause	2	1471529344	1471529344
-14	indep	independent clause	2	1471529344	1471529344
+1	n	noun	1	1472545696	1472545696
+2	v	verb	1	1472545696	1472545696
+3	adv	adverb	1	1472545696	1472545696
+4	adj	adjective	1	1472545696	1472545696
+5	pro	pronoun	1	1472545696	1472545696
+6	art	article	1	1472545696	1472545696
+7	prep	preposition	1	1472545696	1472545696
+8	infin	infinitive	1	1472545696	1472545696
+9	ger	gerund	1	1472545696	1472545696
+10	subj	subject	1	1472545696	1472545696
+11	obj	object	1	1472545696	1472545696
+12	conj adv	conjunctive adverb	1	1472545696	1472545696
+13	dep	dependent clause	2	1472545696	1472545696
+14	indep	independent clause	2	1472545696	1472545696
 \.
 
 
@@ -64370,7 +64400,7 @@ COPY phpu_dragdrop_word_block (id, dragdropid, wordblock, tagid, timecreated, ti
 -- Name: phpu_dragdrop_word_block_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_dragdrop_word_block_id_seq', 193000, false);
+SELECT pg_catalog.setval('phpu_dragdrop_word_block_id_seq', 187000, false);
 
 
 --
@@ -64385,7 +64415,7 @@ COPY phpu_editor_atto_autosave (id, elementid, contextid, pagehash, userid, draf
 -- Name: phpu_editor_atto_autosave_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_editor_atto_autosave_id_seq', 194000, false);
+SELECT pg_catalog.setval('phpu_editor_atto_autosave_id_seq', 188000, false);
 
 
 --
@@ -64408,14 +64438,14 @@ COPY phpu_enrol_flatfile (id, action, roleid, userid, courseid, timestart, timee
 -- Name: phpu_enrol_flatfile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_enrol_flatfile_id_seq', 196000, false);
+SELECT pg_catalog.setval('phpu_enrol_flatfile_id_seq', 190000, false);
 
 
 --
 -- Name: phpu_enrol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_enrol_id_seq', 195000, false);
+SELECT pg_catalog.setval('phpu_enrol_id_seq', 189000, false);
 
 
 --
@@ -64430,7 +64460,7 @@ COPY phpu_enrol_lti_tools (id, enrolid, contextid, institution, lang, timezone, 
 -- Name: phpu_enrol_lti_tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_enrol_lti_tools_id_seq', 197000, false);
+SELECT pg_catalog.setval('phpu_enrol_lti_tools_id_seq', 191000, false);
 
 
 --
@@ -64445,7 +64475,7 @@ COPY phpu_enrol_lti_users (id, userid, toolid, serviceurl, sourceid, consumerkey
 -- Name: phpu_enrol_lti_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_enrol_lti_users_id_seq', 198000, false);
+SELECT pg_catalog.setval('phpu_enrol_lti_users_id_seq', 192000, false);
 
 
 --
@@ -64460,7 +64490,7 @@ COPY phpu_enrol_paypal (id, business, receiver_email, receiver_id, item_name, co
 -- Name: phpu_enrol_paypal_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_enrol_paypal_id_seq', 199000, false);
+SELECT pg_catalog.setval('phpu_enrol_paypal_id_seq', 193000, false);
 
 
 --
@@ -64475,7 +64505,7 @@ COPY phpu_event (id, name, description, format, courseid, groupid, userid, repea
 -- Name: phpu_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_event_id_seq', 200000, false);
+SELECT pg_catalog.setval('phpu_event_id_seq', 194000, false);
 
 
 --
@@ -64490,7 +64520,7 @@ COPY phpu_event_subscriptions (id, url, courseid, groupid, userid, eventtype, po
 -- Name: phpu_event_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_event_subscriptions_id_seq', 201000, false);
+SELECT pg_catalog.setval('phpu_event_subscriptions_id_seq', 195000, false);
 
 
 --
@@ -64505,7 +64535,7 @@ COPY phpu_events_handlers (id, eventname, component, handlerfile, handlerfunctio
 -- Name: phpu_events_handlers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_events_handlers_id_seq', 202000, false);
+SELECT pg_catalog.setval('phpu_events_handlers_id_seq', 196000, false);
 
 
 --
@@ -64528,14 +64558,14 @@ COPY phpu_events_queue_handlers (id, queuedeventid, handlerid, status, errormess
 -- Name: phpu_events_queue_handlers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_events_queue_handlers_id_seq', 204000, false);
+SELECT pg_catalog.setval('phpu_events_queue_handlers_id_seq', 198000, false);
 
 
 --
 -- Name: phpu_events_queue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_events_queue_id_seq', 203000, false);
+SELECT pg_catalog.setval('phpu_events_queue_id_seq', 197000, false);
 
 
 --
@@ -64888,7 +64918,7 @@ SELECT pg_catalog.setval('phpu_external_functions_id_seq', 330, true);
 --
 
 COPY phpu_external_services (id, name, enabled, requiredcapability, restrictedusers, component, timecreated, timemodified, shortname, downloadfiles, uploadfiles) FROM stdin;
-1	Moodle mobile web service	0	\N	0	moodle	1471529336	1471529477	moodle_mobile_app	1	1
+1	Moodle mobile web service	0	\N	0	moodle	1472545687	1472545848	moodle_mobile_app	1	1
 \.
 
 
@@ -65102,7 +65132,7 @@ COPY phpu_external_services_users (id, externalserviceid, userid, iprestriction,
 -- Name: phpu_external_services_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_external_services_users_id_seq', 206000, false);
+SELECT pg_catalog.setval('phpu_external_services_users_id_seq', 199000, false);
 
 
 --
@@ -65117,7 +65147,7 @@ COPY phpu_external_tokens (id, token, tokentype, userid, externalserviceid, sid,
 -- Name: phpu_external_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_external_tokens_id_seq', 207000, false);
+SELECT pg_catalog.setval('phpu_external_tokens_id_seq', 200000, false);
 
 
 --
@@ -65140,7 +65170,7 @@ COPY phpu_feedback_completed (id, feedback, userid, timemodified, random_respons
 -- Name: phpu_feedback_completed_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_completed_id_seq', 209000, false);
+SELECT pg_catalog.setval('phpu_feedback_completed_id_seq', 202000, false);
 
 
 --
@@ -65155,14 +65185,14 @@ COPY phpu_feedback_completedtmp (id, feedback, userid, guestid, timemodified, ra
 -- Name: phpu_feedback_completedtmp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_completedtmp_id_seq', 210000, false);
+SELECT pg_catalog.setval('phpu_feedback_completedtmp_id_seq', 203000, false);
 
 
 --
 -- Name: phpu_feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_id_seq', 208000, false);
+SELECT pg_catalog.setval('phpu_feedback_id_seq', 201000, false);
 
 
 --
@@ -65177,7 +65207,7 @@ COPY phpu_feedback_item (id, feedback, template, name, label, presentation, typ,
 -- Name: phpu_feedback_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_item_id_seq', 211000, false);
+SELECT pg_catalog.setval('phpu_feedback_item_id_seq', 204000, false);
 
 
 --
@@ -65192,7 +65222,7 @@ COPY phpu_feedback_sitecourse_map (id, feedbackid, courseid) FROM stdin;
 -- Name: phpu_feedback_sitecourse_map_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_sitecourse_map_id_seq', 212000, false);
+SELECT pg_catalog.setval('phpu_feedback_sitecourse_map_id_seq', 205000, false);
 
 
 --
@@ -65207,7 +65237,7 @@ COPY phpu_feedback_template (id, course, ispublic, name) FROM stdin;
 -- Name: phpu_feedback_template_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_template_id_seq', 213000, false);
+SELECT pg_catalog.setval('phpu_feedback_template_id_seq', 206000, false);
 
 
 --
@@ -65222,7 +65252,7 @@ COPY phpu_feedback_value (id, course_id, item, completed, tmp_completed, value) 
 -- Name: phpu_feedback_value_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_value_id_seq', 214000, false);
+SELECT pg_catalog.setval('phpu_feedback_value_id_seq', 207000, false);
 
 
 --
@@ -65237,7 +65267,7 @@ COPY phpu_feedback_valuetmp (id, course_id, item, completed, tmp_completed, valu
 -- Name: phpu_feedback_valuetmp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_feedback_valuetmp_id_seq', 215000, false);
+SELECT pg_catalog.setval('phpu_feedback_valuetmp_id_seq', 208000, false);
 
 
 --
@@ -65245,13 +65275,13 @@ SELECT pg_catalog.setval('phpu_feedback_valuetmp_id_seq', 215000, false);
 --
 
 COPY phpu_files (id, contenthash, pathnamehash, contextid, component, filearea, itemid, filepath, filename, userid, filesize, mimetype, status, source, author, license, timecreated, timemodified, sortorder, referencefileid) FROM stdin;
-1	41cfeee5884a43a4650a851f4f85e7b28316fcc9	a48e186a2cc853a9e94e9305f4e9bc086391212d	1	theme_more	backgroundimage	0	/	background.jpg	2	4451	image/jpeg	0	\N	\N	\N	1471529391	1471529391	0	\N
-2	da39a3ee5e6b4b0d3255bfef95601890afd80709	d1da7ab1bb9c08a926037367bf8ce9a838034ead	1	theme_more	backgroundimage	0	/	.	2	0	\N	0	\N	\N	\N	1471529391	1471529391	0	\N
-3	5f8e911d0da441e36f47c5c46f4393269211ca56	508e674d49c30d4fde325fe6c7f6fd3d56b247e1	1	assignfeedback_editpdf	stamps	0	/	smile.png	2	1085	image/png	0	\N	\N	\N	1471529392	1471529392	0	\N
-4	da39a3ee5e6b4b0d3255bfef95601890afd80709	70b7cdade7b4e27d4e83f0cdaad10d6a3c0cccb5	1	assignfeedback_editpdf	stamps	0	/	.	2	0	\N	0	\N	\N	\N	1471529392	1471529392	0	\N
-5	75c101cb8cb34ea573cd25ac38f8157b1de901b8	68317eab56c67d32aeaee5acf509a0c4aa828b6b	1	assignfeedback_editpdf	stamps	0	/	sad.png	2	966	image/png	0	\N	\N	\N	1471529392	1471529392	0	\N
-6	0c5190a24c3943966541401c883eacaa20ca20cb	695a55ff780e61c9e59428aa425430b0d6bde53b	1	assignfeedback_editpdf	stamps	0	/	tick.png	2	1039	image/png	0	\N	\N	\N	1471529392	1471529392	0	\N
-7	8c96a486d5801e0f4ab8c411f561f1c687e1f865	373e63af262a9b8466ba8632551520be793c37ff	1	assignfeedback_editpdf	stamps	0	/	cross.png	2	861	image/png	0	\N	\N	\N	1471529392	1471529392	0	\N
+1	41cfeee5884a43a4650a851f4f85e7b28316fcc9	a48e186a2cc853a9e94e9305f4e9bc086391212d	1	theme_more	backgroundimage	0	/	background.jpg	2	4451	image/jpeg	0	\N	\N	\N	1472545754	1472545754	0	\N
+2	da39a3ee5e6b4b0d3255bfef95601890afd80709	d1da7ab1bb9c08a926037367bf8ce9a838034ead	1	theme_more	backgroundimage	0	/	.	2	0	\N	0	\N	\N	\N	1472545755	1472545755	0	\N
+3	5f8e911d0da441e36f47c5c46f4393269211ca56	508e674d49c30d4fde325fe6c7f6fd3d56b247e1	1	assignfeedback_editpdf	stamps	0	/	smile.png	2	1085	image/png	0	\N	\N	\N	1472545756	1472545756	0	\N
+4	da39a3ee5e6b4b0d3255bfef95601890afd80709	70b7cdade7b4e27d4e83f0cdaad10d6a3c0cccb5	1	assignfeedback_editpdf	stamps	0	/	.	2	0	\N	0	\N	\N	\N	1472545756	1472545756	0	\N
+5	75c101cb8cb34ea573cd25ac38f8157b1de901b8	68317eab56c67d32aeaee5acf509a0c4aa828b6b	1	assignfeedback_editpdf	stamps	0	/	sad.png	2	966	image/png	0	\N	\N	\N	1472545756	1472545756	0	\N
+6	0c5190a24c3943966541401c883eacaa20ca20cb	695a55ff780e61c9e59428aa425430b0d6bde53b	1	assignfeedback_editpdf	stamps	0	/	tick.png	2	1039	image/png	0	\N	\N	\N	1472545756	1472545756	0	\N
+7	8c96a486d5801e0f4ab8c411f561f1c687e1f865	373e63af262a9b8466ba8632551520be793c37ff	1	assignfeedback_editpdf	stamps	0	/	cross.png	2	861	image/png	0	\N	\N	\N	1472545756	1472545756	0	\N
 \.
 
 
@@ -65259,7 +65289,7 @@ COPY phpu_files (id, contenthash, pathnamehash, contextid, component, filearea, 
 -- Name: phpu_files_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_files_id_seq', 216000, false);
+SELECT pg_catalog.setval('phpu_files_id_seq', 101000, false);
 
 
 --
@@ -65274,7 +65304,7 @@ COPY phpu_files_reference (id, repositoryid, lastsync, reference, referencehash)
 -- Name: phpu_files_reference_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_files_reference_id_seq', 217000, false);
+SELECT pg_catalog.setval('phpu_files_reference_id_seq', 209000, false);
 
 
 --
@@ -65292,7 +65322,7 @@ COPY phpu_filter_active (id, filter, contextid, active, sortorder) FROM stdin;
 -- Name: phpu_filter_active_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_filter_active_id_seq', 3, true);
+SELECT pg_catalog.setval('phpu_filter_active_id_seq', 102000, false);
 
 
 --
@@ -65307,7 +65337,7 @@ COPY phpu_filter_config (id, filter, contextid, name, value) FROM stdin;
 -- Name: phpu_filter_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_filter_config_id_seq', 218000, false);
+SELECT pg_catalog.setval('phpu_filter_config_id_seq', 210000, false);
 
 
 --
@@ -65322,7 +65352,7 @@ COPY phpu_folder (id, course, name, intro, introformat, revision, timemodified, 
 -- Name: phpu_folder_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_folder_id_seq', 219000, false);
+SELECT pg_catalog.setval('phpu_folder_id_seq', 211000, false);
 
 
 --
@@ -65345,7 +65375,7 @@ COPY phpu_forum_digests (id, userid, forum, maildigest) FROM stdin;
 -- Name: phpu_forum_digests_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_digests_id_seq', 221000, false);
+SELECT pg_catalog.setval('phpu_forum_digests_id_seq', 213000, false);
 
 
 --
@@ -65360,7 +65390,7 @@ COPY phpu_forum_discussion_subs (id, forum, userid, discussion, preference) FROM
 -- Name: phpu_forum_discussion_subs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_discussion_subs_id_seq', 222000, false);
+SELECT pg_catalog.setval('phpu_forum_discussion_subs_id_seq', 214000, false);
 
 
 --
@@ -65375,14 +65405,14 @@ COPY phpu_forum_discussions (id, course, forum, name, firstpost, userid, groupid
 -- Name: phpu_forum_discussions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_discussions_id_seq', 223000, false);
+SELECT pg_catalog.setval('phpu_forum_discussions_id_seq', 215000, false);
 
 
 --
 -- Name: phpu_forum_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_id_seq', 220000, false);
+SELECT pg_catalog.setval('phpu_forum_id_seq', 212000, false);
 
 
 --
@@ -65397,7 +65427,7 @@ COPY phpu_forum_posts (id, discussion, parent, userid, created, modified, mailed
 -- Name: phpu_forum_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_posts_id_seq', 224000, false);
+SELECT pg_catalog.setval('phpu_forum_posts_id_seq', 216000, false);
 
 
 --
@@ -65412,7 +65442,7 @@ COPY phpu_forum_queue (id, userid, discussionid, postid, timemodified) FROM stdi
 -- Name: phpu_forum_queue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_queue_id_seq', 225000, false);
+SELECT pg_catalog.setval('phpu_forum_queue_id_seq', 217000, false);
 
 
 --
@@ -65427,7 +65457,7 @@ COPY phpu_forum_read (id, userid, forumid, discussionid, postid, firstread, last
 -- Name: phpu_forum_read_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_read_id_seq', 226000, false);
+SELECT pg_catalog.setval('phpu_forum_read_id_seq', 218000, false);
 
 
 --
@@ -65442,7 +65472,7 @@ COPY phpu_forum_subscriptions (id, userid, forum) FROM stdin;
 -- Name: phpu_forum_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_subscriptions_id_seq', 227000, false);
+SELECT pg_catalog.setval('phpu_forum_subscriptions_id_seq', 219000, false);
 
 
 --
@@ -65457,7 +65487,7 @@ COPY phpu_forum_track_prefs (id, userid, forumid) FROM stdin;
 -- Name: phpu_forum_track_prefs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_forum_track_prefs_id_seq', 228000, false);
+SELECT pg_catalog.setval('phpu_forum_track_prefs_id_seq', 220000, false);
 
 
 --
@@ -65480,7 +65510,7 @@ COPY phpu_glossary_alias (id, entryid, alias) FROM stdin;
 -- Name: phpu_glossary_alias_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_glossary_alias_id_seq', 230000, false);
+SELECT pg_catalog.setval('phpu_glossary_alias_id_seq', 222000, false);
 
 
 --
@@ -65495,7 +65525,7 @@ COPY phpu_glossary_categories (id, glossaryid, name, usedynalink) FROM stdin;
 -- Name: phpu_glossary_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_glossary_categories_id_seq', 231000, false);
+SELECT pg_catalog.setval('phpu_glossary_categories_id_seq', 223000, false);
 
 
 --
@@ -65518,14 +65548,14 @@ COPY phpu_glossary_entries_categories (id, categoryid, entryid) FROM stdin;
 -- Name: phpu_glossary_entries_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_glossary_entries_categories_id_seq', 233000, false);
+SELECT pg_catalog.setval('phpu_glossary_entries_categories_id_seq', 225000, false);
 
 
 --
 -- Name: phpu_glossary_entries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_glossary_entries_id_seq', 232000, false);
+SELECT pg_catalog.setval('phpu_glossary_entries_id_seq', 224000, false);
 
 
 --
@@ -65554,7 +65584,7 @@ SELECT pg_catalog.setval('phpu_glossary_formats_id_seq', 7, true);
 -- Name: phpu_glossary_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_glossary_id_seq', 229000, false);
+SELECT pg_catalog.setval('phpu_glossary_id_seq', 221000, false);
 
 
 --
@@ -65577,14 +65607,14 @@ COPY phpu_grade_categories_history (id, action, oldid, source, timemodified, log
 -- Name: phpu_grade_categories_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_categories_history_id_seq', 235000, false);
+SELECT pg_catalog.setval('phpu_grade_categories_history_id_seq', 227000, false);
 
 
 --
 -- Name: phpu_grade_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_categories_id_seq', 234000, false);
+SELECT pg_catalog.setval('phpu_grade_categories_id_seq', 226000, false);
 
 
 --
@@ -65607,14 +65637,14 @@ COPY phpu_grade_grades_history (id, action, oldid, source, timemodified, loggedu
 -- Name: phpu_grade_grades_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_grades_history_id_seq', 237000, false);
+SELECT pg_catalog.setval('phpu_grade_grades_history_id_seq', 229000, false);
 
 
 --
 -- Name: phpu_grade_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_grades_id_seq', 236000, false);
+SELECT pg_catalog.setval('phpu_grade_grades_id_seq', 228000, false);
 
 
 --
@@ -65629,7 +65659,7 @@ COPY phpu_grade_import_newitem (id, itemname, importcode, importer) FROM stdin;
 -- Name: phpu_grade_import_newitem_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_import_newitem_id_seq', 238000, false);
+SELECT pg_catalog.setval('phpu_grade_import_newitem_id_seq', 230000, false);
 
 
 --
@@ -65644,7 +65674,7 @@ COPY phpu_grade_import_values (id, itemid, newgradeitem, userid, finalgrade, fee
 -- Name: phpu_grade_import_values_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_import_values_id_seq', 239000, false);
+SELECT pg_catalog.setval('phpu_grade_import_values_id_seq', 231000, false);
 
 
 --
@@ -65667,14 +65697,14 @@ COPY phpu_grade_items_history (id, action, oldid, source, timemodified, loggedus
 -- Name: phpu_grade_items_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_items_history_id_seq', 241000, false);
+SELECT pg_catalog.setval('phpu_grade_items_history_id_seq', 233000, false);
 
 
 --
 -- Name: phpu_grade_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_items_id_seq', 240000, false);
+SELECT pg_catalog.setval('phpu_grade_items_id_seq', 232000, false);
 
 
 --
@@ -65689,7 +65719,7 @@ COPY phpu_grade_letters (id, contextid, lowerboundary, letter) FROM stdin;
 -- Name: phpu_grade_letters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_letters_id_seq', 242000, false);
+SELECT pg_catalog.setval('phpu_grade_letters_id_seq', 234000, false);
 
 
 --
@@ -65712,7 +65742,7 @@ COPY phpu_grade_outcomes_courses (id, courseid, outcomeid) FROM stdin;
 -- Name: phpu_grade_outcomes_courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_outcomes_courses_id_seq', 244000, false);
+SELECT pg_catalog.setval('phpu_grade_outcomes_courses_id_seq', 236000, false);
 
 
 --
@@ -65727,14 +65757,14 @@ COPY phpu_grade_outcomes_history (id, action, oldid, source, timemodified, logge
 -- Name: phpu_grade_outcomes_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_outcomes_history_id_seq', 245000, false);
+SELECT pg_catalog.setval('phpu_grade_outcomes_history_id_seq', 237000, false);
 
 
 --
 -- Name: phpu_grade_outcomes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_outcomes_id_seq', 243000, false);
+SELECT pg_catalog.setval('phpu_grade_outcomes_id_seq', 235000, false);
 
 
 --
@@ -65749,7 +65779,7 @@ COPY phpu_grade_settings (id, courseid, name, value) FROM stdin;
 -- Name: phpu_grade_settings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grade_settings_id_seq', 246000, false);
+SELECT pg_catalog.setval('phpu_grade_settings_id_seq', 238000, false);
 
 
 --
@@ -65764,7 +65794,7 @@ COPY phpu_grading_areas (id, contextid, component, areaname, activemethod) FROM 
 -- Name: phpu_grading_areas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grading_areas_id_seq', 247000, false);
+SELECT pg_catalog.setval('phpu_grading_areas_id_seq', 239000, false);
 
 
 --
@@ -65779,7 +65809,7 @@ COPY phpu_grading_definitions (id, areaid, method, name, description, descriptio
 -- Name: phpu_grading_definitions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grading_definitions_id_seq', 248000, false);
+SELECT pg_catalog.setval('phpu_grading_definitions_id_seq', 240000, false);
 
 
 --
@@ -65794,7 +65824,7 @@ COPY phpu_grading_instances (id, definitionid, raterid, itemid, rawgrade, status
 -- Name: phpu_grading_instances_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_grading_instances_id_seq', 249000, false);
+SELECT pg_catalog.setval('phpu_grading_instances_id_seq', 241000, false);
 
 
 --
@@ -65809,7 +65839,7 @@ COPY phpu_gradingform_guide_comments (id, definitionid, sortorder, description, 
 -- Name: phpu_gradingform_guide_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_guide_comments_id_seq', 250000, false);
+SELECT pg_catalog.setval('phpu_gradingform_guide_comments_id_seq', 242000, false);
 
 
 --
@@ -65824,7 +65854,7 @@ COPY phpu_gradingform_guide_criteria (id, definitionid, sortorder, shortname, de
 -- Name: phpu_gradingform_guide_criteria_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_guide_criteria_id_seq', 251000, false);
+SELECT pg_catalog.setval('phpu_gradingform_guide_criteria_id_seq', 243000, false);
 
 
 --
@@ -65839,7 +65869,7 @@ COPY phpu_gradingform_guide_fillings (id, instanceid, criterionid, remark, remar
 -- Name: phpu_gradingform_guide_fillings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_guide_fillings_id_seq', 252000, false);
+SELECT pg_catalog.setval('phpu_gradingform_guide_fillings_id_seq', 244000, false);
 
 
 --
@@ -65854,7 +65884,7 @@ COPY phpu_gradingform_rubric_criteria (id, definitionid, sortorder, description,
 -- Name: phpu_gradingform_rubric_criteria_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_rubric_criteria_id_seq', 253000, false);
+SELECT pg_catalog.setval('phpu_gradingform_rubric_criteria_id_seq', 245000, false);
 
 
 --
@@ -65869,7 +65899,7 @@ COPY phpu_gradingform_rubric_fillings (id, instanceid, criterionid, levelid, rem
 -- Name: phpu_gradingform_rubric_fillings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_rubric_fillings_id_seq', 254000, false);
+SELECT pg_catalog.setval('phpu_gradingform_rubric_fillings_id_seq', 246000, false);
 
 
 --
@@ -65884,7 +65914,7 @@ COPY phpu_gradingform_rubric_levels (id, criterionid, score, definition, definit
 -- Name: phpu_gradingform_rubric_levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_gradingform_rubric_levels_id_seq', 255000, false);
+SELECT pg_catalog.setval('phpu_gradingform_rubric_levels_id_seq', 247000, false);
 
 
 --
@@ -65907,14 +65937,14 @@ COPY phpu_groupings_groups (id, groupingid, groupid, timeadded) FROM stdin;
 -- Name: phpu_groupings_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_groupings_groups_id_seq', 257000, false);
+SELECT pg_catalog.setval('phpu_groupings_groups_id_seq', 249000, false);
 
 
 --
 -- Name: phpu_groupings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_groupings_id_seq', 256000, false);
+SELECT pg_catalog.setval('phpu_groupings_id_seq', 248000, false);
 
 
 --
@@ -65929,7 +65959,7 @@ COPY phpu_groups (id, courseid, idnumber, name, description, descriptionformat, 
 -- Name: phpu_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_groups_id_seq', 258000, false);
+SELECT pg_catalog.setval('phpu_groups_id_seq', 250000, false);
 
 
 --
@@ -65944,7 +65974,7 @@ COPY phpu_groups_members (id, groupid, userid, timeadded, component, itemid) FRO
 -- Name: phpu_groups_members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_groups_members_id_seq', 259000, false);
+SELECT pg_catalog.setval('phpu_groups_members_id_seq', 251000, false);
 
 
 --
@@ -65959,7 +65989,7 @@ COPY phpu_imscp (id, course, name, intro, introformat, revision, keepold, struct
 -- Name: phpu_imscp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_imscp_id_seq', 260000, false);
+SELECT pg_catalog.setval('phpu_imscp_id_seq', 252000, false);
 
 
 --
@@ -65974,7 +66004,7 @@ COPY phpu_label (id, course, name, intro, introformat, timemodified) FROM stdin;
 -- Name: phpu_label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_label_id_seq', 261000, false);
+SELECT pg_catalog.setval('phpu_label_id_seq', 253000, false);
 
 
 --
@@ -65997,7 +66027,7 @@ COPY phpu_lesson_answers (id, lessonid, pageid, jumpto, grade, score, flags, tim
 -- Name: phpu_lesson_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_answers_id_seq', 263000, false);
+SELECT pg_catalog.setval('phpu_lesson_answers_id_seq', 255000, false);
 
 
 --
@@ -66012,7 +66042,7 @@ COPY phpu_lesson_attempts (id, lessonid, pageid, userid, answerid, retry, correc
 -- Name: phpu_lesson_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_attempts_id_seq', 264000, false);
+SELECT pg_catalog.setval('phpu_lesson_attempts_id_seq', 256000, false);
 
 
 --
@@ -66027,7 +66057,7 @@ COPY phpu_lesson_branch (id, lessonid, userid, pageid, retry, flag, timeseen, ne
 -- Name: phpu_lesson_branch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_branch_id_seq', 265000, false);
+SELECT pg_catalog.setval('phpu_lesson_branch_id_seq', 257000, false);
 
 
 --
@@ -66042,14 +66072,14 @@ COPY phpu_lesson_grades (id, lessonid, userid, grade, late, completed) FROM stdi
 -- Name: phpu_lesson_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_grades_id_seq', 266000, false);
+SELECT pg_catalog.setval('phpu_lesson_grades_id_seq', 258000, false);
 
 
 --
 -- Name: phpu_lesson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_id_seq', 262000, false);
+SELECT pg_catalog.setval('phpu_lesson_id_seq', 254000, false);
 
 
 --
@@ -66064,7 +66094,7 @@ COPY phpu_lesson_overrides (id, lessonid, groupid, userid, available, deadline, 
 -- Name: phpu_lesson_overrides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_overrides_id_seq', 267000, false);
+SELECT pg_catalog.setval('phpu_lesson_overrides_id_seq', 259000, false);
 
 
 --
@@ -66079,7 +66109,7 @@ COPY phpu_lesson_pages (id, lessonid, prevpageid, nextpageid, qtype, qoption, la
 -- Name: phpu_lesson_pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_pages_id_seq', 268000, false);
+SELECT pg_catalog.setval('phpu_lesson_pages_id_seq', 260000, false);
 
 
 --
@@ -66094,7 +66124,7 @@ COPY phpu_lesson_timer (id, lessonid, userid, starttime, lessontime, completed) 
 -- Name: phpu_lesson_timer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lesson_timer_id_seq', 269000, false);
+SELECT pg_catalog.setval('phpu_lesson_timer_id_seq', 261000, false);
 
 
 --
@@ -66133,7 +66163,7 @@ COPY phpu_lock_db (id, resourcekey, expires, owner) FROM stdin;
 -- Name: phpu_lock_db_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lock_db_id_seq', 270000, false);
+SELECT pg_catalog.setval('phpu_lock_db_id_seq', 262000, false);
 
 
 --
@@ -66352,7 +66382,7 @@ SELECT pg_catalog.setval('phpu_log_display_id_seq', 272000, false);
 -- Name: phpu_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_log_id_seq', 271000, false);
+SELECT pg_catalog.setval('phpu_log_id_seq', 263000, false);
 
 
 --
@@ -66367,7 +66397,7 @@ COPY phpu_log_queries (id, qtype, sqltext, sqlparams, error, info, backtrace, ex
 -- Name: phpu_log_queries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_log_queries_id_seq', 273000, false);
+SELECT pg_catalog.setval('phpu_log_queries_id_seq', 264000, false);
 
 
 --
@@ -66382,7 +66412,7 @@ COPY phpu_logstore_standard_log (id, eventname, component, action, target, objec
 -- Name: phpu_logstore_standard_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_logstore_standard_log_id_seq', 274000, false);
+SELECT pg_catalog.setval('phpu_logstore_standard_log_id_seq', 265000, false);
 
 
 --
@@ -66397,7 +66427,7 @@ COPY phpu_lti (id, course, name, intro, introformat, timecreated, timemodified, 
 -- Name: phpu_lti_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_id_seq', 275000, false);
+SELECT pg_catalog.setval('phpu_lti_id_seq', 266000, false);
 
 
 --
@@ -66412,7 +66442,7 @@ COPY phpu_lti_submission (id, ltiid, userid, datesubmitted, dateupdated, gradepe
 -- Name: phpu_lti_submission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_submission_id_seq', 276000, false);
+SELECT pg_catalog.setval('phpu_lti_submission_id_seq', 267000, false);
 
 
 --
@@ -66427,7 +66457,7 @@ COPY phpu_lti_tool_proxies (id, name, regurl, state, guid, secret, vendorcode, c
 -- Name: phpu_lti_tool_proxies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_tool_proxies_id_seq', 277000, false);
+SELECT pg_catalog.setval('phpu_lti_tool_proxies_id_seq', 268000, false);
 
 
 --
@@ -66442,7 +66472,7 @@ COPY phpu_lti_tool_settings (id, toolproxyid, course, coursemoduleid, settings, 
 -- Name: phpu_lti_tool_settings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_tool_settings_id_seq', 278000, false);
+SELECT pg_catalog.setval('phpu_lti_tool_settings_id_seq', 269000, false);
 
 
 --
@@ -66465,14 +66495,14 @@ COPY phpu_lti_types_config (id, typeid, name, value) FROM stdin;
 -- Name: phpu_lti_types_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_types_config_id_seq', 280000, false);
+SELECT pg_catalog.setval('phpu_lti_types_config_id_seq', 271000, false);
 
 
 --
 -- Name: phpu_lti_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_lti_types_id_seq', 279000, false);
+SELECT pg_catalog.setval('phpu_lti_types_id_seq', 270000, false);
 
 
 --
@@ -66495,7 +66525,7 @@ COPY phpu_message_airnotifier_devices (id, userdeviceid, enable) FROM stdin;
 -- Name: phpu_message_airnotifier_devices_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_message_airnotifier_devices_id_seq', 282000, false);
+SELECT pg_catalog.setval('phpu_message_airnotifier_devices_id_seq', 273000, false);
 
 
 --
@@ -66510,14 +66540,14 @@ COPY phpu_message_contacts (id, userid, contactid, blocked) FROM stdin;
 -- Name: phpu_message_contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_message_contacts_id_seq', 283000, false);
+SELECT pg_catalog.setval('phpu_message_contacts_id_seq', 274000, false);
 
 
 --
 -- Name: phpu_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_message_id_seq', 281000, false);
+SELECT pg_catalog.setval('phpu_message_id_seq', 272000, false);
 
 
 --
@@ -66597,7 +66627,7 @@ COPY phpu_message_read (id, useridfrom, useridto, subject, fullmessage, fullmess
 -- Name: phpu_message_read_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_message_read_id_seq', 284000, false);
+SELECT pg_catalog.setval('phpu_message_read_id_seq', 275000, false);
 
 
 --
@@ -66612,7 +66642,7 @@ COPY phpu_message_working (id, unreadmessageid, processorid) FROM stdin;
 -- Name: phpu_message_working_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_message_working_id_seq', 285000, false);
+SELECT pg_catalog.setval('phpu_message_working_id_seq', 276000, false);
 
 
 --
@@ -66627,7 +66657,7 @@ COPY phpu_messageinbound_datakeys (id, handler, datavalue, datakey, timecreated,
 -- Name: phpu_messageinbound_datakeys_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_messageinbound_datakeys_id_seq', 286000, false);
+SELECT pg_catalog.setval('phpu_messageinbound_datakeys_id_seq', 277000, false);
 
 
 --
@@ -66660,7 +66690,7 @@ COPY phpu_messageinbound_messagelist (id, messageid, userid, address, timecreate
 -- Name: phpu_messageinbound_messagelist_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_messageinbound_messagelist_id_seq', 287000, false);
+SELECT pg_catalog.setval('phpu_messageinbound_messagelist_id_seq', 278000, false);
 
 
 --
@@ -66702,7 +66732,7 @@ COPY phpu_mnet_host2service (id, hostid, serviceid, publish, subscribe) FROM std
 -- Name: phpu_mnet_host2service_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnet_host2service_id_seq', 288000, false);
+SELECT pg_catalog.setval('phpu_mnet_host2service_id_seq', 279000, false);
 
 
 --
@@ -66724,7 +66754,7 @@ COPY phpu_mnet_log (id, hostid, remoteid, "time", userid, ip, course, coursename
 -- Name: phpu_mnet_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnet_log_id_seq', 289000, false);
+SELECT pg_catalog.setval('phpu_mnet_log_id_seq', 280000, false);
 
 
 --
@@ -66880,7 +66910,7 @@ COPY phpu_mnet_session (id, userid, username, token, mnethostid, useragent, conf
 -- Name: phpu_mnet_session_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnet_session_id_seq', 290000, false);
+SELECT pg_catalog.setval('phpu_mnet_session_id_seq', 281000, false);
 
 
 --
@@ -66895,7 +66925,7 @@ COPY phpu_mnet_sso_access_control (id, username, mnet_host_id, accessctrl) FROM 
 -- Name: phpu_mnet_sso_access_control_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnet_sso_access_control_id_seq', 291000, false);
+SELECT pg_catalog.setval('phpu_mnet_sso_access_control_id_seq', 282000, false);
 
 
 --
@@ -66910,7 +66940,7 @@ COPY phpu_mnetservice_enrol_courses (id, hostid, remoteid, categoryid, categoryn
 -- Name: phpu_mnetservice_enrol_courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnetservice_enrol_courses_id_seq', 292000, false);
+SELECT pg_catalog.setval('phpu_mnetservice_enrol_courses_id_seq', 283000, false);
 
 
 --
@@ -66925,7 +66955,7 @@ COPY phpu_mnetservice_enrol_enrolments (id, hostid, userid, remotecourseid, role
 -- Name: phpu_mnetservice_enrol_enrolments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_mnetservice_enrol_enrolments_id_seq', 293000, false);
+SELECT pg_catalog.setval('phpu_mnetservice_enrol_enrolments_id_seq', 284000, false);
 
 
 --
@@ -66999,7 +67029,7 @@ COPY phpu_page (id, course, name, intro, introformat, content, contentformat, le
 -- Name: phpu_page_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_page_id_seq', 294000, false);
+SELECT pg_catalog.setval('phpu_page_id_seq', 285000, false);
 
 
 --
@@ -67022,14 +67052,14 @@ COPY phpu_portfolio_instance_config (id, instance, name, value) FROM stdin;
 -- Name: phpu_portfolio_instance_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_instance_config_id_seq', 296000, false);
+SELECT pg_catalog.setval('phpu_portfolio_instance_config_id_seq', 287000, false);
 
 
 --
 -- Name: phpu_portfolio_instance_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_instance_id_seq', 295000, false);
+SELECT pg_catalog.setval('phpu_portfolio_instance_id_seq', 286000, false);
 
 
 --
@@ -67044,7 +67074,7 @@ COPY phpu_portfolio_instance_user (id, instance, userid, name, value) FROM stdin
 -- Name: phpu_portfolio_instance_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_instance_user_id_seq', 297000, false);
+SELECT pg_catalog.setval('phpu_portfolio_instance_user_id_seq', 288000, false);
 
 
 --
@@ -67059,7 +67089,7 @@ COPY phpu_portfolio_log (id, userid, "time", portfolio, caller_class, caller_fil
 -- Name: phpu_portfolio_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_log_id_seq', 298000, false);
+SELECT pg_catalog.setval('phpu_portfolio_log_id_seq', 289000, false);
 
 
 --
@@ -67074,7 +67104,7 @@ COPY phpu_portfolio_mahara_queue (id, transferid, token) FROM stdin;
 -- Name: phpu_portfolio_mahara_queue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_mahara_queue_id_seq', 299000, false);
+SELECT pg_catalog.setval('phpu_portfolio_mahara_queue_id_seq', 290000, false);
 
 
 --
@@ -67089,7 +67119,7 @@ COPY phpu_portfolio_tempdata (id, data, expirytime, userid, instance, queued) FR
 -- Name: phpu_portfolio_tempdata_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_portfolio_tempdata_id_seq', 300000, false);
+SELECT pg_catalog.setval('phpu_portfolio_tempdata_id_seq', 291000, false);
 
 
 --
@@ -67104,7 +67134,7 @@ COPY phpu_post (id, module, userid, courseid, groupid, moduleid, coursemoduleid,
 -- Name: phpu_post_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_post_id_seq', 301000, false);
+SELECT pg_catalog.setval('phpu_post_id_seq', 292000, false);
 
 
 --
@@ -67119,7 +67149,7 @@ COPY phpu_profiling (id, runid, url, data, totalexecutiontime, totalcputime, tot
 -- Name: phpu_profiling_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_profiling_id_seq', 302000, false);
+SELECT pg_catalog.setval('phpu_profiling_id_seq', 293000, false);
 
 
 --
@@ -67142,7 +67172,7 @@ COPY phpu_qtype_ddimageortext_drags (id, questionid, no, draggroup, infinite, la
 -- Name: phpu_qtype_ddimageortext_drags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddimageortext_drags_id_seq', 304000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddimageortext_drags_id_seq', 295000, false);
 
 
 --
@@ -67157,14 +67187,14 @@ COPY phpu_qtype_ddimageortext_drops (id, questionid, no, xleft, ytop, choice, la
 -- Name: phpu_qtype_ddimageortext_drops_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddimageortext_drops_id_seq', 305000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddimageortext_drops_id_seq', 296000, false);
 
 
 --
 -- Name: phpu_qtype_ddimageortext_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddimageortext_id_seq', 303000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddimageortext_id_seq', 294000, false);
 
 
 --
@@ -67187,7 +67217,7 @@ COPY phpu_qtype_ddmarker_drags (id, questionid, no, label, infinite, noofdrags) 
 -- Name: phpu_qtype_ddmarker_drags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddmarker_drags_id_seq', 307000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddmarker_drags_id_seq', 298000, false);
 
 
 --
@@ -67202,14 +67232,14 @@ COPY phpu_qtype_ddmarker_drops (id, questionid, no, shape, coords, choice) FROM 
 -- Name: phpu_qtype_ddmarker_drops_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddmarker_drops_id_seq', 308000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddmarker_drops_id_seq', 299000, false);
 
 
 --
 -- Name: phpu_qtype_ddmarker_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_ddmarker_id_seq', 306000, false);
+SELECT pg_catalog.setval('phpu_qtype_ddmarker_id_seq', 297000, false);
 
 
 --
@@ -67224,7 +67254,7 @@ COPY phpu_qtype_essay_options (id, questionid, responseformat, responserequired,
 -- Name: phpu_qtype_essay_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_essay_options_id_seq', 309000, false);
+SELECT pg_catalog.setval('phpu_qtype_essay_options_id_seq', 300000, false);
 
 
 --
@@ -67239,7 +67269,7 @@ COPY phpu_qtype_match_options (id, questionid, shuffleanswers, correctfeedback, 
 -- Name: phpu_qtype_match_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_match_options_id_seq', 310000, false);
+SELECT pg_catalog.setval('phpu_qtype_match_options_id_seq', 301000, false);
 
 
 --
@@ -67254,7 +67284,7 @@ COPY phpu_qtype_match_subquestions (id, questionid, questiontext, questiontextfo
 -- Name: phpu_qtype_match_subquestions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_match_subquestions_id_seq', 311000, false);
+SELECT pg_catalog.setval('phpu_qtype_match_subquestions_id_seq', 302000, false);
 
 
 --
@@ -67269,7 +67299,7 @@ COPY phpu_qtype_multichoice_options (id, questionid, layout, single, shuffleansw
 -- Name: phpu_qtype_multichoice_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_multichoice_options_id_seq', 312000, false);
+SELECT pg_catalog.setval('phpu_qtype_multichoice_options_id_seq', 303000, false);
 
 
 --
@@ -67284,7 +67314,7 @@ COPY phpu_qtype_randomsamatch_options (id, questionid, choose, subcats, correctf
 -- Name: phpu_qtype_randomsamatch_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_randomsamatch_options_id_seq', 313000, false);
+SELECT pg_catalog.setval('phpu_qtype_randomsamatch_options_id_seq', 304000, false);
 
 
 --
@@ -67299,7 +67329,7 @@ COPY phpu_qtype_shortanswer_options (id, questionid, usecase) FROM stdin;
 -- Name: phpu_qtype_shortanswer_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_qtype_shortanswer_options_id_seq', 314000, false);
+SELECT pg_catalog.setval('phpu_qtype_shortanswer_options_id_seq', 305000, false);
 
 
 --
@@ -67322,7 +67352,7 @@ COPY phpu_question_answers (id, question, answer, answerformat, fraction, feedba
 -- Name: phpu_question_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_answers_id_seq', 316000, false);
+SELECT pg_catalog.setval('phpu_question_answers_id_seq', 307000, false);
 
 
 --
@@ -67337,7 +67367,7 @@ COPY phpu_question_attempt_step_data (id, attemptstepid, name, value) FROM stdin
 -- Name: phpu_question_attempt_step_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_attempt_step_data_id_seq', 317000, false);
+SELECT pg_catalog.setval('phpu_question_attempt_step_data_id_seq', 308000, false);
 
 
 --
@@ -67352,7 +67382,7 @@ COPY phpu_question_attempt_steps (id, questionattemptid, sequencenumber, state, 
 -- Name: phpu_question_attempt_steps_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_attempt_steps_id_seq', 318000, false);
+SELECT pg_catalog.setval('phpu_question_attempt_steps_id_seq', 309000, false);
 
 
 --
@@ -67367,7 +67397,7 @@ COPY phpu_question_attempts (id, questionusageid, slot, behaviour, questionid, v
 -- Name: phpu_question_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_attempts_id_seq', 319000, false);
+SELECT pg_catalog.setval('phpu_question_attempts_id_seq', 310000, false);
 
 
 --
@@ -67382,7 +67412,7 @@ COPY phpu_question_calculated (id, question, answer, tolerance, tolerancetype, c
 -- Name: phpu_question_calculated_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_calculated_id_seq', 320000, false);
+SELECT pg_catalog.setval('phpu_question_calculated_id_seq', 311000, false);
 
 
 --
@@ -67397,7 +67427,7 @@ COPY phpu_question_calculated_options (id, question, synchronize, single, shuffl
 -- Name: phpu_question_calculated_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_calculated_options_id_seq', 321000, false);
+SELECT pg_catalog.setval('phpu_question_calculated_options_id_seq', 312000, false);
 
 
 --
@@ -67412,7 +67442,7 @@ COPY phpu_question_categories (id, name, contextid, info, infoformat, stamp, par
 -- Name: phpu_question_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_categories_id_seq', 322000, false);
+SELECT pg_catalog.setval('phpu_question_categories_id_seq', 313000, false);
 
 
 --
@@ -67427,7 +67457,7 @@ COPY phpu_question_dataset_definitions (id, category, name, type, options, itemc
 -- Name: phpu_question_dataset_definitions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_dataset_definitions_id_seq', 323000, false);
+SELECT pg_catalog.setval('phpu_question_dataset_definitions_id_seq', 314000, false);
 
 
 --
@@ -67442,7 +67472,7 @@ COPY phpu_question_dataset_items (id, definition, itemnumber, value) FROM stdin;
 -- Name: phpu_question_dataset_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_dataset_items_id_seq', 324000, false);
+SELECT pg_catalog.setval('phpu_question_dataset_items_id_seq', 315000, false);
 
 
 --
@@ -67457,7 +67487,7 @@ COPY phpu_question_datasets (id, question, datasetdefinition) FROM stdin;
 -- Name: phpu_question_datasets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_datasets_id_seq', 325000, false);
+SELECT pg_catalog.setval('phpu_question_datasets_id_seq', 316000, false);
 
 
 --
@@ -67472,7 +67502,7 @@ COPY phpu_question_ddwtos (id, questionid, shuffleanswers, correctfeedback, corr
 -- Name: phpu_question_ddwtos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_ddwtos_id_seq', 326000, false);
+SELECT pg_catalog.setval('phpu_question_ddwtos_id_seq', 317000, false);
 
 
 --
@@ -67487,7 +67517,7 @@ COPY phpu_question_gapselect (id, questionid, shuffleanswers, correctfeedback, c
 -- Name: phpu_question_gapselect_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_gapselect_id_seq', 327000, false);
+SELECT pg_catalog.setval('phpu_question_gapselect_id_seq', 318000, false);
 
 
 --
@@ -67502,14 +67532,14 @@ COPY phpu_question_hints (id, questionid, hint, hintformat, shownumcorrect, clea
 -- Name: phpu_question_hints_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_hints_id_seq', 328000, false);
+SELECT pg_catalog.setval('phpu_question_hints_id_seq', 319000, false);
 
 
 --
 -- Name: phpu_question_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_id_seq', 315000, false);
+SELECT pg_catalog.setval('phpu_question_id_seq', 306000, false);
 
 
 --
@@ -67524,7 +67554,7 @@ COPY phpu_question_multianswer (id, question, sequence) FROM stdin;
 -- Name: phpu_question_multianswer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_multianswer_id_seq', 329000, false);
+SELECT pg_catalog.setval('phpu_question_multianswer_id_seq', 320000, false);
 
 
 --
@@ -67539,7 +67569,7 @@ COPY phpu_question_numerical (id, question, answer, tolerance) FROM stdin;
 -- Name: phpu_question_numerical_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_numerical_id_seq', 330000, false);
+SELECT pg_catalog.setval('phpu_question_numerical_id_seq', 321000, false);
 
 
 --
@@ -67554,7 +67584,7 @@ COPY phpu_question_numerical_options (id, question, showunits, unitsleft, unitgr
 -- Name: phpu_question_numerical_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_numerical_options_id_seq', 331000, false);
+SELECT pg_catalog.setval('phpu_question_numerical_options_id_seq', 322000, false);
 
 
 --
@@ -67569,7 +67599,7 @@ COPY phpu_question_numerical_units (id, question, multiplier, unit) FROM stdin;
 -- Name: phpu_question_numerical_units_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_numerical_units_id_seq', 332000, false);
+SELECT pg_catalog.setval('phpu_question_numerical_units_id_seq', 323000, false);
 
 
 --
@@ -67584,7 +67614,7 @@ COPY phpu_question_response_analysis (id, hashcode, whichtries, timemodified, qu
 -- Name: phpu_question_response_analysis_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_response_analysis_id_seq', 333000, false);
+SELECT pg_catalog.setval('phpu_question_response_analysis_id_seq', 324000, false);
 
 
 --
@@ -67599,7 +67629,7 @@ COPY phpu_question_response_count (id, analysisid, try, rcount) FROM stdin;
 -- Name: phpu_question_response_count_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_response_count_id_seq', 334000, false);
+SELECT pg_catalog.setval('phpu_question_response_count_id_seq', 325000, false);
 
 
 --
@@ -67614,7 +67644,7 @@ COPY phpu_question_statistics (id, hashcode, timemodified, questionid, slot, sub
 -- Name: phpu_question_statistics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_statistics_id_seq', 335000, false);
+SELECT pg_catalog.setval('phpu_question_statistics_id_seq', 326000, false);
 
 
 --
@@ -67629,7 +67659,7 @@ COPY phpu_question_truefalse (id, question, trueanswer, falseanswer) FROM stdin;
 -- Name: phpu_question_truefalse_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_truefalse_id_seq', 336000, false);
+SELECT pg_catalog.setval('phpu_question_truefalse_id_seq', 327000, false);
 
 
 --
@@ -67644,7 +67674,7 @@ COPY phpu_question_usages (id, contextid, component, preferredbehaviour) FROM st
 -- Name: phpu_question_usages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_question_usages_id_seq', 337000, false);
+SELECT pg_catalog.setval('phpu_question_usages_id_seq', 328000, false);
 
 
 --
@@ -67667,7 +67697,7 @@ COPY phpu_quiz_attempts (id, quiz, userid, attempt, uniqueid, layout, currentpag
 -- Name: phpu_quiz_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_attempts_id_seq', 339000, false);
+SELECT pg_catalog.setval('phpu_quiz_attempts_id_seq', 330000, false);
 
 
 --
@@ -67682,7 +67712,7 @@ COPY phpu_quiz_feedback (id, quizid, feedbacktext, feedbacktextformat, mingrade,
 -- Name: phpu_quiz_feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_feedback_id_seq', 340000, false);
+SELECT pg_catalog.setval('phpu_quiz_feedback_id_seq', 331000, false);
 
 
 --
@@ -67697,14 +67727,14 @@ COPY phpu_quiz_grades (id, quiz, userid, grade, timemodified) FROM stdin;
 -- Name: phpu_quiz_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_grades_id_seq', 341000, false);
+SELECT pg_catalog.setval('phpu_quiz_grades_id_seq', 332000, false);
 
 
 --
 -- Name: phpu_quiz_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_id_seq', 338000, false);
+SELECT pg_catalog.setval('phpu_quiz_id_seq', 329000, false);
 
 
 --
@@ -67719,7 +67749,7 @@ COPY phpu_quiz_overrides (id, quiz, groupid, userid, timeopen, timeclose, timeli
 -- Name: phpu_quiz_overrides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_overrides_id_seq', 342000, false);
+SELECT pg_catalog.setval('phpu_quiz_overrides_id_seq', 333000, false);
 
 
 --
@@ -67734,7 +67764,7 @@ COPY phpu_quiz_overview_regrades (id, questionusageid, slot, newfraction, oldfra
 -- Name: phpu_quiz_overview_regrades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_overview_regrades_id_seq', 343000, false);
+SELECT pg_catalog.setval('phpu_quiz_overview_regrades_id_seq', 334000, false);
 
 
 --
@@ -67768,7 +67798,7 @@ COPY phpu_quiz_sections (id, quizid, firstslot, heading, shufflequestions) FROM 
 -- Name: phpu_quiz_sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_sections_id_seq', 344000, false);
+SELECT pg_catalog.setval('phpu_quiz_sections_id_seq', 335000, false);
 
 
 --
@@ -67783,7 +67813,7 @@ COPY phpu_quiz_slots (id, slot, quizid, page, requireprevious, questionid, maxma
 -- Name: phpu_quiz_slots_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_slots_id_seq', 345000, false);
+SELECT pg_catalog.setval('phpu_quiz_slots_id_seq', 336000, false);
 
 
 --
@@ -67798,7 +67828,7 @@ COPY phpu_quiz_statistics (id, hashcode, whichattempts, timemodified, firstattem
 -- Name: phpu_quiz_statistics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_quiz_statistics_id_seq', 346000, false);
+SELECT pg_catalog.setval('phpu_quiz_statistics_id_seq', 337000, false);
 
 
 --
@@ -67813,7 +67843,7 @@ COPY phpu_rating (id, contextid, component, ratingarea, itemid, scaleid, rating,
 -- Name: phpu_rating_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_rating_id_seq', 347000, false);
+SELECT pg_catalog.setval('phpu_rating_id_seq', 338000, false);
 
 
 --
@@ -67828,7 +67858,7 @@ COPY phpu_registration_hubs (id, token, hubname, huburl, confirmed, secret, time
 -- Name: phpu_registration_hubs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_registration_hubs_id_seq', 348000, false);
+SELECT pg_catalog.setval('phpu_registration_hubs_id_seq', 339000, false);
 
 
 --
@@ -67865,7 +67895,7 @@ COPY phpu_repository_instance_config (id, instanceid, name, value) FROM stdin;
 -- Name: phpu_repository_instance_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_repository_instance_config_id_seq', 349000, false);
+SELECT pg_catalog.setval('phpu_repository_instance_config_id_seq', 340000, false);
 
 
 --
@@ -67873,13 +67903,13 @@ SELECT pg_catalog.setval('phpu_repository_instance_config_id_seq', 349000, false
 --
 
 COPY phpu_repository_instances (id, name, typeid, userid, contextid, username, password, timecreated, timemodified, readonly) FROM stdin;
-1		1	0	1	\N	\N	1471529379	1471529379	0
-2		2	0	1	\N	\N	1471529380	1471529380	0
-3		3	0	1	\N	\N	1471529381	1471529381	0
-4		4	0	1	\N	\N	1471529381	1471529381	0
-5		5	0	1	\N	\N	1471529381	1471529381	0
-6		6	0	1	\N	\N	1471529382	1471529382	0
-7		7	0	1	\N	\N	1471529382	1471529382	0
+1		1	0	1	\N	\N	1472545737	1472545737	0
+2		2	0	1	\N	\N	1472545739	1472545739	0
+3		3	0	1	\N	\N	1472545739	1472545739	0
+4		4	0	1	\N	\N	1472545740	1472545740	0
+5		5	0	1	\N	\N	1472545740	1472545740	0
+6		6	0	1	\N	\N	1472545740	1472545740	0
+7		7	0	1	\N	\N	1472545741	1472545741	0
 \.
 
 
@@ -67887,7 +67917,7 @@ COPY phpu_repository_instances (id, name, typeid, userid, contextid, username, p
 -- Name: phpu_repository_instances_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_repository_instances_id_seq', 350000, false);
+SELECT pg_catalog.setval('phpu_repository_instances_id_seq', 103000, false);
 
 
 --
@@ -67902,7 +67932,7 @@ COPY phpu_resource (id, course, name, intro, introformat, tobemigrated, legacyfi
 -- Name: phpu_resource_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_resource_id_seq', 351000, false);
+SELECT pg_catalog.setval('phpu_resource_id_seq', 341000, false);
 
 
 --
@@ -67917,7 +67947,7 @@ COPY phpu_resource_old (id, course, name, type, reference, intro, introformat, a
 -- Name: phpu_resource_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_resource_old_id_seq', 352000, false);
+SELECT pg_catalog.setval('phpu_resource_old_id_seq', 342000, false);
 
 
 --
@@ -68020,7 +68050,7 @@ COPY phpu_role_assignments (id, roleid, contextid, userid, timemodified, modifie
 -- Name: phpu_role_assignments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_role_assignments_id_seq', 353000, false);
+SELECT pg_catalog.setval('phpu_role_assignments_id_seq', 343000, false);
 
 
 --
@@ -68028,1316 +68058,1316 @@ SELECT pg_catalog.setval('phpu_role_assignments_id_seq', 353000, false);
 --
 
 COPY phpu_role_capabilities (id, contextid, roleid, capability, permission, timemodified, modifierid) FROM stdin;
-1	1	1	moodle/site:readallmessages	1	1471529331	0
-2	1	3	moodle/site:readallmessages	1	1471529331	0
-3	1	1	moodle/site:deleteanymessage	1	1471529331	0
-4	1	1	moodle/site:sendmessage	1	1471529331	0
-5	1	7	moodle/site:sendmessage	1	1471529331	0
-6	1	7	moodle/site:deleteownmessage	1	1471529331	0
-7	1	1	moodle/site:approvecourse	1	1471529331	0
-8	1	3	moodle/backup:backupcourse	1	1471529331	0
-9	1	1	moodle/backup:backupcourse	1	1471529331	0
-10	1	3	moodle/backup:backupsection	1	1471529331	0
-11	1	1	moodle/backup:backupsection	1	1471529331	0
-12	1	3	moodle/backup:backupactivity	1	1471529331	0
-13	1	1	moodle/backup:backupactivity	1	1471529331	0
-14	1	3	moodle/backup:backuptargethub	1	1471529331	0
-15	1	1	moodle/backup:backuptargethub	1	1471529331	0
-16	1	3	moodle/backup:backuptargetimport	1	1471529331	0
-17	1	1	moodle/backup:backuptargetimport	1	1471529331	0
-18	1	3	moodle/backup:downloadfile	1	1471529331	0
-19	1	1	moodle/backup:downloadfile	1	1471529331	0
-20	1	3	moodle/backup:configure	1	1471529331	0
-21	1	1	moodle/backup:configure	1	1471529331	0
-22	1	1	moodle/backup:userinfo	1	1471529331	0
-23	1	1	moodle/backup:anonymise	1	1471529331	0
-24	1	3	moodle/restore:restorecourse	1	1471529331	0
-25	1	1	moodle/restore:restorecourse	1	1471529331	0
-26	1	3	moodle/restore:restoresection	1	1471529331	0
-27	1	1	moodle/restore:restoresection	1	1471529331	0
-28	1	3	moodle/restore:restoreactivity	1	1471529331	0
-29	1	1	moodle/restore:restoreactivity	1	1471529331	0
-30	1	3	moodle/restore:restoretargethub	1	1471529331	0
-31	1	1	moodle/restore:restoretargethub	1	1471529331	0
-32	1	3	moodle/restore:restoretargetimport	1	1471529331	0
-33	1	1	moodle/restore:restoretargetimport	1	1471529331	0
-34	1	3	moodle/restore:uploadfile	1	1471529331	0
-35	1	1	moodle/restore:uploadfile	1	1471529331	0
-36	1	3	moodle/restore:configure	1	1471529331	0
-37	1	1	moodle/restore:configure	1	1471529331	0
-38	1	2	moodle/restore:rolldates	1	1471529331	0
-39	1	1	moodle/restore:rolldates	1	1471529331	0
-40	1	1	moodle/restore:userinfo	1	1471529331	0
-41	1	1	moodle/restore:createuser	1	1471529331	0
-42	1	3	moodle/site:manageblocks	1	1471529331	0
-43	1	1	moodle/site:manageblocks	1	1471529331	0
-44	1	4	moodle/site:accessallgroups	1	1471529331	0
-45	1	3	moodle/site:accessallgroups	1	1471529331	0
-46	1	1	moodle/site:accessallgroups	1	1471529332	0
-47	1	4	moodle/site:viewfullnames	1	1471529332	0
-48	1	3	moodle/site:viewfullnames	1	1471529332	0
-49	1	1	moodle/site:viewfullnames	1	1471529332	0
-50	1	4	moodle/site:viewuseridentity	1	1471529332	0
-51	1	3	moodle/site:viewuseridentity	1	1471529332	0
-52	1	1	moodle/site:viewuseridentity	1	1471529332	0
-53	1	4	moodle/site:viewreports	1	1471529332	0
-54	1	3	moodle/site:viewreports	1	1471529332	0
-55	1	1	moodle/site:viewreports	1	1471529332	0
-56	1	3	moodle/site:trustcontent	1	1471529332	0
-57	1	1	moodle/site:trustcontent	1	1471529332	0
-58	1	1	moodle/site:uploadusers	1	1471529332	0
-59	1	3	moodle/filter:manage	1	1471529332	0
-60	1	1	moodle/filter:manage	1	1471529332	0
-61	1	1	moodle/user:create	1	1471529332	0
-62	1	1	moodle/user:delete	1	1471529332	0
-63	1	1	moodle/user:update	1	1471529332	0
-64	1	6	moodle/user:viewdetails	1	1471529332	0
-65	1	5	moodle/user:viewdetails	1	1471529332	0
-66	1	4	moodle/user:viewdetails	1	1471529332	0
-67	1	3	moodle/user:viewdetails	1	1471529332	0
-68	1	1	moodle/user:viewdetails	1	1471529332	0
-69	1	1	moodle/user:viewalldetails	1	1471529332	0
-70	1	1	moodle/user:viewlastip	1	1471529332	0
-71	1	4	moodle/user:viewhiddendetails	1	1471529332	0
-72	1	3	moodle/user:viewhiddendetails	1	1471529332	0
-73	1	1	moodle/user:viewhiddendetails	1	1471529332	0
-74	1	1	moodle/user:loginas	1	1471529332	0
-75	1	1	moodle/user:managesyspages	1	1471529332	0
-76	1	7	moodle/user:manageownblocks	1	1471529332	0
-77	1	7	moodle/user:manageownfiles	1	1471529332	0
-78	1	1	moodle/my:configsyspages	1	1471529332	0
-79	1	3	moodle/role:assign	1	1471529332	0
-80	1	1	moodle/role:assign	1	1471529332	0
-81	1	4	moodle/role:review	1	1471529332	0
-82	1	3	moodle/role:review	1	1471529332	0
-83	1	1	moodle/role:review	1	1471529332	0
-84	1	1	moodle/role:override	1	1471529332	0
-85	1	3	moodle/role:safeoverride	1	1471529332	0
-86	1	1	moodle/role:manage	1	1471529332	0
-87	1	3	moodle/role:switchroles	1	1471529332	0
-88	1	1	moodle/role:switchroles	1	1471529332	0
-89	1	1	moodle/category:manage	1	1471529332	0
-90	1	2	moodle/category:viewhiddencategories	1	1471529332	0
-91	1	1	moodle/category:viewhiddencategories	1	1471529332	0
-92	1	1	moodle/cohort:manage	1	1471529332	0
-93	1	1	moodle/cohort:assign	1	1471529332	0
-94	1	3	moodle/cohort:view	1	1471529332	0
-95	1	1	moodle/cohort:view	1	1471529332	0
-96	1	2	moodle/course:create	1	1471529332	0
-97	1	1	moodle/course:create	1	1471529332	0
-98	1	7	moodle/course:request	1	1471529332	0
-99	1	1	moodle/course:delete	1	1471529332	0
-100	1	3	moodle/course:update	1	1471529332	0
-101	1	1	moodle/course:update	1	1471529332	0
-102	1	1	moodle/course:view	1	1471529332	0
-103	1	3	moodle/course:enrolreview	1	1471529332	0
-104	1	1	moodle/course:enrolreview	1	1471529332	0
-105	1	3	moodle/course:enrolconfig	1	1471529332	0
-106	1	1	moodle/course:enrolconfig	1	1471529332	0
-107	1	3	moodle/course:reviewotherusers	1	1471529332	0
-108	1	1	moodle/course:reviewotherusers	1	1471529332	0
-109	1	4	moodle/course:bulkmessaging	1	1471529332	0
-110	1	3	moodle/course:bulkmessaging	1	1471529332	0
-111	1	1	moodle/course:bulkmessaging	1	1471529332	0
-112	1	4	moodle/course:viewhiddenuserfields	1	1471529332	0
-113	1	3	moodle/course:viewhiddenuserfields	1	1471529332	0
-114	1	1	moodle/course:viewhiddenuserfields	1	1471529332	0
-115	1	2	moodle/course:viewhiddencourses	1	1471529332	0
-116	1	4	moodle/course:viewhiddencourses	1	1471529332	0
-117	1	3	moodle/course:viewhiddencourses	1	1471529332	0
-118	1	1	moodle/course:viewhiddencourses	1	1471529332	0
-119	1	3	moodle/course:visibility	1	1471529332	0
-120	1	1	moodle/course:visibility	1	1471529332	0
-121	1	3	moodle/course:managefiles	1	1471529332	0
-122	1	1	moodle/course:managefiles	1	1471529332	0
-123	1	3	moodle/course:manageactivities	1	1471529332	0
-124	1	1	moodle/course:manageactivities	1	1471529332	0
-125	1	3	moodle/course:activityvisibility	1	1471529332	0
-126	1	1	moodle/course:activityvisibility	1	1471529332	0
-127	1	4	moodle/course:viewhiddenactivities	1	1471529332	0
-128	1	3	moodle/course:viewhiddenactivities	1	1471529332	0
-129	1	1	moodle/course:viewhiddenactivities	1	1471529332	0
-130	1	5	moodle/course:viewparticipants	1	1471529332	0
-131	1	4	moodle/course:viewparticipants	1	1471529332	0
-132	1	3	moodle/course:viewparticipants	1	1471529332	0
-133	1	1	moodle/course:viewparticipants	1	1471529332	0
-134	1	3	moodle/course:changefullname	1	1471529332	0
-135	1	1	moodle/course:changefullname	1	1471529332	0
-136	1	3	moodle/course:changeshortname	1	1471529332	0
-137	1	1	moodle/course:changeshortname	1	1471529332	0
-138	1	3	moodle/course:renameroles	1	1471529332	0
-139	1	1	moodle/course:renameroles	1	1471529332	0
-140	1	3	moodle/course:changeidnumber	1	1471529332	0
-141	1	1	moodle/course:changeidnumber	1	1471529332	0
-142	1	3	moodle/course:changecategory	1	1471529332	0
-143	1	1	moodle/course:changecategory	1	1471529333	0
-144	1	3	moodle/course:changesummary	1	1471529333	0
-145	1	1	moodle/course:changesummary	1	1471529333	0
-146	1	1	moodle/site:viewparticipants	1	1471529333	0
-147	1	5	moodle/course:isincompletionreports	1	1471529333	0
-148	1	5	moodle/course:viewscales	1	1471529333	0
-149	1	4	moodle/course:viewscales	1	1471529333	0
-150	1	3	moodle/course:viewscales	1	1471529333	0
-151	1	1	moodle/course:viewscales	1	1471529333	0
-152	1	3	moodle/course:managescales	1	1471529333	0
-153	1	1	moodle/course:managescales	1	1471529333	0
-154	1	3	moodle/course:managegroups	1	1471529333	0
-155	1	1	moodle/course:managegroups	1	1471529333	0
-156	1	3	moodle/course:reset	1	1471529333	0
-157	1	1	moodle/course:reset	1	1471529333	0
-158	1	3	moodle/course:viewsuspendedusers	1	1471529333	0
-159	1	1	moodle/course:viewsuspendedusers	1	1471529333	0
-160	1	1	moodle/course:tag	1	1471529333	0
-161	1	3	moodle/course:tag	1	1471529333	0
-162	1	6	moodle/blog:view	1	1471529333	0
-163	1	7	moodle/blog:view	1	1471529333	0
-164	1	5	moodle/blog:view	1	1471529333	0
-165	1	4	moodle/blog:view	1	1471529333	0
-166	1	3	moodle/blog:view	1	1471529333	0
-167	1	1	moodle/blog:view	1	1471529333	0
-168	1	6	moodle/blog:search	1	1471529333	0
-169	1	7	moodle/blog:search	1	1471529333	0
-170	1	5	moodle/blog:search	1	1471529333	0
-171	1	4	moodle/blog:search	1	1471529333	0
-172	1	3	moodle/blog:search	1	1471529333	0
-173	1	1	moodle/blog:search	1	1471529333	0
-174	1	1	moodle/blog:viewdrafts	1	1471529333	0
-175	1	7	moodle/blog:create	1	1471529333	0
-176	1	1	moodle/blog:create	1	1471529333	0
-177	1	4	moodle/blog:manageentries	1	1471529333	0
-178	1	3	moodle/blog:manageentries	1	1471529333	0
-179	1	1	moodle/blog:manageentries	1	1471529333	0
-180	1	5	moodle/blog:manageexternal	1	1471529333	0
-181	1	7	moodle/blog:manageexternal	1	1471529333	0
-182	1	4	moodle/blog:manageexternal	1	1471529333	0
-183	1	3	moodle/blog:manageexternal	1	1471529333	0
-184	1	1	moodle/blog:manageexternal	1	1471529333	0
-185	1	7	moodle/calendar:manageownentries	1	1471529333	0
-186	1	1	moodle/calendar:manageownentries	1	1471529333	0
-187	1	4	moodle/calendar:managegroupentries	1	1471529333	0
-188	1	3	moodle/calendar:managegroupentries	1	1471529333	0
-189	1	1	moodle/calendar:managegroupentries	1	1471529333	0
-190	1	4	moodle/calendar:manageentries	1	1471529333	0
-191	1	3	moodle/calendar:manageentries	1	1471529333	0
-192	1	1	moodle/calendar:manageentries	1	1471529333	0
-193	1	1	moodle/user:editprofile	1	1471529333	0
-194	1	6	moodle/user:editownprofile	-1000	1471529333	0
-195	1	7	moodle/user:editownprofile	1	1471529333	0
-196	1	1	moodle/user:editownprofile	1	1471529333	0
-197	1	6	moodle/user:changeownpassword	-1000	1471529333	0
-198	1	7	moodle/user:changeownpassword	1	1471529333	0
-199	1	1	moodle/user:changeownpassword	1	1471529333	0
-200	1	5	moodle/user:readuserposts	1	1471529333	0
-201	1	4	moodle/user:readuserposts	1	1471529333	0
-202	1	3	moodle/user:readuserposts	1	1471529333	0
-203	1	1	moodle/user:readuserposts	1	1471529333	0
-204	1	5	moodle/user:readuserblogs	1	1471529333	0
-205	1	4	moodle/user:readuserblogs	1	1471529333	0
-206	1	3	moodle/user:readuserblogs	1	1471529333	0
-207	1	1	moodle/user:readuserblogs	1	1471529333	0
-208	1	1	moodle/user:editmessageprofile	1	1471529333	0
-209	1	6	moodle/user:editownmessageprofile	-1000	1471529333	0
-210	1	7	moodle/user:editownmessageprofile	1	1471529333	0
-211	1	1	moodle/user:editownmessageprofile	1	1471529333	0
-212	1	3	moodle/question:managecategory	1	1471529333	0
-213	1	1	moodle/question:managecategory	1	1471529333	0
-214	1	3	moodle/question:add	1	1471529333	0
-215	1	1	moodle/question:add	1	1471529333	0
-216	1	3	moodle/question:editmine	1	1471529333	0
-217	1	1	moodle/question:editmine	1	1471529333	0
-218	1	3	moodle/question:editall	1	1471529333	0
-219	1	1	moodle/question:editall	1	1471529333	0
-220	1	3	moodle/question:viewmine	1	1471529333	0
-221	1	1	moodle/question:viewmine	1	1471529333	0
-222	1	3	moodle/question:viewall	1	1471529333	0
-223	1	1	moodle/question:viewall	1	1471529333	0
-224	1	3	moodle/question:usemine	1	1471529333	0
-225	1	1	moodle/question:usemine	1	1471529333	0
-226	1	3	moodle/question:useall	1	1471529333	0
-227	1	1	moodle/question:useall	1	1471529333	0
-228	1	3	moodle/question:movemine	1	1471529333	0
-229	1	1	moodle/question:movemine	1	1471529333	0
-230	1	3	moodle/question:moveall	1	1471529333	0
-231	1	1	moodle/question:moveall	1	1471529333	0
-232	1	1	moodle/question:config	1	1471529333	0
-233	1	5	moodle/question:flag	1	1471529333	0
-234	1	4	moodle/question:flag	1	1471529333	0
-235	1	3	moodle/question:flag	1	1471529333	0
-236	1	1	moodle/question:flag	1	1471529333	0
-237	1	4	moodle/site:doclinks	1	1471529333	0
-238	1	3	moodle/site:doclinks	1	1471529333	0
-239	1	1	moodle/site:doclinks	1	1471529333	0
-240	1	3	moodle/course:sectionvisibility	1	1471529334	0
-241	1	1	moodle/course:sectionvisibility	1	1471529334	0
-242	1	3	moodle/course:useremail	1	1471529334	0
-243	1	1	moodle/course:useremail	1	1471529334	0
-244	1	3	moodle/course:viewhiddensections	1	1471529334	0
-245	1	1	moodle/course:viewhiddensections	1	1471529334	0
-246	1	3	moodle/course:setcurrentsection	1	1471529334	0
-247	1	1	moodle/course:setcurrentsection	1	1471529334	0
-248	1	3	moodle/course:movesections	1	1471529334	0
-249	1	1	moodle/course:movesections	1	1471529334	0
-250	1	4	moodle/grade:viewall	1	1471529334	0
-251	1	3	moodle/grade:viewall	1	1471529334	0
-252	1	1	moodle/grade:viewall	1	1471529334	0
-253	1	5	moodle/grade:view	1	1471529334	0
-254	1	4	moodle/grade:viewhidden	1	1471529334	0
-255	1	3	moodle/grade:viewhidden	1	1471529334	0
-256	1	1	moodle/grade:viewhidden	1	1471529334	0
-257	1	3	moodle/grade:import	1	1471529334	0
-258	1	1	moodle/grade:import	1	1471529334	0
-259	1	4	moodle/grade:export	1	1471529334	0
-260	1	3	moodle/grade:export	1	1471529334	0
-261	1	1	moodle/grade:export	1	1471529334	0
-262	1	3	moodle/grade:manage	1	1471529334	0
-263	1	1	moodle/grade:manage	1	1471529334	0
-264	1	3	moodle/grade:edit	1	1471529334	0
-265	1	1	moodle/grade:edit	1	1471529334	0
-266	1	3	moodle/grade:managegradingforms	1	1471529334	0
-267	1	1	moodle/grade:managegradingforms	1	1471529334	0
-268	1	1	moodle/grade:sharegradingforms	1	1471529334	0
-269	1	1	moodle/grade:managesharedforms	1	1471529334	0
-270	1	3	moodle/grade:manageoutcomes	1	1471529334	0
-271	1	1	moodle/grade:manageoutcomes	1	1471529334	0
-272	1	3	moodle/grade:manageletters	1	1471529334	0
-273	1	1	moodle/grade:manageletters	1	1471529334	0
-274	1	3	moodle/grade:hide	1	1471529334	0
-275	1	1	moodle/grade:hide	1	1471529334	0
-276	1	3	moodle/grade:lock	1	1471529334	0
-277	1	1	moodle/grade:lock	1	1471529334	0
-278	1	3	moodle/grade:unlock	1	1471529334	0
-279	1	1	moodle/grade:unlock	1	1471529334	0
-280	1	7	moodle/my:manageblocks	1	1471529334	0
-281	1	4	moodle/notes:view	1	1471529334	0
-282	1	3	moodle/notes:view	1	1471529334	0
-283	1	1	moodle/notes:view	1	1471529334	0
-284	1	4	moodle/notes:manage	1	1471529334	0
-285	1	3	moodle/notes:manage	1	1471529334	0
-286	1	1	moodle/notes:manage	1	1471529334	0
-287	1	1	moodle/tag:manage	1	1471529334	0
-288	1	1	moodle/tag:edit	1	1471529334	0
-289	1	7	moodle/tag:flag	1	1471529334	0
-290	1	4	moodle/tag:editblocks	1	1471529334	0
-291	1	3	moodle/tag:editblocks	1	1471529334	0
-292	1	1	moodle/tag:editblocks	1	1471529334	0
-293	1	6	moodle/block:view	1	1471529334	0
-294	1	7	moodle/block:view	1	1471529334	0
-295	1	5	moodle/block:view	1	1471529334	0
-296	1	4	moodle/block:view	1	1471529334	0
-297	1	3	moodle/block:view	1	1471529334	0
-298	1	3	moodle/block:edit	1	1471529334	0
-299	1	1	moodle/block:edit	1	1471529334	0
-300	1	7	moodle/portfolio:export	1	1471529334	0
-301	1	5	moodle/portfolio:export	1	1471529334	0
-302	1	4	moodle/portfolio:export	1	1471529334	0
-303	1	3	moodle/portfolio:export	1	1471529334	0
-304	1	8	moodle/comment:view	1	1471529334	0
-305	1	6	moodle/comment:view	1	1471529334	0
-306	1	7	moodle/comment:view	1	1471529334	0
-307	1	5	moodle/comment:view	1	1471529334	0
-308	1	4	moodle/comment:view	1	1471529334	0
-309	1	3	moodle/comment:view	1	1471529334	0
-310	1	1	moodle/comment:view	1	1471529334	0
-311	1	7	moodle/comment:post	1	1471529334	0
-312	1	5	moodle/comment:post	1	1471529334	0
-313	1	4	moodle/comment:post	1	1471529334	0
-314	1	3	moodle/comment:post	1	1471529334	0
-315	1	1	moodle/comment:post	1	1471529334	0
-316	1	3	moodle/comment:delete	1	1471529334	0
-317	1	1	moodle/comment:delete	1	1471529334	0
-318	1	1	moodle/webservice:createtoken	1	1471529334	0
-319	1	7	moodle/webservice:createmobiletoken	1	1471529334	0
-320	1	7	moodle/rating:view	1	1471529334	0
-321	1	5	moodle/rating:view	1	1471529334	0
-322	1	4	moodle/rating:view	1	1471529334	0
-323	1	3	moodle/rating:view	1	1471529334	0
-324	1	1	moodle/rating:view	1	1471529334	0
-325	1	7	moodle/rating:viewany	1	1471529334	0
-326	1	5	moodle/rating:viewany	1	1471529334	0
-327	1	4	moodle/rating:viewany	1	1471529334	0
-328	1	3	moodle/rating:viewany	1	1471529334	0
-329	1	1	moodle/rating:viewany	1	1471529334	0
-330	1	7	moodle/rating:viewall	1	1471529334	0
-331	1	5	moodle/rating:viewall	1	1471529334	0
-332	1	4	moodle/rating:viewall	1	1471529334	0
-333	1	3	moodle/rating:viewall	1	1471529334	0
-334	1	1	moodle/rating:viewall	1	1471529334	0
-335	1	7	moodle/rating:rate	1	1471529335	0
-336	1	5	moodle/rating:rate	1	1471529335	0
-337	1	4	moodle/rating:rate	1	1471529335	0
-338	1	3	moodle/rating:rate	1	1471529335	0
-339	1	1	moodle/rating:rate	1	1471529335	0
-340	1	1	moodle/course:publish	1	1471529335	0
-341	1	4	moodle/course:markcomplete	1	1471529335	0
-342	1	3	moodle/course:markcomplete	1	1471529335	0
-343	1	1	moodle/course:markcomplete	1	1471529335	0
-344	1	1	moodle/community:add	1	1471529335	0
-345	1	4	moodle/community:add	1	1471529335	0
-346	1	3	moodle/community:add	1	1471529335	0
-347	1	1	moodle/community:download	1	1471529335	0
-348	1	3	moodle/community:download	1	1471529335	0
-349	1	1	moodle/badges:manageglobalsettings	1	1471529335	0
-350	1	7	moodle/badges:viewbadges	1	1471529335	0
-351	1	7	moodle/badges:manageownbadges	1	1471529335	0
-352	1	7	moodle/badges:viewotherbadges	1	1471529335	0
-353	1	7	moodle/badges:earnbadge	1	1471529335	0
-354	1	1	moodle/badges:createbadge	1	1471529335	0
-355	1	3	moodle/badges:createbadge	1	1471529335	0
-356	1	1	moodle/badges:deletebadge	1	1471529335	0
-357	1	3	moodle/badges:deletebadge	1	1471529335	0
-358	1	1	moodle/badges:configuredetails	1	1471529335	0
-359	1	3	moodle/badges:configuredetails	1	1471529335	0
-360	1	1	moodle/badges:configurecriteria	1	1471529335	0
-361	1	3	moodle/badges:configurecriteria	1	1471529335	0
-362	1	1	moodle/badges:configuremessages	1	1471529335	0
-363	1	3	moodle/badges:configuremessages	1	1471529335	0
-364	1	1	moodle/badges:awardbadge	1	1471529335	0
-365	1	4	moodle/badges:awardbadge	1	1471529335	0
-366	1	3	moodle/badges:awardbadge	1	1471529335	0
-367	1	1	moodle/badges:viewawarded	1	1471529335	0
-368	1	4	moodle/badges:viewawarded	1	1471529335	0
-369	1	3	moodle/badges:viewawarded	1	1471529335	0
-370	1	6	moodle/search:query	1	1471529335	0
-371	1	7	moodle/search:query	1	1471529335	0
-372	1	5	moodle/search:query	1	1471529335	0
-373	1	4	moodle/search:query	1	1471529335	0
-374	1	3	moodle/search:query	1	1471529335	0
-375	1	1	moodle/search:query	1	1471529335	0
-376	1	1	moodle/competency:competencymanage	1	1471529335	0
-377	1	7	moodle/competency:competencyview	1	1471529335	0
-378	1	3	moodle/competency:competencygrade	1	1471529335	0
-379	1	4	moodle/competency:competencygrade	1	1471529335	0
-380	1	1	moodle/competency:competencygrade	1	1471529335	0
-381	1	3	moodle/competency:coursecompetencymanage	1	1471529335	0
-382	1	1	moodle/competency:coursecompetencymanage	1	1471529335	0
-383	1	1	moodle/competency:coursecompetencyconfigure	1	1471529335	0
-384	1	5	moodle/competency:coursecompetencygradable	1	1471529335	0
-385	1	7	moodle/competency:coursecompetencyview	1	1471529335	0
-386	1	1	moodle/competency:planmanage	1	1471529335	0
-387	1	1	moodle/competency:planmanagedraft	1	1471529335	0
-388	1	1	moodle/competency:planview	1	1471529335	0
-389	1	1	moodle/competency:planviewdraft	1	1471529335	0
-390	1	7	moodle/competency:planviewown	1	1471529335	0
-391	1	1	moodle/competency:planrequestreview	1	1471529335	0
-392	1	7	moodle/competency:planrequestreviewown	1	1471529335	0
-393	1	1	moodle/competency:planreview	1	1471529335	0
-394	1	1	moodle/competency:plancomment	1	1471529335	0
-395	1	7	moodle/competency:plancommentown	1	1471529335	0
-396	1	1	moodle/competency:usercompetencyview	1	1471529335	0
-397	1	3	moodle/competency:usercompetencyview	1	1471529335	0
-398	1	4	moodle/competency:usercompetencyview	1	1471529335	0
-399	1	1	moodle/competency:usercompetencyrequestreview	1	1471529335	0
-400	1	7	moodle/competency:usercompetencyrequestreviewown	1	1471529335	0
-401	1	1	moodle/competency:usercompetencyreview	1	1471529335	0
-402	1	1	moodle/competency:usercompetencycomment	1	1471529335	0
-403	1	7	moodle/competency:usercompetencycommentown	1	1471529335	0
-404	1	1	moodle/competency:templatemanage	1	1471529335	0
-405	1	1	moodle/competency:templateview	1	1471529335	0
-406	1	1	moodle/competency:userevidencemanage	1	1471529335	0
-407	1	7	moodle/competency:userevidencemanageown	1	1471529335	0
-408	1	1	moodle/competency:userevidenceview	1	1471529335	0
-409	1	6	mod/assign:view	1	1471529341	0
-410	1	5	mod/assign:view	1	1471529341	0
-411	1	4	mod/assign:view	1	1471529341	0
-412	1	3	mod/assign:view	1	1471529341	0
-413	1	1	mod/assign:view	1	1471529341	0
-414	1	5	mod/assign:submit	1	1471529341	0
-415	1	4	mod/assign:grade	1	1471529341	0
-416	1	3	mod/assign:grade	1	1471529341	0
-417	1	1	mod/assign:grade	1	1471529341	0
-418	1	4	mod/assign:exportownsubmission	1	1471529341	0
-419	1	3	mod/assign:exportownsubmission	1	1471529341	0
-420	1	1	mod/assign:exportownsubmission	1	1471529341	0
-421	1	5	mod/assign:exportownsubmission	1	1471529341	0
-422	1	3	mod/assign:addinstance	1	1471529341	0
-423	1	1	mod/assign:addinstance	1	1471529341	0
-424	1	4	mod/assign:grantextension	1	1471529341	0
-425	1	3	mod/assign:grantextension	1	1471529341	0
-426	1	1	mod/assign:grantextension	1	1471529341	0
-427	1	3	mod/assign:revealidentities	1	1471529341	0
-428	1	1	mod/assign:revealidentities	1	1471529341	0
-429	1	3	mod/assign:reviewgrades	1	1471529341	0
-430	1	1	mod/assign:reviewgrades	1	1471529341	0
-431	1	3	mod/assign:releasegrades	1	1471529341	0
-432	1	1	mod/assign:releasegrades	1	1471529341	0
-433	1	3	mod/assign:managegrades	1	1471529341	0
-434	1	1	mod/assign:managegrades	1	1471529341	0
-435	1	3	mod/assign:manageallocations	1	1471529341	0
-436	1	1	mod/assign:manageallocations	1	1471529341	0
-437	1	3	mod/assign:viewgrades	1	1471529341	0
-438	1	1	mod/assign:viewgrades	1	1471529341	0
-439	1	4	mod/assign:viewgrades	1	1471529341	0
-440	1	1	mod/assign:viewblinddetails	1	1471529341	0
-441	1	4	mod/assign:receivegradernotifications	1	1471529341	0
-442	1	3	mod/assign:receivegradernotifications	1	1471529341	0
-443	1	1	mod/assign:receivegradernotifications	1	1471529341	0
-444	1	6	mod/assignment:view	1	1471529342	0
-445	1	5	mod/assignment:view	1	1471529342	0
-446	1	4	mod/assignment:view	1	1471529342	0
-447	1	3	mod/assignment:view	1	1471529342	0
-448	1	1	mod/assignment:view	1	1471529342	0
-449	1	3	mod/assignment:addinstance	1	1471529342	0
-450	1	1	mod/assignment:addinstance	1	1471529342	0
-451	1	5	mod/assignment:submit	1	1471529342	0
-452	1	4	mod/assignment:grade	1	1471529342	0
-453	1	3	mod/assignment:grade	1	1471529342	0
-454	1	1	mod/assignment:grade	1	1471529342	0
-455	1	4	mod/assignment:exportownsubmission	1	1471529342	0
-456	1	3	mod/assignment:exportownsubmission	1	1471529342	0
-457	1	1	mod/assignment:exportownsubmission	1	1471529342	0
-458	1	5	mod/assignment:exportownsubmission	1	1471529342	0
-459	1	3	mod/book:addinstance	1	1471529342	0
-460	1	1	mod/book:addinstance	1	1471529342	0
-461	1	6	mod/book:read	1	1471529342	0
-462	1	8	mod/book:read	1	1471529342	0
-463	1	5	mod/book:read	1	1471529342	0
-464	1	4	mod/book:read	1	1471529342	0
-465	1	3	mod/book:read	1	1471529342	0
-466	1	1	mod/book:read	1	1471529342	0
-467	1	4	mod/book:viewhiddenchapters	1	1471529342	0
-468	1	3	mod/book:viewhiddenchapters	1	1471529342	0
-469	1	1	mod/book:viewhiddenchapters	1	1471529342	0
-470	1	3	mod/book:edit	1	1471529342	0
-471	1	1	mod/book:edit	1	1471529342	0
-472	1	3	mod/chat:addinstance	1	1471529342	0
-473	1	1	mod/chat:addinstance	1	1471529342	0
-474	1	5	mod/chat:chat	1	1471529342	0
-475	1	4	mod/chat:chat	1	1471529342	0
-476	1	3	mod/chat:chat	1	1471529342	0
-477	1	1	mod/chat:chat	1	1471529342	0
-478	1	5	mod/chat:readlog	1	1471529342	0
-479	1	4	mod/chat:readlog	1	1471529342	0
-480	1	3	mod/chat:readlog	1	1471529342	0
-481	1	1	mod/chat:readlog	1	1471529343	0
-482	1	4	mod/chat:deletelog	1	1471529343	0
-483	1	3	mod/chat:deletelog	1	1471529343	0
-484	1	1	mod/chat:deletelog	1	1471529343	0
-485	1	4	mod/chat:exportparticipatedsession	1	1471529343	0
-486	1	3	mod/chat:exportparticipatedsession	1	1471529343	0
-487	1	1	mod/chat:exportparticipatedsession	1	1471529343	0
-488	1	4	mod/chat:exportsession	1	1471529343	0
-489	1	3	mod/chat:exportsession	1	1471529343	0
-490	1	1	mod/chat:exportsession	1	1471529343	0
-491	1	3	mod/choice:addinstance	1	1471529343	0
-492	1	1	mod/choice:addinstance	1	1471529343	0
-493	1	5	mod/choice:choose	1	1471529343	0
-494	1	4	mod/choice:choose	1	1471529343	0
-495	1	3	mod/choice:choose	1	1471529343	0
-496	1	4	mod/choice:readresponses	1	1471529343	0
-497	1	3	mod/choice:readresponses	1	1471529343	0
-498	1	1	mod/choice:readresponses	1	1471529343	0
-499	1	4	mod/choice:deleteresponses	1	1471529343	0
-500	1	3	mod/choice:deleteresponses	1	1471529343	0
-501	1	1	mod/choice:deleteresponses	1	1471529343	0
-502	1	4	mod/choice:downloadresponses	1	1471529343	0
-503	1	3	mod/choice:downloadresponses	1	1471529343	0
-504	1	1	mod/choice:downloadresponses	1	1471529343	0
-505	1	3	mod/communitywall:addinstance	1	1471529343	0
-506	1	1	mod/communitywall:addinstance	1	1471529343	0
-507	1	6	mod/communitywall:view	1	1471529343	0
-508	1	5	mod/communitywall:view	1	1471529343	0
-509	1	4	mod/communitywall:view	1	1471529343	0
-510	1	3	mod/communitywall:view	1	1471529343	0
-511	1	1	mod/communitywall:view	1	1471529343	0
-512	1	3	mod/data:addinstance	1	1471529343	0
-513	1	1	mod/data:addinstance	1	1471529343	0
-514	1	8	mod/data:viewentry	1	1471529343	0
-515	1	6	mod/data:viewentry	1	1471529343	0
-516	1	5	mod/data:viewentry	1	1471529344	0
-517	1	4	mod/data:viewentry	1	1471529344	0
-518	1	3	mod/data:viewentry	1	1471529344	0
-519	1	1	mod/data:viewentry	1	1471529344	0
-520	1	5	mod/data:writeentry	1	1471529344	0
-521	1	4	mod/data:writeentry	1	1471529344	0
-522	1	3	mod/data:writeentry	1	1471529344	0
-523	1	1	mod/data:writeentry	1	1471529344	0
-524	1	5	mod/data:comment	1	1471529344	0
-525	1	4	mod/data:comment	1	1471529344	0
-526	1	3	mod/data:comment	1	1471529344	0
-527	1	1	mod/data:comment	1	1471529344	0
-528	1	4	mod/data:rate	1	1471529344	0
-529	1	3	mod/data:rate	1	1471529344	0
-530	1	1	mod/data:rate	1	1471529344	0
-531	1	4	mod/data:viewrating	1	1471529344	0
-532	1	3	mod/data:viewrating	1	1471529344	0
-533	1	1	mod/data:viewrating	1	1471529344	0
-534	1	4	mod/data:viewanyrating	1	1471529344	0
-535	1	3	mod/data:viewanyrating	1	1471529344	0
-536	1	1	mod/data:viewanyrating	1	1471529344	0
-537	1	4	mod/data:viewallratings	1	1471529344	0
-538	1	3	mod/data:viewallratings	1	1471529344	0
-539	1	1	mod/data:viewallratings	1	1471529344	0
-540	1	4	mod/data:approve	1	1471529344	0
-541	1	3	mod/data:approve	1	1471529344	0
-542	1	1	mod/data:approve	1	1471529344	0
-543	1	4	mod/data:manageentries	1	1471529344	0
-544	1	3	mod/data:manageentries	1	1471529344	0
-545	1	1	mod/data:manageentries	1	1471529344	0
-546	1	4	mod/data:managecomments	1	1471529344	0
-547	1	3	mod/data:managecomments	1	1471529344	0
-548	1	1	mod/data:managecomments	1	1471529344	0
-549	1	3	mod/data:managetemplates	1	1471529344	0
-550	1	1	mod/data:managetemplates	1	1471529344	0
-551	1	4	mod/data:viewalluserpresets	1	1471529344	0
-552	1	3	mod/data:viewalluserpresets	1	1471529344	0
-553	1	1	mod/data:viewalluserpresets	1	1471529344	0
-554	1	1	mod/data:manageuserpresets	1	1471529344	0
-555	1	1	mod/data:exportentry	1	1471529344	0
-556	1	4	mod/data:exportentry	1	1471529344	0
-557	1	3	mod/data:exportentry	1	1471529344	0
-558	1	1	mod/data:exportownentry	1	1471529344	0
-559	1	4	mod/data:exportownentry	1	1471529344	0
-560	1	3	mod/data:exportownentry	1	1471529344	0
-561	1	5	mod/data:exportownentry	1	1471529344	0
-562	1	1	mod/data:exportallentries	1	1471529344	0
-563	1	4	mod/data:exportallentries	1	1471529344	0
-564	1	3	mod/data:exportallentries	1	1471529344	0
-565	1	1	mod/data:exportuserinfo	1	1471529344	0
-566	1	4	mod/data:exportuserinfo	1	1471529344	0
-567	1	3	mod/data:exportuserinfo	1	1471529344	0
-568	1	3	mod/dragdrop:addinstance	1	1471529344	0
-569	1	1	mod/dragdrop:addinstance	1	1471529344	0
-570	1	6	mod/dragdrop:view	1	1471529344	0
-571	1	5	mod/dragdrop:view	1	1471529344	0
-572	1	4	mod/dragdrop:view	1	1471529344	0
-573	1	3	mod/dragdrop:view	1	1471529344	0
-574	1	1	mod/dragdrop:view	1	1471529344	0
-575	1	3	mod/dragdrop:word_blocks	1	1471529344	0
-576	1	1	mod/dragdrop:word_blocks	1	1471529344	0
-577	1	3	mod/dragdrop:sentences	1	1471529344	0
-578	1	1	mod/dragdrop:sentences	1	1471529344	0
-579	1	3	mod/dragdrop:feedback_settings	1	1471529344	0
-580	1	1	mod/dragdrop:feedback_settings	1	1471529344	0
-581	1	3	mod/dragdrop:view_all_attempts	1	1471529344	0
-582	1	1	mod/dragdrop:view_all_attempts	1	1471529344	0
-583	1	4	mod/dragdrop:view_all_attempts	1	1471529344	0
-584	1	3	mod/dragdrop:view_all_comments	1	1471529345	0
-585	1	1	mod/dragdrop:view_all_comments	1	1471529345	0
-586	1	4	mod/dragdrop:view_all_comments	1	1471529345	0
-587	1	3	mod/dragdrop:manage_all_attempts	1	1471529345	0
-588	1	1	mod/dragdrop:manage_all_attempts	1	1471529345	0
-589	1	4	mod/dragdrop:manage_all_attempts	1	1471529345	0
-590	1	3	mod/dragdrop:manage_all_comments	1	1471529345	0
-591	1	1	mod/dragdrop:manage_all_comments	1	1471529345	0
-592	1	4	mod/dragdrop:manage_all_comments	1	1471529345	0
-593	1	3	mod/dragdrop:comment	1	1471529345	0
-594	1	1	mod/dragdrop:comment	1	1471529345	0
-595	1	4	mod/dragdrop:comment	1	1471529345	0
-596	1	6	mod/dragdrop:attempts	1	1471529345	0
-597	1	5	mod/dragdrop:attempts	1	1471529345	0
-598	1	4	mod/dragdrop:attempts	1	1471529345	0
-599	1	3	mod/dragdrop:attempts	1	1471529345	0
-600	1	1	mod/dragdrop:attempts	1	1471529345	0
-601	1	3	mod/feedback:addinstance	1	1471529345	0
-602	1	1	mod/feedback:addinstance	1	1471529345	0
-603	1	6	mod/feedback:view	1	1471529345	0
-604	1	8	mod/feedback:view	1	1471529345	0
-605	1	5	mod/feedback:view	1	1471529345	0
-606	1	4	mod/feedback:view	1	1471529345	0
-607	1	3	mod/feedback:view	1	1471529345	0
-608	1	1	mod/feedback:view	1	1471529345	0
-609	1	8	mod/feedback:complete	1	1471529345	0
-610	1	5	mod/feedback:complete	1	1471529345	0
-611	1	5	mod/feedback:viewanalysepage	1	1471529345	0
-612	1	3	mod/feedback:viewanalysepage	1	1471529345	0
-613	1	1	mod/feedback:viewanalysepage	1	1471529345	0
-614	1	3	mod/feedback:deletesubmissions	1	1471529345	0
-615	1	1	mod/feedback:deletesubmissions	1	1471529345	0
-616	1	1	mod/feedback:mapcourse	1	1471529345	0
-617	1	3	mod/feedback:edititems	1	1471529345	0
-618	1	1	mod/feedback:edititems	1	1471529345	0
-619	1	3	mod/feedback:createprivatetemplate	1	1471529345	0
-620	1	1	mod/feedback:createprivatetemplate	1	1471529345	0
-621	1	3	mod/feedback:createpublictemplate	1	1471529345	0
-622	1	1	mod/feedback:createpublictemplate	1	1471529345	0
-623	1	3	mod/feedback:deletetemplate	1	1471529345	0
-624	1	1	mod/feedback:deletetemplate	1	1471529345	0
-625	1	4	mod/feedback:viewreports	1	1471529345	0
-626	1	3	mod/feedback:viewreports	1	1471529345	0
-627	1	1	mod/feedback:viewreports	1	1471529345	0
-628	1	4	mod/feedback:receivemail	1	1471529345	0
-629	1	3	mod/feedback:receivemail	1	1471529345	0
-630	1	3	mod/folder:addinstance	1	1471529346	0
-631	1	1	mod/folder:addinstance	1	1471529346	0
-632	1	6	mod/folder:view	1	1471529346	0
-633	1	7	mod/folder:view	1	1471529346	0
-634	1	3	mod/folder:managefiles	1	1471529346	0
-635	1	3	mod/forum:addinstance	1	1471529346	0
-636	1	1	mod/forum:addinstance	1	1471529346	0
-637	1	8	mod/forum:viewdiscussion	1	1471529346	0
-638	1	6	mod/forum:viewdiscussion	1	1471529346	0
-639	1	5	mod/forum:viewdiscussion	1	1471529346	0
-640	1	4	mod/forum:viewdiscussion	1	1471529346	0
-641	1	3	mod/forum:viewdiscussion	1	1471529346	0
-642	1	1	mod/forum:viewdiscussion	1	1471529346	0
-643	1	4	mod/forum:viewhiddentimedposts	1	1471529346	0
-644	1	3	mod/forum:viewhiddentimedposts	1	1471529346	0
-645	1	1	mod/forum:viewhiddentimedposts	1	1471529346	0
-646	1	5	mod/forum:startdiscussion	1	1471529346	0
-647	1	4	mod/forum:startdiscussion	1	1471529346	0
-648	1	3	mod/forum:startdiscussion	1	1471529346	0
-649	1	1	mod/forum:startdiscussion	1	1471529346	0
-650	1	5	mod/forum:replypost	1	1471529346	0
-651	1	4	mod/forum:replypost	1	1471529346	0
-652	1	3	mod/forum:replypost	1	1471529346	0
-653	1	1	mod/forum:replypost	1	1471529346	0
-654	1	4	mod/forum:addnews	1	1471529346	0
-655	1	3	mod/forum:addnews	1	1471529346	0
-656	1	1	mod/forum:addnews	1	1471529346	0
-657	1	4	mod/forum:replynews	1	1471529346	0
-658	1	3	mod/forum:replynews	1	1471529346	0
-659	1	1	mod/forum:replynews	1	1471529346	0
-660	1	5	mod/forum:viewrating	1	1471529346	0
-661	1	4	mod/forum:viewrating	1	1471529346	0
-662	1	3	mod/forum:viewrating	1	1471529346	0
-663	1	1	mod/forum:viewrating	1	1471529346	0
-664	1	4	mod/forum:viewanyrating	1	1471529346	0
-665	1	3	mod/forum:viewanyrating	1	1471529346	0
-666	1	1	mod/forum:viewanyrating	1	1471529346	0
-667	1	4	mod/forum:viewallratings	1	1471529346	0
-668	1	3	mod/forum:viewallratings	1	1471529346	0
-669	1	1	mod/forum:viewallratings	1	1471529346	0
-670	1	4	mod/forum:rate	1	1471529346	0
-671	1	3	mod/forum:rate	1	1471529346	0
-672	1	1	mod/forum:rate	1	1471529346	0
-673	1	5	mod/forum:createattachment	1	1471529346	0
-674	1	4	mod/forum:createattachment	1	1471529346	0
-675	1	3	mod/forum:createattachment	1	1471529346	0
-676	1	1	mod/forum:createattachment	1	1471529346	0
-677	1	5	mod/forum:deleteownpost	1	1471529346	0
-678	1	4	mod/forum:deleteownpost	1	1471529346	0
-679	1	3	mod/forum:deleteownpost	1	1471529346	0
-680	1	1	mod/forum:deleteownpost	1	1471529346	0
-681	1	4	mod/forum:deleteanypost	1	1471529346	0
-682	1	3	mod/forum:deleteanypost	1	1471529346	0
-683	1	1	mod/forum:deleteanypost	1	1471529346	0
-684	1	4	mod/forum:splitdiscussions	1	1471529346	0
-685	1	3	mod/forum:splitdiscussions	1	1471529346	0
-686	1	1	mod/forum:splitdiscussions	1	1471529346	0
-687	1	4	mod/forum:movediscussions	1	1471529346	0
-688	1	3	mod/forum:movediscussions	1	1471529346	0
-689	1	1	mod/forum:movediscussions	1	1471529346	0
-690	1	4	mod/forum:pindiscussions	1	1471529347	0
-691	1	3	mod/forum:pindiscussions	1	1471529347	0
-692	1	1	mod/forum:pindiscussions	1	1471529347	0
-693	1	4	mod/forum:editanypost	1	1471529347	0
-694	1	3	mod/forum:editanypost	1	1471529347	0
-695	1	1	mod/forum:editanypost	1	1471529347	0
-696	1	4	mod/forum:viewqandawithoutposting	1	1471529347	0
-697	1	3	mod/forum:viewqandawithoutposting	1	1471529347	0
-698	1	1	mod/forum:viewqandawithoutposting	1	1471529347	0
-699	1	4	mod/forum:viewsubscribers	1	1471529347	0
-700	1	3	mod/forum:viewsubscribers	1	1471529347	0
-701	1	1	mod/forum:viewsubscribers	1	1471529347	0
-702	1	4	mod/forum:managesubscriptions	1	1471529347	0
-703	1	3	mod/forum:managesubscriptions	1	1471529347	0
-704	1	1	mod/forum:managesubscriptions	1	1471529347	0
-705	1	4	mod/forum:postwithoutthrottling	1	1471529347	0
-706	1	3	mod/forum:postwithoutthrottling	1	1471529347	0
-707	1	1	mod/forum:postwithoutthrottling	1	1471529347	0
-708	1	4	mod/forum:exportdiscussion	1	1471529347	0
-709	1	3	mod/forum:exportdiscussion	1	1471529347	0
-710	1	1	mod/forum:exportdiscussion	1	1471529347	0
-711	1	4	mod/forum:exportpost	1	1471529347	0
-712	1	3	mod/forum:exportpost	1	1471529347	0
-713	1	1	mod/forum:exportpost	1	1471529347	0
-714	1	4	mod/forum:exportownpost	1	1471529347	0
-715	1	3	mod/forum:exportownpost	1	1471529347	0
-716	1	1	mod/forum:exportownpost	1	1471529347	0
-717	1	5	mod/forum:exportownpost	1	1471529347	0
-718	1	4	mod/forum:addquestion	1	1471529347	0
-719	1	3	mod/forum:addquestion	1	1471529347	0
-720	1	1	mod/forum:addquestion	1	1471529347	0
-721	1	5	mod/forum:allowforcesubscribe	1	1471529347	0
-722	1	4	mod/forum:allowforcesubscribe	1	1471529347	0
-723	1	3	mod/forum:allowforcesubscribe	1	1471529347	0
-724	1	8	mod/forum:allowforcesubscribe	1	1471529347	0
-725	1	4	mod/forum:canposttomygroups	1	1471529347	0
-726	1	3	mod/forum:canposttomygroups	1	1471529347	0
-727	1	1	mod/forum:canposttomygroups	1	1471529347	0
-728	1	3	mod/glossary:addinstance	1	1471529347	0
-729	1	1	mod/glossary:addinstance	1	1471529347	0
-730	1	8	mod/glossary:view	1	1471529347	0
-731	1	6	mod/glossary:view	1	1471529347	0
-732	1	5	mod/glossary:view	1	1471529347	0
-733	1	4	mod/glossary:view	1	1471529347	0
-734	1	3	mod/glossary:view	1	1471529347	0
-735	1	1	mod/glossary:view	1	1471529347	0
-736	1	5	mod/glossary:write	1	1471529347	0
-737	1	4	mod/glossary:write	1	1471529347	0
-738	1	3	mod/glossary:write	1	1471529347	0
-739	1	1	mod/glossary:write	1	1471529347	0
-740	1	4	mod/glossary:manageentries	1	1471529347	0
-741	1	3	mod/glossary:manageentries	1	1471529347	0
-742	1	1	mod/glossary:manageentries	1	1471529347	0
-743	1	4	mod/glossary:managecategories	1	1471529347	0
-744	1	3	mod/glossary:managecategories	1	1471529348	0
-745	1	1	mod/glossary:managecategories	1	1471529348	0
-746	1	5	mod/glossary:comment	1	1471529348	0
-747	1	4	mod/glossary:comment	1	1471529348	0
-748	1	3	mod/glossary:comment	1	1471529348	0
-749	1	1	mod/glossary:comment	1	1471529348	0
-750	1	4	mod/glossary:managecomments	1	1471529348	0
-751	1	3	mod/glossary:managecomments	1	1471529348	0
-752	1	1	mod/glossary:managecomments	1	1471529348	0
-753	1	4	mod/glossary:import	1	1471529348	0
-754	1	3	mod/glossary:import	1	1471529348	0
-755	1	1	mod/glossary:import	1	1471529348	0
-756	1	4	mod/glossary:export	1	1471529348	0
-757	1	3	mod/glossary:export	1	1471529348	0
-758	1	1	mod/glossary:export	1	1471529348	0
-759	1	4	mod/glossary:approve	1	1471529348	0
-760	1	3	mod/glossary:approve	1	1471529348	0
-761	1	1	mod/glossary:approve	1	1471529348	0
-762	1	4	mod/glossary:rate	1	1471529348	0
-763	1	3	mod/glossary:rate	1	1471529348	0
-764	1	1	mod/glossary:rate	1	1471529348	0
-765	1	4	mod/glossary:viewrating	1	1471529348	0
-766	1	3	mod/glossary:viewrating	1	1471529348	0
-767	1	1	mod/glossary:viewrating	1	1471529348	0
-768	1	4	mod/glossary:viewanyrating	1	1471529348	0
-769	1	3	mod/glossary:viewanyrating	1	1471529348	0
-770	1	1	mod/glossary:viewanyrating	1	1471529348	0
-771	1	4	mod/glossary:viewallratings	1	1471529348	0
-772	1	3	mod/glossary:viewallratings	1	1471529348	0
-773	1	1	mod/glossary:viewallratings	1	1471529348	0
-774	1	4	mod/glossary:exportentry	1	1471529348	0
-775	1	3	mod/glossary:exportentry	1	1471529348	0
-776	1	1	mod/glossary:exportentry	1	1471529348	0
-777	1	4	mod/glossary:exportownentry	1	1471529348	0
-778	1	3	mod/glossary:exportownentry	1	1471529348	0
-779	1	1	mod/glossary:exportownentry	1	1471529348	0
-780	1	5	mod/glossary:exportownentry	1	1471529348	0
-781	1	6	mod/imscp:view	1	1471529348	0
-782	1	7	mod/imscp:view	1	1471529348	0
-783	1	3	mod/imscp:addinstance	1	1471529348	0
-784	1	1	mod/imscp:addinstance	1	1471529348	0
-785	1	3	mod/label:addinstance	1	1471529348	0
-786	1	1	mod/label:addinstance	1	1471529348	0
-787	1	3	mod/lesson:addinstance	1	1471529349	0
-788	1	1	mod/lesson:addinstance	1	1471529349	0
-789	1	3	mod/lesson:edit	1	1471529349	0
-790	1	1	mod/lesson:edit	1	1471529349	0
-791	1	4	mod/lesson:grade	1	1471529349	0
-792	1	3	mod/lesson:grade	1	1471529349	0
-793	1	1	mod/lesson:grade	1	1471529349	0
-794	1	4	mod/lesson:viewreports	1	1471529349	0
-795	1	3	mod/lesson:viewreports	1	1471529349	0
-796	1	1	mod/lesson:viewreports	1	1471529349	0
-797	1	4	mod/lesson:manage	1	1471529349	0
-798	1	3	mod/lesson:manage	1	1471529349	0
-799	1	1	mod/lesson:manage	1	1471529349	0
-800	1	3	mod/lesson:manageoverrides	1	1471529349	0
-801	1	1	mod/lesson:manageoverrides	1	1471529349	0
-802	1	5	mod/lti:view	1	1471529349	0
-803	1	4	mod/lti:view	1	1471529349	0
-804	1	3	mod/lti:view	1	1471529349	0
-805	1	1	mod/lti:view	1	1471529349	0
-806	1	3	mod/lti:addinstance	1	1471529349	0
-807	1	1	mod/lti:addinstance	1	1471529349	0
-808	1	4	mod/lti:manage	1	1471529349	0
-809	1	3	mod/lti:manage	1	1471529349	0
-810	1	1	mod/lti:manage	1	1471529349	0
-811	1	3	mod/lti:addcoursetool	1	1471529349	0
-812	1	1	mod/lti:addcoursetool	1	1471529349	0
-813	1	3	mod/lti:requesttooladd	1	1471529349	0
-814	1	1	mod/lti:requesttooladd	1	1471529349	0
-815	1	6	mod/page:view	1	1471529349	0
-816	1	7	mod/page:view	1	1471529349	0
-817	1	3	mod/page:addinstance	1	1471529349	0
-818	1	1	mod/page:addinstance	1	1471529349	0
-819	1	6	mod/quiz:view	1	1471529350	0
-820	1	5	mod/quiz:view	1	1471529350	0
-821	1	4	mod/quiz:view	1	1471529350	0
-822	1	3	mod/quiz:view	1	1471529350	0
-823	1	1	mod/quiz:view	1	1471529350	0
-824	1	3	mod/quiz:addinstance	1	1471529350	0
-825	1	1	mod/quiz:addinstance	1	1471529350	0
-826	1	5	mod/quiz:attempt	1	1471529350	0
-827	1	5	mod/quiz:reviewmyattempts	1	1471529350	0
-828	1	3	mod/quiz:manage	1	1471529350	0
-829	1	1	mod/quiz:manage	1	1471529350	0
-830	1	3	mod/quiz:manageoverrides	1	1471529350	0
-831	1	1	mod/quiz:manageoverrides	1	1471529350	0
-832	1	4	mod/quiz:preview	1	1471529350	0
-833	1	3	mod/quiz:preview	1	1471529350	0
-834	1	1	mod/quiz:preview	1	1471529350	0
-835	1	4	mod/quiz:grade	1	1471529350	0
-836	1	3	mod/quiz:grade	1	1471529350	0
-837	1	1	mod/quiz:grade	1	1471529350	0
-838	1	4	mod/quiz:regrade	1	1471529350	0
-839	1	3	mod/quiz:regrade	1	1471529350	0
-840	1	1	mod/quiz:regrade	1	1471529350	0
-841	1	4	mod/quiz:viewreports	1	1471529350	0
-842	1	3	mod/quiz:viewreports	1	1471529350	0
-843	1	1	mod/quiz:viewreports	1	1471529350	0
-844	1	3	mod/quiz:deleteattempts	1	1471529350	0
-845	1	1	mod/quiz:deleteattempts	1	1471529350	0
-846	1	6	mod/resource:view	1	1471529350	0
-847	1	7	mod/resource:view	1	1471529350	0
-848	1	3	mod/resource:addinstance	1	1471529350	0
-849	1	1	mod/resource:addinstance	1	1471529350	0
-850	1	3	mod/scorm:addinstance	1	1471529351	0
-851	1	1	mod/scorm:addinstance	1	1471529351	0
-852	1	4	mod/scorm:viewreport	1	1471529351	0
-853	1	3	mod/scorm:viewreport	1	1471529351	0
-854	1	1	mod/scorm:viewreport	1	1471529351	0
-855	1	5	mod/scorm:skipview	1	1471529351	0
-856	1	5	mod/scorm:savetrack	1	1471529351	0
-857	1	4	mod/scorm:savetrack	1	1471529351	0
-858	1	3	mod/scorm:savetrack	1	1471529351	0
-859	1	1	mod/scorm:savetrack	1	1471529351	0
-860	1	5	mod/scorm:viewscores	1	1471529351	0
-861	1	4	mod/scorm:viewscores	1	1471529351	0
-862	1	3	mod/scorm:viewscores	1	1471529351	0
-863	1	1	mod/scorm:viewscores	1	1471529351	0
-864	1	4	mod/scorm:deleteresponses	1	1471529351	0
-865	1	3	mod/scorm:deleteresponses	1	1471529351	0
-866	1	1	mod/scorm:deleteresponses	1	1471529351	0
-867	1	3	mod/survey:addinstance	1	1471529351	0
-868	1	1	mod/survey:addinstance	1	1471529351	0
-869	1	5	mod/survey:participate	1	1471529351	0
-870	1	4	mod/survey:participate	1	1471529352	0
-871	1	3	mod/survey:participate	1	1471529352	0
-872	1	1	mod/survey:participate	1	1471529352	0
-873	1	4	mod/survey:readresponses	1	1471529352	0
-874	1	3	mod/survey:readresponses	1	1471529352	0
-875	1	1	mod/survey:readresponses	1	1471529352	0
-876	1	4	mod/survey:download	1	1471529352	0
-877	1	3	mod/survey:download	1	1471529352	0
-878	1	1	mod/survey:download	1	1471529352	0
-879	1	3	mod/talkpoint:addinstance	1	1471529352	0
-880	1	1	mod/talkpoint:addinstance	1	1471529352	0
-881	1	6	mod/talkpoint:view	1	1471529352	0
-882	1	5	mod/talkpoint:view	1	1471529352	0
-883	1	4	mod/talkpoint:view	1	1471529352	0
-884	1	3	mod/talkpoint:view	1	1471529352	0
-885	1	1	mod/talkpoint:view	1	1471529352	0
-886	1	6	mod/url:view	1	1471529352	0
-887	1	7	mod/url:view	1	1471529352	0
-888	1	3	mod/url:addinstance	1	1471529352	0
-889	1	1	mod/url:addinstance	1	1471529352	0
-890	1	3	mod/videoquanda:addinstance	1	1471529352	0
-891	1	1	mod/videoquanda:addinstance	1	1471529352	0
-892	1	6	mod/videoquanda:view	1	1471529352	0
-893	1	5	mod/videoquanda:view	1	1471529352	0
-894	1	4	mod/videoquanda:view	1	1471529352	0
-895	1	3	mod/videoquanda:view	1	1471529352	0
-896	1	1	mod/videoquanda:view	1	1471529352	0
-897	1	3	mod/vocabcards:addinstance	1	1471529353	0
-898	1	1	mod/vocabcards:addinstance	1	1471529353	0
-899	1	6	mod/vocabcards:view	1	1471529353	0
-900	1	5	mod/vocabcards:view	1	1471529353	0
-901	1	4	mod/vocabcards:view	1	1471529353	0
-902	1	3	mod/vocabcards:view	1	1471529353	0
-903	1	1	mod/vocabcards:view	1	1471529353	0
-904	1	4	mod/vocabcards:feedback	1	1471529353	0
-905	1	3	mod/vocabcards:feedback	1	1471529353	0
-906	1	1	mod/vocabcards:feedback	1	1471529353	0
-907	1	3	mod/vocabcards:syllabus	1	1471529353	0
-908	1	1	mod/vocabcards:syllabus	1	1471529353	0
-909	1	4	mod/vocabcards:assignment	1	1471529353	0
-910	1	3	mod/vocabcards:assignment	1	1471529353	0
-911	1	1	mod/vocabcards:assignment	1	1471529353	0
-912	1	5	mod/vocabcards:repository	1	1471529353	0
-913	1	4	mod/vocabcards:repository	1	1471529353	0
-914	1	3	mod/vocabcards:repository	1	1471529353	0
-915	1	1	mod/vocabcards:repository	1	1471529353	0
-916	1	4	mod/vocabcards:omniscience	1	1471529353	0
-917	1	3	mod/vocabcards:omniscience	1	1471529353	0
-918	1	1	mod/vocabcards:omniscience	1	1471529353	0
-919	1	3	mod/wiki:addinstance	1	1471529353	0
-920	1	1	mod/wiki:addinstance	1	1471529353	0
-921	1	6	mod/wiki:viewpage	1	1471529353	0
-922	1	5	mod/wiki:viewpage	1	1471529353	0
-923	1	4	mod/wiki:viewpage	1	1471529353	0
-924	1	3	mod/wiki:viewpage	1	1471529353	0
-925	1	1	mod/wiki:viewpage	1	1471529353	0
-926	1	5	mod/wiki:editpage	1	1471529353	0
-927	1	4	mod/wiki:editpage	1	1471529353	0
-928	1	3	mod/wiki:editpage	1	1471529353	0
-929	1	1	mod/wiki:editpage	1	1471529353	0
-930	1	5	mod/wiki:createpage	1	1471529353	0
-931	1	4	mod/wiki:createpage	1	1471529353	0
-932	1	3	mod/wiki:createpage	1	1471529353	0
-933	1	1	mod/wiki:createpage	1	1471529353	0
-934	1	5	mod/wiki:viewcomment	1	1471529353	0
-935	1	4	mod/wiki:viewcomment	1	1471529353	0
-936	1	3	mod/wiki:viewcomment	1	1471529353	0
-937	1	1	mod/wiki:viewcomment	1	1471529353	0
-938	1	5	mod/wiki:editcomment	1	1471529353	0
-939	1	4	mod/wiki:editcomment	1	1471529353	0
-940	1	3	mod/wiki:editcomment	1	1471529353	0
-941	1	1	mod/wiki:editcomment	1	1471529353	0
-942	1	4	mod/wiki:managecomment	1	1471529353	0
-943	1	3	mod/wiki:managecomment	1	1471529353	0
-944	1	1	mod/wiki:managecomment	1	1471529353	0
-945	1	4	mod/wiki:managefiles	1	1471529353	0
-946	1	3	mod/wiki:managefiles	1	1471529353	0
-947	1	1	mod/wiki:managefiles	1	1471529353	0
-948	1	4	mod/wiki:overridelock	1	1471529353	0
-949	1	3	mod/wiki:overridelock	1	1471529353	0
-950	1	1	mod/wiki:overridelock	1	1471529353	0
-951	1	4	mod/wiki:managewiki	1	1471529353	0
-952	1	3	mod/wiki:managewiki	1	1471529353	0
-953	1	1	mod/wiki:managewiki	1	1471529353	0
-954	1	6	mod/workshop:view	1	1471529354	0
-955	1	5	mod/workshop:view	1	1471529354	0
-956	1	4	mod/workshop:view	1	1471529354	0
-957	1	3	mod/workshop:view	1	1471529354	0
-958	1	1	mod/workshop:view	1	1471529354	0
-959	1	3	mod/workshop:addinstance	1	1471529354	0
-960	1	1	mod/workshop:addinstance	1	1471529354	0
-961	1	4	mod/workshop:switchphase	1	1471529354	0
-962	1	3	mod/workshop:switchphase	1	1471529354	0
-963	1	1	mod/workshop:switchphase	1	1471529354	0
-964	1	3	mod/workshop:editdimensions	1	1471529354	0
-965	1	1	mod/workshop:editdimensions	1	1471529354	0
-966	1	5	mod/workshop:submit	1	1471529354	0
-967	1	5	mod/workshop:peerassess	1	1471529354	0
-968	1	4	mod/workshop:manageexamples	1	1471529354	0
-969	1	3	mod/workshop:manageexamples	1	1471529354	0
-970	1	1	mod/workshop:manageexamples	1	1471529354	0
-971	1	4	mod/workshop:allocate	1	1471529354	0
-972	1	3	mod/workshop:allocate	1	1471529354	0
-973	1	1	mod/workshop:allocate	1	1471529354	0
-974	1	4	mod/workshop:publishsubmissions	1	1471529354	0
-975	1	3	mod/workshop:publishsubmissions	1	1471529354	0
-976	1	1	mod/workshop:publishsubmissions	1	1471529354	0
-977	1	5	mod/workshop:viewauthornames	1	1471529354	0
-978	1	4	mod/workshop:viewauthornames	1	1471529354	0
-979	1	3	mod/workshop:viewauthornames	1	1471529354	0
-980	1	1	mod/workshop:viewauthornames	1	1471529354	0
-981	1	4	mod/workshop:viewreviewernames	1	1471529354	0
-982	1	3	mod/workshop:viewreviewernames	1	1471529354	0
-983	1	1	mod/workshop:viewreviewernames	1	1471529354	0
-984	1	4	mod/workshop:viewallsubmissions	1	1471529354	0
-985	1	3	mod/workshop:viewallsubmissions	1	1471529354	0
-986	1	1	mod/workshop:viewallsubmissions	1	1471529354	0
-987	1	5	mod/workshop:viewpublishedsubmissions	1	1471529354	0
-988	1	4	mod/workshop:viewpublishedsubmissions	1	1471529354	0
-989	1	3	mod/workshop:viewpublishedsubmissions	1	1471529354	0
-990	1	1	mod/workshop:viewpublishedsubmissions	1	1471529354	0
-991	1	5	mod/workshop:viewauthorpublished	1	1471529354	0
-992	1	4	mod/workshop:viewauthorpublished	1	1471529354	0
-993	1	3	mod/workshop:viewauthorpublished	1	1471529354	0
-994	1	1	mod/workshop:viewauthorpublished	1	1471529354	0
-995	1	4	mod/workshop:viewallassessments	1	1471529354	0
-996	1	3	mod/workshop:viewallassessments	1	1471529354	0
-997	1	1	mod/workshop:viewallassessments	1	1471529354	0
-998	1	4	mod/workshop:overridegrades	1	1471529354	0
-999	1	3	mod/workshop:overridegrades	1	1471529354	0
-1000	1	1	mod/workshop:overridegrades	1	1471529354	0
-1001	1	4	mod/workshop:ignoredeadlines	1	1471529354	0
-1002	1	3	mod/workshop:ignoredeadlines	1	1471529354	0
-1003	1	1	mod/workshop:ignoredeadlines	1	1471529354	0
-1004	1	4	mod/workshop:deletesubmissions	1	1471529354	0
-1005	1	3	mod/workshop:deletesubmissions	1	1471529354	0
-1006	1	1	mod/workshop:deletesubmissions	1	1471529354	0
-1007	1	1	enrol/category:config	1	1471529357	0
-1008	1	3	enrol/category:config	1	1471529357	0
-1009	1	3	enrol/cohort:config	1	1471529358	0
-1010	1	1	enrol/cohort:config	1	1471529358	0
-1011	1	1	enrol/cohort:unenrol	1	1471529358	0
-1012	1	1	enrol/database:unenrol	1	1471529358	0
-1013	1	1	enrol/database:config	1	1471529358	0
-1014	1	3	enrol/database:config	1	1471529358	0
-1015	1	1	enrol/guest:config	1	1471529358	0
-1016	1	3	enrol/guest:config	1	1471529358	0
-1017	1	1	enrol/imsenterprise:config	1	1471529358	0
-1018	1	3	enrol/imsenterprise:config	1	1471529358	0
-1019	1	1	enrol/ldap:manage	1	1471529358	0
-1020	1	1	enrol/lti:config	1	1471529359	0
-1021	1	3	enrol/lti:config	1	1471529359	0
-1022	1	1	enrol/lti:unenrol	1	1471529359	0
-1023	1	3	enrol/lti:unenrol	1	1471529359	0
-1024	1	1	enrol/manual:config	1	1471529359	0
-1025	1	1	enrol/manual:enrol	1	1471529359	0
-1026	1	3	enrol/manual:enrol	1	1471529359	0
-1027	1	1	enrol/manual:manage	1	1471529359	0
-1028	1	3	enrol/manual:manage	1	1471529359	0
-1029	1	1	enrol/manual:unenrol	1	1471529359	0
-1030	1	3	enrol/manual:unenrol	1	1471529359	0
-1031	1	1	enrol/meta:config	1	1471529359	0
-1032	1	3	enrol/meta:config	1	1471529359	0
-1033	1	1	enrol/meta:selectaslinked	1	1471529359	0
-1034	1	1	enrol/meta:unenrol	1	1471529359	0
-1035	1	1	enrol/mnet:config	1	1471529359	0
-1036	1	3	enrol/mnet:config	1	1471529359	0
-1037	1	1	enrol/paypal:config	1	1471529359	0
-1038	1	1	enrol/paypal:manage	1	1471529359	0
-1039	1	3	enrol/paypal:manage	1	1471529360	0
-1040	1	1	enrol/paypal:unenrol	1	1471529360	0
-1041	1	3	enrol/self:config	1	1471529360	0
-1042	1	1	enrol/self:config	1	1471529360	0
-1043	1	3	enrol/self:manage	1	1471529360	0
-1044	1	1	enrol/self:manage	1	1471529360	0
-1045	1	1	enrol/self:holdkey	-1000	1471529360	0
-1046	1	5	enrol/self:unenrolself	1	1471529360	0
-1047	1	3	enrol/self:unenrol	1	1471529360	0
-1048	1	1	enrol/self:unenrol	1	1471529360	0
-1049	1	7	message/airnotifier:managedevice	1	1471529360	0
-1050	1	3	block/activity_modules:addinstance	1	1471529363	0
-1051	1	1	block/activity_modules:addinstance	1	1471529363	0
-1052	1	3	block/activity_results:addinstance	1	1471529363	0
-1053	1	1	block/activity_results:addinstance	1	1471529363	0
-1054	1	7	block/admin_bookmarks:myaddinstance	1	1471529363	0
-1055	1	3	block/admin_bookmarks:addinstance	1	1471529363	0
-1056	1	1	block/admin_bookmarks:addinstance	1	1471529363	0
-1057	1	3	block/badges:addinstance	1	1471529363	0
-1058	1	1	block/badges:addinstance	1	1471529363	0
-1059	1	7	block/badges:myaddinstance	1	1471529363	0
-1060	1	3	block/blog_menu:addinstance	1	1471529363	0
-1061	1	1	block/blog_menu:addinstance	1	1471529363	0
-1062	1	3	block/blog_recent:addinstance	1	1471529363	0
-1063	1	1	block/blog_recent:addinstance	1	1471529363	0
-1064	1	3	block/blog_tags:addinstance	1	1471529364	0
-1065	1	1	block/blog_tags:addinstance	1	1471529364	0
-1066	1	7	block/calendar_month:myaddinstance	1	1471529364	0
-1067	1	3	block/calendar_month:addinstance	1	1471529364	0
-1068	1	1	block/calendar_month:addinstance	1	1471529364	0
-1069	1	7	block/calendar_upcoming:myaddinstance	1	1471529364	0
-1070	1	3	block/calendar_upcoming:addinstance	1	1471529364	0
-1071	1	1	block/calendar_upcoming:addinstance	1	1471529364	0
-1072	1	7	block/comments:myaddinstance	1	1471529364	0
-1073	1	3	block/comments:addinstance	1	1471529364	0
-1074	1	1	block/comments:addinstance	1	1471529364	0
-1075	1	7	block/community:myaddinstance	1	1471529364	0
-1076	1	3	block/community:addinstance	1	1471529364	0
-1077	1	1	block/community:addinstance	1	1471529364	0
-1078	1	3	block/completionstatus:addinstance	1	1471529364	0
-1079	1	1	block/completionstatus:addinstance	1	1471529364	0
-1080	1	7	block/course_list:myaddinstance	1	1471529365	0
-1081	1	3	block/course_list:addinstance	1	1471529365	0
-1082	1	1	block/course_list:addinstance	1	1471529365	0
-1083	1	7	block/course_overview:myaddinstance	1	1471529365	0
-1084	1	3	block/course_overview:addinstance	1	1471529365	0
-1085	1	1	block/course_overview:addinstance	1	1471529365	0
-1086	1	3	block/course_summary:addinstance	1	1471529365	0
-1087	1	1	block/course_summary:addinstance	1	1471529365	0
-1088	1	3	block/feedback:addinstance	1	1471529365	0
-1089	1	1	block/feedback:addinstance	1	1471529365	0
-1090	1	7	block/globalsearch:myaddinstance	1	1471529365	0
-1091	1	3	block/globalsearch:addinstance	1	1471529365	0
-1092	1	1	block/globalsearch:addinstance	1	1471529365	0
-1093	1	7	block/glossary_random:myaddinstance	1	1471529365	0
-1094	1	3	block/glossary_random:addinstance	1	1471529365	0
-1095	1	1	block/glossary_random:addinstance	1	1471529365	0
-1096	1	7	block/html:myaddinstance	1	1471529365	0
-1097	1	3	block/html:addinstance	1	1471529365	0
-1098	1	1	block/html:addinstance	1	1471529365	0
-1099	1	3	block/login:addinstance	1	1471529366	0
-1100	1	1	block/login:addinstance	1	1471529366	0
-1101	1	3	block/lp:addinstance	1	1471529366	0
-1102	1	1	block/lp:addinstance	1	1471529366	0
-1103	1	7	block/lp:myaddinstance	1	1471529366	0
-1104	1	7	block/lp:view	1	1471529366	0
-1105	1	7	block/mentees:myaddinstance	1	1471529366	0
-1106	1	3	block/mentees:addinstance	1	1471529366	0
-1107	1	1	block/mentees:addinstance	1	1471529366	0
-1108	1	7	block/messages:myaddinstance	1	1471529366	0
-1109	1	3	block/messages:addinstance	1	1471529366	0
-1110	1	1	block/messages:addinstance	1	1471529366	0
-1111	1	7	block/mnet_hosts:myaddinstance	1	1471529366	0
-1112	1	3	block/mnet_hosts:addinstance	1	1471529366	0
-1113	1	1	block/mnet_hosts:addinstance	1	1471529366	0
-1114	1	7	block/myprofile:myaddinstance	1	1471529366	0
-1115	1	3	block/myprofile:addinstance	1	1471529366	0
-1116	1	1	block/myprofile:addinstance	1	1471529366	0
-1117	1	7	block/navigation:myaddinstance	1	1471529367	0
-1118	1	3	block/navigation:addinstance	1	1471529367	0
-1119	1	1	block/navigation:addinstance	1	1471529367	0
-1120	1	7	block/news_items:myaddinstance	1	1471529367	0
-1121	1	3	block/news_items:addinstance	1	1471529367	0
-1122	1	1	block/news_items:addinstance	1	1471529367	0
-1123	1	7	block/online_users:myaddinstance	1	1471529367	0
-1124	1	3	block/online_users:addinstance	1	1471529367	0
-1125	1	1	block/online_users:addinstance	1	1471529367	0
-1126	1	7	block/online_users:viewlist	1	1471529367	0
-1127	1	6	block/online_users:viewlist	1	1471529367	0
-1128	1	5	block/online_users:viewlist	1	1471529367	0
-1129	1	4	block/online_users:viewlist	1	1471529367	0
-1130	1	3	block/online_users:viewlist	1	1471529367	0
-1131	1	1	block/online_users:viewlist	1	1471529367	0
-1132	1	3	block/participants:addinstance	1	1471529367	0
-1133	1	1	block/participants:addinstance	1	1471529367	0
-1134	1	7	block/private_files:myaddinstance	1	1471529367	0
-1135	1	3	block/private_files:addinstance	1	1471529367	0
-1136	1	1	block/private_files:addinstance	1	1471529367	0
-1137	1	3	block/quiz_results:addinstance	1	1471529367	0
-1138	1	1	block/quiz_results:addinstance	1	1471529367	0
-1139	1	3	block/recent_activity:addinstance	1	1471529368	0
-1140	1	1	block/recent_activity:addinstance	1	1471529368	0
-1141	1	7	block/recent_activity:viewaddupdatemodule	1	1471529368	0
-1142	1	7	block/recent_activity:viewdeletemodule	1	1471529368	0
-1143	1	7	block/rss_client:myaddinstance	1	1471529368	0
-1144	1	3	block/rss_client:addinstance	1	1471529368	0
-1145	1	1	block/rss_client:addinstance	1	1471529368	0
-1146	1	4	block/rss_client:manageownfeeds	1	1471529368	0
-1147	1	3	block/rss_client:manageownfeeds	1	1471529368	0
-1148	1	1	block/rss_client:manageownfeeds	1	1471529368	0
-1149	1	1	block/rss_client:manageanyfeeds	1	1471529368	0
-1150	1	3	block/search_forums:addinstance	1	1471529368	0
-1151	1	1	block/search_forums:addinstance	1	1471529368	0
-1152	1	3	block/section_links:addinstance	1	1471529368	0
-1153	1	1	block/section_links:addinstance	1	1471529368	0
-1154	1	3	block/selfcompletion:addinstance	1	1471529368	0
-1155	1	1	block/selfcompletion:addinstance	1	1471529368	0
-1156	1	7	block/settings:myaddinstance	1	1471529368	0
-1157	1	3	block/settings:addinstance	1	1471529368	0
-1158	1	1	block/settings:addinstance	1	1471529368	0
-1159	1	3	block/site_main_menu:addinstance	1	1471529369	0
-1160	1	1	block/site_main_menu:addinstance	1	1471529369	0
-1161	1	3	block/social_activities:addinstance	1	1471529369	0
-1162	1	1	block/social_activities:addinstance	1	1471529369	0
-1163	1	3	block/tag_flickr:addinstance	1	1471529369	0
-1164	1	1	block/tag_flickr:addinstance	1	1471529369	0
-1165	1	3	block/tag_youtube:addinstance	1	1471529369	0
-1166	1	1	block/tag_youtube:addinstance	1	1471529369	0
-1167	1	7	block/tags:myaddinstance	1	1471529369	0
-1168	1	3	block/tags:addinstance	1	1471529369	0
-1169	1	1	block/tags:addinstance	1	1471529369	0
-1170	1	4	report/completion:view	1	1471529373	0
-1171	1	3	report/completion:view	1	1471529373	0
-1172	1	1	report/completion:view	1	1471529373	0
-1173	1	4	report/courseoverview:view	1	1471529374	0
-1174	1	3	report/courseoverview:view	1	1471529374	0
-1175	1	1	report/courseoverview:view	1	1471529374	0
-1176	1	4	report/log:view	1	1471529374	0
-1177	1	3	report/log:view	1	1471529374	0
-1178	1	1	report/log:view	1	1471529374	0
-1179	1	4	report/log:viewtoday	1	1471529374	0
-1180	1	3	report/log:viewtoday	1	1471529374	0
-1181	1	1	report/log:viewtoday	1	1471529374	0
-1182	1	4	report/loglive:view	1	1471529374	0
-1183	1	3	report/loglive:view	1	1471529374	0
-1184	1	1	report/loglive:view	1	1471529374	0
-1185	1	4	report/outline:view	1	1471529374	0
-1186	1	3	report/outline:view	1	1471529374	0
-1187	1	1	report/outline:view	1	1471529374	0
-1188	1	4	report/participation:view	1	1471529374	0
-1189	1	3	report/participation:view	1	1471529374	0
-1190	1	1	report/participation:view	1	1471529375	0
-1191	1	1	report/performance:view	1	1471529375	0
-1192	1	4	report/progress:view	1	1471529375	0
-1193	1	3	report/progress:view	1	1471529375	0
-1194	1	1	report/progress:view	1	1471529375	0
-1195	1	1	report/security:view	1	1471529375	0
-1196	1	4	report/stats:view	1	1471529375	0
-1197	1	3	report/stats:view	1	1471529375	0
-1198	1	1	report/stats:view	1	1471529375	0
-1199	1	6	report/usersessions:manageownsessions	-1000	1471529375	0
-1200	1	7	report/usersessions:manageownsessions	1	1471529375	0
-1201	1	1	report/usersessions:manageownsessions	1	1471529375	0
-1202	1	4	gradeexport/ods:view	1	1471529376	0
-1203	1	3	gradeexport/ods:view	1	1471529376	0
-1204	1	1	gradeexport/ods:view	1	1471529376	0
-1205	1	1	gradeexport/ods:publish	1	1471529376	0
-1206	1	4	gradeexport/txt:view	1	1471529376	0
-1207	1	3	gradeexport/txt:view	1	1471529376	0
-1208	1	1	gradeexport/txt:view	1	1471529376	0
-1209	1	1	gradeexport/txt:publish	1	1471529376	0
-1210	1	4	gradeexport/xls:view	1	1471529376	0
-1211	1	3	gradeexport/xls:view	1	1471529376	0
-1212	1	1	gradeexport/xls:view	1	1471529376	0
-1213	1	1	gradeexport/xls:publish	1	1471529376	0
-1214	1	4	gradeexport/xml:view	1	1471529376	0
-1215	1	3	gradeexport/xml:view	1	1471529376	0
-1216	1	1	gradeexport/xml:view	1	1471529376	0
-1217	1	1	gradeexport/xml:publish	1	1471529376	0
-1218	1	3	gradeimport/csv:view	1	1471529376	0
-1219	1	1	gradeimport/csv:view	1	1471529376	0
-1220	1	3	gradeimport/direct:view	1	1471529376	0
-1221	1	1	gradeimport/direct:view	1	1471529376	0
-1222	1	3	gradeimport/xml:view	1	1471529376	0
-1223	1	1	gradeimport/xml:view	1	1471529376	0
-1224	1	1	gradeimport/xml:publish	1	1471529377	0
-1225	1	4	gradereport/grader:view	1	1471529377	0
-1226	1	3	gradereport/grader:view	1	1471529377	0
-1227	1	1	gradereport/grader:view	1	1471529377	0
-1228	1	4	gradereport/history:view	1	1471529377	0
-1229	1	3	gradereport/history:view	1	1471529377	0
-1230	1	1	gradereport/history:view	1	1471529377	0
-1231	1	4	gradereport/outcomes:view	1	1471529377	0
-1232	1	3	gradereport/outcomes:view	1	1471529377	0
-1233	1	1	gradereport/outcomes:view	1	1471529377	0
-1234	1	5	gradereport/overview:view	1	1471529377	0
-1235	1	1	gradereport/overview:view	1	1471529377	0
-1236	1	3	gradereport/singleview:view	1	1471529377	0
-1237	1	1	gradereport/singleview:view	1	1471529377	0
-1238	1	5	gradereport/user:view	1	1471529377	0
-1239	1	4	gradereport/user:view	1	1471529377	0
-1240	1	3	gradereport/user:view	1	1471529377	0
-1241	1	1	gradereport/user:view	1	1471529377	0
-1242	1	7	repository/alfresco:view	1	1471529378	0
-1243	1	7	repository/areafiles:view	1	1471529379	0
-1244	1	7	repository/boxnet:view	1	1471529379	0
-1245	1	2	repository/coursefiles:view	1	1471529379	0
-1246	1	4	repository/coursefiles:view	1	1471529379	0
-1247	1	3	repository/coursefiles:view	1	1471529379	0
-1248	1	1	repository/coursefiles:view	1	1471529379	0
-1249	1	7	repository/dropbox:view	1	1471529379	0
-1250	1	7	repository/equella:view	1	1471529379	0
-1251	1	2	repository/filesystem:view	1	1471529379	0
-1252	1	4	repository/filesystem:view	1	1471529379	0
-1253	1	3	repository/filesystem:view	1	1471529379	0
-1254	1	1	repository/filesystem:view	1	1471529379	0
-1255	1	7	repository/flickr:view	1	1471529380	0
-1256	1	7	repository/flickr_public:view	1	1471529380	0
-1257	1	7	repository/googledocs:view	1	1471529380	0
-1258	1	2	repository/local:view	1	1471529380	0
-1259	1	4	repository/local:view	1	1471529380	0
-1260	1	3	repository/local:view	1	1471529380	0
-1261	1	1	repository/local:view	1	1471529380	0
-1262	1	7	repository/merlot:view	1	1471529380	0
-1263	1	7	repository/picasa:view	1	1471529380	0
-1264	1	7	repository/recent:view	1	1471529381	0
-1265	1	7	repository/s3:view	1	1471529381	0
-1266	1	7	repository/skydrive:view	1	1471529381	0
-1267	1	7	repository/upload:view	1	1471529381	0
-1268	1	7	repository/url:view	1	1471529381	0
-1269	1	7	repository/user:view	1	1471529382	0
-1270	1	2	repository/webdav:view	1	1471529382	0
-1271	1	4	repository/webdav:view	1	1471529382	0
-1272	1	3	repository/webdav:view	1	1471529382	0
-1273	1	1	repository/webdav:view	1	1471529382	0
-1274	1	7	repository/wikimedia:view	1	1471529382	0
-1275	1	7	repository/youtube:view	1	1471529382	0
-1276	1	1	tool/customlang:view	1	1471529386	0
-1277	1	1	tool/customlang:edit	1	1471529386	0
-1278	1	1	tool/lpmigrate:frameworksmigrate	1	1471529388	0
-1279	1	4	tool/monitor:subscribe	1	1471529388	0
-1280	1	3	tool/monitor:subscribe	1	1471529388	0
-1281	1	1	tool/monitor:subscribe	1	1471529388	0
-1282	1	4	tool/monitor:managerules	1	1471529388	0
-1283	1	3	tool/monitor:managerules	1	1471529388	0
-1284	1	1	tool/monitor:managerules	1	1471529388	0
-1285	1	1	tool/monitor:managetool	1	1471529388	0
-1286	1	3	tool/recyclebin:deleteitems	1	1471529389	0
-1287	1	1	tool/recyclebin:deleteitems	1	1471529389	0
-1288	1	3	tool/recyclebin:restoreitems	1	1471529389	0
-1289	1	1	tool/recyclebin:restoreitems	1	1471529389	0
-1290	1	4	tool/recyclebin:viewitems	1	1471529389	0
-1291	1	3	tool/recyclebin:viewitems	1	1471529389	0
-1292	1	1	tool/recyclebin:viewitems	1	1471529389	0
-1293	1	1	tool/uploaduser:uploaduserpictures	1	1471529390	0
-1294	1	3	booktool/importhtml:import	1	1471529393	0
-1295	1	1	booktool/importhtml:import	1	1471529393	0
-1296	1	6	booktool/print:print	1	1471529393	0
-1297	1	8	booktool/print:print	1	1471529393	0
-1298	1	5	booktool/print:print	1	1471529393	0
-1299	1	4	booktool/print:print	1	1471529393	0
-1300	1	3	booktool/print:print	1	1471529393	0
-1301	1	1	booktool/print:print	1	1471529393	0
-1302	1	4	quiz/grading:viewstudentnames	1	1471529396	0
-1303	1	3	quiz/grading:viewstudentnames	1	1471529396	0
-1304	1	1	quiz/grading:viewstudentnames	1	1471529396	0
-1305	1	4	quiz/grading:viewidnumber	1	1471529396	0
-1306	1	3	quiz/grading:viewidnumber	1	1471529396	0
-1307	1	1	quiz/grading:viewidnumber	1	1471529396	0
-1308	1	4	quiz/statistics:view	1	1471529396	0
-1309	1	3	quiz/statistics:view	1	1471529396	0
-1310	1	1	quiz/statistics:view	1	1471529396	0
+1	1	1	moodle/site:readallmessages	1	1472545680	0
+2	1	3	moodle/site:readallmessages	1	1472545680	0
+3	1	1	moodle/site:deleteanymessage	1	1472545680	0
+4	1	1	moodle/site:sendmessage	1	1472545680	0
+5	1	7	moodle/site:sendmessage	1	1472545680	0
+6	1	7	moodle/site:deleteownmessage	1	1472545680	0
+7	1	1	moodle/site:approvecourse	1	1472545680	0
+8	1	3	moodle/backup:backupcourse	1	1472545680	0
+9	1	1	moodle/backup:backupcourse	1	1472545680	0
+10	1	3	moodle/backup:backupsection	1	1472545680	0
+11	1	1	moodle/backup:backupsection	1	1472545680	0
+12	1	3	moodle/backup:backupactivity	1	1472545680	0
+13	1	1	moodle/backup:backupactivity	1	1472545680	0
+14	1	3	moodle/backup:backuptargethub	1	1472545680	0
+15	1	1	moodle/backup:backuptargethub	1	1472545680	0
+16	1	3	moodle/backup:backuptargetimport	1	1472545680	0
+17	1	1	moodle/backup:backuptargetimport	1	1472545680	0
+18	1	3	moodle/backup:downloadfile	1	1472545680	0
+19	1	1	moodle/backup:downloadfile	1	1472545680	0
+20	1	3	moodle/backup:configure	1	1472545680	0
+21	1	1	moodle/backup:configure	1	1472545680	0
+22	1	1	moodle/backup:userinfo	1	1472545680	0
+23	1	1	moodle/backup:anonymise	1	1472545680	0
+24	1	3	moodle/restore:restorecourse	1	1472545680	0
+25	1	1	moodle/restore:restorecourse	1	1472545680	0
+26	1	3	moodle/restore:restoresection	1	1472545680	0
+27	1	1	moodle/restore:restoresection	1	1472545680	0
+28	1	3	moodle/restore:restoreactivity	1	1472545680	0
+29	1	1	moodle/restore:restoreactivity	1	1472545680	0
+30	1	3	moodle/restore:restoretargethub	1	1472545680	0
+31	1	1	moodle/restore:restoretargethub	1	1472545680	0
+32	1	3	moodle/restore:restoretargetimport	1	1472545680	0
+33	1	1	moodle/restore:restoretargetimport	1	1472545680	0
+34	1	3	moodle/restore:uploadfile	1	1472545680	0
+35	1	1	moodle/restore:uploadfile	1	1472545680	0
+36	1	3	moodle/restore:configure	1	1472545680	0
+37	1	1	moodle/restore:configure	1	1472545680	0
+38	1	2	moodle/restore:rolldates	1	1472545680	0
+39	1	1	moodle/restore:rolldates	1	1472545680	0
+40	1	1	moodle/restore:userinfo	1	1472545680	0
+41	1	1	moodle/restore:createuser	1	1472545680	0
+42	1	3	moodle/site:manageblocks	1	1472545680	0
+43	1	1	moodle/site:manageblocks	1	1472545681	0
+44	1	4	moodle/site:accessallgroups	1	1472545681	0
+45	1	3	moodle/site:accessallgroups	1	1472545681	0
+46	1	1	moodle/site:accessallgroups	1	1472545681	0
+47	1	4	moodle/site:viewfullnames	1	1472545681	0
+48	1	3	moodle/site:viewfullnames	1	1472545681	0
+49	1	1	moodle/site:viewfullnames	1	1472545681	0
+50	1	4	moodle/site:viewuseridentity	1	1472545681	0
+51	1	3	moodle/site:viewuseridentity	1	1472545681	0
+52	1	1	moodle/site:viewuseridentity	1	1472545681	0
+53	1	4	moodle/site:viewreports	1	1472545681	0
+54	1	3	moodle/site:viewreports	1	1472545681	0
+55	1	1	moodle/site:viewreports	1	1472545681	0
+56	1	3	moodle/site:trustcontent	1	1472545681	0
+57	1	1	moodle/site:trustcontent	1	1472545681	0
+58	1	1	moodle/site:uploadusers	1	1472545681	0
+59	1	3	moodle/filter:manage	1	1472545681	0
+60	1	1	moodle/filter:manage	1	1472545681	0
+61	1	1	moodle/user:create	1	1472545681	0
+62	1	1	moodle/user:delete	1	1472545681	0
+63	1	1	moodle/user:update	1	1472545681	0
+64	1	6	moodle/user:viewdetails	1	1472545681	0
+65	1	5	moodle/user:viewdetails	1	1472545681	0
+66	1	4	moodle/user:viewdetails	1	1472545681	0
+67	1	3	moodle/user:viewdetails	1	1472545681	0
+68	1	1	moodle/user:viewdetails	1	1472545681	0
+69	1	1	moodle/user:viewalldetails	1	1472545681	0
+70	1	1	moodle/user:viewlastip	1	1472545681	0
+71	1	4	moodle/user:viewhiddendetails	1	1472545681	0
+72	1	3	moodle/user:viewhiddendetails	1	1472545681	0
+73	1	1	moodle/user:viewhiddendetails	1	1472545681	0
+74	1	1	moodle/user:loginas	1	1472545681	0
+75	1	1	moodle/user:managesyspages	1	1472545681	0
+76	1	7	moodle/user:manageownblocks	1	1472545681	0
+77	1	7	moodle/user:manageownfiles	1	1472545681	0
+78	1	1	moodle/my:configsyspages	1	1472545681	0
+79	1	3	moodle/role:assign	1	1472545681	0
+80	1	1	moodle/role:assign	1	1472545681	0
+81	1	4	moodle/role:review	1	1472545681	0
+82	1	3	moodle/role:review	1	1472545681	0
+83	1	1	moodle/role:review	1	1472545681	0
+84	1	1	moodle/role:override	1	1472545681	0
+85	1	3	moodle/role:safeoverride	1	1472545681	0
+86	1	1	moodle/role:manage	1	1472545681	0
+87	1	3	moodle/role:switchroles	1	1472545681	0
+88	1	1	moodle/role:switchroles	1	1472545681	0
+89	1	1	moodle/category:manage	1	1472545681	0
+90	1	2	moodle/category:viewhiddencategories	1	1472545681	0
+91	1	1	moodle/category:viewhiddencategories	1	1472545681	0
+92	1	1	moodle/cohort:manage	1	1472545681	0
+93	1	1	moodle/cohort:assign	1	1472545681	0
+94	1	3	moodle/cohort:view	1	1472545681	0
+95	1	1	moodle/cohort:view	1	1472545681	0
+96	1	2	moodle/course:create	1	1472545681	0
+97	1	1	moodle/course:create	1	1472545681	0
+98	1	7	moodle/course:request	1	1472545681	0
+99	1	1	moodle/course:delete	1	1472545682	0
+100	1	3	moodle/course:update	1	1472545682	0
+101	1	1	moodle/course:update	1	1472545682	0
+102	1	1	moodle/course:view	1	1472545682	0
+103	1	3	moodle/course:enrolreview	1	1472545682	0
+104	1	1	moodle/course:enrolreview	1	1472545682	0
+105	1	3	moodle/course:enrolconfig	1	1472545682	0
+106	1	1	moodle/course:enrolconfig	1	1472545682	0
+107	1	3	moodle/course:reviewotherusers	1	1472545682	0
+108	1	1	moodle/course:reviewotherusers	1	1472545682	0
+109	1	4	moodle/course:bulkmessaging	1	1472545682	0
+110	1	3	moodle/course:bulkmessaging	1	1472545682	0
+111	1	1	moodle/course:bulkmessaging	1	1472545682	0
+112	1	4	moodle/course:viewhiddenuserfields	1	1472545682	0
+113	1	3	moodle/course:viewhiddenuserfields	1	1472545682	0
+114	1	1	moodle/course:viewhiddenuserfields	1	1472545682	0
+115	1	2	moodle/course:viewhiddencourses	1	1472545682	0
+116	1	4	moodle/course:viewhiddencourses	1	1472545682	0
+117	1	3	moodle/course:viewhiddencourses	1	1472545682	0
+118	1	1	moodle/course:viewhiddencourses	1	1472545682	0
+119	1	3	moodle/course:visibility	1	1472545682	0
+120	1	1	moodle/course:visibility	1	1472545682	0
+121	1	3	moodle/course:managefiles	1	1472545682	0
+122	1	1	moodle/course:managefiles	1	1472545682	0
+123	1	3	moodle/course:manageactivities	1	1472545682	0
+124	1	1	moodle/course:manageactivities	1	1472545682	0
+125	1	3	moodle/course:activityvisibility	1	1472545682	0
+126	1	1	moodle/course:activityvisibility	1	1472545682	0
+127	1	4	moodle/course:viewhiddenactivities	1	1472545682	0
+128	1	3	moodle/course:viewhiddenactivities	1	1472545682	0
+129	1	1	moodle/course:viewhiddenactivities	1	1472545682	0
+130	1	5	moodle/course:viewparticipants	1	1472545682	0
+131	1	4	moodle/course:viewparticipants	1	1472545682	0
+132	1	3	moodle/course:viewparticipants	1	1472545682	0
+133	1	1	moodle/course:viewparticipants	1	1472545682	0
+134	1	3	moodle/course:changefullname	1	1472545682	0
+135	1	1	moodle/course:changefullname	1	1472545682	0
+136	1	3	moodle/course:changeshortname	1	1472545682	0
+137	1	1	moodle/course:changeshortname	1	1472545682	0
+138	1	3	moodle/course:renameroles	1	1472545682	0
+139	1	1	moodle/course:renameroles	1	1472545682	0
+140	1	3	moodle/course:changeidnumber	1	1472545682	0
+141	1	1	moodle/course:changeidnumber	1	1472545682	0
+142	1	3	moodle/course:changecategory	1	1472545682	0
+143	1	1	moodle/course:changecategory	1	1472545682	0
+144	1	3	moodle/course:changesummary	1	1472545682	0
+145	1	1	moodle/course:changesummary	1	1472545682	0
+146	1	1	moodle/site:viewparticipants	1	1472545682	0
+147	1	5	moodle/course:isincompletionreports	1	1472545682	0
+148	1	5	moodle/course:viewscales	1	1472545682	0
+149	1	4	moodle/course:viewscales	1	1472545682	0
+150	1	3	moodle/course:viewscales	1	1472545682	0
+151	1	1	moodle/course:viewscales	1	1472545682	0
+152	1	3	moodle/course:managescales	1	1472545682	0
+153	1	1	moodle/course:managescales	1	1472545682	0
+154	1	3	moodle/course:managegroups	1	1472545682	0
+155	1	1	moodle/course:managegroups	1	1472545682	0
+156	1	3	moodle/course:reset	1	1472545682	0
+157	1	1	moodle/course:reset	1	1472545682	0
+158	1	3	moodle/course:viewsuspendedusers	1	1472545682	0
+159	1	1	moodle/course:viewsuspendedusers	1	1472545682	0
+160	1	1	moodle/course:tag	1	1472545683	0
+161	1	3	moodle/course:tag	1	1472545683	0
+162	1	6	moodle/blog:view	1	1472545683	0
+163	1	7	moodle/blog:view	1	1472545683	0
+164	1	5	moodle/blog:view	1	1472545683	0
+165	1	4	moodle/blog:view	1	1472545683	0
+166	1	3	moodle/blog:view	1	1472545683	0
+167	1	1	moodle/blog:view	1	1472545683	0
+168	1	6	moodle/blog:search	1	1472545683	0
+169	1	7	moodle/blog:search	1	1472545683	0
+170	1	5	moodle/blog:search	1	1472545683	0
+171	1	4	moodle/blog:search	1	1472545683	0
+172	1	3	moodle/blog:search	1	1472545683	0
+173	1	1	moodle/blog:search	1	1472545683	0
+174	1	1	moodle/blog:viewdrafts	1	1472545683	0
+175	1	7	moodle/blog:create	1	1472545683	0
+176	1	1	moodle/blog:create	1	1472545683	0
+177	1	4	moodle/blog:manageentries	1	1472545683	0
+178	1	3	moodle/blog:manageentries	1	1472545683	0
+179	1	1	moodle/blog:manageentries	1	1472545683	0
+180	1	5	moodle/blog:manageexternal	1	1472545683	0
+181	1	7	moodle/blog:manageexternal	1	1472545683	0
+182	1	4	moodle/blog:manageexternal	1	1472545683	0
+183	1	3	moodle/blog:manageexternal	1	1472545683	0
+184	1	1	moodle/blog:manageexternal	1	1472545683	0
+185	1	7	moodle/calendar:manageownentries	1	1472545683	0
+186	1	1	moodle/calendar:manageownentries	1	1472545683	0
+187	1	4	moodle/calendar:managegroupentries	1	1472545683	0
+188	1	3	moodle/calendar:managegroupentries	1	1472545683	0
+189	1	1	moodle/calendar:managegroupentries	1	1472545683	0
+190	1	4	moodle/calendar:manageentries	1	1472545683	0
+191	1	3	moodle/calendar:manageentries	1	1472545683	0
+192	1	1	moodle/calendar:manageentries	1	1472545683	0
+193	1	1	moodle/user:editprofile	1	1472545683	0
+194	1	6	moodle/user:editownprofile	-1000	1472545683	0
+195	1	7	moodle/user:editownprofile	1	1472545683	0
+196	1	1	moodle/user:editownprofile	1	1472545683	0
+197	1	6	moodle/user:changeownpassword	-1000	1472545683	0
+198	1	7	moodle/user:changeownpassword	1	1472545683	0
+199	1	1	moodle/user:changeownpassword	1	1472545683	0
+200	1	5	moodle/user:readuserposts	1	1472545683	0
+201	1	4	moodle/user:readuserposts	1	1472545683	0
+202	1	3	moodle/user:readuserposts	1	1472545683	0
+203	1	1	moodle/user:readuserposts	1	1472545683	0
+204	1	5	moodle/user:readuserblogs	1	1472545683	0
+205	1	4	moodle/user:readuserblogs	1	1472545683	0
+206	1	3	moodle/user:readuserblogs	1	1472545683	0
+207	1	1	moodle/user:readuserblogs	1	1472545683	0
+208	1	1	moodle/user:editmessageprofile	1	1472545683	0
+209	1	6	moodle/user:editownmessageprofile	-1000	1472545683	0
+210	1	7	moodle/user:editownmessageprofile	1	1472545683	0
+211	1	1	moodle/user:editownmessageprofile	1	1472545683	0
+212	1	3	moodle/question:managecategory	1	1472545683	0
+213	1	1	moodle/question:managecategory	1	1472545683	0
+214	1	3	moodle/question:add	1	1472545683	0
+215	1	1	moodle/question:add	1	1472545683	0
+216	1	3	moodle/question:editmine	1	1472545683	0
+217	1	1	moodle/question:editmine	1	1472545683	0
+218	1	3	moodle/question:editall	1	1472545683	0
+219	1	1	moodle/question:editall	1	1472545683	0
+220	1	3	moodle/question:viewmine	1	1472545683	0
+221	1	1	moodle/question:viewmine	1	1472545684	0
+222	1	3	moodle/question:viewall	1	1472545684	0
+223	1	1	moodle/question:viewall	1	1472545684	0
+224	1	3	moodle/question:usemine	1	1472545684	0
+225	1	1	moodle/question:usemine	1	1472545684	0
+226	1	3	moodle/question:useall	1	1472545684	0
+227	1	1	moodle/question:useall	1	1472545684	0
+228	1	3	moodle/question:movemine	1	1472545684	0
+229	1	1	moodle/question:movemine	1	1472545684	0
+230	1	3	moodle/question:moveall	1	1472545684	0
+231	1	1	moodle/question:moveall	1	1472545684	0
+232	1	1	moodle/question:config	1	1472545684	0
+233	1	5	moodle/question:flag	1	1472545684	0
+234	1	4	moodle/question:flag	1	1472545684	0
+235	1	3	moodle/question:flag	1	1472545684	0
+236	1	1	moodle/question:flag	1	1472545684	0
+237	1	4	moodle/site:doclinks	1	1472545684	0
+238	1	3	moodle/site:doclinks	1	1472545684	0
+239	1	1	moodle/site:doclinks	1	1472545684	0
+240	1	3	moodle/course:sectionvisibility	1	1472545684	0
+241	1	1	moodle/course:sectionvisibility	1	1472545684	0
+242	1	3	moodle/course:useremail	1	1472545684	0
+243	1	1	moodle/course:useremail	1	1472545684	0
+244	1	3	moodle/course:viewhiddensections	1	1472545684	0
+245	1	1	moodle/course:viewhiddensections	1	1472545684	0
+246	1	3	moodle/course:setcurrentsection	1	1472545684	0
+247	1	1	moodle/course:setcurrentsection	1	1472545684	0
+248	1	3	moodle/course:movesections	1	1472545684	0
+249	1	1	moodle/course:movesections	1	1472545684	0
+250	1	4	moodle/grade:viewall	1	1472545684	0
+251	1	3	moodle/grade:viewall	1	1472545684	0
+252	1	1	moodle/grade:viewall	1	1472545684	0
+253	1	5	moodle/grade:view	1	1472545684	0
+254	1	4	moodle/grade:viewhidden	1	1472545684	0
+255	1	3	moodle/grade:viewhidden	1	1472545684	0
+256	1	1	moodle/grade:viewhidden	1	1472545684	0
+257	1	3	moodle/grade:import	1	1472545684	0
+258	1	1	moodle/grade:import	1	1472545684	0
+259	1	4	moodle/grade:export	1	1472545684	0
+260	1	3	moodle/grade:export	1	1472545684	0
+261	1	1	moodle/grade:export	1	1472545684	0
+262	1	3	moodle/grade:manage	1	1472545684	0
+263	1	1	moodle/grade:manage	1	1472545684	0
+264	1	3	moodle/grade:edit	1	1472545684	0
+265	1	1	moodle/grade:edit	1	1472545684	0
+266	1	3	moodle/grade:managegradingforms	1	1472545684	0
+267	1	1	moodle/grade:managegradingforms	1	1472545684	0
+268	1	1	moodle/grade:sharegradingforms	1	1472545684	0
+269	1	1	moodle/grade:managesharedforms	1	1472545684	0
+270	1	3	moodle/grade:manageoutcomes	1	1472545684	0
+271	1	1	moodle/grade:manageoutcomes	1	1472545684	0
+272	1	3	moodle/grade:manageletters	1	1472545684	0
+273	1	1	moodle/grade:manageletters	1	1472545684	0
+274	1	3	moodle/grade:hide	1	1472545684	0
+275	1	1	moodle/grade:hide	1	1472545684	0
+276	1	3	moodle/grade:lock	1	1472545684	0
+277	1	1	moodle/grade:lock	1	1472545684	0
+278	1	3	moodle/grade:unlock	1	1472545684	0
+279	1	1	moodle/grade:unlock	1	1472545684	0
+280	1	7	moodle/my:manageblocks	1	1472545684	0
+281	1	4	moodle/notes:view	1	1472545684	0
+282	1	3	moodle/notes:view	1	1472545685	0
+283	1	1	moodle/notes:view	1	1472545685	0
+284	1	4	moodle/notes:manage	1	1472545685	0
+285	1	3	moodle/notes:manage	1	1472545685	0
+286	1	1	moodle/notes:manage	1	1472545685	0
+287	1	1	moodle/tag:manage	1	1472545685	0
+288	1	1	moodle/tag:edit	1	1472545685	0
+289	1	7	moodle/tag:flag	1	1472545685	0
+290	1	4	moodle/tag:editblocks	1	1472545685	0
+291	1	3	moodle/tag:editblocks	1	1472545685	0
+292	1	1	moodle/tag:editblocks	1	1472545685	0
+293	1	6	moodle/block:view	1	1472545685	0
+294	1	7	moodle/block:view	1	1472545685	0
+295	1	5	moodle/block:view	1	1472545685	0
+296	1	4	moodle/block:view	1	1472545685	0
+297	1	3	moodle/block:view	1	1472545685	0
+298	1	3	moodle/block:edit	1	1472545685	0
+299	1	1	moodle/block:edit	1	1472545685	0
+300	1	7	moodle/portfolio:export	1	1472545685	0
+301	1	5	moodle/portfolio:export	1	1472545685	0
+302	1	4	moodle/portfolio:export	1	1472545685	0
+303	1	3	moodle/portfolio:export	1	1472545685	0
+304	1	8	moodle/comment:view	1	1472545685	0
+305	1	6	moodle/comment:view	1	1472545685	0
+306	1	7	moodle/comment:view	1	1472545685	0
+307	1	5	moodle/comment:view	1	1472545685	0
+308	1	4	moodle/comment:view	1	1472545685	0
+309	1	3	moodle/comment:view	1	1472545685	0
+310	1	1	moodle/comment:view	1	1472545685	0
+311	1	7	moodle/comment:post	1	1472545685	0
+312	1	5	moodle/comment:post	1	1472545685	0
+313	1	4	moodle/comment:post	1	1472545685	0
+314	1	3	moodle/comment:post	1	1472545685	0
+315	1	1	moodle/comment:post	1	1472545685	0
+316	1	3	moodle/comment:delete	1	1472545685	0
+317	1	1	moodle/comment:delete	1	1472545685	0
+318	1	1	moodle/webservice:createtoken	1	1472545685	0
+319	1	7	moodle/webservice:createmobiletoken	1	1472545685	0
+320	1	7	moodle/rating:view	1	1472545685	0
+321	1	5	moodle/rating:view	1	1472545685	0
+322	1	4	moodle/rating:view	1	1472545685	0
+323	1	3	moodle/rating:view	1	1472545685	0
+324	1	1	moodle/rating:view	1	1472545685	0
+325	1	7	moodle/rating:viewany	1	1472545685	0
+326	1	5	moodle/rating:viewany	1	1472545685	0
+327	1	4	moodle/rating:viewany	1	1472545685	0
+328	1	3	moodle/rating:viewany	1	1472545685	0
+329	1	1	moodle/rating:viewany	1	1472545685	0
+330	1	7	moodle/rating:viewall	1	1472545685	0
+331	1	5	moodle/rating:viewall	1	1472545685	0
+332	1	4	moodle/rating:viewall	1	1472545685	0
+333	1	3	moodle/rating:viewall	1	1472545685	0
+334	1	1	moodle/rating:viewall	1	1472545685	0
+335	1	7	moodle/rating:rate	1	1472545685	0
+336	1	5	moodle/rating:rate	1	1472545685	0
+337	1	4	moodle/rating:rate	1	1472545685	0
+338	1	3	moodle/rating:rate	1	1472545685	0
+339	1	1	moodle/rating:rate	1	1472545685	0
+340	1	1	moodle/course:publish	1	1472545685	0
+341	1	4	moodle/course:markcomplete	1	1472545685	0
+342	1	3	moodle/course:markcomplete	1	1472545685	0
+343	1	1	moodle/course:markcomplete	1	1472545685	0
+344	1	1	moodle/community:add	1	1472545685	0
+345	1	4	moodle/community:add	1	1472545685	0
+346	1	3	moodle/community:add	1	1472545685	0
+347	1	1	moodle/community:download	1	1472545685	0
+348	1	3	moodle/community:download	1	1472545685	0
+349	1	1	moodle/badges:manageglobalsettings	1	1472545685	0
+350	1	7	moodle/badges:viewbadges	1	1472545685	0
+351	1	7	moodle/badges:manageownbadges	1	1472545685	0
+352	1	7	moodle/badges:viewotherbadges	1	1472545685	0
+353	1	7	moodle/badges:earnbadge	1	1472545685	0
+354	1	1	moodle/badges:createbadge	1	1472545685	0
+355	1	3	moodle/badges:createbadge	1	1472545686	0
+356	1	1	moodle/badges:deletebadge	1	1472545686	0
+357	1	3	moodle/badges:deletebadge	1	1472545686	0
+358	1	1	moodle/badges:configuredetails	1	1472545686	0
+359	1	3	moodle/badges:configuredetails	1	1472545686	0
+360	1	1	moodle/badges:configurecriteria	1	1472545686	0
+361	1	3	moodle/badges:configurecriteria	1	1472545686	0
+362	1	1	moodle/badges:configuremessages	1	1472545686	0
+363	1	3	moodle/badges:configuremessages	1	1472545686	0
+364	1	1	moodle/badges:awardbadge	1	1472545686	0
+365	1	4	moodle/badges:awardbadge	1	1472545686	0
+366	1	3	moodle/badges:awardbadge	1	1472545686	0
+367	1	1	moodle/badges:viewawarded	1	1472545686	0
+368	1	4	moodle/badges:viewawarded	1	1472545686	0
+369	1	3	moodle/badges:viewawarded	1	1472545686	0
+370	1	6	moodle/search:query	1	1472545686	0
+371	1	7	moodle/search:query	1	1472545686	0
+372	1	5	moodle/search:query	1	1472545686	0
+373	1	4	moodle/search:query	1	1472545686	0
+374	1	3	moodle/search:query	1	1472545686	0
+375	1	1	moodle/search:query	1	1472545686	0
+376	1	1	moodle/competency:competencymanage	1	1472545686	0
+377	1	7	moodle/competency:competencyview	1	1472545686	0
+378	1	3	moodle/competency:competencygrade	1	1472545686	0
+379	1	4	moodle/competency:competencygrade	1	1472545686	0
+380	1	1	moodle/competency:competencygrade	1	1472545686	0
+381	1	3	moodle/competency:coursecompetencymanage	1	1472545686	0
+382	1	1	moodle/competency:coursecompetencymanage	1	1472545686	0
+383	1	1	moodle/competency:coursecompetencyconfigure	1	1472545686	0
+384	1	5	moodle/competency:coursecompetencygradable	1	1472545686	0
+385	1	7	moodle/competency:coursecompetencyview	1	1472545686	0
+386	1	1	moodle/competency:planmanage	1	1472545686	0
+387	1	1	moodle/competency:planmanagedraft	1	1472545686	0
+388	1	1	moodle/competency:planview	1	1472545686	0
+389	1	1	moodle/competency:planviewdraft	1	1472545686	0
+390	1	7	moodle/competency:planviewown	1	1472545686	0
+391	1	1	moodle/competency:planrequestreview	1	1472545686	0
+392	1	7	moodle/competency:planrequestreviewown	1	1472545686	0
+393	1	1	moodle/competency:planreview	1	1472545686	0
+394	1	1	moodle/competency:plancomment	1	1472545686	0
+395	1	7	moodle/competency:plancommentown	1	1472545686	0
+396	1	1	moodle/competency:usercompetencyview	1	1472545686	0
+397	1	3	moodle/competency:usercompetencyview	1	1472545686	0
+398	1	4	moodle/competency:usercompetencyview	1	1472545686	0
+399	1	1	moodle/competency:usercompetencyrequestreview	1	1472545686	0
+400	1	7	moodle/competency:usercompetencyrequestreviewown	1	1472545686	0
+401	1	1	moodle/competency:usercompetencyreview	1	1472545686	0
+402	1	1	moodle/competency:usercompetencycomment	1	1472545686	0
+403	1	7	moodle/competency:usercompetencycommentown	1	1472545686	0
+404	1	1	moodle/competency:templatemanage	1	1472545686	0
+405	1	1	moodle/competency:templateview	1	1472545686	0
+406	1	1	moodle/competency:userevidencemanage	1	1472545686	0
+407	1	7	moodle/competency:userevidencemanageown	1	1472545686	0
+408	1	1	moodle/competency:userevidenceview	1	1472545686	0
+409	1	6	mod/assign:view	1	1472545693	0
+410	1	5	mod/assign:view	1	1472545693	0
+411	1	4	mod/assign:view	1	1472545693	0
+412	1	3	mod/assign:view	1	1472545693	0
+413	1	1	mod/assign:view	1	1472545693	0
+414	1	5	mod/assign:submit	1	1472545693	0
+415	1	4	mod/assign:grade	1	1472545693	0
+416	1	3	mod/assign:grade	1	1472545693	0
+417	1	1	mod/assign:grade	1	1472545693	0
+418	1	4	mod/assign:exportownsubmission	1	1472545693	0
+419	1	3	mod/assign:exportownsubmission	1	1472545693	0
+420	1	1	mod/assign:exportownsubmission	1	1472545693	0
+421	1	5	mod/assign:exportownsubmission	1	1472545693	0
+422	1	3	mod/assign:addinstance	1	1472545693	0
+423	1	1	mod/assign:addinstance	1	1472545693	0
+424	1	4	mod/assign:grantextension	1	1472545693	0
+425	1	3	mod/assign:grantextension	1	1472545693	0
+426	1	1	mod/assign:grantextension	1	1472545693	0
+427	1	3	mod/assign:revealidentities	1	1472545693	0
+428	1	1	mod/assign:revealidentities	1	1472545693	0
+429	1	3	mod/assign:reviewgrades	1	1472545693	0
+430	1	1	mod/assign:reviewgrades	1	1472545693	0
+431	1	3	mod/assign:releasegrades	1	1472545693	0
+432	1	1	mod/assign:releasegrades	1	1472545693	0
+433	1	3	mod/assign:managegrades	1	1472545693	0
+434	1	1	mod/assign:managegrades	1	1472545693	0
+435	1	3	mod/assign:manageallocations	1	1472545693	0
+436	1	1	mod/assign:manageallocations	1	1472545693	0
+437	1	3	mod/assign:viewgrades	1	1472545693	0
+438	1	1	mod/assign:viewgrades	1	1472545693	0
+439	1	4	mod/assign:viewgrades	1	1472545693	0
+440	1	1	mod/assign:viewblinddetails	1	1472545693	0
+441	1	4	mod/assign:receivegradernotifications	1	1472545693	0
+442	1	3	mod/assign:receivegradernotifications	1	1472545693	0
+443	1	1	mod/assign:receivegradernotifications	1	1472545693	0
+444	1	6	mod/assignment:view	1	1472545693	0
+445	1	5	mod/assignment:view	1	1472545693	0
+446	1	4	mod/assignment:view	1	1472545694	0
+447	1	3	mod/assignment:view	1	1472545694	0
+448	1	1	mod/assignment:view	1	1472545694	0
+449	1	3	mod/assignment:addinstance	1	1472545694	0
+450	1	1	mod/assignment:addinstance	1	1472545694	0
+451	1	5	mod/assignment:submit	1	1472545694	0
+452	1	4	mod/assignment:grade	1	1472545694	0
+453	1	3	mod/assignment:grade	1	1472545694	0
+454	1	1	mod/assignment:grade	1	1472545694	0
+455	1	4	mod/assignment:exportownsubmission	1	1472545694	0
+456	1	3	mod/assignment:exportownsubmission	1	1472545694	0
+457	1	1	mod/assignment:exportownsubmission	1	1472545694	0
+458	1	5	mod/assignment:exportownsubmission	1	1472545694	0
+459	1	3	mod/book:addinstance	1	1472545694	0
+460	1	1	mod/book:addinstance	1	1472545694	0
+461	1	6	mod/book:read	1	1472545694	0
+462	1	8	mod/book:read	1	1472545694	0
+463	1	5	mod/book:read	1	1472545694	0
+464	1	4	mod/book:read	1	1472545694	0
+465	1	3	mod/book:read	1	1472545694	0
+466	1	1	mod/book:read	1	1472545694	0
+467	1	4	mod/book:viewhiddenchapters	1	1472545694	0
+468	1	3	mod/book:viewhiddenchapters	1	1472545694	0
+469	1	1	mod/book:viewhiddenchapters	1	1472545694	0
+470	1	3	mod/book:edit	1	1472545694	0
+471	1	1	mod/book:edit	1	1472545694	0
+472	1	3	mod/chat:addinstance	1	1472545694	0
+473	1	1	mod/chat:addinstance	1	1472545694	0
+474	1	5	mod/chat:chat	1	1472545694	0
+475	1	4	mod/chat:chat	1	1472545694	0
+476	1	3	mod/chat:chat	1	1472545694	0
+477	1	1	mod/chat:chat	1	1472545694	0
+478	1	5	mod/chat:readlog	1	1472545694	0
+479	1	4	mod/chat:readlog	1	1472545694	0
+480	1	3	mod/chat:readlog	1	1472545694	0
+481	1	1	mod/chat:readlog	1	1472545694	0
+482	1	4	mod/chat:deletelog	1	1472545694	0
+483	1	3	mod/chat:deletelog	1	1472545694	0
+484	1	1	mod/chat:deletelog	1	1472545694	0
+485	1	4	mod/chat:exportparticipatedsession	1	1472545694	0
+486	1	3	mod/chat:exportparticipatedsession	1	1472545694	0
+487	1	1	mod/chat:exportparticipatedsession	1	1472545694	0
+488	1	4	mod/chat:exportsession	1	1472545694	0
+489	1	3	mod/chat:exportsession	1	1472545694	0
+490	1	1	mod/chat:exportsession	1	1472545694	0
+491	1	3	mod/choice:addinstance	1	1472545695	0
+492	1	1	mod/choice:addinstance	1	1472545695	0
+493	1	5	mod/choice:choose	1	1472545695	0
+494	1	4	mod/choice:choose	1	1472545695	0
+495	1	3	mod/choice:choose	1	1472545695	0
+496	1	4	mod/choice:readresponses	1	1472545695	0
+497	1	3	mod/choice:readresponses	1	1472545695	0
+498	1	1	mod/choice:readresponses	1	1472545695	0
+499	1	4	mod/choice:deleteresponses	1	1472545695	0
+500	1	3	mod/choice:deleteresponses	1	1472545695	0
+501	1	1	mod/choice:deleteresponses	1	1472545695	0
+502	1	4	mod/choice:downloadresponses	1	1472545695	0
+503	1	3	mod/choice:downloadresponses	1	1472545695	0
+504	1	1	mod/choice:downloadresponses	1	1472545695	0
+505	1	3	mod/communitywall:addinstance	1	1472545695	0
+506	1	1	mod/communitywall:addinstance	1	1472545695	0
+507	1	6	mod/communitywall:view	1	1472545695	0
+508	1	5	mod/communitywall:view	1	1472545695	0
+509	1	4	mod/communitywall:view	1	1472545695	0
+510	1	3	mod/communitywall:view	1	1472545695	0
+511	1	1	mod/communitywall:view	1	1472545695	0
+512	1	3	mod/data:addinstance	1	1472545695	0
+513	1	1	mod/data:addinstance	1	1472545695	0
+514	1	8	mod/data:viewentry	1	1472545695	0
+515	1	6	mod/data:viewentry	1	1472545695	0
+516	1	5	mod/data:viewentry	1	1472545695	0
+517	1	4	mod/data:viewentry	1	1472545695	0
+518	1	3	mod/data:viewentry	1	1472545695	0
+519	1	1	mod/data:viewentry	1	1472545695	0
+520	1	5	mod/data:writeentry	1	1472545695	0
+521	1	4	mod/data:writeentry	1	1472545695	0
+522	1	3	mod/data:writeentry	1	1472545696	0
+523	1	1	mod/data:writeentry	1	1472545696	0
+524	1	5	mod/data:comment	1	1472545696	0
+525	1	4	mod/data:comment	1	1472545696	0
+526	1	3	mod/data:comment	1	1472545696	0
+527	1	1	mod/data:comment	1	1472545696	0
+528	1	4	mod/data:rate	1	1472545696	0
+529	1	3	mod/data:rate	1	1472545696	0
+530	1	1	mod/data:rate	1	1472545696	0
+531	1	4	mod/data:viewrating	1	1472545696	0
+532	1	3	mod/data:viewrating	1	1472545696	0
+533	1	1	mod/data:viewrating	1	1472545696	0
+534	1	4	mod/data:viewanyrating	1	1472545696	0
+535	1	3	mod/data:viewanyrating	1	1472545696	0
+536	1	1	mod/data:viewanyrating	1	1472545696	0
+537	1	4	mod/data:viewallratings	1	1472545696	0
+538	1	3	mod/data:viewallratings	1	1472545696	0
+539	1	1	mod/data:viewallratings	1	1472545696	0
+540	1	4	mod/data:approve	1	1472545696	0
+541	1	3	mod/data:approve	1	1472545696	0
+542	1	1	mod/data:approve	1	1472545696	0
+543	1	4	mod/data:manageentries	1	1472545696	0
+544	1	3	mod/data:manageentries	1	1472545696	0
+545	1	1	mod/data:manageentries	1	1472545696	0
+546	1	4	mod/data:managecomments	1	1472545696	0
+547	1	3	mod/data:managecomments	1	1472545696	0
+548	1	1	mod/data:managecomments	1	1472545696	0
+549	1	3	mod/data:managetemplates	1	1472545696	0
+550	1	1	mod/data:managetemplates	1	1472545696	0
+551	1	4	mod/data:viewalluserpresets	1	1472545696	0
+552	1	3	mod/data:viewalluserpresets	1	1472545696	0
+553	1	1	mod/data:viewalluserpresets	1	1472545696	0
+554	1	1	mod/data:manageuserpresets	1	1472545696	0
+555	1	1	mod/data:exportentry	1	1472545696	0
+556	1	4	mod/data:exportentry	1	1472545696	0
+557	1	3	mod/data:exportentry	1	1472545696	0
+558	1	1	mod/data:exportownentry	1	1472545696	0
+559	1	4	mod/data:exportownentry	1	1472545696	0
+560	1	3	mod/data:exportownentry	1	1472545696	0
+561	1	5	mod/data:exportownentry	1	1472545696	0
+562	1	1	mod/data:exportallentries	1	1472545696	0
+563	1	4	mod/data:exportallentries	1	1472545696	0
+564	1	3	mod/data:exportallentries	1	1472545696	0
+565	1	1	mod/data:exportuserinfo	1	1472545696	0
+566	1	4	mod/data:exportuserinfo	1	1472545696	0
+567	1	3	mod/data:exportuserinfo	1	1472545696	0
+568	1	3	mod/dragdrop:addinstance	1	1472545696	0
+569	1	1	mod/dragdrop:addinstance	1	1472545696	0
+570	1	6	mod/dragdrop:view	1	1472545696	0
+571	1	5	mod/dragdrop:view	1	1472545696	0
+572	1	4	mod/dragdrop:view	1	1472545697	0
+573	1	3	mod/dragdrop:view	1	1472545697	0
+574	1	1	mod/dragdrop:view	1	1472545697	0
+575	1	3	mod/dragdrop:word_blocks	1	1472545697	0
+576	1	1	mod/dragdrop:word_blocks	1	1472545697	0
+577	1	3	mod/dragdrop:sentences	1	1472545697	0
+578	1	1	mod/dragdrop:sentences	1	1472545697	0
+579	1	3	mod/dragdrop:feedback_settings	1	1472545697	0
+580	1	1	mod/dragdrop:feedback_settings	1	1472545697	0
+581	1	3	mod/dragdrop:view_all_attempts	1	1472545697	0
+582	1	1	mod/dragdrop:view_all_attempts	1	1472545697	0
+583	1	4	mod/dragdrop:view_all_attempts	1	1472545697	0
+584	1	3	mod/dragdrop:view_all_comments	1	1472545697	0
+585	1	1	mod/dragdrop:view_all_comments	1	1472545697	0
+586	1	4	mod/dragdrop:view_all_comments	1	1472545697	0
+587	1	3	mod/dragdrop:manage_all_attempts	1	1472545697	0
+588	1	1	mod/dragdrop:manage_all_attempts	1	1472545697	0
+589	1	4	mod/dragdrop:manage_all_attempts	1	1472545697	0
+590	1	3	mod/dragdrop:manage_all_comments	1	1472545697	0
+591	1	1	mod/dragdrop:manage_all_comments	1	1472545697	0
+592	1	4	mod/dragdrop:manage_all_comments	1	1472545697	0
+593	1	3	mod/dragdrop:comment	1	1472545697	0
+594	1	1	mod/dragdrop:comment	1	1472545697	0
+595	1	4	mod/dragdrop:comment	1	1472545697	0
+596	1	6	mod/dragdrop:attempts	1	1472545697	0
+597	1	5	mod/dragdrop:attempts	1	1472545697	0
+598	1	4	mod/dragdrop:attempts	1	1472545697	0
+599	1	3	mod/dragdrop:attempts	1	1472545697	0
+600	1	1	mod/dragdrop:attempts	1	1472545697	0
+601	1	3	mod/feedback:addinstance	1	1472545697	0
+602	1	1	mod/feedback:addinstance	1	1472545697	0
+603	1	6	mod/feedback:view	1	1472545697	0
+604	1	8	mod/feedback:view	1	1472545697	0
+605	1	5	mod/feedback:view	1	1472545697	0
+606	1	4	mod/feedback:view	1	1472545697	0
+607	1	3	mod/feedback:view	1	1472545697	0
+608	1	1	mod/feedback:view	1	1472545697	0
+609	1	8	mod/feedback:complete	1	1472545697	0
+610	1	5	mod/feedback:complete	1	1472545697	0
+611	1	5	mod/feedback:viewanalysepage	1	1472545697	0
+612	1	3	mod/feedback:viewanalysepage	1	1472545697	0
+613	1	1	mod/feedback:viewanalysepage	1	1472545697	0
+614	1	3	mod/feedback:deletesubmissions	1	1472545697	0
+615	1	1	mod/feedback:deletesubmissions	1	1472545697	0
+616	1	1	mod/feedback:mapcourse	1	1472545697	0
+617	1	3	mod/feedback:edititems	1	1472545697	0
+618	1	1	mod/feedback:edititems	1	1472545697	0
+619	1	3	mod/feedback:createprivatetemplate	1	1472545697	0
+620	1	1	mod/feedback:createprivatetemplate	1	1472545697	0
+621	1	3	mod/feedback:createpublictemplate	1	1472545697	0
+622	1	1	mod/feedback:createpublictemplate	1	1472545697	0
+623	1	3	mod/feedback:deletetemplate	1	1472545697	0
+624	1	1	mod/feedback:deletetemplate	1	1472545697	0
+625	1	4	mod/feedback:viewreports	1	1472545697	0
+626	1	3	mod/feedback:viewreports	1	1472545697	0
+627	1	1	mod/feedback:viewreports	1	1472545697	0
+628	1	4	mod/feedback:receivemail	1	1472545697	0
+629	1	3	mod/feedback:receivemail	1	1472545697	0
+630	1	3	mod/folder:addinstance	1	1472545698	0
+631	1	1	mod/folder:addinstance	1	1472545698	0
+632	1	6	mod/folder:view	1	1472545698	0
+633	1	7	mod/folder:view	1	1472545698	0
+634	1	3	mod/folder:managefiles	1	1472545698	0
+635	1	3	mod/forum:addinstance	1	1472545698	0
+636	1	1	mod/forum:addinstance	1	1472545698	0
+637	1	8	mod/forum:viewdiscussion	1	1472545698	0
+638	1	6	mod/forum:viewdiscussion	1	1472545698	0
+639	1	5	mod/forum:viewdiscussion	1	1472545698	0
+640	1	4	mod/forum:viewdiscussion	1	1472545698	0
+641	1	3	mod/forum:viewdiscussion	1	1472545698	0
+642	1	1	mod/forum:viewdiscussion	1	1472545698	0
+643	1	4	mod/forum:viewhiddentimedposts	1	1472545698	0
+644	1	3	mod/forum:viewhiddentimedposts	1	1472545698	0
+645	1	1	mod/forum:viewhiddentimedposts	1	1472545698	0
+646	1	5	mod/forum:startdiscussion	1	1472545698	0
+647	1	4	mod/forum:startdiscussion	1	1472545698	0
+648	1	3	mod/forum:startdiscussion	1	1472545698	0
+649	1	1	mod/forum:startdiscussion	1	1472545698	0
+650	1	5	mod/forum:replypost	1	1472545698	0
+651	1	4	mod/forum:replypost	1	1472545698	0
+652	1	3	mod/forum:replypost	1	1472545698	0
+653	1	1	mod/forum:replypost	1	1472545698	0
+654	1	4	mod/forum:addnews	1	1472545698	0
+655	1	3	mod/forum:addnews	1	1472545698	0
+656	1	1	mod/forum:addnews	1	1472545698	0
+657	1	4	mod/forum:replynews	1	1472545698	0
+658	1	3	mod/forum:replynews	1	1472545698	0
+659	1	1	mod/forum:replynews	1	1472545698	0
+660	1	5	mod/forum:viewrating	1	1472545698	0
+661	1	4	mod/forum:viewrating	1	1472545698	0
+662	1	3	mod/forum:viewrating	1	1472545698	0
+663	1	1	mod/forum:viewrating	1	1472545698	0
+664	1	4	mod/forum:viewanyrating	1	1472545698	0
+665	1	3	mod/forum:viewanyrating	1	1472545698	0
+666	1	1	mod/forum:viewanyrating	1	1472545698	0
+667	1	4	mod/forum:viewallratings	1	1472545698	0
+668	1	3	mod/forum:viewallratings	1	1472545698	0
+669	1	1	mod/forum:viewallratings	1	1472545698	0
+670	1	4	mod/forum:rate	1	1472545698	0
+671	1	3	mod/forum:rate	1	1472545698	0
+672	1	1	mod/forum:rate	1	1472545698	0
+673	1	5	mod/forum:createattachment	1	1472545698	0
+674	1	4	mod/forum:createattachment	1	1472545698	0
+675	1	3	mod/forum:createattachment	1	1472545699	0
+676	1	1	mod/forum:createattachment	1	1472545699	0
+677	1	5	mod/forum:deleteownpost	1	1472545699	0
+678	1	4	mod/forum:deleteownpost	1	1472545699	0
+679	1	3	mod/forum:deleteownpost	1	1472545699	0
+680	1	1	mod/forum:deleteownpost	1	1472545699	0
+681	1	4	mod/forum:deleteanypost	1	1472545699	0
+682	1	3	mod/forum:deleteanypost	1	1472545699	0
+683	1	1	mod/forum:deleteanypost	1	1472545699	0
+684	1	4	mod/forum:splitdiscussions	1	1472545699	0
+685	1	3	mod/forum:splitdiscussions	1	1472545699	0
+686	1	1	mod/forum:splitdiscussions	1	1472545699	0
+687	1	4	mod/forum:movediscussions	1	1472545699	0
+688	1	3	mod/forum:movediscussions	1	1472545699	0
+689	1	1	mod/forum:movediscussions	1	1472545699	0
+690	1	4	mod/forum:pindiscussions	1	1472545699	0
+691	1	3	mod/forum:pindiscussions	1	1472545699	0
+692	1	1	mod/forum:pindiscussions	1	1472545699	0
+693	1	4	mod/forum:editanypost	1	1472545699	0
+694	1	3	mod/forum:editanypost	1	1472545699	0
+695	1	1	mod/forum:editanypost	1	1472545699	0
+696	1	4	mod/forum:viewqandawithoutposting	1	1472545699	0
+697	1	3	mod/forum:viewqandawithoutposting	1	1472545699	0
+698	1	1	mod/forum:viewqandawithoutposting	1	1472545699	0
+699	1	4	mod/forum:viewsubscribers	1	1472545699	0
+700	1	3	mod/forum:viewsubscribers	1	1472545699	0
+701	1	1	mod/forum:viewsubscribers	1	1472545699	0
+702	1	4	mod/forum:managesubscriptions	1	1472545699	0
+703	1	3	mod/forum:managesubscriptions	1	1472545699	0
+704	1	1	mod/forum:managesubscriptions	1	1472545699	0
+705	1	4	mod/forum:postwithoutthrottling	1	1472545699	0
+706	1	3	mod/forum:postwithoutthrottling	1	1472545699	0
+707	1	1	mod/forum:postwithoutthrottling	1	1472545699	0
+708	1	4	mod/forum:exportdiscussion	1	1472545699	0
+709	1	3	mod/forum:exportdiscussion	1	1472545699	0
+710	1	1	mod/forum:exportdiscussion	1	1472545699	0
+711	1	4	mod/forum:exportpost	1	1472545699	0
+712	1	3	mod/forum:exportpost	1	1472545699	0
+713	1	1	mod/forum:exportpost	1	1472545699	0
+714	1	4	mod/forum:exportownpost	1	1472545699	0
+715	1	3	mod/forum:exportownpost	1	1472545699	0
+716	1	1	mod/forum:exportownpost	1	1472545699	0
+717	1	5	mod/forum:exportownpost	1	1472545699	0
+718	1	4	mod/forum:addquestion	1	1472545699	0
+719	1	3	mod/forum:addquestion	1	1472545699	0
+720	1	1	mod/forum:addquestion	1	1472545699	0
+721	1	5	mod/forum:allowforcesubscribe	1	1472545699	0
+722	1	4	mod/forum:allowforcesubscribe	1	1472545699	0
+723	1	3	mod/forum:allowforcesubscribe	1	1472545699	0
+724	1	8	mod/forum:allowforcesubscribe	1	1472545699	0
+725	1	4	mod/forum:canposttomygroups	1	1472545699	0
+726	1	3	mod/forum:canposttomygroups	1	1472545699	0
+727	1	1	mod/forum:canposttomygroups	1	1472545699	0
+728	1	3	mod/glossary:addinstance	1	1472545700	0
+729	1	1	mod/glossary:addinstance	1	1472545700	0
+730	1	8	mod/glossary:view	1	1472545700	0
+731	1	6	mod/glossary:view	1	1472545700	0
+732	1	5	mod/glossary:view	1	1472545700	0
+733	1	4	mod/glossary:view	1	1472545700	0
+734	1	3	mod/glossary:view	1	1472545700	0
+735	1	1	mod/glossary:view	1	1472545700	0
+736	1	5	mod/glossary:write	1	1472545700	0
+737	1	4	mod/glossary:write	1	1472545700	0
+738	1	3	mod/glossary:write	1	1472545700	0
+739	1	1	mod/glossary:write	1	1472545700	0
+740	1	4	mod/glossary:manageentries	1	1472545700	0
+741	1	3	mod/glossary:manageentries	1	1472545700	0
+742	1	1	mod/glossary:manageentries	1	1472545700	0
+743	1	4	mod/glossary:managecategories	1	1472545700	0
+744	1	3	mod/glossary:managecategories	1	1472545700	0
+745	1	1	mod/glossary:managecategories	1	1472545700	0
+746	1	5	mod/glossary:comment	1	1472545700	0
+747	1	4	mod/glossary:comment	1	1472545700	0
+748	1	3	mod/glossary:comment	1	1472545700	0
+749	1	1	mod/glossary:comment	1	1472545700	0
+750	1	4	mod/glossary:managecomments	1	1472545700	0
+751	1	3	mod/glossary:managecomments	1	1472545700	0
+752	1	1	mod/glossary:managecomments	1	1472545700	0
+753	1	4	mod/glossary:import	1	1472545700	0
+754	1	3	mod/glossary:import	1	1472545700	0
+755	1	1	mod/glossary:import	1	1472545700	0
+756	1	4	mod/glossary:export	1	1472545700	0
+757	1	3	mod/glossary:export	1	1472545700	0
+758	1	1	mod/glossary:export	1	1472545700	0
+759	1	4	mod/glossary:approve	1	1472545700	0
+760	1	3	mod/glossary:approve	1	1472545700	0
+761	1	1	mod/glossary:approve	1	1472545700	0
+762	1	4	mod/glossary:rate	1	1472545700	0
+763	1	3	mod/glossary:rate	1	1472545700	0
+764	1	1	mod/glossary:rate	1	1472545700	0
+765	1	4	mod/glossary:viewrating	1	1472545700	0
+766	1	3	mod/glossary:viewrating	1	1472545700	0
+767	1	1	mod/glossary:viewrating	1	1472545700	0
+768	1	4	mod/glossary:viewanyrating	1	1472545700	0
+769	1	3	mod/glossary:viewanyrating	1	1472545700	0
+770	1	1	mod/glossary:viewanyrating	1	1472545700	0
+771	1	4	mod/glossary:viewallratings	1	1472545700	0
+772	1	3	mod/glossary:viewallratings	1	1472545700	0
+773	1	1	mod/glossary:viewallratings	1	1472545700	0
+774	1	4	mod/glossary:exportentry	1	1472545700	0
+775	1	3	mod/glossary:exportentry	1	1472545700	0
+776	1	1	mod/glossary:exportentry	1	1472545700	0
+777	1	4	mod/glossary:exportownentry	1	1472545700	0
+778	1	3	mod/glossary:exportownentry	1	1472545700	0
+779	1	1	mod/glossary:exportownentry	1	1472545700	0
+780	1	5	mod/glossary:exportownentry	1	1472545700	0
+781	1	6	mod/imscp:view	1	1472545701	0
+782	1	7	mod/imscp:view	1	1472545701	0
+783	1	3	mod/imscp:addinstance	1	1472545701	0
+784	1	1	mod/imscp:addinstance	1	1472545701	0
+785	1	3	mod/label:addinstance	1	1472545701	0
+786	1	1	mod/label:addinstance	1	1472545701	0
+787	1	3	mod/lesson:addinstance	1	1472545701	0
+788	1	1	mod/lesson:addinstance	1	1472545701	0
+789	1	3	mod/lesson:edit	1	1472545701	0
+790	1	1	mod/lesson:edit	1	1472545701	0
+791	1	4	mod/lesson:grade	1	1472545702	0
+792	1	3	mod/lesson:grade	1	1472545702	0
+793	1	1	mod/lesson:grade	1	1472545702	0
+794	1	4	mod/lesson:viewreports	1	1472545702	0
+795	1	3	mod/lesson:viewreports	1	1472545702	0
+796	1	1	mod/lesson:viewreports	1	1472545702	0
+797	1	4	mod/lesson:manage	1	1472545702	0
+798	1	3	mod/lesson:manage	1	1472545702	0
+799	1	1	mod/lesson:manage	1	1472545702	0
+800	1	3	mod/lesson:manageoverrides	1	1472545702	0
+801	1	1	mod/lesson:manageoverrides	1	1472545702	0
+802	1	5	mod/lti:view	1	1472545702	0
+803	1	4	mod/lti:view	1	1472545702	0
+804	1	3	mod/lti:view	1	1472545702	0
+805	1	1	mod/lti:view	1	1472545702	0
+806	1	3	mod/lti:addinstance	1	1472545702	0
+807	1	1	mod/lti:addinstance	1	1472545702	0
+808	1	4	mod/lti:manage	1	1472545702	0
+809	1	3	mod/lti:manage	1	1472545702	0
+810	1	1	mod/lti:manage	1	1472545702	0
+811	1	3	mod/lti:addcoursetool	1	1472545702	0
+812	1	1	mod/lti:addcoursetool	1	1472545702	0
+813	1	3	mod/lti:requesttooladd	1	1472545702	0
+814	1	1	mod/lti:requesttooladd	1	1472545702	0
+815	1	6	mod/page:view	1	1472545703	0
+816	1	7	mod/page:view	1	1472545703	0
+817	1	3	mod/page:addinstance	1	1472545703	0
+818	1	1	mod/page:addinstance	1	1472545703	0
+819	1	6	mod/quiz:view	1	1472545703	0
+820	1	5	mod/quiz:view	1	1472545704	0
+821	1	4	mod/quiz:view	1	1472545704	0
+822	1	3	mod/quiz:view	1	1472545704	0
+823	1	1	mod/quiz:view	1	1472545704	0
+824	1	3	mod/quiz:addinstance	1	1472545704	0
+825	1	1	mod/quiz:addinstance	1	1472545704	0
+826	1	5	mod/quiz:attempt	1	1472545704	0
+827	1	5	mod/quiz:reviewmyattempts	1	1472545704	0
+828	1	3	mod/quiz:manage	1	1472545704	0
+829	1	1	mod/quiz:manage	1	1472545704	0
+830	1	3	mod/quiz:manageoverrides	1	1472545704	0
+831	1	1	mod/quiz:manageoverrides	1	1472545704	0
+832	1	4	mod/quiz:preview	1	1472545704	0
+833	1	3	mod/quiz:preview	1	1472545704	0
+834	1	1	mod/quiz:preview	1	1472545704	0
+835	1	4	mod/quiz:grade	1	1472545704	0
+836	1	3	mod/quiz:grade	1	1472545704	0
+837	1	1	mod/quiz:grade	1	1472545704	0
+838	1	4	mod/quiz:regrade	1	1472545704	0
+839	1	3	mod/quiz:regrade	1	1472545704	0
+840	1	1	mod/quiz:regrade	1	1472545704	0
+841	1	4	mod/quiz:viewreports	1	1472545704	0
+842	1	3	mod/quiz:viewreports	1	1472545704	0
+843	1	1	mod/quiz:viewreports	1	1472545704	0
+844	1	3	mod/quiz:deleteattempts	1	1472545704	0
+845	1	1	mod/quiz:deleteattempts	1	1472545704	0
+846	1	6	mod/resource:view	1	1472545704	0
+847	1	7	mod/resource:view	1	1472545704	0
+848	1	3	mod/resource:addinstance	1	1472545704	0
+849	1	1	mod/resource:addinstance	1	1472545704	0
+850	1	3	mod/scorm:addinstance	1	1472545705	0
+851	1	1	mod/scorm:addinstance	1	1472545705	0
+852	1	4	mod/scorm:viewreport	1	1472545705	0
+853	1	3	mod/scorm:viewreport	1	1472545705	0
+854	1	1	mod/scorm:viewreport	1	1472545705	0
+855	1	5	mod/scorm:skipview	1	1472545705	0
+856	1	5	mod/scorm:savetrack	1	1472545705	0
+857	1	4	mod/scorm:savetrack	1	1472545705	0
+858	1	3	mod/scorm:savetrack	1	1472545705	0
+859	1	1	mod/scorm:savetrack	1	1472545705	0
+860	1	5	mod/scorm:viewscores	1	1472545705	0
+861	1	4	mod/scorm:viewscores	1	1472545705	0
+862	1	3	mod/scorm:viewscores	1	1472545705	0
+863	1	1	mod/scorm:viewscores	1	1472545705	0
+864	1	4	mod/scorm:deleteresponses	1	1472545705	0
+865	1	3	mod/scorm:deleteresponses	1	1472545705	0
+866	1	1	mod/scorm:deleteresponses	1	1472545705	0
+867	1	3	mod/survey:addinstance	1	1472545705	0
+868	1	1	mod/survey:addinstance	1	1472545705	0
+869	1	5	mod/survey:participate	1	1472545705	0
+870	1	4	mod/survey:participate	1	1472545705	0
+871	1	3	mod/survey:participate	1	1472545705	0
+872	1	1	mod/survey:participate	1	1472545705	0
+873	1	4	mod/survey:readresponses	1	1472545705	0
+874	1	3	mod/survey:readresponses	1	1472545705	0
+875	1	1	mod/survey:readresponses	1	1472545705	0
+876	1	4	mod/survey:download	1	1472545705	0
+877	1	3	mod/survey:download	1	1472545705	0
+878	1	1	mod/survey:download	1	1472545705	0
+879	1	3	mod/talkpoint:addinstance	1	1472545706	0
+880	1	1	mod/talkpoint:addinstance	1	1472545706	0
+881	1	6	mod/talkpoint:view	1	1472545706	0
+882	1	5	mod/talkpoint:view	1	1472545706	0
+883	1	4	mod/talkpoint:view	1	1472545706	0
+884	1	3	mod/talkpoint:view	1	1472545706	0
+885	1	1	mod/talkpoint:view	1	1472545706	0
+886	1	6	mod/url:view	1	1472545706	0
+887	1	7	mod/url:view	1	1472545706	0
+888	1	3	mod/url:addinstance	1	1472545706	0
+889	1	1	mod/url:addinstance	1	1472545706	0
+890	1	3	mod/videoquanda:addinstance	1	1472545706	0
+891	1	1	mod/videoquanda:addinstance	1	1472545706	0
+892	1	6	mod/videoquanda:view	1	1472545706	0
+893	1	5	mod/videoquanda:view	1	1472545706	0
+894	1	4	mod/videoquanda:view	1	1472545706	0
+895	1	3	mod/videoquanda:view	1	1472545706	0
+896	1	1	mod/videoquanda:view	1	1472545706	0
+897	1	3	mod/vocabcards:addinstance	1	1472545706	0
+898	1	1	mod/vocabcards:addinstance	1	1472545706	0
+899	1	6	mod/vocabcards:view	1	1472545706	0
+900	1	5	mod/vocabcards:view	1	1472545706	0
+901	1	4	mod/vocabcards:view	1	1472545706	0
+902	1	3	mod/vocabcards:view	1	1472545706	0
+903	1	1	mod/vocabcards:view	1	1472545706	0
+904	1	4	mod/vocabcards:feedback	1	1472545706	0
+905	1	3	mod/vocabcards:feedback	1	1472545706	0
+906	1	1	mod/vocabcards:feedback	1	1472545707	0
+907	1	3	mod/vocabcards:syllabus	1	1472545707	0
+908	1	1	mod/vocabcards:syllabus	1	1472545707	0
+909	1	4	mod/vocabcards:assignment	1	1472545707	0
+910	1	3	mod/vocabcards:assignment	1	1472545707	0
+911	1	1	mod/vocabcards:assignment	1	1472545707	0
+912	1	5	mod/vocabcards:repository	1	1472545707	0
+913	1	4	mod/vocabcards:repository	1	1472545707	0
+914	1	3	mod/vocabcards:repository	1	1472545707	0
+915	1	1	mod/vocabcards:repository	1	1472545707	0
+916	1	4	mod/vocabcards:omniscience	1	1472545707	0
+917	1	3	mod/vocabcards:omniscience	1	1472545707	0
+918	1	1	mod/vocabcards:omniscience	1	1472545707	0
+919	1	3	mod/wiki:addinstance	1	1472545707	0
+920	1	1	mod/wiki:addinstance	1	1472545707	0
+921	1	6	mod/wiki:viewpage	1	1472545707	0
+922	1	5	mod/wiki:viewpage	1	1472545707	0
+923	1	4	mod/wiki:viewpage	1	1472545707	0
+924	1	3	mod/wiki:viewpage	1	1472545707	0
+925	1	1	mod/wiki:viewpage	1	1472545707	0
+926	1	5	mod/wiki:editpage	1	1472545707	0
+927	1	4	mod/wiki:editpage	1	1472545707	0
+928	1	3	mod/wiki:editpage	1	1472545707	0
+929	1	1	mod/wiki:editpage	1	1472545707	0
+930	1	5	mod/wiki:createpage	1	1472545707	0
+931	1	4	mod/wiki:createpage	1	1472545707	0
+932	1	3	mod/wiki:createpage	1	1472545707	0
+933	1	1	mod/wiki:createpage	1	1472545707	0
+934	1	5	mod/wiki:viewcomment	1	1472545707	0
+935	1	4	mod/wiki:viewcomment	1	1472545707	0
+936	1	3	mod/wiki:viewcomment	1	1472545707	0
+937	1	1	mod/wiki:viewcomment	1	1472545707	0
+938	1	5	mod/wiki:editcomment	1	1472545707	0
+939	1	4	mod/wiki:editcomment	1	1472545707	0
+940	1	3	mod/wiki:editcomment	1	1472545707	0
+941	1	1	mod/wiki:editcomment	1	1472545707	0
+942	1	4	mod/wiki:managecomment	1	1472545707	0
+943	1	3	mod/wiki:managecomment	1	1472545707	0
+944	1	1	mod/wiki:managecomment	1	1472545707	0
+945	1	4	mod/wiki:managefiles	1	1472545707	0
+946	1	3	mod/wiki:managefiles	1	1472545707	0
+947	1	1	mod/wiki:managefiles	1	1472545707	0
+948	1	4	mod/wiki:overridelock	1	1472545707	0
+949	1	3	mod/wiki:overridelock	1	1472545707	0
+950	1	1	mod/wiki:overridelock	1	1472545707	0
+951	1	4	mod/wiki:managewiki	1	1472545707	0
+952	1	3	mod/wiki:managewiki	1	1472545707	0
+953	1	1	mod/wiki:managewiki	1	1472545707	0
+954	1	6	mod/workshop:view	1	1472545708	0
+955	1	5	mod/workshop:view	1	1472545708	0
+956	1	4	mod/workshop:view	1	1472545708	0
+957	1	3	mod/workshop:view	1	1472545708	0
+958	1	1	mod/workshop:view	1	1472545708	0
+959	1	3	mod/workshop:addinstance	1	1472545708	0
+960	1	1	mod/workshop:addinstance	1	1472545708	0
+961	1	4	mod/workshop:switchphase	1	1472545708	0
+962	1	3	mod/workshop:switchphase	1	1472545708	0
+963	1	1	mod/workshop:switchphase	1	1472545708	0
+964	1	3	mod/workshop:editdimensions	1	1472545708	0
+965	1	1	mod/workshop:editdimensions	1	1472545708	0
+966	1	5	mod/workshop:submit	1	1472545708	0
+967	1	5	mod/workshop:peerassess	1	1472545708	0
+968	1	4	mod/workshop:manageexamples	1	1472545708	0
+969	1	3	mod/workshop:manageexamples	1	1472545708	0
+970	1	1	mod/workshop:manageexamples	1	1472545708	0
+971	1	4	mod/workshop:allocate	1	1472545708	0
+972	1	3	mod/workshop:allocate	1	1472545708	0
+973	1	1	mod/workshop:allocate	1	1472545708	0
+974	1	4	mod/workshop:publishsubmissions	1	1472545708	0
+975	1	3	mod/workshop:publishsubmissions	1	1472545708	0
+976	1	1	mod/workshop:publishsubmissions	1	1472545708	0
+977	1	5	mod/workshop:viewauthornames	1	1472545708	0
+978	1	4	mod/workshop:viewauthornames	1	1472545708	0
+979	1	3	mod/workshop:viewauthornames	1	1472545708	0
+980	1	1	mod/workshop:viewauthornames	1	1472545708	0
+981	1	4	mod/workshop:viewreviewernames	1	1472545708	0
+982	1	3	mod/workshop:viewreviewernames	1	1472545708	0
+983	1	1	mod/workshop:viewreviewernames	1	1472545708	0
+984	1	4	mod/workshop:viewallsubmissions	1	1472545708	0
+985	1	3	mod/workshop:viewallsubmissions	1	1472545708	0
+986	1	1	mod/workshop:viewallsubmissions	1	1472545708	0
+987	1	5	mod/workshop:viewpublishedsubmissions	1	1472545708	0
+988	1	4	mod/workshop:viewpublishedsubmissions	1	1472545708	0
+989	1	3	mod/workshop:viewpublishedsubmissions	1	1472545708	0
+990	1	1	mod/workshop:viewpublishedsubmissions	1	1472545708	0
+991	1	5	mod/workshop:viewauthorpublished	1	1472545708	0
+992	1	4	mod/workshop:viewauthorpublished	1	1472545708	0
+993	1	3	mod/workshop:viewauthorpublished	1	1472545708	0
+994	1	1	mod/workshop:viewauthorpublished	1	1472545708	0
+995	1	4	mod/workshop:viewallassessments	1	1472545708	0
+996	1	3	mod/workshop:viewallassessments	1	1472545708	0
+997	1	1	mod/workshop:viewallassessments	1	1472545708	0
+998	1	4	mod/workshop:overridegrades	1	1472545708	0
+999	1	3	mod/workshop:overridegrades	1	1472545708	0
+1000	1	1	mod/workshop:overridegrades	1	1472545708	0
+1001	1	4	mod/workshop:ignoredeadlines	1	1472545708	0
+1002	1	3	mod/workshop:ignoredeadlines	1	1472545708	0
+1003	1	1	mod/workshop:ignoredeadlines	1	1472545708	0
+1004	1	4	mod/workshop:deletesubmissions	1	1472545708	0
+1005	1	3	mod/workshop:deletesubmissions	1	1472545708	0
+1006	1	1	mod/workshop:deletesubmissions	1	1472545708	0
+1007	1	1	enrol/category:config	1	1472545712	0
+1008	1	3	enrol/category:config	1	1472545712	0
+1009	1	3	enrol/cohort:config	1	1472545712	0
+1010	1	1	enrol/cohort:config	1	1472545712	0
+1011	1	1	enrol/cohort:unenrol	1	1472545712	0
+1012	1	1	enrol/database:unenrol	1	1472545712	0
+1013	1	1	enrol/database:config	1	1472545712	0
+1014	1	3	enrol/database:config	1	1472545712	0
+1015	1	1	enrol/guest:config	1	1472545712	0
+1016	1	3	enrol/guest:config	1	1472545712	0
+1017	1	1	enrol/imsenterprise:config	1	1472545713	0
+1018	1	3	enrol/imsenterprise:config	1	1472545713	0
+1019	1	1	enrol/ldap:manage	1	1472545713	0
+1020	1	1	enrol/lti:config	1	1472545713	0
+1021	1	3	enrol/lti:config	1	1472545713	0
+1022	1	1	enrol/lti:unenrol	1	1472545713	0
+1023	1	3	enrol/lti:unenrol	1	1472545713	0
+1024	1	1	enrol/manual:config	1	1472545713	0
+1025	1	1	enrol/manual:enrol	1	1472545713	0
+1026	1	3	enrol/manual:enrol	1	1472545713	0
+1027	1	1	enrol/manual:manage	1	1472545713	0
+1028	1	3	enrol/manual:manage	1	1472545713	0
+1029	1	1	enrol/manual:unenrol	1	1472545713	0
+1030	1	3	enrol/manual:unenrol	1	1472545713	0
+1031	1	1	enrol/meta:config	1	1472545713	0
+1032	1	3	enrol/meta:config	1	1472545713	0
+1033	1	1	enrol/meta:selectaslinked	1	1472545713	0
+1034	1	1	enrol/meta:unenrol	1	1472545713	0
+1035	1	1	enrol/mnet:config	1	1472545714	0
+1036	1	3	enrol/mnet:config	1	1472545714	0
+1037	1	1	enrol/paypal:config	1	1472545714	0
+1038	1	1	enrol/paypal:manage	1	1472545714	0
+1039	1	3	enrol/paypal:manage	1	1472545714	0
+1040	1	1	enrol/paypal:unenrol	1	1472545714	0
+1041	1	3	enrol/self:config	1	1472545714	0
+1042	1	1	enrol/self:config	1	1472545714	0
+1043	1	3	enrol/self:manage	1	1472545714	0
+1044	1	1	enrol/self:manage	1	1472545714	0
+1045	1	1	enrol/self:holdkey	-1000	1472545714	0
+1046	1	5	enrol/self:unenrolself	1	1472545714	0
+1047	1	3	enrol/self:unenrol	1	1472545714	0
+1048	1	1	enrol/self:unenrol	1	1472545714	0
+1049	1	7	message/airnotifier:managedevice	1	1472545714	0
+1050	1	3	block/activity_modules:addinstance	1	1472545717	0
+1051	1	1	block/activity_modules:addinstance	1	1472545717	0
+1052	1	3	block/activity_results:addinstance	1	1472545717	0
+1053	1	1	block/activity_results:addinstance	1	1472545717	0
+1054	1	7	block/admin_bookmarks:myaddinstance	1	1472545718	0
+1055	1	3	block/admin_bookmarks:addinstance	1	1472545718	0
+1056	1	1	block/admin_bookmarks:addinstance	1	1472545718	0
+1057	1	3	block/badges:addinstance	1	1472545718	0
+1058	1	1	block/badges:addinstance	1	1472545718	0
+1059	1	7	block/badges:myaddinstance	1	1472545718	0
+1060	1	3	block/blog_menu:addinstance	1	1472545718	0
+1061	1	1	block/blog_menu:addinstance	1	1472545718	0
+1062	1	3	block/blog_recent:addinstance	1	1472545718	0
+1063	1	1	block/blog_recent:addinstance	1	1472545718	0
+1064	1	3	block/blog_tags:addinstance	1	1472545718	0
+1065	1	1	block/blog_tags:addinstance	1	1472545718	0
+1066	1	7	block/calendar_month:myaddinstance	1	1472545718	0
+1067	1	3	block/calendar_month:addinstance	1	1472545718	0
+1068	1	1	block/calendar_month:addinstance	1	1472545718	0
+1069	1	7	block/calendar_upcoming:myaddinstance	1	1472545719	0
+1070	1	3	block/calendar_upcoming:addinstance	1	1472545719	0
+1071	1	1	block/calendar_upcoming:addinstance	1	1472545719	0
+1072	1	7	block/comments:myaddinstance	1	1472545719	0
+1073	1	3	block/comments:addinstance	1	1472545719	0
+1074	1	1	block/comments:addinstance	1	1472545719	0
+1075	1	7	block/community:myaddinstance	1	1472545719	0
+1076	1	3	block/community:addinstance	1	1472545719	0
+1077	1	1	block/community:addinstance	1	1472545719	0
+1078	1	3	block/completionstatus:addinstance	1	1472545719	0
+1079	1	1	block/completionstatus:addinstance	1	1472545719	0
+1080	1	7	block/course_list:myaddinstance	1	1472545719	0
+1081	1	3	block/course_list:addinstance	1	1472545719	0
+1082	1	1	block/course_list:addinstance	1	1472545719	0
+1083	1	7	block/course_overview:myaddinstance	1	1472545720	0
+1084	1	3	block/course_overview:addinstance	1	1472545720	0
+1085	1	1	block/course_overview:addinstance	1	1472545720	0
+1086	1	3	block/course_summary:addinstance	1	1472545720	0
+1087	1	1	block/course_summary:addinstance	1	1472545720	0
+1088	1	3	block/feedback:addinstance	1	1472545720	0
+1089	1	1	block/feedback:addinstance	1	1472545720	0
+1090	1	7	block/globalsearch:myaddinstance	1	1472545720	0
+1091	1	3	block/globalsearch:addinstance	1	1472545720	0
+1092	1	1	block/globalsearch:addinstance	1	1472545720	0
+1093	1	7	block/glossary_random:myaddinstance	1	1472545720	0
+1094	1	3	block/glossary_random:addinstance	1	1472545720	0
+1095	1	1	block/glossary_random:addinstance	1	1472545720	0
+1096	1	7	block/html:myaddinstance	1	1472545720	0
+1097	1	3	block/html:addinstance	1	1472545720	0
+1098	1	1	block/html:addinstance	1	1472545720	0
+1099	1	3	block/login:addinstance	1	1472545721	0
+1100	1	1	block/login:addinstance	1	1472545721	0
+1101	1	3	block/lp:addinstance	1	1472545721	0
+1102	1	1	block/lp:addinstance	1	1472545721	0
+1103	1	7	block/lp:myaddinstance	1	1472545721	0
+1104	1	7	block/lp:view	1	1472545721	0
+1105	1	7	block/mentees:myaddinstance	1	1472545721	0
+1106	1	3	block/mentees:addinstance	1	1472545721	0
+1107	1	1	block/mentees:addinstance	1	1472545721	0
+1108	1	7	block/messages:myaddinstance	1	1472545721	0
+1109	1	3	block/messages:addinstance	1	1472545721	0
+1110	1	1	block/messages:addinstance	1	1472545721	0
+1111	1	7	block/mnet_hosts:myaddinstance	1	1472545721	0
+1112	1	3	block/mnet_hosts:addinstance	1	1472545721	0
+1113	1	1	block/mnet_hosts:addinstance	1	1472545721	0
+1114	1	7	block/myprofile:myaddinstance	1	1472545722	0
+1115	1	3	block/myprofile:addinstance	1	1472545722	0
+1116	1	1	block/myprofile:addinstance	1	1472545722	0
+1117	1	7	block/navigation:myaddinstance	1	1472545722	0
+1118	1	3	block/navigation:addinstance	1	1472545722	0
+1119	1	1	block/navigation:addinstance	1	1472545722	0
+1120	1	7	block/news_items:myaddinstance	1	1472545722	0
+1121	1	3	block/news_items:addinstance	1	1472545722	0
+1122	1	1	block/news_items:addinstance	1	1472545722	0
+1123	1	7	block/online_users:myaddinstance	1	1472545722	0
+1124	1	3	block/online_users:addinstance	1	1472545722	0
+1125	1	1	block/online_users:addinstance	1	1472545722	0
+1126	1	7	block/online_users:viewlist	1	1472545722	0
+1127	1	6	block/online_users:viewlist	1	1472545722	0
+1128	1	5	block/online_users:viewlist	1	1472545722	0
+1129	1	4	block/online_users:viewlist	1	1472545722	0
+1130	1	3	block/online_users:viewlist	1	1472545722	0
+1131	1	1	block/online_users:viewlist	1	1472545722	0
+1132	1	3	block/participants:addinstance	1	1472545722	0
+1133	1	1	block/participants:addinstance	1	1472545722	0
+1134	1	7	block/private_files:myaddinstance	1	1472545723	0
+1135	1	3	block/private_files:addinstance	1	1472545723	0
+1136	1	1	block/private_files:addinstance	1	1472545723	0
+1137	1	3	block/quiz_results:addinstance	1	1472545723	0
+1138	1	1	block/quiz_results:addinstance	1	1472545723	0
+1139	1	3	block/recent_activity:addinstance	1	1472545723	0
+1140	1	1	block/recent_activity:addinstance	1	1472545723	0
+1141	1	7	block/recent_activity:viewaddupdatemodule	1	1472545723	0
+1142	1	7	block/recent_activity:viewdeletemodule	1	1472545723	0
+1143	1	7	block/rss_client:myaddinstance	1	1472545724	0
+1144	1	3	block/rss_client:addinstance	1	1472545724	0
+1145	1	1	block/rss_client:addinstance	1	1472545724	0
+1146	1	4	block/rss_client:manageownfeeds	1	1472545724	0
+1147	1	3	block/rss_client:manageownfeeds	1	1472545724	0
+1148	1	1	block/rss_client:manageownfeeds	1	1472545724	0
+1149	1	1	block/rss_client:manageanyfeeds	1	1472545724	0
+1150	1	3	block/search_forums:addinstance	1	1472545724	0
+1151	1	1	block/search_forums:addinstance	1	1472545724	0
+1152	1	3	block/section_links:addinstance	1	1472545724	0
+1153	1	1	block/section_links:addinstance	1	1472545724	0
+1154	1	3	block/selfcompletion:addinstance	1	1472545724	0
+1155	1	1	block/selfcompletion:addinstance	1	1472545724	0
+1156	1	7	block/settings:myaddinstance	1	1472545724	0
+1157	1	3	block/settings:addinstance	1	1472545724	0
+1158	1	1	block/settings:addinstance	1	1472545724	0
+1159	1	3	block/site_main_menu:addinstance	1	1472545725	0
+1160	1	1	block/site_main_menu:addinstance	1	1472545725	0
+1161	1	3	block/social_activities:addinstance	1	1472545725	0
+1162	1	1	block/social_activities:addinstance	1	1472545725	0
+1163	1	3	block/tag_flickr:addinstance	1	1472545725	0
+1164	1	1	block/tag_flickr:addinstance	1	1472545725	0
+1165	1	3	block/tag_youtube:addinstance	1	1472545725	0
+1166	1	1	block/tag_youtube:addinstance	1	1472545725	0
+1167	1	7	block/tags:myaddinstance	1	1472545725	0
+1168	1	3	block/tags:addinstance	1	1472545725	0
+1169	1	1	block/tags:addinstance	1	1472545725	0
+1170	1	4	report/completion:view	1	1472545731	0
+1171	1	3	report/completion:view	1	1472545731	0
+1172	1	1	report/completion:view	1	1472545731	0
+1173	1	4	report/courseoverview:view	1	1472545731	0
+1174	1	3	report/courseoverview:view	1	1472545731	0
+1175	1	1	report/courseoverview:view	1	1472545731	0
+1176	1	4	report/log:view	1	1472545731	0
+1177	1	3	report/log:view	1	1472545731	0
+1178	1	1	report/log:view	1	1472545731	0
+1179	1	4	report/log:viewtoday	1	1472545731	0
+1180	1	3	report/log:viewtoday	1	1472545731	0
+1181	1	1	report/log:viewtoday	1	1472545731	0
+1182	1	4	report/loglive:view	1	1472545732	0
+1183	1	3	report/loglive:view	1	1472545732	0
+1184	1	1	report/loglive:view	1	1472545732	0
+1185	1	4	report/outline:view	1	1472545732	0
+1186	1	3	report/outline:view	1	1472545732	0
+1187	1	1	report/outline:view	1	1472545732	0
+1188	1	4	report/participation:view	1	1472545732	0
+1189	1	3	report/participation:view	1	1472545732	0
+1190	1	1	report/participation:view	1	1472545732	0
+1191	1	1	report/performance:view	1	1472545732	0
+1192	1	4	report/progress:view	1	1472545732	0
+1193	1	3	report/progress:view	1	1472545732	0
+1194	1	1	report/progress:view	1	1472545732	0
+1195	1	1	report/security:view	1	1472545733	0
+1196	1	4	report/stats:view	1	1472545733	0
+1197	1	3	report/stats:view	1	1472545733	0
+1198	1	1	report/stats:view	1	1472545733	0
+1199	1	6	report/usersessions:manageownsessions	-1000	1472545733	0
+1200	1	7	report/usersessions:manageownsessions	1	1472545733	0
+1201	1	1	report/usersessions:manageownsessions	1	1472545733	0
+1202	1	4	gradeexport/ods:view	1	1472545734	0
+1203	1	3	gradeexport/ods:view	1	1472545734	0
+1204	1	1	gradeexport/ods:view	1	1472545734	0
+1205	1	1	gradeexport/ods:publish	1	1472545734	0
+1206	1	4	gradeexport/txt:view	1	1472545734	0
+1207	1	3	gradeexport/txt:view	1	1472545734	0
+1208	1	1	gradeexport/txt:view	1	1472545734	0
+1209	1	1	gradeexport/txt:publish	1	1472545734	0
+1210	1	4	gradeexport/xls:view	1	1472545734	0
+1211	1	3	gradeexport/xls:view	1	1472545734	0
+1212	1	1	gradeexport/xls:view	1	1472545734	0
+1213	1	1	gradeexport/xls:publish	1	1472545734	0
+1214	1	4	gradeexport/xml:view	1	1472545734	0
+1215	1	3	gradeexport/xml:view	1	1472545734	0
+1216	1	1	gradeexport/xml:view	1	1472545734	0
+1217	1	1	gradeexport/xml:publish	1	1472545734	0
+1218	1	3	gradeimport/csv:view	1	1472545735	0
+1219	1	1	gradeimport/csv:view	1	1472545735	0
+1220	1	3	gradeimport/direct:view	1	1472545735	0
+1221	1	1	gradeimport/direct:view	1	1472545735	0
+1222	1	3	gradeimport/xml:view	1	1472545735	0
+1223	1	1	gradeimport/xml:view	1	1472545735	0
+1224	1	1	gradeimport/xml:publish	1	1472545735	0
+1225	1	4	gradereport/grader:view	1	1472545735	0
+1226	1	3	gradereport/grader:view	1	1472545735	0
+1227	1	1	gradereport/grader:view	1	1472545735	0
+1228	1	4	gradereport/history:view	1	1472545735	0
+1229	1	3	gradereport/history:view	1	1472545735	0
+1230	1	1	gradereport/history:view	1	1472545735	0
+1231	1	4	gradereport/outcomes:view	1	1472545735	0
+1232	1	3	gradereport/outcomes:view	1	1472545735	0
+1233	1	1	gradereport/outcomes:view	1	1472545735	0
+1234	1	5	gradereport/overview:view	1	1472545736	0
+1235	1	1	gradereport/overview:view	1	1472545736	0
+1236	1	3	gradereport/singleview:view	1	1472545736	0
+1237	1	1	gradereport/singleview:view	1	1472545736	0
+1238	1	5	gradereport/user:view	1	1472545736	0
+1239	1	4	gradereport/user:view	1	1472545736	0
+1240	1	3	gradereport/user:view	1	1472545736	0
+1241	1	1	gradereport/user:view	1	1472545736	0
+1242	1	7	repository/alfresco:view	1	1472545737	0
+1243	1	7	repository/areafiles:view	1	1472545737	0
+1244	1	7	repository/boxnet:view	1	1472545738	0
+1245	1	2	repository/coursefiles:view	1	1472545738	0
+1246	1	4	repository/coursefiles:view	1	1472545738	0
+1247	1	3	repository/coursefiles:view	1	1472545738	0
+1248	1	1	repository/coursefiles:view	1	1472545738	0
+1249	1	7	repository/dropbox:view	1	1472545738	0
+1250	1	7	repository/equella:view	1	1472545738	0
+1251	1	2	repository/filesystem:view	1	1472545738	0
+1252	1	4	repository/filesystem:view	1	1472545738	0
+1253	1	3	repository/filesystem:view	1	1472545738	0
+1254	1	1	repository/filesystem:view	1	1472545738	0
+1255	1	7	repository/flickr:view	1	1472545738	0
+1256	1	7	repository/flickr_public:view	1	1472545739	0
+1257	1	7	repository/googledocs:view	1	1472545739	0
+1258	1	2	repository/local:view	1	1472545739	0
+1259	1	4	repository/local:view	1	1472545739	0
+1260	1	3	repository/local:view	1	1472545739	0
+1261	1	1	repository/local:view	1	1472545739	0
+1262	1	7	repository/merlot:view	1	1472545739	0
+1263	1	7	repository/picasa:view	1	1472545739	0
+1264	1	7	repository/recent:view	1	1472545740	0
+1265	1	7	repository/s3:view	1	1472545740	0
+1266	1	7	repository/skydrive:view	1	1472545740	0
+1267	1	7	repository/upload:view	1	1472545740	0
+1268	1	7	repository/url:view	1	1472545740	0
+1269	1	7	repository/user:view	1	1472545740	0
+1270	1	2	repository/webdav:view	1	1472545741	0
+1271	1	4	repository/webdav:view	1	1472545741	0
+1272	1	3	repository/webdav:view	1	1472545741	0
+1273	1	1	repository/webdav:view	1	1472545741	0
+1274	1	7	repository/wikimedia:view	1	1472545741	0
+1275	1	7	repository/youtube:view	1	1472545741	0
+1276	1	1	tool/customlang:view	1	1472545746	0
+1277	1	1	tool/customlang:edit	1	1472545746	0
+1278	1	1	tool/lpmigrate:frameworksmigrate	1	1472545747	0
+1279	1	4	tool/monitor:subscribe	1	1472545748	0
+1280	1	3	tool/monitor:subscribe	1	1472545748	0
+1281	1	1	tool/monitor:subscribe	1	1472545748	0
+1282	1	4	tool/monitor:managerules	1	1472545748	0
+1283	1	3	tool/monitor:managerules	1	1472545748	0
+1284	1	1	tool/monitor:managerules	1	1472545748	0
+1285	1	1	tool/monitor:managetool	1	1472545748	0
+1286	1	3	tool/recyclebin:deleteitems	1	1472545749	0
+1287	1	1	tool/recyclebin:deleteitems	1	1472545749	0
+1288	1	3	tool/recyclebin:restoreitems	1	1472545749	0
+1289	1	1	tool/recyclebin:restoreitems	1	1472545749	0
+1290	1	4	tool/recyclebin:viewitems	1	1472545749	0
+1291	1	3	tool/recyclebin:viewitems	1	1472545749	0
+1292	1	1	tool/recyclebin:viewitems	1	1472545749	0
+1293	1	1	tool/uploaduser:uploaduserpictures	1	1472545751	0
+1294	1	3	booktool/importhtml:import	1	1472545757	0
+1295	1	1	booktool/importhtml:import	1	1472545757	0
+1296	1	6	booktool/print:print	1	1472545757	0
+1297	1	8	booktool/print:print	1	1472545757	0
+1298	1	5	booktool/print:print	1	1472545757	0
+1299	1	4	booktool/print:print	1	1472545757	0
+1300	1	3	booktool/print:print	1	1472545757	0
+1301	1	1	booktool/print:print	1	1472545757	0
+1302	1	4	quiz/grading:viewstudentnames	1	1472545760	0
+1303	1	3	quiz/grading:viewstudentnames	1	1472545760	0
+1304	1	1	quiz/grading:viewstudentnames	1	1472545760	0
+1305	1	4	quiz/grading:viewidnumber	1	1472545760	0
+1306	1	3	quiz/grading:viewidnumber	1	1472545760	0
+1307	1	1	quiz/grading:viewidnumber	1	1472545760	0
+1308	1	4	quiz/statistics:view	1	1472545760	0
+1309	1	3	quiz/statistics:view	1	1472545760	0
+1310	1	1	quiz/statistics:view	1	1472545760	0
 \.
 
 
@@ -69345,7 +69375,7 @@ COPY phpu_role_capabilities (id, contextid, roleid, capability, permission, time
 -- Name: phpu_role_capabilities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_role_capabilities_id_seq', 354000, false);
+SELECT pg_catalog.setval('phpu_role_capabilities_id_seq', 104000, false);
 
 
 --
@@ -69371,7 +69401,7 @@ COPY phpu_role_context_levels (id, roleid, contextlevel) FROM stdin;
 -- Name: phpu_role_context_levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_role_context_levels_id_seq', 101000, false);
+SELECT pg_catalog.setval('phpu_role_context_levels_id_seq', 100000, false);
 
 
 --
@@ -69393,7 +69423,7 @@ COPY phpu_role_names (id, roleid, contextid, name) FROM stdin;
 -- Name: phpu_role_names_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_role_names_id_seq', 355000, false);
+SELECT pg_catalog.setval('phpu_role_names_id_seq', 344000, false);
 
 
 --
@@ -69408,7 +69438,7 @@ COPY phpu_role_sortorder (id, userid, roleid, contextid, sortoder) FROM stdin;
 -- Name: phpu_role_sortorder_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_role_sortorder_id_seq', 356000, false);
+SELECT pg_catalog.setval('phpu_role_sortorder_id_seq', 345000, false);
 
 
 --
@@ -69416,8 +69446,8 @@ SELECT pg_catalog.setval('phpu_role_sortorder_id_seq', 356000, false);
 --
 
 COPY phpu_scale (id, courseid, userid, name, scale, description, descriptionformat, timemodified) FROM stdin;
-1	0	0	Separate and Connected ways of knowing	Mostly separate knowing,Separate and connected,Mostly connected knowing	The scale based on the theory of separate and connected knowing. This theory describes two different ways that we can evaluate and learn about the things we see and hear.<ul><li><strong>Separate knowers</strong> remain as objective as possible without including feelings and emotions. In a discussion with other people, they like to defend their own ideas, using logic to find holes in opponent's ideas.</li><li><strong>Connected knowers</strong> are more sensitive to other people. They are skilled at empathy and tends to listen and ask questions until they feel they can connect and "understand things from their point of view". They learn by trying to share the experiences that led to the knowledge they find in other people.</li></ul>	0	1471529336
-2	0	0	Default competence scale	Not yet competent,Competent	A binary rating scale that provides no further information beyond whether someone has demonstrated proficiency or not.	0	1471529336
+1	0	0	Separate and Connected ways of knowing	Mostly separate knowing,Separate and connected,Mostly connected knowing	The scale based on the theory of separate and connected knowing. This theory describes two different ways that we can evaluate and learn about the things we see and hear.<ul><li><strong>Separate knowers</strong> remain as objective as possible without including feelings and emotions. In a discussion with other people, they like to defend their own ideas, using logic to find holes in opponent's ideas.</li><li><strong>Connected knowers</strong> are more sensitive to other people. They are skilled at empathy and tends to listen and ask questions until they feel they can connect and "understand things from their point of view". They learn by trying to share the experiences that led to the knowledge they find in other people.</li></ul>	0	1472545687
+2	0	0	Default competence scale	Not yet competent,Competent	A binary rating scale that provides no further information beyond whether someone has demonstrated proficiency or not.	0	1472545687
 \.
 
 
@@ -69433,14 +69463,14 @@ COPY phpu_scale_history (id, action, oldid, source, timemodified, loggeduser, co
 -- Name: phpu_scale_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scale_history_id_seq', 358000, false);
+SELECT pg_catalog.setval('phpu_scale_history_id_seq', 346000, false);
 
 
 --
 -- Name: phpu_scale_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scale_id_seq', 357000, false);
+SELECT pg_catalog.setval('phpu_scale_id_seq', 356000, false);
 
 
 --
@@ -69463,14 +69493,14 @@ COPY phpu_scorm_aicc_session (id, userid, scormid, hacpsession, scoid, scormmode
 -- Name: phpu_scorm_aicc_session_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_aicc_session_id_seq', 360000, false);
+SELECT pg_catalog.setval('phpu_scorm_aicc_session_id_seq', 348000, false);
 
 
 --
 -- Name: phpu_scorm_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_id_seq', 359000, false);
+SELECT pg_catalog.setval('phpu_scorm_id_seq', 347000, false);
 
 
 --
@@ -69493,14 +69523,14 @@ COPY phpu_scorm_scoes_data (id, scoid, name, value) FROM stdin;
 -- Name: phpu_scorm_scoes_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_scoes_data_id_seq', 362000, false);
+SELECT pg_catalog.setval('phpu_scorm_scoes_data_id_seq', 350000, false);
 
 
 --
 -- Name: phpu_scorm_scoes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_scoes_id_seq', 361000, false);
+SELECT pg_catalog.setval('phpu_scorm_scoes_id_seq', 349000, false);
 
 
 --
@@ -69515,7 +69545,7 @@ COPY phpu_scorm_scoes_track (id, userid, scormid, scoid, attempt, element, value
 -- Name: phpu_scorm_scoes_track_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_scoes_track_id_seq', 363000, false);
+SELECT pg_catalog.setval('phpu_scorm_scoes_track_id_seq', 351000, false);
 
 
 --
@@ -69530,7 +69560,7 @@ COPY phpu_scorm_seq_mapinfo (id, scoid, objectiveid, targetobjectiveid, readsati
 -- Name: phpu_scorm_seq_mapinfo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_mapinfo_id_seq', 364000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_mapinfo_id_seq', 352000, false);
 
 
 --
@@ -69545,7 +69575,7 @@ COPY phpu_scorm_seq_objective (id, scoid, primaryobj, objectiveid, satisfiedbyme
 -- Name: phpu_scorm_seq_objective_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_objective_id_seq', 365000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_objective_id_seq', 353000, false);
 
 
 --
@@ -69560,7 +69590,7 @@ COPY phpu_scorm_seq_rolluprule (id, scoid, childactivityset, minimumcount, minim
 -- Name: phpu_scorm_seq_rolluprule_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_rolluprule_id_seq', 366000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_rolluprule_id_seq', 354000, false);
 
 
 --
@@ -69575,7 +69605,7 @@ COPY phpu_scorm_seq_rolluprulecond (id, scoid, rollupruleid, operator, cond) FRO
 -- Name: phpu_scorm_seq_rolluprulecond_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_rolluprulecond_id_seq', 367000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_rolluprulecond_id_seq', 355000, false);
 
 
 --
@@ -69590,7 +69620,7 @@ COPY phpu_scorm_seq_rulecond (id, scoid, ruleconditionsid, refrencedobjective, m
 -- Name: phpu_scorm_seq_rulecond_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_rulecond_id_seq', 368000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_rulecond_id_seq', 356000, false);
 
 
 --
@@ -69605,7 +69635,7 @@ COPY phpu_scorm_seq_ruleconds (id, scoid, conditioncombination, ruletype, action
 -- Name: phpu_scorm_seq_ruleconds_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_scorm_seq_ruleconds_id_seq', 369000, false);
+SELECT pg_catalog.setval('phpu_scorm_seq_ruleconds_id_seq', 357000, false);
 
 
 --
@@ -69620,7 +69650,7 @@ COPY phpu_sessions (id, state, sid, userid, sessdata, timecreated, timemodified,
 -- Name: phpu_sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_sessions_id_seq', 370000, false);
+SELECT pg_catalog.setval('phpu_sessions_id_seq', 358000, false);
 
 
 --
@@ -69635,7 +69665,7 @@ COPY phpu_stats_daily (id, courseid, timeend, roleid, stattype, stat1, stat2) FR
 -- Name: phpu_stats_daily_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_daily_id_seq', 371000, false);
+SELECT pg_catalog.setval('phpu_stats_daily_id_seq', 359000, false);
 
 
 --
@@ -69650,7 +69680,7 @@ COPY phpu_stats_monthly (id, courseid, timeend, roleid, stattype, stat1, stat2) 
 -- Name: phpu_stats_monthly_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_monthly_id_seq', 372000, false);
+SELECT pg_catalog.setval('phpu_stats_monthly_id_seq', 360000, false);
 
 
 --
@@ -69665,7 +69695,7 @@ COPY phpu_stats_user_daily (id, courseid, userid, roleid, timeend, statsreads, s
 -- Name: phpu_stats_user_daily_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_user_daily_id_seq', 373000, false);
+SELECT pg_catalog.setval('phpu_stats_user_daily_id_seq', 361000, false);
 
 
 --
@@ -69680,7 +69710,7 @@ COPY phpu_stats_user_monthly (id, courseid, userid, roleid, timeend, statsreads,
 -- Name: phpu_stats_user_monthly_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_user_monthly_id_seq', 374000, false);
+SELECT pg_catalog.setval('phpu_stats_user_monthly_id_seq', 362000, false);
 
 
 --
@@ -69695,7 +69725,7 @@ COPY phpu_stats_user_weekly (id, courseid, userid, roleid, timeend, statsreads, 
 -- Name: phpu_stats_user_weekly_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_user_weekly_id_seq', 375000, false);
+SELECT pg_catalog.setval('phpu_stats_user_weekly_id_seq', 363000, false);
 
 
 --
@@ -69710,7 +69740,7 @@ COPY phpu_stats_weekly (id, courseid, timeend, roleid, stattype, stat1, stat2) F
 -- Name: phpu_stats_weekly_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_stats_weekly_id_seq', 376000, false);
+SELECT pg_catalog.setval('phpu_stats_weekly_id_seq', 364000, false);
 
 
 --
@@ -69738,7 +69768,7 @@ COPY phpu_survey_analysis (id, survey, userid, notes) FROM stdin;
 -- Name: phpu_survey_analysis_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_survey_analysis_id_seq', 377000, false);
+SELECT pg_catalog.setval('phpu_survey_analysis_id_seq', 365000, false);
 
 
 --
@@ -69753,7 +69783,7 @@ COPY phpu_survey_answers (id, userid, survey, question, "time", answer1, answer2
 -- Name: phpu_survey_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_survey_answers_id_seq', 378000, false);
+SELECT pg_catalog.setval('phpu_survey_answers_id_seq', 366000, false);
 
 
 --
@@ -69909,14 +69939,14 @@ COPY phpu_tag_correlation (id, tagid, correlatedtags) FROM stdin;
 -- Name: phpu_tag_correlation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tag_correlation_id_seq', 380000, false);
+SELECT pg_catalog.setval('phpu_tag_correlation_id_seq', 368000, false);
 
 
 --
 -- Name: phpu_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tag_id_seq', 379000, false);
+SELECT pg_catalog.setval('phpu_tag_id_seq', 367000, false);
 
 
 --
@@ -69931,7 +69961,7 @@ COPY phpu_tag_instance (id, tagid, component, itemtype, itemid, contextid, tiuse
 -- Name: phpu_tag_instance_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tag_instance_id_seq', 381000, false);
+SELECT pg_catalog.setval('phpu_tag_instance_id_seq', 369000, false);
 
 
 --
@@ -69954,14 +69984,14 @@ COPY phpu_talkpoint_comment (id, talkpointid, userid, textcomment, nimbbguidcomm
 -- Name: phpu_talkpoint_comment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_talkpoint_comment_id_seq', 383000, false);
+SELECT pg_catalog.setval('phpu_talkpoint_comment_id_seq', 371000, false);
 
 
 --
 -- Name: phpu_talkpoint_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_talkpoint_id_seq', 382000, false);
+SELECT pg_catalog.setval('phpu_talkpoint_id_seq', 370000, false);
 
 
 --
@@ -69976,7 +70006,7 @@ COPY phpu_talkpoint_talkpoint (id, instanceid, userid, title, uploadedfile, nimb
 -- Name: phpu_talkpoint_talkpoint_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_talkpoint_talkpoint_id_seq', 384000, false);
+SELECT pg_catalog.setval('phpu_talkpoint_talkpoint_id_seq', 372000, false);
 
 
 --
@@ -69991,7 +70021,7 @@ COPY phpu_talkpoint_video_conversion (id, talkpointid, src, dst, is_converting, 
 -- Name: phpu_talkpoint_video_conversion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_talkpoint_video_conversion_id_seq', 385000, false);
+SELECT pg_catalog.setval('phpu_talkpoint_video_conversion_id_seq', 373000, false);
 
 
 --
@@ -70006,7 +70036,7 @@ COPY phpu_task_adhoc (id, component, classname, nextruntime, faildelay, customda
 -- Name: phpu_task_adhoc_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_task_adhoc_id_seq', 386000, false);
+SELECT pg_catalog.setval('phpu_task_adhoc_id_seq', 374000, false);
 
 
 --
@@ -70014,59 +70044,59 @@ SELECT pg_catalog.setval('phpu_task_adhoc_id_seq', 386000, false);
 --
 
 COPY phpu_task_scheduled (id, component, classname, lastruntime, nextruntime, blocking, minute, hour, day, month, dayofweek, faildelay, customised, disabled) FROM stdin;
-1	moodle	\\core\\task\\session_cleanup_task	0	1471529340	0	*	*	*	*	*	0	0	0
-2	moodle	\\core\\task\\delete_unconfirmed_users_task	0	1471532400	0	0	*	*	*	*	0	0	0
-3	moodle	\\core\\task\\delete_incomplete_users_task	0	1471532700	0	5	*	*	*	*	0	0	0
-4	moodle	\\core\\task\\backup_cleanup_task	0	1471529400	0	10	*	*	*	*	0	0	0
-5	moodle	\\core\\task\\tag_cron_task	0	1471547880	0	18	3	*	*	*	0	0	0
-6	moodle	\\core\\task\\context_cleanup_task	0	1471530300	0	25	*	*	*	*	0	0	0
-7	moodle	\\core\\task\\cache_cleanup_task	0	1471530600	0	30	*	*	*	*	0	0	0
-8	moodle	\\core\\task\\messaging_cleanup_task	0	1471530900	0	35	*	*	*	*	0	0	0
-9	moodle	\\core\\task\\send_new_user_passwords_task	0	1471529340	0	*	*	*	*	*	0	0	0
-10	moodle	\\core\\task\\send_failed_login_notifications_task	0	1471529340	0	*	*	*	*	*	0	0	0
-11	moodle	\\core\\task\\create_contexts_task	0	1471536000	1	0	0	*	*	*	0	0	0
-12	moodle	\\core\\task\\legacy_plugin_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-13	moodle	\\core\\task\\grade_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-14	moodle	\\core\\task\\events_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-15	moodle	\\core\\task\\completion_regular_task	0	1471529340	0	*	*	*	*	*	0	0	0
-16	moodle	\\core\\task\\completion_daily_task	0	1471602060	0	21	18	*	*	*	0	0	0
-17	moodle	\\core\\task\\portfolio_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-18	moodle	\\core\\task\\plagiarism_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-19	moodle	\\core\\task\\calendar_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-20	moodle	\\core\\task\\blog_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-21	moodle	\\core\\task\\question_cron_task	0	1471529340	0	*	*	*	*	*	0	0	0
-22	moodle	\\core\\task\\registration_cron_task	0	1472105220	0	7	14	*	*	4	0	0	0
-23	moodle	\\core\\task\\check_for_updates_task	0	1471536000	0	0	*/2	*	*	*	0	0	0
-24	moodle	\\core\\task\\cache_cron_task	0	1471531800	0	50	*	*	*	*	0	0	0
-25	moodle	\\core\\task\\automated_backup_task	0	1471531800	0	50	*	*	*	*	0	0	0
-26	moodle	\\core\\task\\badges_cron_task	0	1471529400	0	*/5	*	*	*	*	0	0	0
-27	moodle	\\core\\task\\file_temp_cleanup_task	0	1471539300	0	55	*/6	*	*	*	0	0	0
-28	moodle	\\core\\task\\file_trash_cleanup_task	0	1471539300	0	55	*/6	*	*	*	0	0	0
-29	moodle	\\core\\task\\search_index_task	0	1471530600	0	*/30	*	*	*	*	0	0	0
-30	moodle	\\core\\task\\search_optimize_task	0	1471536900	0	15	*/12	*	*	*	0	0	0
-31	moodle	\\core\\task\\stats_cron_task	0	1471532400	0	0	*	*	*	*	0	0	0
-32	moodle	\\core\\task\\password_reset_cleanup_task	0	1471536000	0	0	*/6	*	*	*	0	0	0
-33	moodle	\\core\\task\\complete_plans_task	0	1471532520	0	2	*	*	*	*	0	0	0
-34	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	0	1471529520	0	12	*	*	*	*	0	0	0
-35	mod_forum	\\mod_forum\\task\\cron_task	0	1471529400	0	*	*	*	*	*	0	0	0
-36	auth_cas	\\auth_cas\\task\\sync_task	0	1471536000	0	0	0	*	*	*	0	0	1
-37	auth_ldap	\\auth_ldap\\task\\sync_task	0	1471536000	0	0	0	*	*	*	0	0	1
-38	enrol_flatfile	\\enrol_flatfile\\task\\flatfile_sync_task	0	1471529700	0	15	*	*	*	*	0	0	0
-39	enrol_imsenterprise	\\enrol_imsenterprise\\task\\cron_task	0	1471529400	0	10	*	*	*	*	0	0	0
-40	enrol_lti	\\enrol_lti\\task\\sync_grades	0	1471530600	0	*/30	*	*	*	*	0	0	0
-41	enrol_lti	\\enrol_lti\\task\\sync_members	0	1471530600	0	*/30	*	*	*	*	0	0	0
-42	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	0	1471969020	0	17	0	*	*	3	0	0	0
-43	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	0	1471529820	0	17	*	*	*	*	0	0	0
-44	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	0	1471551720	0	22	4	*	*	*	0	0	0
-45	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	0	1471529400	0	*	*	*	*	*	0	0	0
-46	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	0	1471542900	0	55	1	*	*	*	0	0	0
-47	tool_monitor	\\tool_monitor\\task\\clean_events	0	1471529400	0	*	*	*	*	*	0	0	0
-48	tool_monitor	\\tool_monitor\\task\\check_subscriptions	0	1471569120	0	12	9	*	*	*	0	0	0
-49	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	0	1471530600	0	*/30	*	*	*	*	0	0	0
-50	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	0	1471530600	0	*/30	*	*	*	*	0	0	0
-51	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	0	1471529700	0	*/15	*	*	*	*	0	0	0
-52	logstore_legacy	\\logstore_legacy\\task\\cleanup_task	0	1471554000	0	0	5	*	*	*	0	0	0
-53	logstore_standard	\\logstore_standard\\task\\cleanup_task	0	1471550640	0	4	4	*	*	*	0	0	0
+1	moodle	\\core\\task\\session_cleanup_task	0	1472545740	0	*	*	*	*	*	0	0	0
+2	moodle	\\core\\task\\delete_unconfirmed_users_task	0	1472547600	0	0	*	*	*	*	0	0	0
+3	moodle	\\core\\task\\delete_incomplete_users_task	0	1472547900	0	5	*	*	*	*	0	0	0
+4	moodle	\\core\\task\\backup_cleanup_task	0	1472548200	0	10	*	*	*	*	0	0	0
+5	moodle	\\core\\task\\tag_cron_task	0	1472584200	0	10	3	*	*	*	0	0	0
+6	moodle	\\core\\task\\context_cleanup_task	0	1472549100	0	25	*	*	*	*	0	0	0
+7	moodle	\\core\\task\\cache_cleanup_task	0	1472545800	0	30	*	*	*	*	0	0	0
+8	moodle	\\core\\task\\messaging_cleanup_task	0	1472546100	0	35	*	*	*	*	0	0	0
+9	moodle	\\core\\task\\send_new_user_passwords_task	0	1472545740	0	*	*	*	*	*	0	0	0
+10	moodle	\\core\\task\\send_failed_login_notifications_task	0	1472545740	0	*	*	*	*	*	0	0	0
+11	moodle	\\core\\task\\create_contexts_task	0	1472572800	1	0	0	*	*	*	0	0	0
+12	moodle	\\core\\task\\legacy_plugin_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+13	moodle	\\core\\task\\grade_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+14	moodle	\\core\\task\\events_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+15	moodle	\\core\\task\\completion_regular_task	0	1472545740	0	*	*	*	*	*	0	0	0
+16	moodle	\\core\\task\\completion_daily_task	0	1472624580	0	23	14	*	*	*	0	0	0
+17	moodle	\\core\\task\\portfolio_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+18	moodle	\\core\\task\\plagiarism_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+19	moodle	\\core\\task\\calendar_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+20	moodle	\\core\\task\\blog_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+21	moodle	\\core\\task\\question_cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+22	moodle	\\core\\task\\registration_cron_task	0	1472580960	0	16	2	*	*	0	0	0	0
+23	moodle	\\core\\task\\check_for_updates_task	0	1472551200	0	0	*/2	*	*	*	0	0	0
+24	moodle	\\core\\task\\cache_cron_task	0	1472547000	0	50	*	*	*	*	0	0	0
+25	moodle	\\core\\task\\automated_backup_task	0	1472547000	0	50	*	*	*	*	0	0	0
+26	moodle	\\core\\task\\badges_cron_task	0	1472545800	0	*/5	*	*	*	*	0	0	0
+27	moodle	\\core\\task\\file_temp_cleanup_task	0	1472554500	0	55	*/6	*	*	*	0	0	0
+28	moodle	\\core\\task\\file_trash_cleanup_task	0	1472554500	0	55	*/6	*	*	*	0	0	0
+29	moodle	\\core\\task\\search_index_task	0	1472545800	0	*/30	*	*	*	*	0	0	0
+30	moodle	\\core\\task\\search_optimize_task	0	1472573700	0	15	*/12	*	*	*	0	0	0
+31	moodle	\\core\\task\\stats_cron_task	0	1472547600	0	0	*	*	*	*	0	0	0
+32	moodle	\\core\\task\\password_reset_cleanup_task	0	1472551200	0	0	*/6	*	*	*	0	0	0
+33	moodle	\\core\\task\\complete_plans_task	0	1472548980	0	23	*	*	*	*	0	0	0
+34	moodle	\\core\\task\\sync_plans_from_template_cohorts_task	0	1472548800	0	20	*	*	*	*	0	0	0
+35	mod_forum	\\mod_forum\\task\\cron_task	0	1472545740	0	*	*	*	*	*	0	0	0
+36	auth_cas	\\auth_cas\\task\\sync_task	0	1472572800	0	0	0	*	*	*	0	0	1
+37	auth_ldap	\\auth_ldap\\task\\sync_task	0	1472572800	0	0	0	*	*	*	0	0	1
+38	enrol_flatfile	\\enrol_flatfile\\task\\flatfile_sync_task	0	1472548500	0	15	*	*	*	*	0	0	0
+39	enrol_imsenterprise	\\enrol_imsenterprise\\task\\cron_task	0	1472548200	0	10	*	*	*	*	0	0	0
+40	enrol_lti	\\enrol_lti\\task\\sync_grades	0	1472545800	0	*/30	*	*	*	*	0	0	0
+41	enrol_lti	\\enrol_lti\\task\\sync_members	0	1472545800	0	*/30	*	*	*	*	0	0	0
+42	editor_atto	\\editor_atto\\task\\autosave_cleanup_task	0	1472735940	0	19	21	*	*	4	0	0	0
+43	tool_cohortroles	\\tool_cohortroles\\task\\cohort_role_sync	0	1472548260	0	11	*	*	*	*	0	0	0
+44	tool_langimport	\\tool_langimport\\task\\update_langpacks_task	0	1472588040	0	14	4	*	*	*	0	0	0
+45	tool_messageinbound	\\tool_messageinbound\\task\\pickup_task	0	1472545800	0	*	*	*	*	*	0	0	0
+46	tool_messageinbound	\\tool_messageinbound\\task\\cleanup_task	0	1472579700	0	55	1	*	*	*	0	0	0
+47	tool_monitor	\\tool_monitor\\task\\clean_events	0	1472545800	0	*	*	*	*	*	0	0	0
+48	tool_monitor	\\tool_monitor\\task\\check_subscriptions	0	1472552160	0	16	18	*	*	*	0	0	0
+49	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_course_bin	0	1472545800	0	*/30	*	*	*	*	0	0	0
+50	tool_recyclebin	\\tool_recyclebin\\task\\cleanup_category_bin	0	1472545800	0	*/30	*	*	*	*	0	0	0
+51	assignfeedback_editpdf	\\assignfeedback_editpdf\\task\\convert_submissions	0	1472545800	0	*/15	*	*	*	*	0	0	0
+52	logstore_legacy	\\logstore_legacy\\task\\cleanup_task	0	1472591220	0	7	5	*	*	*	0	0	0
+53	logstore_standard	\\logstore_standard\\task\\cleanup_task	0	1472588280	0	18	4	*	*	*	0	0	0
 \.
 
 
@@ -70074,7 +70104,7 @@ COPY phpu_task_scheduled (id, component, classname, lastruntime, nextruntime, bl
 -- Name: phpu_task_scheduled_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_task_scheduled_id_seq', 387000, false);
+SELECT pg_catalog.setval('phpu_task_scheduled_id_seq', 386000, false);
 
 
 --
@@ -70089,7 +70119,7 @@ COPY phpu_tool_cohortroles (id, cohortid, roleid, userid, timecreated, timemodif
 -- Name: phpu_tool_cohortroles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_cohortroles_id_seq', 388000, false);
+SELECT pg_catalog.setval('phpu_tool_cohortroles_id_seq', 375000, false);
 
 
 --
@@ -70112,14 +70142,14 @@ COPY phpu_tool_customlang_components (id, name, version) FROM stdin;
 -- Name: phpu_tool_customlang_components_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_customlang_components_id_seq', 390000, false);
+SELECT pg_catalog.setval('phpu_tool_customlang_components_id_seq', 377000, false);
 
 
 --
 -- Name: phpu_tool_customlang_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_customlang_id_seq', 389000, false);
+SELECT pg_catalog.setval('phpu_tool_customlang_id_seq', 376000, false);
 
 
 --
@@ -70134,7 +70164,7 @@ COPY phpu_tool_monitor_events (id, eventname, contextid, contextlevel, contextin
 -- Name: phpu_tool_monitor_events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_monitor_events_id_seq', 391000, false);
+SELECT pg_catalog.setval('phpu_tool_monitor_events_id_seq', 378000, false);
 
 
 --
@@ -70149,7 +70179,7 @@ COPY phpu_tool_monitor_history (id, sid, userid, timesent) FROM stdin;
 -- Name: phpu_tool_monitor_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_monitor_history_id_seq', 392000, false);
+SELECT pg_catalog.setval('phpu_tool_monitor_history_id_seq', 379000, false);
 
 
 --
@@ -70164,7 +70194,7 @@ COPY phpu_tool_monitor_rules (id, description, descriptionformat, name, userid, 
 -- Name: phpu_tool_monitor_rules_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_monitor_rules_id_seq', 393000, false);
+SELECT pg_catalog.setval('phpu_tool_monitor_rules_id_seq', 380000, false);
 
 
 --
@@ -70179,7 +70209,7 @@ COPY phpu_tool_monitor_subscriptions (id, courseid, ruleid, cmid, userid, timecr
 -- Name: phpu_tool_monitor_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_monitor_subscriptions_id_seq', 394000, false);
+SELECT pg_catalog.setval('phpu_tool_monitor_subscriptions_id_seq', 381000, false);
 
 
 --
@@ -70194,7 +70224,7 @@ COPY phpu_tool_recyclebin_category (id, categoryid, shortname, fullname, timecre
 -- Name: phpu_tool_recyclebin_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_recyclebin_category_id_seq', 395000, false);
+SELECT pg_catalog.setval('phpu_tool_recyclebin_category_id_seq', 382000, false);
 
 
 --
@@ -70209,7 +70239,7 @@ COPY phpu_tool_recyclebin_course (id, courseid, section, module, name, timecreat
 -- Name: phpu_tool_recyclebin_course_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_tool_recyclebin_course_id_seq', 396000, false);
+SELECT pg_catalog.setval('phpu_tool_recyclebin_course_id_seq', 383000, false);
 
 
 --
@@ -70217,1166 +70247,1169 @@ SELECT pg_catalog.setval('phpu_tool_recyclebin_course_id_seq', 396000, false);
 --
 
 COPY phpu_upgrade_log (id, type, plugin, version, targetversion, info, details, backtrace, userid, timemodified) FROM stdin;
-1	0	core	2016052301	2016052301	Upgrade savepoint reached	\N		0	1471529336
-2	0	core	2016052301	2016052301	Core installed	\N		0	1471529338
-3	0	antivirus_clamav	\N	2016052300	Starting plugin installation	\N		0	1471529338
-4	0	antivirus_clamav	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529338
-5	0	antivirus_clamav	2016052300	2016052300	Plugin installed	\N		0	1471529338
-6	0	availability_completion	\N	2016052300	Starting plugin installation	\N		0	1471529338
-7	0	availability_completion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529338
-8	0	availability_completion	2016052300	2016052300	Plugin installed	\N		0	1471529338
-9	0	availability_date	\N	2016052300	Starting plugin installation	\N		0	1471529338
-10	0	availability_date	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529338
-11	0	availability_date	2016052300	2016052300	Plugin installed	\N		0	1471529339
-12	0	availability_grade	\N	2016052300	Starting plugin installation	\N		0	1471529339
-13	0	availability_grade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-14	0	availability_grade	2016052300	2016052300	Plugin installed	\N		0	1471529339
-15	0	availability_group	\N	2016052300	Starting plugin installation	\N		0	1471529339
-16	0	availability_group	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-17	0	availability_group	2016052300	2016052300	Plugin installed	\N		0	1471529339
-18	0	availability_grouping	\N	2016052300	Starting plugin installation	\N		0	1471529339
-19	0	availability_grouping	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-20	0	availability_grouping	2016052300	2016052300	Plugin installed	\N		0	1471529339
-21	0	availability_profile	\N	2016052300	Starting plugin installation	\N		0	1471529339
-22	0	availability_profile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-23	0	availability_profile	2016052300	2016052300	Plugin installed	\N		0	1471529339
-24	0	qtype_calculated	\N	2016052300	Starting plugin installation	\N		0	1471529339
-25	0	qtype_calculated	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-26	0	qtype_calculated	2016052300	2016052300	Plugin installed	\N		0	1471529339
-27	0	qtype_calculatedmulti	\N	2016052300	Starting plugin installation	\N		0	1471529339
-28	0	qtype_calculatedmulti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-29	0	qtype_calculatedmulti	2016052300	2016052300	Plugin installed	\N		0	1471529339
-30	0	qtype_calculatedsimple	\N	2016052300	Starting plugin installation	\N		0	1471529339
-31	0	qtype_calculatedsimple	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-32	0	qtype_calculatedsimple	2016052300	2016052300	Plugin installed	\N		0	1471529339
-33	0	qtype_ddimageortext	\N	2016052300	Starting plugin installation	\N		0	1471529339
-34	0	qtype_ddimageortext	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529339
-35	0	qtype_ddimageortext	2016052300	2016052300	Plugin installed	\N		0	1471529339
-36	0	qtype_ddmarker	\N	2016052300	Starting plugin installation	\N		0	1471529339
-37	0	qtype_ddmarker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-38	0	qtype_ddmarker	2016052300	2016052300	Plugin installed	\N		0	1471529340
-39	0	qtype_ddwtos	\N	2016052300	Starting plugin installation	\N		0	1471529340
-40	0	qtype_ddwtos	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-41	0	qtype_ddwtos	2016052300	2016052300	Plugin installed	\N		0	1471529340
-42	0	qtype_description	\N	2016052300	Starting plugin installation	\N		0	1471529340
-43	0	qtype_description	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-44	0	qtype_description	2016052300	2016052300	Plugin installed	\N		0	1471529340
-45	0	qtype_essay	\N	2016052300	Starting plugin installation	\N		0	1471529340
-46	0	qtype_essay	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-47	0	qtype_essay	2016052300	2016052300	Plugin installed	\N		0	1471529340
-48	0	qtype_gapselect	\N	2016052300	Starting plugin installation	\N		0	1471529340
-49	0	qtype_gapselect	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-50	0	qtype_gapselect	2016052300	2016052300	Plugin installed	\N		0	1471529340
-51	0	qtype_match	\N	2016052300	Starting plugin installation	\N		0	1471529340
-52	0	qtype_match	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-53	0	qtype_match	2016052300	2016052300	Plugin installed	\N		0	1471529340
-54	0	qtype_missingtype	\N	2016052300	Starting plugin installation	\N		0	1471529340
-55	0	qtype_missingtype	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-56	0	qtype_missingtype	2016052300	2016052300	Plugin installed	\N		0	1471529340
-57	0	qtype_multianswer	\N	2016052300	Starting plugin installation	\N		0	1471529340
-58	0	qtype_multianswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-59	0	qtype_multianswer	2016052300	2016052300	Plugin installed	\N		0	1471529340
-60	0	qtype_multichoice	\N	2016052300	Starting plugin installation	\N		0	1471529340
-61	0	qtype_multichoice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-62	0	qtype_multichoice	2016052300	2016052300	Plugin installed	\N		0	1471529340
-63	0	qtype_numerical	\N	2016052300	Starting plugin installation	\N		0	1471529340
-64	0	qtype_numerical	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529340
-65	0	qtype_numerical	2016052300	2016052300	Plugin installed	\N		0	1471529340
-66	0	qtype_random	\N	2016052300	Starting plugin installation	\N		0	1471529341
-67	0	qtype_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529341
-68	0	qtype_random	2016052300	2016052300	Plugin installed	\N		0	1471529341
-69	0	qtype_randomsamatch	\N	2016052300	Starting plugin installation	\N		0	1471529341
-70	0	qtype_randomsamatch	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529341
-71	0	qtype_randomsamatch	2016052300	2016052300	Plugin installed	\N		0	1471529341
-72	0	qtype_shortanswer	\N	2016052300	Starting plugin installation	\N		0	1471529341
-73	0	qtype_shortanswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529341
-74	0	qtype_shortanswer	2016052300	2016052300	Plugin installed	\N		0	1471529341
-75	0	qtype_truefalse	\N	2016052300	Starting plugin installation	\N		0	1471529341
-76	0	qtype_truefalse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529341
-77	0	qtype_truefalse	2016052300	2016052300	Plugin installed	\N		0	1471529341
-78	0	mod_assign	\N	2016052300	Starting plugin installation	\N		0	1471529341
-79	0	mod_assign	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529341
-80	0	mod_assign	2016052300	2016052300	Plugin installed	\N		0	1471529342
-81	0	mod_assignment	\N	2016052300	Starting plugin installation	\N		0	1471529342
-82	0	mod_assignment	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529342
-83	0	mod_assignment	2016052300	2016052300	Plugin installed	\N		0	1471529342
-84	0	mod_book	\N	2016052300	Starting plugin installation	\N		0	1471529342
-85	0	mod_book	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529342
-86	0	mod_book	2016052300	2016052300	Plugin installed	\N		0	1471529342
-87	0	mod_chat	\N	2016052300	Starting plugin installation	\N		0	1471529342
-88	0	mod_chat	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529342
-89	0	mod_chat	2016052300	2016052300	Plugin installed	\N		0	1471529343
-90	0	mod_choice	\N	2016052300	Starting plugin installation	\N		0	1471529343
-91	0	mod_choice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529343
-92	0	mod_choice	2016052300	2016052300	Plugin installed	\N		0	1471529343
-93	0	mod_communitywall	\N	2014031800	Starting plugin installation	\N		0	1471529343
-94	0	mod_communitywall	2014031800	2014031800	Upgrade savepoint reached	\N		0	1471529343
-95	0	mod_communitywall	2014031800	2014031800	Plugin installed	\N		0	1471529343
-96	0	mod_data	\N	2016052300	Starting plugin installation	\N		0	1471529343
-97	0	mod_data	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529343
-98	0	mod_data	2016052300	2016052300	Plugin installed	\N		0	1471529344
-99	0	mod_dragdrop	\N	2014081401	Starting plugin installation	\N		0	1471529344
-100	0	mod_dragdrop	2014081401	2014081401	Upgrade savepoint reached	\N		0	1471529344
-101	0	mod_dragdrop	2014081401	2014081401	Plugin installed	\N		0	1471529345
-102	0	mod_feedback	\N	2016052300	Starting plugin installation	\N		0	1471529345
-103	0	mod_feedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529345
-104	0	mod_feedback	2016052300	2016052300	Plugin installed	\N		0	1471529345
-105	0	mod_folder	\N	2016052300	Starting plugin installation	\N		0	1471529345
-106	0	mod_folder	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529345
-107	0	mod_folder	2016052300	2016052300	Plugin installed	\N		0	1471529346
-108	0	mod_forum	\N	2016052300	Starting plugin installation	\N		0	1471529346
-109	0	mod_forum	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529346
-110	0	mod_forum	2016052300	2016052300	Plugin installed	\N		0	1471529347
-111	0	mod_glossary	\N	2016052300	Starting plugin installation	\N		0	1471529347
-112	0	mod_glossary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529347
-113	0	mod_glossary	2016052300	2016052300	Plugin installed	\N		0	1471529348
-114	0	mod_imscp	\N	2016052300	Starting plugin installation	\N		0	1471529348
-115	0	mod_imscp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529348
-116	0	mod_imscp	2016052300	2016052300	Plugin installed	\N		0	1471529348
-117	0	mod_label	\N	2016052300	Starting plugin installation	\N		0	1471529348
-118	0	mod_label	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529348
-119	0	mod_label	2016052300	2016052300	Plugin installed	\N		0	1471529348
-120	0	mod_lesson	\N	2016052300	Starting plugin installation	\N		0	1471529348
-121	0	mod_lesson	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529349
-122	0	mod_lesson	2016052300	2016052300	Plugin installed	\N		0	1471529349
-123	0	mod_lti	\N	2016052300	Starting plugin installation	\N		0	1471529349
-124	0	mod_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529349
-125	0	mod_lti	2016052300	2016052300	Plugin installed	\N		0	1471529349
-126	0	mod_page	\N	2016052300	Starting plugin installation	\N		0	1471529349
-127	0	mod_page	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529349
-128	0	mod_page	2016052300	2016052300	Plugin installed	\N		0	1471529350
-129	0	mod_quiz	\N	2016052300	Starting plugin installation	\N		0	1471529350
-130	0	mod_quiz	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529350
-131	0	mod_quiz	2016052300	2016052300	Plugin installed	\N		0	1471529350
-132	0	mod_resource	\N	2016052300	Starting plugin installation	\N		0	1471529350
-133	0	mod_resource	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529350
-134	0	mod_resource	2016052300	2016052300	Plugin installed	\N		0	1471529350
-135	0	mod_scorm	\N	2016052300	Starting plugin installation	\N		0	1471529351
-136	0	mod_scorm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529351
-137	0	mod_scorm	2016052300	2016052300	Plugin installed	\N		0	1471529351
-138	0	mod_survey	\N	2016052300	Starting plugin installation	\N		0	1471529351
-139	0	mod_survey	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529351
-140	0	mod_survey	2016052300	2016052300	Plugin installed	\N		0	1471529352
-141	0	mod_talkpoint	\N	2015070900	Starting plugin installation	\N		0	1471529352
-142	0	mod_talkpoint	2015070900	2015070900	Upgrade savepoint reached	\N		0	1471529352
-143	0	mod_talkpoint	2015070900	2015070900	Plugin installed	\N		0	1471529352
-144	0	mod_url	\N	2016052300	Starting plugin installation	\N		0	1471529352
-145	0	mod_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529352
-146	0	mod_url	2016052300	2016052300	Plugin installed	\N		0	1471529352
-147	0	mod_videoquanda	\N	2013112500	Starting plugin installation	\N		0	1471529352
-148	0	mod_videoquanda	2013112500	2013112500	Upgrade savepoint reached	\N		0	1471529352
-149	0	mod_videoquanda	2013112500	2013112500	Plugin installed	\N		0	1471529353
-150	0	mod_vocabcards	\N	2014072500	Starting plugin installation	\N		0	1471529353
-151	0	mod_vocabcards	2014072500	2014072500	Upgrade savepoint reached	\N		0	1471529353
-152	0	mod_vocabcards	2014072500	2014072500	Plugin installed	\N		0	1471529353
-153	0	mod_wiki	\N	2016052300	Starting plugin installation	\N		0	1471529353
-154	0	mod_wiki	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529353
-155	0	mod_wiki	2016052300	2016052300	Plugin installed	\N		0	1471529354
-156	0	mod_workshop	\N	2016052300	Starting plugin installation	\N		0	1471529354
-157	0	mod_workshop	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529354
-158	0	mod_workshop	2016052300	2016052300	Plugin installed	\N		0	1471529354
-159	0	auth_cas	\N	2016052300	Starting plugin installation	\N		0	1471529355
-160	0	auth_cas	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-161	0	auth_cas	2016052300	2016052300	Plugin installed	\N		0	1471529355
-162	0	auth_db	\N	2016052300	Starting plugin installation	\N		0	1471529355
-163	0	auth_db	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-164	0	auth_db	2016052300	2016052300	Plugin installed	\N		0	1471529355
-165	0	auth_email	\N	2016052300	Starting plugin installation	\N		0	1471529355
-166	0	auth_email	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-167	0	auth_email	2016052300	2016052300	Plugin installed	\N		0	1471529355
-168	0	auth_fc	\N	2016052300	Starting plugin installation	\N		0	1471529355
-169	0	auth_fc	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-170	0	auth_fc	2016052300	2016052300	Plugin installed	\N		0	1471529355
-171	0	auth_imap	\N	2016052300	Starting plugin installation	\N		0	1471529355
-172	0	auth_imap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-173	0	auth_imap	2016052300	2016052300	Plugin installed	\N		0	1471529355
-174	0	auth_ldap	\N	2016052300	Starting plugin installation	\N		0	1471529355
-175	0	auth_ldap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-176	0	auth_ldap	2016052300	2016052300	Plugin installed	\N		0	1471529355
-177	0	auth_lti	\N	2016052300	Starting plugin installation	\N		0	1471529355
-178	0	auth_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-179	0	auth_lti	2016052300	2016052300	Plugin installed	\N		0	1471529355
-180	0	auth_manual	\N	2016052300	Starting plugin installation	\N		0	1471529355
-181	0	auth_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529355
-182	0	auth_manual	2016052300	2016052300	Plugin installed	\N		0	1471529356
-183	0	auth_mnet	\N	2016052300	Starting plugin installation	\N		0	1471529356
-184	0	auth_mnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529356
-185	0	auth_mnet	2016052300	2016052300	Plugin installed	\N		0	1471529356
-186	0	auth_nntp	\N	2016052300	Starting plugin installation	\N		0	1471529356
-187	0	auth_nntp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529356
-188	0	auth_nntp	2016052300	2016052300	Plugin installed	\N		0	1471529356
-189	0	auth_nologin	\N	2016052300	Starting plugin installation	\N		0	1471529356
-190	0	auth_nologin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529356
-191	0	auth_nologin	2016052300	2016052300	Plugin installed	\N		0	1471529356
-192	0	auth_none	\N	2016052300	Starting plugin installation	\N		0	1471529356
-193	0	auth_none	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529356
-194	0	auth_none	2016052300	2016052300	Plugin installed	\N		0	1471529356
-195	0	auth_oauth	\N	2014041401	Starting plugin installation	\N		0	1471529356
-196	0	auth_oauth	2014041401	2014041401	Upgrade savepoint reached	\N		0	1471529356
-197	0	auth_oauth	2014041401	2014041401	Plugin installed	\N		0	1471529356
-198	0	auth_pam	\N	2016052300	Starting plugin installation	\N		0	1471529356
-199	0	auth_pam	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529356
-200	0	auth_pam	2016052300	2016052300	Plugin installed	\N		0	1471529357
-201	0	auth_pop3	\N	2016052300	Starting plugin installation	\N		0	1471529357
-202	0	auth_pop3	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-203	0	auth_pop3	2016052300	2016052300	Plugin installed	\N		0	1471529357
-204	0	auth_radius	\N	2016052300	Starting plugin installation	\N		0	1471529357
-205	0	auth_radius	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-206	0	auth_radius	2016052300	2016052300	Plugin installed	\N		0	1471529357
-207	0	auth_shibboleth	\N	2016052300	Starting plugin installation	\N		0	1471529357
-208	0	auth_shibboleth	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-209	0	auth_shibboleth	2016052300	2016052300	Plugin installed	\N		0	1471529357
-210	0	auth_webservice	\N	2016052300	Starting plugin installation	\N		0	1471529357
-211	0	auth_webservice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-212	0	auth_webservice	2016052300	2016052300	Plugin installed	\N		0	1471529357
-213	0	calendartype_gregorian	\N	2016052300	Starting plugin installation	\N		0	1471529357
-214	0	calendartype_gregorian	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-215	0	calendartype_gregorian	2016052300	2016052300	Plugin installed	\N		0	1471529357
-216	0	enrol_category	\N	2016052300	Starting plugin installation	\N		0	1471529357
-217	0	enrol_category	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-218	0	enrol_category	2016052300	2016052300	Plugin installed	\N		0	1471529357
-219	0	enrol_cohort	\N	2016052300	Starting plugin installation	\N		0	1471529357
-220	0	enrol_cohort	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529357
-221	0	enrol_cohort	2016052300	2016052300	Plugin installed	\N		0	1471529358
-222	0	enrol_database	\N	2016052300	Starting plugin installation	\N		0	1471529358
-223	0	enrol_database	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529358
-224	0	enrol_database	2016052300	2016052300	Plugin installed	\N		0	1471529358
-225	0	enrol_flatfile	\N	2016052300	Starting plugin installation	\N		0	1471529358
-226	0	enrol_flatfile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529358
-227	0	enrol_flatfile	2016052300	2016052300	Plugin installed	\N		0	1471529358
-228	0	enrol_guest	\N	2016052300	Starting plugin installation	\N		0	1471529358
-229	0	enrol_guest	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529358
-230	0	enrol_guest	2016052300	2016052300	Plugin installed	\N		0	1471529358
-231	0	enrol_imsenterprise	\N	2016052300	Starting plugin installation	\N		0	1471529358
-232	0	enrol_imsenterprise	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529358
-233	0	enrol_imsenterprise	2016052300	2016052300	Plugin installed	\N		0	1471529358
-234	0	enrol_ldap	\N	2016052300	Starting plugin installation	\N		0	1471529358
-235	0	enrol_ldap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529358
-236	0	enrol_ldap	2016052300	2016052300	Plugin installed	\N		0	1471529358
-237	0	enrol_lti	\N	2016052300	Starting plugin installation	\N		0	1471529359
-238	0	enrol_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529359
-239	0	enrol_lti	2016052300	2016052300	Plugin installed	\N		0	1471529359
-240	0	enrol_manual	\N	2016052300	Starting plugin installation	\N		0	1471529359
-241	0	enrol_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529359
-242	0	enrol_manual	2016052300	2016052300	Plugin installed	\N		0	1471529359
-243	0	enrol_meta	\N	2016052300	Starting plugin installation	\N		0	1471529359
-244	0	enrol_meta	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529359
-245	0	enrol_meta	2016052300	2016052300	Plugin installed	\N		0	1471529359
-246	0	enrol_mnet	\N	2016052300	Starting plugin installation	\N		0	1471529359
-247	0	enrol_mnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529359
-248	0	enrol_mnet	2016052300	2016052300	Plugin installed	\N		0	1471529359
-249	0	enrol_paypal	\N	2016052300	Starting plugin installation	\N		0	1471529359
-250	0	enrol_paypal	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529359
-251	0	enrol_paypal	2016052300	2016052300	Plugin installed	\N		0	1471529360
-252	0	enrol_self	\N	2016052300	Starting plugin installation	\N		0	1471529360
-253	0	enrol_self	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529360
-254	0	enrol_self	2016052300	2016052300	Plugin installed	\N		0	1471529360
-255	0	message_airnotifier	\N	2016052300	Starting plugin installation	\N		0	1471529360
-256	0	message_airnotifier	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529360
-257	0	message_airnotifier	2016052300	2016052300	Plugin installed	\N		0	1471529361
-258	0	message_email	\N	2016052300	Starting plugin installation	\N		0	1471529361
-259	0	message_email	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529361
-260	0	message_email	2016052300	2016052300	Plugin installed	\N		0	1471529361
-261	0	message_jabber	\N	2016052300	Starting plugin installation	\N		0	1471529361
-262	0	message_jabber	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529361
-263	0	message_jabber	2016052300	2016052300	Plugin installed	\N		0	1471529362
-264	0	message_popup	\N	2016052300	Starting plugin installation	\N		0	1471529362
-265	0	message_popup	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529362
-266	0	message_popup	2016052300	2016052300	Plugin installed	\N		0	1471529362
-267	0	block_activity_modules	\N	2016052300	Starting plugin installation	\N		0	1471529363
-268	0	block_activity_modules	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-269	0	block_activity_modules	2016052300	2016052300	Plugin installed	\N		0	1471529363
-270	0	block_activity_results	\N	2016052300	Starting plugin installation	\N		0	1471529363
-271	0	block_activity_results	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-272	0	block_activity_results	2016052300	2016052300	Plugin installed	\N		0	1471529363
-273	0	block_activity_tree	\N	2015070700	Starting plugin installation	\N		0	1471529363
-274	0	block_activity_tree	2015070700	2015070700	Upgrade savepoint reached	\N		0	1471529363
-275	0	block_activity_tree	2015070700	2015070700	Plugin installed	\N		0	1471529363
-276	0	block_admin_bookmarks	\N	2016052300	Starting plugin installation	\N		0	1471529363
-277	0	block_admin_bookmarks	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-278	0	block_admin_bookmarks	2016052300	2016052300	Plugin installed	\N		0	1471529363
-279	0	block_badges	\N	2016052300	Starting plugin installation	\N		0	1471529363
-280	0	block_badges	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-281	0	block_badges	2016052300	2016052300	Plugin installed	\N		0	1471529363
-282	0	block_blog_menu	\N	2016052300	Starting plugin installation	\N		0	1471529363
-283	0	block_blog_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-284	0	block_blog_menu	2016052300	2016052300	Plugin installed	\N		0	1471529363
-285	0	block_blog_recent	\N	2016052300	Starting plugin installation	\N		0	1471529363
-286	0	block_blog_recent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529363
-287	0	block_blog_recent	2016052300	2016052300	Plugin installed	\N		0	1471529363
-288	0	block_blog_tags	\N	2016052300	Starting plugin installation	\N		0	1471529364
-289	0	block_blog_tags	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-290	0	block_blog_tags	2016052300	2016052300	Plugin installed	\N		0	1471529364
-291	0	block_calendar_month	\N	2016052300	Starting plugin installation	\N		0	1471529364
-292	0	block_calendar_month	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-293	0	block_calendar_month	2016052300	2016052300	Plugin installed	\N		0	1471529364
-294	0	block_calendar_upcoming	\N	2016052300	Starting plugin installation	\N		0	1471529364
-295	0	block_calendar_upcoming	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-296	0	block_calendar_upcoming	2016052300	2016052300	Plugin installed	\N		0	1471529364
-297	0	block_comments	\N	2016052300	Starting plugin installation	\N		0	1471529364
-298	0	block_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-299	0	block_comments	2016052300	2016052300	Plugin installed	\N		0	1471529364
-300	0	block_community	\N	2016052300	Starting plugin installation	\N		0	1471529364
-301	0	block_community	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-302	0	block_community	2016052300	2016052300	Plugin installed	\N		0	1471529364
-303	0	block_completionstatus	\N	2016052300	Starting plugin installation	\N		0	1471529364
-304	0	block_completionstatus	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-305	0	block_completionstatus	2016052300	2016052300	Plugin installed	\N		0	1471529364
-306	0	block_course_list	\N	2016052300	Starting plugin installation	\N		0	1471529364
-307	0	block_course_list	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529364
-308	0	block_course_list	2016052300	2016052300	Plugin installed	\N		0	1471529365
-309	0	block_course_overview	\N	2016052300	Starting plugin installation	\N		0	1471529365
-310	0	block_course_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-311	0	block_course_overview	2016052300	2016052300	Plugin installed	\N		0	1471529365
-312	0	block_course_summary	\N	2016052300	Starting plugin installation	\N		0	1471529365
-313	0	block_course_summary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-314	0	block_course_summary	2016052300	2016052300	Plugin installed	\N		0	1471529365
-315	0	block_feedback	\N	2016052300	Starting plugin installation	\N		0	1471529365
-316	0	block_feedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-317	0	block_feedback	2016052300	2016052300	Plugin installed	\N		0	1471529365
-318	0	block_globalsearch	\N	2016052300	Starting plugin installation	\N		0	1471529365
-319	0	block_globalsearch	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-320	0	block_globalsearch	2016052300	2016052300	Plugin installed	\N		0	1471529365
-321	0	block_glossary_random	\N	2016052300	Starting plugin installation	\N		0	1471529365
-322	0	block_glossary_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-323	0	block_glossary_random	2016052300	2016052300	Plugin installed	\N		0	1471529365
-324	0	block_html	\N	2016052300	Starting plugin installation	\N		0	1471529365
-325	0	block_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529365
-326	0	block_html	2016052300	2016052300	Plugin installed	\N		0	1471529365
-327	0	block_login	\N	2016052300	Starting plugin installation	\N		0	1471529366
-328	0	block_login	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-329	0	block_login	2016052300	2016052300	Plugin installed	\N		0	1471529366
-330	0	block_lp	\N	2016052300	Starting plugin installation	\N		0	1471529366
-331	0	block_lp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-332	0	block_lp	2016052300	2016052300	Plugin installed	\N		0	1471529366
-333	0	block_mentees	\N	2016052300	Starting plugin installation	\N		0	1471529366
-334	0	block_mentees	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-335	0	block_mentees	2016052300	2016052300	Plugin installed	\N		0	1471529366
-336	0	block_messages	\N	2016052300	Starting plugin installation	\N		0	1471529366
-337	0	block_messages	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-338	0	block_messages	2016052300	2016052300	Plugin installed	\N		0	1471529366
-339	0	block_mnet_hosts	\N	2016052300	Starting plugin installation	\N		0	1471529366
-340	0	block_mnet_hosts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-341	0	block_mnet_hosts	2016052300	2016052300	Plugin installed	\N		0	1471529366
-342	0	block_myprofile	\N	2016052300	Starting plugin installation	\N		0	1471529366
-343	0	block_myprofile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-344	0	block_myprofile	2016052300	2016052300	Plugin installed	\N		0	1471529366
-345	0	block_navigation	\N	2016052300	Starting plugin installation	\N		0	1471529366
-346	0	block_navigation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529366
-347	0	block_navigation	2016052300	2016052300	Plugin installed	\N		0	1471529367
-348	0	block_news_items	\N	2016052300	Starting plugin installation	\N		0	1471529367
-349	0	block_news_items	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529367
-350	0	block_news_items	2016052300	2016052300	Plugin installed	\N		0	1471529367
-351	0	block_online_users	\N	2016052300	Starting plugin installation	\N		0	1471529367
-352	0	block_online_users	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529367
-353	0	block_online_users	2016052300	2016052300	Plugin installed	\N		0	1471529367
-354	0	block_participants	\N	2016052300	Starting plugin installation	\N		0	1471529367
-355	0	block_participants	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529367
-356	0	block_participants	2016052300	2016052300	Plugin installed	\N		0	1471529367
-357	0	block_private_files	\N	2016052300	Starting plugin installation	\N		0	1471529367
-358	0	block_private_files	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529367
-359	0	block_private_files	2016052300	2016052300	Plugin installed	\N		0	1471529367
-360	0	block_quiz_results	\N	2016052300	Starting plugin installation	\N		0	1471529367
-361	0	block_quiz_results	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529367
-362	0	block_quiz_results	2016052300	2016052300	Plugin installed	\N		0	1471529367
-363	0	block_recent_activity	\N	2016052300	Starting plugin installation	\N		0	1471529368
-364	0	block_recent_activity	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-365	0	block_recent_activity	2016052300	2016052300	Plugin installed	\N		0	1471529368
-366	0	block_rss_client	\N	2016052300	Starting plugin installation	\N		0	1471529368
-367	0	block_rss_client	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-368	0	block_rss_client	2016052300	2016052300	Plugin installed	\N		0	1471529368
-369	0	block_search_forums	\N	2016052300	Starting plugin installation	\N		0	1471529368
-370	0	block_search_forums	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-371	0	block_search_forums	2016052300	2016052300	Plugin installed	\N		0	1471529368
-372	0	block_section_links	\N	2016052300	Starting plugin installation	\N		0	1471529368
-373	0	block_section_links	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-374	0	block_section_links	2016052300	2016052300	Plugin installed	\N		0	1471529368
-375	0	block_selfcompletion	\N	2016052300	Starting plugin installation	\N		0	1471529368
-376	0	block_selfcompletion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-377	0	block_selfcompletion	2016052300	2016052300	Plugin installed	\N		0	1471529368
-378	0	block_settings	\N	2016052300	Starting plugin installation	\N		0	1471529368
-379	0	block_settings	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529368
-380	0	block_settings	2016052300	2016052300	Plugin installed	\N		0	1471529369
-381	0	block_site_main_menu	\N	2016052300	Starting plugin installation	\N		0	1471529369
-382	0	block_site_main_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529369
-383	0	block_site_main_menu	2016052300	2016052300	Plugin installed	\N		0	1471529369
-384	0	block_social_activities	\N	2016052300	Starting plugin installation	\N		0	1471529369
-385	0	block_social_activities	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529369
-386	0	block_social_activities	2016052300	2016052300	Plugin installed	\N		0	1471529369
-387	0	block_tag_flickr	\N	2016052300	Starting plugin installation	\N		0	1471529369
-388	0	block_tag_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529369
-389	0	block_tag_flickr	2016052300	2016052300	Plugin installed	\N		0	1471529369
-390	0	block_tag_youtube	\N	2016052300	Starting plugin installation	\N		0	1471529369
-391	0	block_tag_youtube	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529369
-392	0	block_tag_youtube	2016052300	2016052300	Plugin installed	\N		0	1471529369
-393	0	block_tags	\N	2016052300	Starting plugin installation	\N		0	1471529369
-394	0	block_tags	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529369
-395	0	block_tags	2016052300	2016052300	Plugin installed	\N		0	1471529369
-396	0	filter_activitynames	\N	2016052300	Starting plugin installation	\N		0	1471529370
-397	0	filter_activitynames	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-398	0	filter_activitynames	2016052300	2016052300	Plugin installed	\N		0	1471529370
-399	0	filter_algebra	\N	2016052300	Starting plugin installation	\N		0	1471529370
-400	0	filter_algebra	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-401	0	filter_algebra	2016052300	2016052300	Plugin installed	\N		0	1471529370
-402	0	filter_censor	\N	2016052300	Starting plugin installation	\N		0	1471529370
-403	0	filter_censor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-404	0	filter_censor	2016052300	2016052300	Plugin installed	\N		0	1471529370
-405	0	filter_data	\N	2016052300	Starting plugin installation	\N		0	1471529370
-406	0	filter_data	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-407	0	filter_data	2016052300	2016052300	Plugin installed	\N		0	1471529370
-408	0	filter_emailprotect	\N	2016052300	Starting plugin installation	\N		0	1471529370
-409	0	filter_emailprotect	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-410	0	filter_emailprotect	2016052300	2016052300	Plugin installed	\N		0	1471529370
-411	0	filter_emoticon	\N	2016052300	Starting plugin installation	\N		0	1471529370
-412	0	filter_emoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-413	0	filter_emoticon	2016052300	2016052300	Plugin installed	\N		0	1471529370
-414	0	filter_glossary	\N	2016052300	Starting plugin installation	\N		0	1471529370
-415	0	filter_glossary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-416	0	filter_glossary	2016052300	2016052300	Plugin installed	\N		0	1471529370
-417	0	filter_mathjaxloader	\N	2016052300	Starting plugin installation	\N		0	1471529370
-418	0	filter_mathjaxloader	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529370
-419	0	filter_mathjaxloader	2016052300	2016052300	Plugin installed	\N		0	1471529370
-420	0	filter_mediaplugin	\N	2016052300	Starting plugin installation	\N		0	1471529371
-421	0	filter_mediaplugin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-422	0	filter_mediaplugin	2016052300	2016052300	Plugin installed	\N		0	1471529371
-423	0	filter_multilang	\N	2016052300	Starting plugin installation	\N		0	1471529371
-424	0	filter_multilang	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-425	0	filter_multilang	2016052300	2016052300	Plugin installed	\N		0	1471529371
-426	0	filter_tex	\N	2016052300	Starting plugin installation	\N		0	1471529371
-427	0	filter_tex	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-428	0	filter_tex	2016052300	2016052300	Plugin installed	\N		0	1471529371
-429	0	filter_tidy	\N	2016052300	Starting plugin installation	\N		0	1471529371
-430	0	filter_tidy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-431	0	filter_tidy	2016052300	2016052300	Plugin installed	\N		0	1471529371
-432	0	filter_urltolink	\N	2016052300	Starting plugin installation	\N		0	1471529371
-433	0	filter_urltolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-434	0	filter_urltolink	2016052300	2016052300	Plugin installed	\N		0	1471529371
-435	0	editor_atto	\N	2016052300	Starting plugin installation	\N		0	1471529371
-436	0	editor_atto	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-437	0	editor_atto	2016052300	2016052300	Plugin installed	\N		0	1471529371
-438	0	editor_textarea	\N	2016052300	Starting plugin installation	\N		0	1471529371
-439	0	editor_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-440	0	editor_textarea	2016052300	2016052300	Plugin installed	\N		0	1471529371
-441	0	editor_tinymce	\N	2016052300	Starting plugin installation	\N		0	1471529371
-442	0	editor_tinymce	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-443	0	editor_tinymce	2016052300	2016052300	Plugin installed	\N		0	1471529371
-444	0	format_singleactivity	\N	2016052300	Starting plugin installation	\N		0	1471529371
-445	0	format_singleactivity	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529371
-446	0	format_singleactivity	2016052300	2016052300	Plugin installed	\N		0	1471529372
-447	0	format_social	\N	2016052300	Starting plugin installation	\N		0	1471529372
-448	0	format_social	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-449	0	format_social	2016052300	2016052300	Plugin installed	\N		0	1471529372
-450	0	format_topics	\N	2016052300	Starting plugin installation	\N		0	1471529372
-451	0	format_topics	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-452	0	format_topics	2016052300	2016052300	Plugin installed	\N		0	1471529372
-453	0	format_weeks	\N	2016052300	Starting plugin installation	\N		0	1471529372
-454	0	format_weeks	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-455	0	format_weeks	2016052300	2016052300	Plugin installed	\N		0	1471529372
-456	0	dataformat_csv	\N	2016052300	Starting plugin installation	\N		0	1471529372
-457	0	dataformat_csv	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-458	0	dataformat_csv	2016052300	2016052300	Plugin installed	\N		0	1471529372
-459	0	dataformat_excel	\N	2016052300	Starting plugin installation	\N		0	1471529372
-460	0	dataformat_excel	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-461	0	dataformat_excel	2016052300	2016052300	Plugin installed	\N		0	1471529372
-462	0	dataformat_html	\N	2016052300	Starting plugin installation	\N		0	1471529372
-463	0	dataformat_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-464	0	dataformat_html	2016052300	2016052300	Plugin installed	\N		0	1471529372
-465	0	dataformat_json	\N	2016052300	Starting plugin installation	\N		0	1471529372
-466	0	dataformat_json	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-467	0	dataformat_json	2016052300	2016052300	Plugin installed	\N		0	1471529372
-468	0	dataformat_ods	\N	2016052300	Starting plugin installation	\N		0	1471529372
-469	0	dataformat_ods	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529372
-470	0	dataformat_ods	2016052300	2016052300	Plugin installed	\N		0	1471529373
-471	0	profilefield_checkbox	\N	2016052300	Starting plugin installation	\N		0	1471529373
-472	0	profilefield_checkbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-473	0	profilefield_checkbox	2016052300	2016052300	Plugin installed	\N		0	1471529373
-474	0	profilefield_datetime	\N	2016052300	Starting plugin installation	\N		0	1471529373
-475	0	profilefield_datetime	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-476	0	profilefield_datetime	2016052300	2016052300	Plugin installed	\N		0	1471529373
-477	0	profilefield_menu	\N	2016052300	Starting plugin installation	\N		0	1471529373
-478	0	profilefield_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-479	0	profilefield_menu	2016052300	2016052300	Plugin installed	\N		0	1471529373
-480	0	profilefield_text	\N	2016052300	Starting plugin installation	\N		0	1471529373
-481	0	profilefield_text	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-482	0	profilefield_text	2016052300	2016052300	Plugin installed	\N		0	1471529373
-483	0	profilefield_textarea	\N	2016052300	Starting plugin installation	\N		0	1471529373
-484	0	profilefield_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-485	0	profilefield_textarea	2016052300	2016052300	Plugin installed	\N		0	1471529373
-486	0	report_backups	\N	2016052300	Starting plugin installation	\N		0	1471529373
-487	0	report_backups	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-488	0	report_backups	2016052300	2016052300	Plugin installed	\N		0	1471529373
-489	0	report_competency	\N	2016052300	Starting plugin installation	\N		0	1471529373
-490	0	report_competency	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-491	0	report_competency	2016052300	2016052300	Plugin installed	\N		0	1471529373
-492	0	report_completion	\N	2016052300	Starting plugin installation	\N		0	1471529373
-493	0	report_completion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529373
-494	0	report_completion	2016052300	2016052300	Plugin installed	\N		0	1471529373
-495	0	report_configlog	\N	2016052300	Starting plugin installation	\N		0	1471529374
-496	0	report_configlog	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-497	0	report_configlog	2016052300	2016052300	Plugin installed	\N		0	1471529374
-498	0	report_courseoverview	\N	2016052300	Starting plugin installation	\N		0	1471529374
-499	0	report_courseoverview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-500	0	report_courseoverview	2016052300	2016052300	Plugin installed	\N		0	1471529374
-501	0	report_eventlist	\N	2016052300	Starting plugin installation	\N		0	1471529374
-502	0	report_eventlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-503	0	report_eventlist	2016052300	2016052300	Plugin installed	\N		0	1471529374
-504	0	report_log	\N	2016052300	Starting plugin installation	\N		0	1471529374
-505	0	report_log	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-506	0	report_log	2016052300	2016052300	Plugin installed	\N		0	1471529374
-507	0	report_loglive	\N	2016052300	Starting plugin installation	\N		0	1471529374
-508	0	report_loglive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-509	0	report_loglive	2016052300	2016052300	Plugin installed	\N		0	1471529374
-510	0	report_outline	\N	2016052300	Starting plugin installation	\N		0	1471529374
-511	0	report_outline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-512	0	report_outline	2016052300	2016052300	Plugin installed	\N		0	1471529374
-513	0	report_participation	\N	2016052300	Starting plugin installation	\N		0	1471529374
-514	0	report_participation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529374
-515	0	report_participation	2016052300	2016052300	Plugin installed	\N		0	1471529375
-516	0	report_performance	\N	2016052300	Starting plugin installation	\N		0	1471529375
-517	0	report_performance	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-518	0	report_performance	2016052300	2016052300	Plugin installed	\N		0	1471529375
-519	0	report_progress	\N	2016052300	Starting plugin installation	\N		0	1471529375
-520	0	report_progress	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-521	0	report_progress	2016052300	2016052300	Plugin installed	\N		0	1471529375
-522	0	report_questioninstances	\N	2016052300	Starting plugin installation	\N		0	1471529375
-523	0	report_questioninstances	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-524	0	report_questioninstances	2016052300	2016052300	Plugin installed	\N		0	1471529375
-525	0	report_search	\N	2016052300	Starting plugin installation	\N		0	1471529375
-526	0	report_search	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-527	0	report_search	2016052300	2016052300	Plugin installed	\N		0	1471529375
-528	0	report_security	\N	2016052300	Starting plugin installation	\N		0	1471529375
-529	0	report_security	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-530	0	report_security	2016052300	2016052300	Plugin installed	\N		0	1471529375
-531	0	report_stats	\N	2016052300	Starting plugin installation	\N		0	1471529375
-532	0	report_stats	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-533	0	report_stats	2016052300	2016052300	Plugin installed	\N		0	1471529375
-534	0	report_usersessions	\N	2016052300	Starting plugin installation	\N		0	1471529375
-535	0	report_usersessions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529375
-536	0	report_usersessions	2016052300	2016052300	Plugin installed	\N		0	1471529375
-537	0	gradeexport_ods	\N	2016052300	Starting plugin installation	\N		0	1471529375
-538	0	gradeexport_ods	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-539	0	gradeexport_ods	2016052300	2016052300	Plugin installed	\N		0	1471529376
-540	0	gradeexport_txt	\N	2016052300	Starting plugin installation	\N		0	1471529376
-541	0	gradeexport_txt	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-542	0	gradeexport_txt	2016052300	2016052300	Plugin installed	\N		0	1471529376
-543	0	gradeexport_xls	\N	2016052300	Starting plugin installation	\N		0	1471529376
-544	0	gradeexport_xls	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-545	0	gradeexport_xls	2016052300	2016052300	Plugin installed	\N		0	1471529376
-546	0	gradeexport_xml	\N	2016052300	Starting plugin installation	\N		0	1471529376
-547	0	gradeexport_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-548	0	gradeexport_xml	2016052300	2016052300	Plugin installed	\N		0	1471529376
-549	0	gradeimport_csv	\N	2016052300	Starting plugin installation	\N		0	1471529376
-550	0	gradeimport_csv	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-551	0	gradeimport_csv	2016052300	2016052300	Plugin installed	\N		0	1471529376
-552	0	gradeimport_direct	\N	2016052300	Starting plugin installation	\N		0	1471529376
-553	0	gradeimport_direct	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-554	0	gradeimport_direct	2016052300	2016052300	Plugin installed	\N		0	1471529376
-555	0	gradeimport_xml	\N	2016052300	Starting plugin installation	\N		0	1471529376
-556	0	gradeimport_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529376
-557	0	gradeimport_xml	2016052300	2016052300	Plugin installed	\N		0	1471529377
-558	0	gradereport_grader	\N	2016052300	Starting plugin installation	\N		0	1471529377
-559	0	gradereport_grader	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-560	0	gradereport_grader	2016052300	2016052300	Plugin installed	\N		0	1471529377
-561	0	gradereport_history	\N	2016052300	Starting plugin installation	\N		0	1471529377
-562	0	gradereport_history	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-563	0	gradereport_history	2016052300	2016052300	Plugin installed	\N		0	1471529377
-564	0	gradereport_outcomes	\N	2016052300	Starting plugin installation	\N		0	1471529377
-565	0	gradereport_outcomes	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-566	0	gradereport_outcomes	2016052300	2016052300	Plugin installed	\N		0	1471529377
-567	0	gradereport_overview	\N	2016052300	Starting plugin installation	\N		0	1471529377
-568	0	gradereport_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-569	0	gradereport_overview	2016052300	2016052300	Plugin installed	\N		0	1471529377
-570	0	gradereport_singleview	\N	2016052300	Starting plugin installation	\N		0	1471529377
-571	0	gradereport_singleview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-572	0	gradereport_singleview	2016052300	2016052300	Plugin installed	\N		0	1471529377
-573	0	gradereport_user	\N	2016052300	Starting plugin installation	\N		0	1471529377
-574	0	gradereport_user	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529377
-575	0	gradereport_user	2016052300	2016052300	Plugin installed	\N		0	1471529377
-576	0	gradingform_guide	\N	2016052300	Starting plugin installation	\N		0	1471529377
-577	0	gradingform_guide	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-578	0	gradingform_guide	2016052300	2016052300	Plugin installed	\N		0	1471529378
-579	0	gradingform_rubric	\N	2016052300	Starting plugin installation	\N		0	1471529378
-580	0	gradingform_rubric	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-581	0	gradingform_rubric	2016052300	2016052300	Plugin installed	\N		0	1471529378
-582	0	mnetservice_enrol	\N	2016052300	Starting plugin installation	\N		0	1471529378
-583	0	mnetservice_enrol	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-584	0	mnetservice_enrol	2016052300	2016052300	Plugin installed	\N		0	1471529378
-585	0	webservice_rest	\N	2016052300	Starting plugin installation	\N		0	1471529378
-586	0	webservice_rest	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-587	0	webservice_rest	2016052300	2016052300	Plugin installed	\N		0	1471529378
-588	0	webservice_soap	\N	2016052300	Starting plugin installation	\N		0	1471529378
-589	0	webservice_soap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-590	0	webservice_soap	2016052300	2016052300	Plugin installed	\N		0	1471529378
-591	0	webservice_xmlrpc	\N	2016052300	Starting plugin installation	\N		0	1471529378
-592	0	webservice_xmlrpc	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-593	0	webservice_xmlrpc	2016052300	2016052300	Plugin installed	\N		0	1471529378
-594	0	repository_alfresco	\N	2016052300	Starting plugin installation	\N		0	1471529378
-595	0	repository_alfresco	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529378
-596	0	repository_alfresco	2016052300	2016052300	Plugin installed	\N		0	1471529378
-597	0	repository_areafiles	\N	2016052300	Starting plugin installation	\N		0	1471529379
-598	0	repository_areafiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-599	0	repository_areafiles	2016052300	2016052300	Plugin installed	\N		0	1471529379
-600	0	repository_boxnet	\N	2016052300	Starting plugin installation	\N		0	1471529379
-601	0	repository_boxnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-602	0	repository_boxnet	2016052300	2016052300	Plugin installed	\N		0	1471529379
-603	0	repository_coursefiles	\N	2016052300	Starting plugin installation	\N		0	1471529379
-604	0	repository_coursefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-605	0	repository_coursefiles	2016052300	2016052300	Plugin installed	\N		0	1471529379
-606	0	repository_dropbox	\N	2016052300	Starting plugin installation	\N		0	1471529379
-607	0	repository_dropbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-608	0	repository_dropbox	2016052300	2016052300	Plugin installed	\N		0	1471529379
-609	0	repository_equella	\N	2016052300	Starting plugin installation	\N		0	1471529379
-610	0	repository_equella	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-611	0	repository_equella	2016052300	2016052300	Plugin installed	\N		0	1471529379
-612	0	repository_filesystem	\N	2016052300	Starting plugin installation	\N		0	1471529379
-613	0	repository_filesystem	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529379
-614	0	repository_filesystem	2016052300	2016052300	Plugin installed	\N		0	1471529380
-615	0	repository_flickr	\N	2016052300	Starting plugin installation	\N		0	1471529380
-616	0	repository_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-617	0	repository_flickr	2016052300	2016052300	Plugin installed	\N		0	1471529380
-618	0	repository_flickr_public	\N	2016052300	Starting plugin installation	\N		0	1471529380
-619	0	repository_flickr_public	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-620	0	repository_flickr_public	2016052300	2016052300	Plugin installed	\N		0	1471529380
-621	0	repository_googledocs	\N	2016052300	Starting plugin installation	\N		0	1471529380
-622	0	repository_googledocs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-623	0	repository_googledocs	2016052300	2016052300	Plugin installed	\N		0	1471529380
-624	0	repository_local	\N	2016052300	Starting plugin installation	\N		0	1471529380
-625	0	repository_local	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-626	0	repository_local	2016052300	2016052300	Plugin installed	\N		0	1471529380
-627	0	repository_merlot	\N	2016052300	Starting plugin installation	\N		0	1471529380
-628	0	repository_merlot	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-629	0	repository_merlot	2016052300	2016052300	Plugin installed	\N		0	1471529380
-630	0	repository_picasa	\N	2016052300	Starting plugin installation	\N		0	1471529380
-631	0	repository_picasa	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-632	0	repository_picasa	2016052300	2016052300	Plugin installed	\N		0	1471529380
-633	0	repository_recent	\N	2016052300	Starting plugin installation	\N		0	1471529380
-634	0	repository_recent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529380
-635	0	repository_recent	2016052300	2016052300	Plugin installed	\N		0	1471529381
-636	0	repository_s3	\N	2016052300	Starting plugin installation	\N		0	1471529381
-637	0	repository_s3	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529381
-638	0	repository_s3	2016052300	2016052300	Plugin installed	\N		0	1471529381
-639	0	repository_skydrive	\N	2016052300	Starting plugin installation	\N		0	1471529381
-640	0	repository_skydrive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529381
-641	0	repository_skydrive	2016052300	2016052300	Plugin installed	\N		0	1471529381
-642	0	repository_upload	\N	2016052300	Starting plugin installation	\N		0	1471529381
-643	0	repository_upload	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529381
-644	0	repository_upload	2016052300	2016052300	Plugin installed	\N		0	1471529381
-645	0	repository_url	\N	2016052300	Starting plugin installation	\N		0	1471529381
-646	0	repository_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529381
-647	0	repository_url	2016052300	2016052300	Plugin installed	\N		0	1471529382
-648	0	repository_user	\N	2016052300	Starting plugin installation	\N		0	1471529382
-649	0	repository_user	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-650	0	repository_user	2016052300	2016052300	Plugin installed	\N		0	1471529382
-651	0	repository_webdav	\N	2016052300	Starting plugin installation	\N		0	1471529382
-652	0	repository_webdav	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-653	0	repository_webdav	2016052300	2016052300	Plugin installed	\N		0	1471529382
-654	0	repository_wikimedia	\N	2016052300	Starting plugin installation	\N		0	1471529382
-655	0	repository_wikimedia	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-656	0	repository_wikimedia	2016052300	2016052300	Plugin installed	\N		0	1471529382
-657	0	repository_youtube	\N	2016052300	Starting plugin installation	\N		0	1471529382
-658	0	repository_youtube	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-659	0	repository_youtube	2016052300	2016052300	Plugin installed	\N		0	1471529382
-660	0	portfolio_boxnet	\N	2016052300	Starting plugin installation	\N		0	1471529382
-661	0	portfolio_boxnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-662	0	portfolio_boxnet	2016052300	2016052300	Plugin installed	\N		0	1471529382
-663	0	portfolio_download	\N	2016052300	Starting plugin installation	\N		0	1471529382
-664	0	portfolio_download	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529382
-665	0	portfolio_download	2016052300	2016052300	Plugin installed	\N		0	1471529382
-666	0	portfolio_flickr	\N	2016052300	Starting plugin installation	\N		0	1471529382
-667	0	portfolio_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-668	0	portfolio_flickr	2016052300	2016052300	Plugin installed	\N		0	1471529383
-669	0	portfolio_googledocs	\N	2016052300	Starting plugin installation	\N		0	1471529383
-670	0	portfolio_googledocs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-671	0	portfolio_googledocs	2016052300	2016052300	Plugin installed	\N		0	1471529383
-672	0	portfolio_mahara	\N	2016052300	Starting plugin installation	\N		0	1471529383
-673	0	portfolio_mahara	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-674	0	portfolio_mahara	2016052300	2016052300	Plugin installed	\N		0	1471529383
-675	0	portfolio_picasa	\N	2016052300	Starting plugin installation	\N		0	1471529383
-676	0	portfolio_picasa	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-677	0	portfolio_picasa	2016052300	2016052300	Plugin installed	\N		0	1471529383
-678	0	search_solr	\N	2016052300	Starting plugin installation	\N		0	1471529383
-679	0	search_solr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-680	0	search_solr	2016052300	2016052300	Plugin installed	\N		0	1471529383
-681	0	qbehaviour_adaptive	\N	2016052300	Starting plugin installation	\N		0	1471529383
-682	0	qbehaviour_adaptive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-683	0	qbehaviour_adaptive	2016052300	2016052300	Plugin installed	\N		0	1471529383
-684	0	qbehaviour_adaptivenopenalty	\N	2016052300	Starting plugin installation	\N		0	1471529383
-685	0	qbehaviour_adaptivenopenalty	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-686	0	qbehaviour_adaptivenopenalty	2016052300	2016052300	Plugin installed	\N		0	1471529383
-687	0	qbehaviour_deferredcbm	\N	2016052300	Starting plugin installation	\N		0	1471529383
-688	0	qbehaviour_deferredcbm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529383
-689	0	qbehaviour_deferredcbm	2016052300	2016052300	Plugin installed	\N		0	1471529384
-690	0	qbehaviour_deferredfeedback	\N	2016052300	Starting plugin installation	\N		0	1471529384
-691	0	qbehaviour_deferredfeedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-692	0	qbehaviour_deferredfeedback	2016052300	2016052300	Plugin installed	\N		0	1471529384
-693	0	qbehaviour_immediatecbm	\N	2016052300	Starting plugin installation	\N		0	1471529384
-694	0	qbehaviour_immediatecbm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-695	0	qbehaviour_immediatecbm	2016052300	2016052300	Plugin installed	\N		0	1471529384
-696	0	qbehaviour_immediatefeedback	\N	2016052300	Starting plugin installation	\N		0	1471529384
-697	0	qbehaviour_immediatefeedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-698	0	qbehaviour_immediatefeedback	2016052300	2016052300	Plugin installed	\N		0	1471529384
-699	0	qbehaviour_informationitem	\N	2016052300	Starting plugin installation	\N		0	1471529384
-700	0	qbehaviour_informationitem	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-701	0	qbehaviour_informationitem	2016052300	2016052300	Plugin installed	\N		0	1471529384
-702	0	qbehaviour_interactive	\N	2016052300	Starting plugin installation	\N		0	1471529384
-703	0	qbehaviour_interactive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-704	0	qbehaviour_interactive	2016052300	2016052300	Plugin installed	\N		0	1471529384
-705	0	qbehaviour_interactivecountback	\N	2016052300	Starting plugin installation	\N		0	1471529384
-706	0	qbehaviour_interactivecountback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-707	0	qbehaviour_interactivecountback	2016052300	2016052300	Plugin installed	\N		0	1471529384
-708	0	qbehaviour_manualgraded	\N	2016052300	Starting plugin installation	\N		0	1471529384
-709	0	qbehaviour_manualgraded	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-710	0	qbehaviour_manualgraded	2016052300	2016052300	Plugin installed	\N		0	1471529384
-711	0	qbehaviour_missing	\N	2016052300	Starting plugin installation	\N		0	1471529384
-712	0	qbehaviour_missing	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529384
-713	0	qbehaviour_missing	2016052300	2016052300	Plugin installed	\N		0	1471529384
-714	0	qformat_aiken	\N	2016052300	Starting plugin installation	\N		0	1471529385
-715	0	qformat_aiken	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-716	0	qformat_aiken	2016052300	2016052300	Plugin installed	\N		0	1471529385
-717	0	qformat_blackboard_six	\N	2016052300	Starting plugin installation	\N		0	1471529385
-718	0	qformat_blackboard_six	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-719	0	qformat_blackboard_six	2016052300	2016052300	Plugin installed	\N		0	1471529385
-720	0	qformat_examview	\N	2016052300	Starting plugin installation	\N		0	1471529385
-721	0	qformat_examview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-722	0	qformat_examview	2016052300	2016052300	Plugin installed	\N		0	1471529385
-723	0	qformat_gift	\N	2016052300	Starting plugin installation	\N		0	1471529385
-724	0	qformat_gift	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-725	0	qformat_gift	2016052300	2016052300	Plugin installed	\N		0	1471529385
-726	0	qformat_missingword	\N	2016052300	Starting plugin installation	\N		0	1471529385
-727	0	qformat_missingword	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-728	0	qformat_missingword	2016052300	2016052300	Plugin installed	\N		0	1471529385
-729	0	qformat_multianswer	\N	2016052300	Starting plugin installation	\N		0	1471529385
-730	0	qformat_multianswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-731	0	qformat_multianswer	2016052300	2016052300	Plugin installed	\N		0	1471529385
-732	0	qformat_webct	\N	2016052300	Starting plugin installation	\N		0	1471529385
-733	0	qformat_webct	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-734	0	qformat_webct	2016052300	2016052300	Plugin installed	\N		0	1471529385
-735	0	qformat_xhtml	\N	2016052300	Starting plugin installation	\N		0	1471529385
-736	0	qformat_xhtml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-737	0	qformat_xhtml	2016052300	2016052300	Plugin installed	\N		0	1471529385
-738	0	qformat_xml	\N	2016052300	Starting plugin installation	\N		0	1471529385
-739	0	qformat_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529385
-740	0	qformat_xml	2016052300	2016052300	Plugin installed	\N		0	1471529386
-741	0	tool_assignmentupgrade	\N	2016052300	Starting plugin installation	\N		0	1471529386
-742	0	tool_assignmentupgrade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-743	0	tool_assignmentupgrade	2016052300	2016052300	Plugin installed	\N		0	1471529386
-744	0	tool_availabilityconditions	\N	2016052300	Starting plugin installation	\N		0	1471529386
-745	0	tool_availabilityconditions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-746	0	tool_availabilityconditions	2016052300	2016052300	Plugin installed	\N		0	1471529386
-747	0	tool_behat	\N	2016052300	Starting plugin installation	\N		0	1471529386
-748	0	tool_behat	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-749	0	tool_behat	2016052300	2016052300	Plugin installed	\N		0	1471529386
-750	0	tool_capability	\N	2016052300	Starting plugin installation	\N		0	1471529386
-751	0	tool_capability	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-752	0	tool_capability	2016052300	2016052300	Plugin installed	\N		0	1471529386
-753	0	tool_cohortroles	\N	2016052300	Starting plugin installation	\N		0	1471529386
-754	0	tool_cohortroles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-755	0	tool_cohortroles	2016052300	2016052300	Plugin installed	\N		0	1471529386
-756	0	tool_customlang	\N	2016052300	Starting plugin installation	\N		0	1471529386
-757	0	tool_customlang	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-758	0	tool_customlang	2016052300	2016052300	Plugin installed	\N		0	1471529386
-759	0	tool_dbtransfer	\N	2016052300	Starting plugin installation	\N		0	1471529386
-760	0	tool_dbtransfer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529386
-761	0	tool_dbtransfer	2016052300	2016052300	Plugin installed	\N		0	1471529386
-762	0	tool_filetypes	\N	2016052300	Starting plugin installation	\N		0	1471529387
-763	0	tool_filetypes	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-764	0	tool_filetypes	2016052300	2016052300	Plugin installed	\N		0	1471529387
-765	0	tool_generator	\N	2016052300	Starting plugin installation	\N		0	1471529387
-766	0	tool_generator	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-767	0	tool_generator	2016052300	2016052300	Plugin installed	\N		0	1471529387
-768	0	tool_health	\N	2016052300	Starting plugin installation	\N		0	1471529387
-769	0	tool_health	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-770	0	tool_health	2016052300	2016052300	Plugin installed	\N		0	1471529387
-771	0	tool_innodb	\N	2016052300	Starting plugin installation	\N		0	1471529387
-772	0	tool_innodb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-773	0	tool_innodb	2016052300	2016052300	Plugin installed	\N		0	1471529387
-774	0	tool_installaddon	\N	2016052300	Starting plugin installation	\N		0	1471529387
-775	0	tool_installaddon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-776	0	tool_installaddon	2016052300	2016052300	Plugin installed	\N		0	1471529387
-777	0	tool_langimport	\N	2016052300	Starting plugin installation	\N		0	1471529387
-778	0	tool_langimport	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-779	0	tool_langimport	2016052300	2016052300	Plugin installed	\N		0	1471529387
-780	0	tool_log	\N	2016052300	Starting plugin installation	\N		0	1471529387
-781	0	tool_log	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-782	0	tool_log	2016052300	2016052300	Plugin installed	\N		0	1471529387
-783	0	tool_lp	\N	2016052300	Starting plugin installation	\N		0	1471529387
-784	0	tool_lp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529387
-785	0	tool_lp	2016052300	2016052300	Plugin installed	\N		0	1471529388
-786	0	tool_lpmigrate	\N	2016052300	Starting plugin installation	\N		0	1471529388
-787	0	tool_lpmigrate	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529388
-788	0	tool_lpmigrate	2016052300	2016052300	Plugin installed	\N		0	1471529388
-789	0	tool_messageinbound	\N	2016052300	Starting plugin installation	\N		0	1471529388
-790	0	tool_messageinbound	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529388
-791	0	tool_messageinbound	2016052300	2016052300	Plugin installed	\N		0	1471529388
-792	0	tool_mobile	\N	2016052300	Starting plugin installation	\N		0	1471529388
-793	0	tool_mobile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529388
-794	0	tool_mobile	2016052300	2016052300	Plugin installed	\N		0	1471529388
-795	0	tool_monitor	\N	2016052305	Starting plugin installation	\N		0	1471529388
-796	0	tool_monitor	2016052305	2016052305	Upgrade savepoint reached	\N		0	1471529388
-797	0	tool_monitor	2016052305	2016052305	Plugin installed	\N		0	1471529388
-798	0	tool_multilangupgrade	\N	2016052300	Starting plugin installation	\N		0	1471529388
-799	0	tool_multilangupgrade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529388
-800	0	tool_multilangupgrade	2016052300	2016052300	Plugin installed	\N		0	1471529389
-801	0	tool_phpunit	\N	2016052300	Starting plugin installation	\N		0	1471529389
-802	0	tool_phpunit	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-803	0	tool_phpunit	2016052300	2016052300	Plugin installed	\N		0	1471529389
-804	0	tool_profiling	\N	2016052300	Starting plugin installation	\N		0	1471529389
-805	0	tool_profiling	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-806	0	tool_profiling	2016052300	2016052300	Plugin installed	\N		0	1471529389
-807	0	tool_recyclebin	\N	2016052300	Starting plugin installation	\N		0	1471529389
-808	0	tool_recyclebin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-809	0	tool_recyclebin	2016052300	2016052300	Plugin installed	\N		0	1471529389
-810	0	tool_replace	\N	2016052300	Starting plugin installation	\N		0	1471529389
-811	0	tool_replace	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-812	0	tool_replace	2016052300	2016052300	Plugin installed	\N		0	1471529389
-813	0	tool_spamcleaner	\N	2016052300	Starting plugin installation	\N		0	1471529389
-814	0	tool_spamcleaner	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-815	0	tool_spamcleaner	2016052300	2016052300	Plugin installed	\N		0	1471529389
-816	0	tool_task	\N	2016052300	Starting plugin installation	\N		0	1471529389
-817	0	tool_task	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-818	0	tool_task	2016052300	2016052300	Plugin installed	\N		0	1471529389
-819	0	tool_templatelibrary	\N	2016052300	Starting plugin installation	\N		0	1471529389
-820	0	tool_templatelibrary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-821	0	tool_templatelibrary	2016052300	2016052300	Plugin installed	\N		0	1471529389
-822	0	tool_unsuproles	\N	2016052300	Starting plugin installation	\N		0	1471529389
-823	0	tool_unsuproles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529389
-824	0	tool_unsuproles	2016052300	2016052300	Plugin installed	\N		0	1471529390
-825	0	tool_uploadcourse	\N	2016052300	Starting plugin installation	\N		0	1471529390
-826	0	tool_uploadcourse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-827	0	tool_uploadcourse	2016052300	2016052300	Plugin installed	\N		0	1471529390
-828	0	tool_uploaduser	\N	2016052300	Starting plugin installation	\N		0	1471529390
-829	0	tool_uploaduser	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-830	0	tool_uploaduser	2016052300	2016052300	Plugin installed	\N		0	1471529390
-831	0	tool_xmldb	\N	2016052300	Starting plugin installation	\N		0	1471529390
-832	0	tool_xmldb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-833	0	tool_xmldb	2016052300	2016052300	Plugin installed	\N		0	1471529390
-834	0	cachestore_file	\N	2016052300	Starting plugin installation	\N		0	1471529390
-835	0	cachestore_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-836	0	cachestore_file	2016052300	2016052300	Plugin installed	\N		0	1471529390
-837	0	cachestore_memcache	\N	2016052300	Starting plugin installation	\N		0	1471529390
-838	0	cachestore_memcache	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-839	0	cachestore_memcache	2016052300	2016052300	Plugin installed	\N		0	1471529390
-840	0	cachestore_memcached	\N	2016052300	Starting plugin installation	\N		0	1471529390
-841	0	cachestore_memcached	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-842	0	cachestore_memcached	2016052300	2016052300	Plugin installed	\N		0	1471529390
-843	0	cachestore_mongodb	\N	2016052300	Starting plugin installation	\N		0	1471529390
-844	0	cachestore_mongodb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-845	0	cachestore_mongodb	2016052300	2016052300	Plugin installed	\N		0	1471529390
-846	0	cachestore_session	\N	2016052300	Starting plugin installation	\N		0	1471529390
-847	0	cachestore_session	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529390
-848	0	cachestore_session	2016052300	2016052300	Plugin installed	\N		0	1471529391
-849	0	cachestore_static	\N	2016052300	Starting plugin installation	\N		0	1471529391
-850	0	cachestore_static	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-851	0	cachestore_static	2016052300	2016052300	Plugin installed	\N		0	1471529391
-852	0	cachelock_file	\N	2016052300	Starting plugin installation	\N		0	1471529391
-853	0	cachelock_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-854	0	cachelock_file	2016052300	2016052300	Plugin installed	\N		0	1471529391
-855	0	theme_base	\N	2016052300	Starting plugin installation	\N		0	1471529391
-856	0	theme_base	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-857	0	theme_base	2016052300	2016052300	Plugin installed	\N		0	1471529391
-858	0	theme_bootstrapbase	\N	2016052300	Starting plugin installation	\N		0	1471529391
-859	0	theme_bootstrapbase	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-860	0	theme_bootstrapbase	2016052300	2016052300	Plugin installed	\N		0	1471529391
-861	0	theme_canvas	\N	2016052300	Starting plugin installation	\N		0	1471529391
-862	0	theme_canvas	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-863	0	theme_canvas	2016052300	2016052300	Plugin installed	\N		0	1471529391
-864	0	theme_clean	\N	2016052300	Starting plugin installation	\N		0	1471529391
-865	0	theme_clean	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-866	0	theme_clean	2016052300	2016052300	Plugin installed	\N		0	1471529391
-867	0	theme_more	\N	2016052300	Starting plugin installation	\N		0	1471529391
-868	0	theme_more	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-869	0	theme_more	2016052300	2016052300	Plugin installed	\N		0	1471529391
-870	0	assignsubmission_comments	\N	2016052300	Starting plugin installation	\N		0	1471529391
-871	0	assignsubmission_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529391
-872	0	assignsubmission_comments	2016052300	2016052300	Plugin installed	\N		0	1471529392
-873	0	assignsubmission_file	\N	2016052300	Starting plugin installation	\N		0	1471529392
-874	0	assignsubmission_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529392
-875	0	assignsubmission_file	2016052300	2016052300	Plugin installed	\N		0	1471529392
-876	0	assignsubmission_onlinetext	\N	2016052300	Starting plugin installation	\N		0	1471529392
-877	0	assignsubmission_onlinetext	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529392
-878	0	assignsubmission_onlinetext	2016052300	2016052300	Plugin installed	\N		0	1471529392
-879	0	assignfeedback_comments	\N	2016052300	Starting plugin installation	\N		0	1471529392
-880	0	assignfeedback_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529392
-881	0	assignfeedback_comments	2016052300	2016052300	Plugin installed	\N		0	1471529392
-882	0	assignfeedback_editpdf	\N	2016052300	Starting plugin installation	\N		0	1471529392
-883	0	assignfeedback_editpdf	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529392
-884	0	assignfeedback_editpdf	2016052300	2016052300	Plugin installed	\N		0	1471529392
-885	0	assignfeedback_file	\N	2016052300	Starting plugin installation	\N		0	1471529392
-886	0	assignfeedback_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529392
-887	0	assignfeedback_file	2016052300	2016052300	Plugin installed	\N		0	1471529392
-888	0	assignfeedback_offline	\N	2016052300	Starting plugin installation	\N		0	1471529392
-889	0	assignfeedback_offline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-890	0	assignfeedback_offline	2016052300	2016052300	Plugin installed	\N		0	1471529393
-891	0	assignment_offline	\N	2016052300	Starting plugin installation	\N		0	1471529393
-892	0	assignment_offline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-893	0	assignment_offline	2016052300	2016052300	Plugin installed	\N		0	1471529393
-894	0	assignment_online	\N	2016052300	Starting plugin installation	\N		0	1471529393
-895	0	assignment_online	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-896	0	assignment_online	2016052300	2016052300	Plugin installed	\N		0	1471529393
-897	0	assignment_upload	\N	2016052300	Starting plugin installation	\N		0	1471529393
-898	0	assignment_upload	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-899	0	assignment_upload	2016052300	2016052300	Plugin installed	\N		0	1471529393
-900	0	assignment_uploadsingle	\N	2016052300	Starting plugin installation	\N		0	1471529393
-901	0	assignment_uploadsingle	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-902	0	assignment_uploadsingle	2016052300	2016052300	Plugin installed	\N		0	1471529393
-903	0	booktool_exportimscp	\N	2016052300	Starting plugin installation	\N		0	1471529393
-904	0	booktool_exportimscp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-905	0	booktool_exportimscp	2016052300	2016052300	Plugin installed	\N		0	1471529393
-906	0	booktool_importhtml	\N	2016052300	Starting plugin installation	\N		0	1471529393
-907	0	booktool_importhtml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-908	0	booktool_importhtml	2016052300	2016052300	Plugin installed	\N		0	1471529393
-909	0	booktool_print	\N	2016052300	Starting plugin installation	\N		0	1471529393
-910	0	booktool_print	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529393
-911	0	booktool_print	2016052300	2016052300	Plugin installed	\N		0	1471529394
-912	0	datafield_checkbox	\N	2016052300	Starting plugin installation	\N		0	1471529394
-913	0	datafield_checkbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-914	0	datafield_checkbox	2016052300	2016052300	Plugin installed	\N		0	1471529394
-915	0	datafield_date	\N	2016052300	Starting plugin installation	\N		0	1471529394
-916	0	datafield_date	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-917	0	datafield_date	2016052300	2016052300	Plugin installed	\N		0	1471529394
-918	0	datafield_file	\N	2016052300	Starting plugin installation	\N		0	1471529394
-919	0	datafield_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-920	0	datafield_file	2016052300	2016052300	Plugin installed	\N		0	1471529394
-921	0	datafield_latlong	\N	2016052300	Starting plugin installation	\N		0	1471529394
-922	0	datafield_latlong	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-923	0	datafield_latlong	2016052300	2016052300	Plugin installed	\N		0	1471529394
-924	0	datafield_menu	\N	2016052300	Starting plugin installation	\N		0	1471529394
-925	0	datafield_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-926	0	datafield_menu	2016052300	2016052300	Plugin installed	\N		0	1471529394
-927	0	datafield_multimenu	\N	2016052300	Starting plugin installation	\N		0	1471529394
-928	0	datafield_multimenu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-929	0	datafield_multimenu	2016052300	2016052300	Plugin installed	\N		0	1471529394
-930	0	datafield_number	\N	2016052300	Starting plugin installation	\N		0	1471529394
-931	0	datafield_number	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529394
-932	0	datafield_number	2016052300	2016052300	Plugin installed	\N		0	1471529394
-933	0	datafield_picture	\N	2016052300	Starting plugin installation	\N		0	1471529394
-934	0	datafield_picture	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-935	0	datafield_picture	2016052300	2016052300	Plugin installed	\N		0	1471529395
-936	0	datafield_radiobutton	\N	2016052300	Starting plugin installation	\N		0	1471529395
-937	0	datafield_radiobutton	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-938	0	datafield_radiobutton	2016052300	2016052300	Plugin installed	\N		0	1471529395
-939	0	datafield_text	\N	2016052300	Starting plugin installation	\N		0	1471529395
-940	0	datafield_text	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-941	0	datafield_text	2016052300	2016052300	Plugin installed	\N		0	1471529395
-942	0	datafield_textarea	\N	2016052300	Starting plugin installation	\N		0	1471529395
-943	0	datafield_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-944	0	datafield_textarea	2016052300	2016052300	Plugin installed	\N		0	1471529395
-945	0	datafield_url	\N	2016052300	Starting plugin installation	\N		0	1471529395
-946	0	datafield_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-947	0	datafield_url	2016052300	2016052300	Plugin installed	\N		0	1471529395
-948	0	datapreset_imagegallery	\N	2016052300	Starting plugin installation	\N		0	1471529395
-949	0	datapreset_imagegallery	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-950	0	datapreset_imagegallery	2016052300	2016052300	Plugin installed	\N		0	1471529395
-951	0	ltiservice_memberships	\N	2016052300	Starting plugin installation	\N		0	1471529395
-952	0	ltiservice_memberships	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-953	0	ltiservice_memberships	2016052300	2016052300	Plugin installed	\N		0	1471529395
-954	0	ltiservice_profile	\N	2016052300	Starting plugin installation	\N		0	1471529395
-955	0	ltiservice_profile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-956	0	ltiservice_profile	2016052300	2016052300	Plugin installed	\N		0	1471529395
-957	0	ltiservice_toolproxy	\N	2016052300	Starting plugin installation	\N		0	1471529395
-958	0	ltiservice_toolproxy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529395
-959	0	ltiservice_toolproxy	2016052300	2016052300	Plugin installed	\N		0	1471529396
-960	0	ltiservice_toolsettings	\N	2016052300	Starting plugin installation	\N		0	1471529396
-961	0	ltiservice_toolsettings	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-962	0	ltiservice_toolsettings	2016052300	2016052300	Plugin installed	\N		0	1471529396
-963	0	quiz_grading	\N	2016052300	Starting plugin installation	\N		0	1471529396
-964	0	quiz_grading	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-965	0	quiz_grading	2016052300	2016052300	Plugin installed	\N		0	1471529396
-966	0	quiz_overview	\N	2016052300	Starting plugin installation	\N		0	1471529396
-967	0	quiz_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-968	0	quiz_overview	2016052300	2016052300	Plugin installed	\N		0	1471529396
-969	0	quiz_responses	\N	2016052300	Starting plugin installation	\N		0	1471529396
-970	0	quiz_responses	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-971	0	quiz_responses	2016052300	2016052300	Plugin installed	\N		0	1471529396
-972	0	quiz_statistics	\N	2016052300	Starting plugin installation	\N		0	1471529396
-973	0	quiz_statistics	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-974	0	quiz_statistics	2016052300	2016052300	Plugin installed	\N		0	1471529396
-975	0	quizaccess_delaybetweenattempts	\N	2016052300	Starting plugin installation	\N		0	1471529396
-976	0	quizaccess_delaybetweenattempts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529396
-977	0	quizaccess_delaybetweenattempts	2016052300	2016052300	Plugin installed	\N		0	1471529396
-978	0	quizaccess_ipaddress	\N	2016052300	Starting plugin installation	\N		0	1471529396
-979	0	quizaccess_ipaddress	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-980	0	quizaccess_ipaddress	2016052300	2016052300	Plugin installed	\N		0	1471529397
-981	0	quizaccess_numattempts	\N	2016052300	Starting plugin installation	\N		0	1471529397
-982	0	quizaccess_numattempts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-983	0	quizaccess_numattempts	2016052300	2016052300	Plugin installed	\N		0	1471529397
-984	0	quizaccess_openclosedate	\N	2016052300	Starting plugin installation	\N		0	1471529397
-985	0	quizaccess_openclosedate	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-986	0	quizaccess_openclosedate	2016052300	2016052300	Plugin installed	\N		0	1471529397
-987	0	quizaccess_password	\N	2016052300	Starting plugin installation	\N		0	1471529397
-988	0	quizaccess_password	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-989	0	quizaccess_password	2016052300	2016052300	Plugin installed	\N		0	1471529397
-990	0	quizaccess_safebrowser	\N	2016052300	Starting plugin installation	\N		0	1471529397
-991	0	quizaccess_safebrowser	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-992	0	quizaccess_safebrowser	2016052300	2016052300	Plugin installed	\N		0	1471529397
-993	0	quizaccess_securewindow	\N	2016052300	Starting plugin installation	\N		0	1471529397
-994	0	quizaccess_securewindow	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-995	0	quizaccess_securewindow	2016052300	2016052300	Plugin installed	\N		0	1471529397
-996	0	quizaccess_timelimit	\N	2016052300	Starting plugin installation	\N		0	1471529397
-997	0	quizaccess_timelimit	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-998	0	quizaccess_timelimit	2016052300	2016052300	Plugin installed	\N		0	1471529397
-999	0	scormreport_basic	\N	2016052300	Starting plugin installation	\N		0	1471529397
-1000	0	scormreport_basic	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-1001	0	scormreport_basic	2016052300	2016052300	Plugin installed	\N		0	1471529397
-1002	0	scormreport_graphs	\N	2016052300	Starting plugin installation	\N		0	1471529397
-1003	0	scormreport_graphs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-1004	0	scormreport_graphs	2016052300	2016052300	Plugin installed	\N		0	1471529397
-1005	0	scormreport_interactions	\N	2016052300	Starting plugin installation	\N		0	1471529397
-1006	0	scormreport_interactions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529397
-1007	0	scormreport_interactions	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1008	0	scormreport_objectives	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1009	0	scormreport_objectives	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1010	0	scormreport_objectives	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1011	0	workshopform_accumulative	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1012	0	workshopform_accumulative	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1013	0	workshopform_accumulative	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1014	0	workshopform_comments	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1015	0	workshopform_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1016	0	workshopform_comments	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1017	0	workshopform_numerrors	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1018	0	workshopform_numerrors	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1019	0	workshopform_numerrors	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1020	0	workshopform_rubric	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1021	0	workshopform_rubric	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1022	0	workshopform_rubric	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1023	0	workshopallocation_manual	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1024	0	workshopallocation_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1025	0	workshopallocation_manual	2016052300	2016052300	Plugin installed	\N		0	1471529398
-1026	0	workshopallocation_random	\N	2016052300	Starting plugin installation	\N		0	1471529398
-1027	0	workshopallocation_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529398
-1028	0	workshopallocation_random	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1029	0	workshopallocation_scheduled	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1030	0	workshopallocation_scheduled	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1031	0	workshopallocation_scheduled	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1032	0	workshopeval_best	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1033	0	workshopeval_best	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1034	0	workshopeval_best	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1035	0	atto_accessibilitychecker	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1036	0	atto_accessibilitychecker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1037	0	atto_accessibilitychecker	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1038	0	atto_accessibilityhelper	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1039	0	atto_accessibilityhelper	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1040	0	atto_accessibilityhelper	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1041	0	atto_align	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1042	0	atto_align	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1043	0	atto_align	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1044	0	atto_backcolor	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1045	0	atto_backcolor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1046	0	atto_backcolor	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1047	0	atto_bold	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1048	0	atto_bold	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1049	0	atto_bold	2016052300	2016052300	Plugin installed	\N		0	1471529399
-1050	0	atto_charmap	\N	2016052300	Starting plugin installation	\N		0	1471529399
-1051	0	atto_charmap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529399
-1052	0	atto_charmap	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1053	0	atto_clear	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1054	0	atto_clear	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1055	0	atto_clear	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1056	0	atto_collapse	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1057	0	atto_collapse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1058	0	atto_collapse	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1059	0	atto_emoticon	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1060	0	atto_emoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1061	0	atto_emoticon	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1062	0	atto_equation	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1063	0	atto_equation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1064	0	atto_equation	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1065	0	atto_fontcolor	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1066	0	atto_fontcolor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1067	0	atto_fontcolor	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1068	0	atto_html	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1069	0	atto_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1070	0	atto_html	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1071	0	atto_image	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1072	0	atto_image	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1073	0	atto_image	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1074	0	atto_indent	\N	2016052300	Starting plugin installation	\N		0	1471529400
-1075	0	atto_indent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529400
-1076	0	atto_indent	2016052300	2016052300	Plugin installed	\N		0	1471529400
-1077	0	atto_italic	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1078	0	atto_italic	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1079	0	atto_italic	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1080	0	atto_link	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1081	0	atto_link	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1082	0	atto_link	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1083	0	atto_managefiles	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1084	0	atto_managefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1085	0	atto_managefiles	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1086	0	atto_media	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1087	0	atto_media	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1088	0	atto_media	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1089	0	atto_noautolink	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1090	0	atto_noautolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1091	0	atto_noautolink	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1092	0	atto_orderedlist	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1093	0	atto_orderedlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1094	0	atto_orderedlist	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1095	0	atto_rtl	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1096	0	atto_rtl	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529401
-1097	0	atto_rtl	2016052300	2016052300	Plugin installed	\N		0	1471529401
-1098	0	atto_strike	\N	2016052300	Starting plugin installation	\N		0	1471529401
-1099	0	atto_strike	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1100	0	atto_strike	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1101	0	atto_subscript	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1102	0	atto_subscript	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1103	0	atto_subscript	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1104	0	atto_superscript	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1105	0	atto_superscript	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1106	0	atto_superscript	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1107	0	atto_table	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1108	0	atto_table	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1109	0	atto_table	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1110	0	atto_title	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1111	0	atto_title	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1112	0	atto_title	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1113	0	atto_underline	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1114	0	atto_underline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1115	0	atto_underline	2016052300	2016052300	Plugin installed	\N		0	1471529402
-1116	0	atto_undo	\N	2016052300	Starting plugin installation	\N		0	1471529402
-1117	0	atto_undo	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529402
-1118	0	atto_undo	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1119	0	atto_unorderedlist	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1120	0	atto_unorderedlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1121	0	atto_unorderedlist	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1122	0	tinymce_ctrlhelp	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1123	0	tinymce_ctrlhelp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1124	0	tinymce_ctrlhelp	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1125	0	tinymce_managefiles	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1126	0	tinymce_managefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1127	0	tinymce_managefiles	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1128	0	tinymce_moodleemoticon	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1129	0	tinymce_moodleemoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1130	0	tinymce_moodleemoticon	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1131	0	tinymce_moodleimage	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1132	0	tinymce_moodleimage	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1133	0	tinymce_moodleimage	2016052300	2016052300	Plugin installed	\N		0	1471529403
-1134	0	tinymce_moodlemedia	\N	2016052300	Starting plugin installation	\N		0	1471529403
-1135	0	tinymce_moodlemedia	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529403
-1136	0	tinymce_moodlemedia	2016052300	2016052300	Plugin installed	\N		0	1471529404
-1137	0	tinymce_moodlenolink	\N	2016052300	Starting plugin installation	\N		0	1471529404
-1138	0	tinymce_moodlenolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529404
-1139	0	tinymce_moodlenolink	2016052300	2016052300	Plugin installed	\N		0	1471529404
-1140	0	tinymce_pdw	\N	2016052300	Starting plugin installation	\N		0	1471529404
-1141	0	tinymce_pdw	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529404
-1142	0	tinymce_pdw	2016052300	2016052300	Plugin installed	\N		0	1471529404
-1143	0	tinymce_spellchecker	\N	2016052300	Starting plugin installation	\N		0	1471529404
-1144	0	tinymce_spellchecker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529404
-1145	0	tinymce_spellchecker	2016052300	2016052300	Plugin installed	\N		0	1471529405
-1146	0	tinymce_wrap	\N	2016052300	Starting plugin installation	\N		0	1471529405
-1147	0	tinymce_wrap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529405
-1148	0	tinymce_wrap	2016052300	2016052300	Plugin installed	\N		0	1471529405
-1149	0	logstore_database	\N	2016052300	Starting plugin installation	\N		0	1471529405
-1150	0	logstore_database	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529405
-1151	0	logstore_database	2016052300	2016052300	Plugin installed	\N		0	1471529405
-1152	0	logstore_legacy	\N	2016052300	Starting plugin installation	\N		0	1471529405
-1153	0	logstore_legacy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529405
-1154	0	logstore_legacy	2016052300	2016052300	Plugin installed	\N		0	1471529405
-1155	0	logstore_standard	\N	2016052300	Starting plugin installation	\N		0	1471529405
-1156	0	logstore_standard	2016052300	2016052300	Upgrade savepoint reached	\N		0	1471529405
-1157	0	logstore_standard	2016052300	2016052300	Plugin installed	\N		0	1471529405
-1158	0	local_activity_bookmark	\N	2015070800	Starting plugin installation	\N		0	1471529405
-1159	0	local_activity_bookmark	2015070800	2015070800	Upgrade savepoint reached	\N		0	1471529405
-1160	0	local_activity_bookmark	2015070800	2015070800	Plugin installed	\N		0	1471529406
+1	0	core	2016052301	2016052301	Upgrade savepoint reached	\N		0	1472545687
+2	0	core	2016052301	2016052301	Core installed	\N		0	1472545689
+3	0	antivirus_clamav	\N	2016052300	Starting plugin installation	\N		0	1472545689
+4	0	antivirus_clamav	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545689
+5	0	antivirus_clamav	2016052300	2016052300	Plugin installed	\N		0	1472545689
+6	0	availability_completion	\N	2016052300	Starting plugin installation	\N		0	1472545690
+7	0	availability_completion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+8	0	availability_completion	2016052300	2016052300	Plugin installed	\N		0	1472545690
+9	0	availability_date	\N	2016052300	Starting plugin installation	\N		0	1472545690
+10	0	availability_date	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+11	0	availability_date	2016052300	2016052300	Plugin installed	\N		0	1472545690
+12	0	availability_grade	\N	2016052300	Starting plugin installation	\N		0	1472545690
+13	0	availability_grade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+14	0	availability_grade	2016052300	2016052300	Plugin installed	\N		0	1472545690
+15	0	availability_group	\N	2016052300	Starting plugin installation	\N		0	1472545690
+16	0	availability_group	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+17	0	availability_group	2016052300	2016052300	Plugin installed	\N		0	1472545690
+18	0	availability_grouping	\N	2016052300	Starting plugin installation	\N		0	1472545690
+19	0	availability_grouping	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+20	0	availability_grouping	2016052300	2016052300	Plugin installed	\N		0	1472545690
+21	0	availability_profile	\N	2016052300	Starting plugin installation	\N		0	1472545690
+22	0	availability_profile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+23	0	availability_profile	2016052300	2016052300	Plugin installed	\N		0	1472545690
+24	0	qtype_calculated	\N	2016052300	Starting plugin installation	\N		0	1472545690
+25	0	qtype_calculated	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+26	0	qtype_calculated	2016052300	2016052300	Plugin installed	\N		0	1472545690
+27	0	qtype_calculatedmulti	\N	2016052300	Starting plugin installation	\N		0	1472545690
+28	0	qtype_calculatedmulti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+29	0	qtype_calculatedmulti	2016052300	2016052300	Plugin installed	\N		0	1472545690
+30	0	qtype_calculatedsimple	\N	2016052300	Starting plugin installation	\N		0	1472545690
+31	0	qtype_calculatedsimple	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545690
+32	0	qtype_calculatedsimple	2016052300	2016052300	Plugin installed	\N		0	1472545690
+33	0	qtype_ddimageortext	\N	2016052300	Starting plugin installation	\N		0	1472545691
+34	0	qtype_ddimageortext	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+35	0	qtype_ddimageortext	2016052300	2016052300	Plugin installed	\N		0	1472545691
+36	0	qtype_ddmarker	\N	2016052300	Starting plugin installation	\N		0	1472545691
+37	0	qtype_ddmarker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+38	0	qtype_ddmarker	2016052300	2016052300	Plugin installed	\N		0	1472545691
+39	0	qtype_ddwtos	\N	2016052300	Starting plugin installation	\N		0	1472545691
+40	0	qtype_ddwtos	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+41	0	qtype_ddwtos	2016052300	2016052300	Plugin installed	\N		0	1472545691
+42	0	qtype_description	\N	2016052300	Starting plugin installation	\N		0	1472545691
+43	0	qtype_description	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+44	0	qtype_description	2016052300	2016052300	Plugin installed	\N		0	1472545691
+45	0	qtype_essay	\N	2016052300	Starting plugin installation	\N		0	1472545691
+46	0	qtype_essay	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+47	0	qtype_essay	2016052300	2016052300	Plugin installed	\N		0	1472545691
+48	0	qtype_gapselect	\N	2016052300	Starting plugin installation	\N		0	1472545691
+49	0	qtype_gapselect	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+50	0	qtype_gapselect	2016052300	2016052300	Plugin installed	\N		0	1472545691
+51	0	qtype_match	\N	2016052300	Starting plugin installation	\N		0	1472545691
+52	0	qtype_match	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+53	0	qtype_match	2016052300	2016052300	Plugin installed	\N		0	1472545691
+54	0	qtype_missingtype	\N	2016052300	Starting plugin installation	\N		0	1472545691
+55	0	qtype_missingtype	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545691
+56	0	qtype_missingtype	2016052300	2016052300	Plugin installed	\N		0	1472545692
+57	0	qtype_multianswer	\N	2016052300	Starting plugin installation	\N		0	1472545692
+58	0	qtype_multianswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+59	0	qtype_multianswer	2016052300	2016052300	Plugin installed	\N		0	1472545692
+60	0	qtype_multichoice	\N	2016052300	Starting plugin installation	\N		0	1472545692
+61	0	qtype_multichoice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+62	0	qtype_multichoice	2016052300	2016052300	Plugin installed	\N		0	1472545692
+63	0	qtype_numerical	\N	2016052300	Starting plugin installation	\N		0	1472545692
+64	0	qtype_numerical	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+65	0	qtype_numerical	2016052300	2016052300	Plugin installed	\N		0	1472545692
+66	0	qtype_random	\N	2016052300	Starting plugin installation	\N		0	1472545692
+67	0	qtype_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+68	0	qtype_random	2016052300	2016052300	Plugin installed	\N		0	1472545692
+69	0	qtype_randomsamatch	\N	2016052300	Starting plugin installation	\N		0	1472545692
+70	0	qtype_randomsamatch	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+71	0	qtype_randomsamatch	2016052300	2016052300	Plugin installed	\N		0	1472545692
+72	0	qtype_shortanswer	\N	2016052300	Starting plugin installation	\N		0	1472545692
+73	0	qtype_shortanswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+74	0	qtype_shortanswer	2016052300	2016052300	Plugin installed	\N		0	1472545692
+75	0	qtype_truefalse	\N	2016052300	Starting plugin installation	\N		0	1472545692
+76	0	qtype_truefalse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545692
+77	0	qtype_truefalse	2016052300	2016052300	Plugin installed	\N		0	1472545693
+78	0	mod_assign	\N	2016052300	Starting plugin installation	\N		0	1472545693
+79	0	mod_assign	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545693
+80	0	mod_assign	2016052300	2016052300	Plugin installed	\N		0	1472545693
+81	0	mod_assignment	\N	2016052300	Starting plugin installation	\N		0	1472545693
+82	0	mod_assignment	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545693
+83	0	mod_assignment	2016052300	2016052300	Plugin installed	\N		0	1472545694
+84	0	mod_book	\N	2016052300	Starting plugin installation	\N		0	1472545694
+85	0	mod_book	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545694
+86	0	mod_book	2016052300	2016052300	Plugin installed	\N		0	1472545694
+87	0	mod_chat	\N	2016052300	Starting plugin installation	\N		0	1472545694
+88	0	mod_chat	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545694
+89	0	mod_chat	2016052300	2016052300	Plugin installed	\N		0	1472545695
+90	0	mod_choice	\N	2016052300	Starting plugin installation	\N		0	1472545695
+91	0	mod_choice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545695
+92	0	mod_choice	2016052300	2016052300	Plugin installed	\N		0	1472545695
+93	0	mod_communitywall	\N	2014031800	Starting plugin installation	\N		0	1472545695
+94	0	mod_communitywall	2014031800	2014031800	Upgrade savepoint reached	\N		0	1472545695
+95	0	mod_communitywall	2014031800	2014031800	Plugin installed	\N		0	1472545695
+96	0	mod_data	\N	2016052300	Starting plugin installation	\N		0	1472545695
+97	0	mod_data	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545695
+98	0	mod_data	2016052300	2016052300	Plugin installed	\N		0	1472545696
+99	0	mod_dragdrop	\N	2014081401	Starting plugin installation	\N		0	1472545696
+100	0	mod_dragdrop	2014081401	2014081401	Upgrade savepoint reached	\N		0	1472545696
+101	0	mod_dragdrop	2014081401	2014081401	Plugin installed	\N		0	1472545697
+102	0	mod_feedback	\N	2016052300	Starting plugin installation	\N		0	1472545697
+103	0	mod_feedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545697
+104	0	mod_feedback	2016052300	2016052300	Plugin installed	\N		0	1472545698
+105	0	mod_folder	\N	2016052300	Starting plugin installation	\N		0	1472545698
+106	0	mod_folder	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545698
+107	0	mod_folder	2016052300	2016052300	Plugin installed	\N		0	1472545698
+108	0	mod_forum	\N	2016052300	Starting plugin installation	\N		0	1472545698
+109	0	mod_forum	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545698
+110	0	mod_forum	2016052300	2016052300	Plugin installed	\N		0	1472545700
+111	0	mod_glossary	\N	2016052300	Starting plugin installation	\N		0	1472545700
+112	0	mod_glossary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545700
+113	0	mod_glossary	2016052300	2016052300	Plugin installed	\N		0	1472545701
+114	0	mod_imscp	\N	2016052300	Starting plugin installation	\N		0	1472545701
+115	0	mod_imscp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545701
+116	0	mod_imscp	2016052300	2016052300	Plugin installed	\N		0	1472545701
+117	0	mod_label	\N	2016052300	Starting plugin installation	\N		0	1472545701
+118	0	mod_label	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545701
+119	0	mod_label	2016052300	2016052300	Plugin installed	\N		0	1472545701
+120	0	mod_lesson	\N	2016052300	Starting plugin installation	\N		0	1472545701
+121	0	mod_lesson	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545701
+122	0	mod_lesson	2016052300	2016052300	Plugin installed	\N		0	1472545702
+123	0	mod_lti	\N	2016052300	Starting plugin installation	\N		0	1472545702
+124	0	mod_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545702
+125	0	mod_lti	2016052300	2016052300	Plugin installed	\N		0	1472545703
+126	0	mod_page	\N	2016052300	Starting plugin installation	\N		0	1472545703
+127	0	mod_page	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545703
+128	0	mod_page	2016052300	2016052300	Plugin installed	\N		0	1472545703
+129	0	mod_quiz	\N	2016052300	Starting plugin installation	\N		0	1472545703
+130	0	mod_quiz	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545703
+131	0	mod_quiz	2016052300	2016052300	Plugin installed	\N		0	1472545704
+132	0	mod_resource	\N	2016052300	Starting plugin installation	\N		0	1472545704
+133	0	mod_resource	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545704
+134	0	mod_resource	2016052300	2016052300	Plugin installed	\N		0	1472545704
+135	0	mod_scorm	\N	2016052300	Starting plugin installation	\N		0	1472545704
+136	0	mod_scorm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545704
+137	0	mod_scorm	2016052300	2016052300	Plugin installed	\N		0	1472545705
+138	0	mod_survey	\N	2016052300	Starting plugin installation	\N		0	1472545705
+139	0	mod_survey	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545705
+140	0	mod_survey	2016052300	2016052300	Plugin installed	\N		0	1472545706
+141	0	mod_talkpoint	\N	2015070900	Starting plugin installation	\N		0	1472545706
+142	0	mod_talkpoint	2015070900	2015070900	Upgrade savepoint reached	\N		0	1472545706
+143	0	mod_talkpoint	2015070900	2015070900	Plugin installed	\N		0	1472545706
+144	0	mod_url	\N	2016052300	Starting plugin installation	\N		0	1472545706
+145	0	mod_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545706
+146	0	mod_url	2016052300	2016052300	Plugin installed	\N		0	1472545706
+147	0	mod_videoquanda	\N	2013112500	Starting plugin installation	\N		0	1472545706
+148	0	mod_videoquanda	2013112500	2013112500	Upgrade savepoint reached	\N		0	1472545706
+149	0	mod_videoquanda	2013112500	2013112500	Plugin installed	\N		0	1472545706
+150	0	mod_vocabcards	\N	2014072500	Starting plugin installation	\N		0	1472545706
+151	0	mod_vocabcards	2014072500	2014072500	Upgrade savepoint reached	\N		0	1472545706
+152	0	mod_vocabcards	2014072500	2014072500	Plugin installed	\N		0	1472545707
+153	0	mod_wiki	\N	2016052300	Starting plugin installation	\N		0	1472545707
+154	0	mod_wiki	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545707
+155	0	mod_wiki	2016052300	2016052300	Plugin installed	\N		0	1472545707
+156	0	mod_workshop	\N	2016052300	Starting plugin installation	\N		0	1472545707
+157	0	mod_workshop	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545708
+158	0	mod_workshop	2016052300	2016052300	Plugin installed	\N		0	1472545709
+159	0	auth_cas	\N	2016052300	Starting plugin installation	\N		0	1472545709
+160	0	auth_cas	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+161	0	auth_cas	2016052300	2016052300	Plugin installed	\N		0	1472545709
+162	0	auth_db	\N	2016052300	Starting plugin installation	\N		0	1472545709
+163	0	auth_db	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+164	0	auth_db	2016052300	2016052300	Plugin installed	\N		0	1472545709
+165	0	auth_email	\N	2016052300	Starting plugin installation	\N		0	1472545709
+166	0	auth_email	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+167	0	auth_email	2016052300	2016052300	Plugin installed	\N		0	1472545709
+168	0	auth_fc	\N	2016052300	Starting plugin installation	\N		0	1472545709
+169	0	auth_fc	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+170	0	auth_fc	2016052300	2016052300	Plugin installed	\N		0	1472545709
+171	0	auth_imap	\N	2016052300	Starting plugin installation	\N		0	1472545709
+172	0	auth_imap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+173	0	auth_imap	2016052300	2016052300	Plugin installed	\N		0	1472545709
+174	0	auth_ldap	\N	2016052300	Starting plugin installation	\N		0	1472545709
+175	0	auth_ldap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+176	0	auth_ldap	2016052300	2016052300	Plugin installed	\N		0	1472545709
+177	0	auth_lti	\N	2016052300	Starting plugin installation	\N		0	1472545709
+178	0	auth_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545709
+179	0	auth_lti	2016052300	2016052300	Plugin installed	\N		0	1472545710
+180	0	auth_manual	\N	2016052300	Starting plugin installation	\N		0	1472545710
+181	0	auth_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545710
+182	0	auth_manual	2016052300	2016052300	Plugin installed	\N		0	1472545710
+183	0	auth_mnet	\N	2016052300	Starting plugin installation	\N		0	1472545710
+184	0	auth_mnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545710
+185	0	auth_mnet	2016052300	2016052300	Plugin installed	\N		0	1472545710
+186	0	auth_nntp	\N	2016052300	Starting plugin installation	\N		0	1472545710
+187	0	auth_nntp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545710
+188	0	auth_nntp	2016052300	2016052300	Plugin installed	\N		0	1472545710
+189	0	auth_nologin	\N	2016052300	Starting plugin installation	\N		0	1472545710
+190	0	auth_nologin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545710
+191	0	auth_nologin	2016052300	2016052300	Plugin installed	\N		0	1472545710
+192	0	auth_none	\N	2016052300	Starting plugin installation	\N		0	1472545710
+193	0	auth_none	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545710
+194	0	auth_none	2016052300	2016052300	Plugin installed	\N		0	1472545710
+195	0	auth_oauth	\N	2014041401	Starting plugin installation	\N		0	1472545711
+196	0	auth_oauth	2014041401	2014041401	Upgrade savepoint reached	\N		0	1472545711
+197	0	auth_oauth	2014041401	2014041401	Plugin installed	\N		0	1472545711
+198	0	auth_pam	\N	2016052300	Starting plugin installation	\N		0	1472545711
+199	0	auth_pam	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+200	0	auth_pam	2016052300	2016052300	Plugin installed	\N		0	1472545711
+201	0	auth_pop3	\N	2016052300	Starting plugin installation	\N		0	1472545711
+202	0	auth_pop3	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+203	0	auth_pop3	2016052300	2016052300	Plugin installed	\N		0	1472545711
+204	0	auth_radius	\N	2016052300	Starting plugin installation	\N		0	1472545711
+205	0	auth_radius	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+206	0	auth_radius	2016052300	2016052300	Plugin installed	\N		0	1472545711
+207	0	auth_shibboleth	\N	2016052300	Starting plugin installation	\N		0	1472545711
+208	0	auth_shibboleth	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+209	0	auth_shibboleth	2016052300	2016052300	Plugin installed	\N		0	1472545711
+210	0	auth_webservice	\N	2016052300	Starting plugin installation	\N		0	1472545711
+211	0	auth_webservice	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+212	0	auth_webservice	2016052300	2016052300	Plugin installed	\N		0	1472545711
+213	0	calendartype_gregorian	\N	2016052300	Starting plugin installation	\N		0	1472545711
+214	0	calendartype_gregorian	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545711
+215	0	calendartype_gregorian	2016052300	2016052300	Plugin installed	\N		0	1472545711
+216	0	enrol_category	\N	2016052300	Starting plugin installation	\N		0	1472545711
+217	0	enrol_category	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545712
+218	0	enrol_category	2016052300	2016052300	Plugin installed	\N		0	1472545712
+219	0	enrol_cohort	\N	2016052300	Starting plugin installation	\N		0	1472545712
+220	0	enrol_cohort	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545712
+221	0	enrol_cohort	2016052300	2016052300	Plugin installed	\N		0	1472545712
+222	0	enrol_database	\N	2016052300	Starting plugin installation	\N		0	1472545712
+223	0	enrol_database	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545712
+224	0	enrol_database	2016052300	2016052300	Plugin installed	\N		0	1472545712
+225	0	enrol_flatfile	\N	2016052300	Starting plugin installation	\N		0	1472545712
+226	0	enrol_flatfile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545712
+227	0	enrol_flatfile	2016052300	2016052300	Plugin installed	\N		0	1472545712
+228	0	enrol_guest	\N	2016052300	Starting plugin installation	\N		0	1472545712
+229	0	enrol_guest	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545712
+230	0	enrol_guest	2016052300	2016052300	Plugin installed	\N		0	1472545712
+231	0	enrol_imsenterprise	\N	2016052300	Starting plugin installation	\N		0	1472545713
+232	0	enrol_imsenterprise	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545713
+233	0	enrol_imsenterprise	2016052300	2016052300	Plugin installed	\N		0	1472545713
+234	0	enrol_ldap	\N	2016052300	Starting plugin installation	\N		0	1472545713
+235	0	enrol_ldap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545713
+236	0	enrol_ldap	2016052300	2016052300	Plugin installed	\N		0	1472545713
+237	0	enrol_lti	\N	2016052300	Starting plugin installation	\N		0	1472545713
+238	0	enrol_lti	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545713
+239	0	enrol_lti	2016052300	2016052300	Plugin installed	\N		0	1472545713
+240	0	enrol_manual	\N	2016052300	Starting plugin installation	\N		0	1472545713
+241	0	enrol_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545713
+242	0	enrol_manual	2016052300	2016052300	Plugin installed	\N		0	1472545713
+243	0	enrol_meta	\N	2016052300	Starting plugin installation	\N		0	1472545713
+244	0	enrol_meta	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545713
+245	0	enrol_meta	2016052300	2016052300	Plugin installed	\N		0	1472545714
+246	0	enrol_mnet	\N	2016052300	Starting plugin installation	\N		0	1472545714
+247	0	enrol_mnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545714
+248	0	enrol_mnet	2016052300	2016052300	Plugin installed	\N		0	1472545714
+249	0	enrol_paypal	\N	2016052300	Starting plugin installation	\N		0	1472545714
+250	0	enrol_paypal	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545714
+251	0	enrol_paypal	2016052300	2016052300	Plugin installed	\N		0	1472545714
+252	0	enrol_self	\N	2016052300	Starting plugin installation	\N		0	1472545714
+253	0	enrol_self	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545714
+254	0	enrol_self	2016052300	2016052300	Plugin installed	\N		0	1472545714
+255	0	message_airnotifier	\N	2016052300	Starting plugin installation	\N		0	1472545714
+256	0	message_airnotifier	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545714
+257	0	message_airnotifier	2016052300	2016052300	Plugin installed	\N		0	1472545715
+258	0	message_email	\N	2016052300	Starting plugin installation	\N		0	1472545715
+259	0	message_email	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545715
+260	0	message_email	2016052300	2016052300	Plugin installed	\N		0	1472545716
+261	0	message_jabber	\N	2016052300	Starting plugin installation	\N		0	1472545716
+262	0	message_jabber	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545716
+263	0	message_jabber	2016052300	2016052300	Plugin installed	\N		0	1472545716
+264	0	message_popup	\N	2016052300	Starting plugin installation	\N		0	1472545716
+265	0	message_popup	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545716
+266	0	message_popup	2016052300	2016052300	Plugin installed	\N		0	1472545717
+267	0	block_activity_modules	\N	2016052300	Starting plugin installation	\N		0	1472545717
+268	0	block_activity_modules	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545717
+269	0	block_activity_modules	2016052300	2016052300	Plugin installed	\N		0	1472545717
+270	0	block_activity_results	\N	2016052300	Starting plugin installation	\N		0	1472545717
+271	0	block_activity_results	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545717
+272	0	block_activity_results	2016052300	2016052300	Plugin installed	\N		0	1472545717
+273	0	block_activity_tree	\N	2015070700	Starting plugin installation	\N		0	1472545717
+274	0	block_activity_tree	2015070700	2015070700	Upgrade savepoint reached	\N		0	1472545717
+275	0	block_activity_tree	2015070700	2015070700	Plugin installed	\N		0	1472545717
+276	0	block_admin_bookmarks	\N	2016052300	Starting plugin installation	\N		0	1472545717
+277	0	block_admin_bookmarks	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+278	0	block_admin_bookmarks	2016052300	2016052300	Plugin installed	\N		0	1472545718
+279	0	block_badges	\N	2016052300	Starting plugin installation	\N		0	1472545718
+280	0	block_badges	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+281	0	block_badges	2016052300	2016052300	Plugin installed	\N		0	1472545718
+282	0	block_blog_menu	\N	2016052300	Starting plugin installation	\N		0	1472545718
+283	0	block_blog_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+284	0	block_blog_menu	2016052300	2016052300	Plugin installed	\N		0	1472545718
+285	0	block_blog_recent	\N	2016052300	Starting plugin installation	\N		0	1472545718
+286	0	block_blog_recent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+287	0	block_blog_recent	2016052300	2016052300	Plugin installed	\N		0	1472545718
+288	0	block_blog_tags	\N	2016052300	Starting plugin installation	\N		0	1472545718
+289	0	block_blog_tags	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+290	0	block_blog_tags	2016052300	2016052300	Plugin installed	\N		0	1472545718
+291	0	block_calendar_month	\N	2016052300	Starting plugin installation	\N		0	1472545718
+292	0	block_calendar_month	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545718
+293	0	block_calendar_month	2016052300	2016052300	Plugin installed	\N		0	1472545719
+294	0	block_calendar_upcoming	\N	2016052300	Starting plugin installation	\N		0	1472545719
+295	0	block_calendar_upcoming	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+296	0	block_calendar_upcoming	2016052300	2016052300	Plugin installed	\N		0	1472545719
+297	0	block_comments	\N	2016052300	Starting plugin installation	\N		0	1472545719
+298	0	block_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+299	0	block_comments	2016052300	2016052300	Plugin installed	\N		0	1472545719
+300	0	block_community	\N	2016052300	Starting plugin installation	\N		0	1472545719
+301	0	block_community	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+302	0	block_community	2016052300	2016052300	Plugin installed	\N		0	1472545719
+303	0	block_completionstatus	\N	2016052300	Starting plugin installation	\N		0	1472545719
+304	0	block_completionstatus	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+305	0	block_completionstatus	2016052300	2016052300	Plugin installed	\N		0	1472545719
+306	0	block_course_list	\N	2016052300	Starting plugin installation	\N		0	1472545719
+307	0	block_course_list	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+308	0	block_course_list	2016052300	2016052300	Plugin installed	\N		0	1472545719
+309	0	block_course_overview	\N	2016052300	Starting plugin installation	\N		0	1472545719
+310	0	block_course_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545719
+311	0	block_course_overview	2016052300	2016052300	Plugin installed	\N		0	1472545720
+312	0	block_course_summary	\N	2016052300	Starting plugin installation	\N		0	1472545720
+313	0	block_course_summary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545720
+314	0	block_course_summary	2016052300	2016052300	Plugin installed	\N		0	1472545720
+315	0	block_feedback	\N	2016052300	Starting plugin installation	\N		0	1472545720
+316	0	block_feedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545720
+317	0	block_feedback	2016052300	2016052300	Plugin installed	\N		0	1472545720
+318	0	block_globalsearch	\N	2016052300	Starting plugin installation	\N		0	1472545720
+319	0	block_globalsearch	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545720
+320	0	block_globalsearch	2016052300	2016052300	Plugin installed	\N		0	1472545720
+321	0	block_glossary_random	\N	2016052300	Starting plugin installation	\N		0	1472545720
+322	0	block_glossary_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545720
+323	0	block_glossary_random	2016052300	2016052300	Plugin installed	\N		0	1472545720
+324	0	block_html	\N	2016052300	Starting plugin installation	\N		0	1472545720
+325	0	block_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545720
+326	0	block_html	2016052300	2016052300	Plugin installed	\N		0	1472545721
+327	0	block_login	\N	2016052300	Starting plugin installation	\N		0	1472545721
+328	0	block_login	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545721
+329	0	block_login	2016052300	2016052300	Plugin installed	\N		0	1472545721
+330	0	block_lp	\N	2016052300	Starting plugin installation	\N		0	1472545721
+331	0	block_lp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545721
+332	0	block_lp	2016052300	2016052300	Plugin installed	\N		0	1472545721
+333	0	block_mentees	\N	2016052300	Starting plugin installation	\N		0	1472545721
+334	0	block_mentees	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545721
+335	0	block_mentees	2016052300	2016052300	Plugin installed	\N		0	1472545721
+336	0	block_messages	\N	2016052300	Starting plugin installation	\N		0	1472545721
+337	0	block_messages	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545721
+338	0	block_messages	2016052300	2016052300	Plugin installed	\N		0	1472545721
+339	0	block_mnet_hosts	\N	2016052300	Starting plugin installation	\N		0	1472545721
+340	0	block_mnet_hosts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545721
+341	0	block_mnet_hosts	2016052300	2016052300	Plugin installed	\N		0	1472545721
+342	0	block_myprofile	\N	2016052300	Starting plugin installation	\N		0	1472545722
+343	0	block_myprofile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545722
+344	0	block_myprofile	2016052300	2016052300	Plugin installed	\N		0	1472545722
+345	0	block_navigation	\N	2016052300	Starting plugin installation	\N		0	1472545722
+346	0	block_navigation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545722
+347	0	block_navigation	2016052300	2016052300	Plugin installed	\N		0	1472545722
+348	0	block_news_items	\N	2016052300	Starting plugin installation	\N		0	1472545722
+349	0	block_news_items	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545722
+350	0	block_news_items	2016052300	2016052300	Plugin installed	\N		0	1472545722
+351	0	block_online_users	\N	2016052300	Starting plugin installation	\N		0	1472545722
+352	0	block_online_users	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545722
+353	0	block_online_users	2016052300	2016052300	Plugin installed	\N		0	1472545722
+354	0	block_participants	\N	2016052300	Starting plugin installation	\N		0	1472545722
+355	0	block_participants	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545722
+356	0	block_participants	2016052300	2016052300	Plugin installed	\N		0	1472545723
+357	0	block_private_files	\N	2016052300	Starting plugin installation	\N		0	1472545723
+358	0	block_private_files	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545723
+359	0	block_private_files	2016052300	2016052300	Plugin installed	\N		0	1472545723
+360	0	block_quiz_results	\N	2016052300	Starting plugin installation	\N		0	1472545723
+361	0	block_quiz_results	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545723
+362	0	block_quiz_results	2016052300	2016052300	Plugin installed	\N		0	1472545723
+363	0	block_recent_activity	\N	2016052300	Starting plugin installation	\N		0	1472545723
+364	0	block_recent_activity	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545723
+365	0	block_recent_activity	2016052300	2016052300	Plugin installed	\N		0	1472545723
+366	0	block_rss_client	\N	2016052300	Starting plugin installation	\N		0	1472545723
+367	0	block_rss_client	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545723
+368	0	block_rss_client	2016052300	2016052300	Plugin installed	\N		0	1472545724
+369	0	block_search_forums	\N	2016052300	Starting plugin installation	\N		0	1472545724
+370	0	block_search_forums	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545724
+371	0	block_search_forums	2016052300	2016052300	Plugin installed	\N		0	1472545724
+372	0	block_section_links	\N	2016052300	Starting plugin installation	\N		0	1472545724
+373	0	block_section_links	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545724
+374	0	block_section_links	2016052300	2016052300	Plugin installed	\N		0	1472545724
+375	0	block_selfcompletion	\N	2016052300	Starting plugin installation	\N		0	1472545724
+376	0	block_selfcompletion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545724
+377	0	block_selfcompletion	2016052300	2016052300	Plugin installed	\N		0	1472545724
+378	0	block_settings	\N	2016052300	Starting plugin installation	\N		0	1472545724
+379	0	block_settings	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545724
+380	0	block_settings	2016052300	2016052300	Plugin installed	\N		0	1472545725
+381	0	block_site_main_menu	\N	2016052300	Starting plugin installation	\N		0	1472545725
+382	0	block_site_main_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545725
+383	0	block_site_main_menu	2016052300	2016052300	Plugin installed	\N		0	1472545725
+384	0	block_social_activities	\N	2016052300	Starting plugin installation	\N		0	1472545725
+385	0	block_social_activities	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545725
+386	0	block_social_activities	2016052300	2016052300	Plugin installed	\N		0	1472545725
+387	0	block_tag_flickr	\N	2016052300	Starting plugin installation	\N		0	1472545725
+388	0	block_tag_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545725
+389	0	block_tag_flickr	2016052300	2016052300	Plugin installed	\N		0	1472545725
+390	0	block_tag_youtube	\N	2016052300	Starting plugin installation	\N		0	1472545725
+391	0	block_tag_youtube	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545725
+392	0	block_tag_youtube	2016052300	2016052300	Plugin installed	\N		0	1472545725
+393	0	block_tags	\N	2016052300	Starting plugin installation	\N		0	1472545725
+394	0	block_tags	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545725
+395	0	block_tags	2016052300	2016052300	Plugin installed	\N		0	1472545725
+396	0	filter_activitynames	\N	2016052300	Starting plugin installation	\N		0	1472545726
+397	0	filter_activitynames	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545726
+398	0	filter_activitynames	2016052300	2016052300	Plugin installed	\N		0	1472545726
+399	0	filter_algebra	\N	2016052300	Starting plugin installation	\N		0	1472545726
+400	0	filter_algebra	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545726
+401	0	filter_algebra	2016052300	2016052300	Plugin installed	\N		0	1472545726
+402	0	filter_censor	\N	2016052300	Starting plugin installation	\N		0	1472545726
+403	0	filter_censor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545726
+404	0	filter_censor	2016052300	2016052300	Plugin installed	\N		0	1472545726
+405	0	filter_data	\N	2016052300	Starting plugin installation	\N		0	1472545726
+406	0	filter_data	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545726
+407	0	filter_data	2016052300	2016052300	Plugin installed	\N		0	1472545726
+408	0	filter_emailprotect	\N	2016052300	Starting plugin installation	\N		0	1472545726
+409	0	filter_emailprotect	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545726
+410	0	filter_emailprotect	2016052300	2016052300	Plugin installed	\N		0	1472545727
+411	0	filter_emoticon	\N	2016052300	Starting plugin installation	\N		0	1472545727
+412	0	filter_emoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+413	0	filter_emoticon	2016052300	2016052300	Plugin installed	\N		0	1472545727
+414	0	filter_glossary	\N	2016052300	Starting plugin installation	\N		0	1472545727
+415	0	filter_glossary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+416	0	filter_glossary	2016052300	2016052300	Plugin installed	\N		0	1472545727
+417	0	filter_mathjaxloader	\N	2016052300	Starting plugin installation	\N		0	1472545727
+418	0	filter_mathjaxloader	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+419	0	filter_mathjaxloader	2016052300	2016052300	Plugin installed	\N		0	1472545727
+420	0	filter_mediaplugin	\N	2016052300	Starting plugin installation	\N		0	1472545727
+421	0	filter_mediaplugin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+422	0	filter_mediaplugin	2016052300	2016052300	Plugin installed	\N		0	1472545727
+423	0	filter_multilang	\N	2016052300	Starting plugin installation	\N		0	1472545727
+424	0	filter_multilang	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+425	0	filter_multilang	2016052300	2016052300	Plugin installed	\N		0	1472545727
+426	0	filter_tex	\N	2016052300	Starting plugin installation	\N		0	1472545727
+427	0	filter_tex	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545727
+428	0	filter_tex	2016052300	2016052300	Plugin installed	\N		0	1472545728
+429	0	filter_tidy	\N	2016052300	Starting plugin installation	\N		0	1472545728
+430	0	filter_tidy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+431	0	filter_tidy	2016052300	2016052300	Plugin installed	\N		0	1472545728
+432	0	filter_urltolink	\N	2016052300	Starting plugin installation	\N		0	1472545728
+433	0	filter_urltolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+434	0	filter_urltolink	2016052300	2016052300	Plugin installed	\N		0	1472545728
+435	0	editor_atto	\N	2016052300	Starting plugin installation	\N		0	1472545728
+436	0	editor_atto	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+437	0	editor_atto	2016052300	2016052300	Plugin installed	\N		0	1472545728
+438	0	editor_textarea	\N	2016052300	Starting plugin installation	\N		0	1472545728
+439	0	editor_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+440	0	editor_textarea	2016052300	2016052300	Plugin installed	\N		0	1472545728
+441	0	editor_tinymce	\N	2016052300	Starting plugin installation	\N		0	1472545728
+442	0	editor_tinymce	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+443	0	editor_tinymce	2016052300	2016052300	Plugin installed	\N		0	1472545728
+444	0	format_singleactivity	\N	2016052300	Starting plugin installation	\N		0	1472545728
+445	0	format_singleactivity	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545728
+446	0	format_singleactivity	2016052300	2016052300	Plugin installed	\N		0	1472545729
+447	0	format_social	\N	2016052300	Starting plugin installation	\N		0	1472545729
+448	0	format_social	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+449	0	format_social	2016052300	2016052300	Plugin installed	\N		0	1472545729
+450	0	format_topics	\N	2016052300	Starting plugin installation	\N		0	1472545729
+451	0	format_topics	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+452	0	format_topics	2016052300	2016052300	Plugin installed	\N		0	1472545729
+453	0	format_weeks	\N	2016052300	Starting plugin installation	\N		0	1472545729
+454	0	format_weeks	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+455	0	format_weeks	2016052300	2016052300	Plugin installed	\N		0	1472545729
+456	0	dataformat_csv	\N	2016052300	Starting plugin installation	\N		0	1472545729
+457	0	dataformat_csv	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+458	0	dataformat_csv	2016052300	2016052300	Plugin installed	\N		0	1472545729
+459	0	dataformat_excel	\N	2016052300	Starting plugin installation	\N		0	1472545729
+460	0	dataformat_excel	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+461	0	dataformat_excel	2016052300	2016052300	Plugin installed	\N		0	1472545729
+462	0	dataformat_html	\N	2016052300	Starting plugin installation	\N		0	1472545729
+463	0	dataformat_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+464	0	dataformat_html	2016052300	2016052300	Plugin installed	\N		0	1472545729
+465	0	dataformat_json	\N	2016052300	Starting plugin installation	\N		0	1472545729
+466	0	dataformat_json	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545729
+467	0	dataformat_json	2016052300	2016052300	Plugin installed	\N		0	1472545730
+468	0	dataformat_ods	\N	2016052300	Starting plugin installation	\N		0	1472545730
+469	0	dataformat_ods	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+470	0	dataformat_ods	2016052300	2016052300	Plugin installed	\N		0	1472545730
+471	0	profilefield_checkbox	\N	2016052300	Starting plugin installation	\N		0	1472545730
+472	0	profilefield_checkbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+473	0	profilefield_checkbox	2016052300	2016052300	Plugin installed	\N		0	1472545730
+474	0	profilefield_datetime	\N	2016052300	Starting plugin installation	\N		0	1472545730
+475	0	profilefield_datetime	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+476	0	profilefield_datetime	2016052300	2016052300	Plugin installed	\N		0	1472545730
+477	0	profilefield_menu	\N	2016052300	Starting plugin installation	\N		0	1472545730
+478	0	profilefield_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+479	0	profilefield_menu	2016052300	2016052300	Plugin installed	\N		0	1472545730
+480	0	profilefield_text	\N	2016052300	Starting plugin installation	\N		0	1472545730
+481	0	profilefield_text	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+482	0	profilefield_text	2016052300	2016052300	Plugin installed	\N		0	1472545730
+483	0	profilefield_textarea	\N	2016052300	Starting plugin installation	\N		0	1472545730
+484	0	profilefield_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+485	0	profilefield_textarea	2016052300	2016052300	Plugin installed	\N		0	1472545730
+486	0	report_backups	\N	2016052300	Starting plugin installation	\N		0	1472545730
+487	0	report_backups	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545730
+488	0	report_backups	2016052300	2016052300	Plugin installed	\N		0	1472545731
+489	0	report_competency	\N	2016052300	Starting plugin installation	\N		0	1472545731
+490	0	report_competency	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+491	0	report_competency	2016052300	2016052300	Plugin installed	\N		0	1472545731
+492	0	report_completion	\N	2016052300	Starting plugin installation	\N		0	1472545731
+493	0	report_completion	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+494	0	report_completion	2016052300	2016052300	Plugin installed	\N		0	1472545731
+495	0	report_configlog	\N	2016052300	Starting plugin installation	\N		0	1472545731
+496	0	report_configlog	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+497	0	report_configlog	2016052300	2016052300	Plugin installed	\N		0	1472545731
+498	0	report_courseoverview	\N	2016052300	Starting plugin installation	\N		0	1472545731
+499	0	report_courseoverview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+500	0	report_courseoverview	2016052300	2016052300	Plugin installed	\N		0	1472545731
+501	0	report_eventlist	\N	2016052300	Starting plugin installation	\N		0	1472545731
+502	0	report_eventlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+503	0	report_eventlist	2016052300	2016052300	Plugin installed	\N		0	1472545731
+504	0	report_log	\N	2016052300	Starting plugin installation	\N		0	1472545731
+505	0	report_log	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545731
+506	0	report_log	2016052300	2016052300	Plugin installed	\N		0	1472545731
+507	0	report_loglive	\N	2016052300	Starting plugin installation	\N		0	1472545732
+508	0	report_loglive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+509	0	report_loglive	2016052300	2016052300	Plugin installed	\N		0	1472545732
+510	0	report_outline	\N	2016052300	Starting plugin installation	\N		0	1472545732
+511	0	report_outline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+512	0	report_outline	2016052300	2016052300	Plugin installed	\N		0	1472545732
+513	0	report_participation	\N	2016052300	Starting plugin installation	\N		0	1472545732
+514	0	report_participation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+515	0	report_participation	2016052300	2016052300	Plugin installed	\N		0	1472545732
+516	0	report_performance	\N	2016052300	Starting plugin installation	\N		0	1472545732
+517	0	report_performance	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+518	0	report_performance	2016052300	2016052300	Plugin installed	\N		0	1472545732
+519	0	report_progress	\N	2016052300	Starting plugin installation	\N		0	1472545732
+520	0	report_progress	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+521	0	report_progress	2016052300	2016052300	Plugin installed	\N		0	1472545732
+522	0	report_questioninstances	\N	2016052300	Starting plugin installation	\N		0	1472545732
+523	0	report_questioninstances	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545732
+524	0	report_questioninstances	2016052300	2016052300	Plugin installed	\N		0	1472545732
+525	0	report_search	\N	2016052300	Starting plugin installation	\N		0	1472545733
+526	0	report_search	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545733
+527	0	report_search	2016052300	2016052300	Plugin installed	\N		0	1472545733
+528	0	report_security	\N	2016052300	Starting plugin installation	\N		0	1472545733
+529	0	report_security	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545733
+530	0	report_security	2016052300	2016052300	Plugin installed	\N		0	1472545733
+531	0	report_stats	\N	2016052300	Starting plugin installation	\N		0	1472545733
+532	0	report_stats	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545733
+533	0	report_stats	2016052300	2016052300	Plugin installed	\N		0	1472545733
+534	0	report_usersessions	\N	2016052300	Starting plugin installation	\N		0	1472545733
+535	0	report_usersessions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545733
+536	0	report_usersessions	2016052300	2016052300	Plugin installed	\N		0	1472545733
+537	0	gradeexport_ods	\N	2016052300	Starting plugin installation	\N		0	1472545733
+538	0	gradeexport_ods	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545734
+539	0	gradeexport_ods	2016052300	2016052300	Plugin installed	\N		0	1472545734
+540	0	gradeexport_txt	\N	2016052300	Starting plugin installation	\N		0	1472545734
+541	0	gradeexport_txt	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545734
+542	0	gradeexport_txt	2016052300	2016052300	Plugin installed	\N		0	1472545734
+543	0	gradeexport_xls	\N	2016052300	Starting plugin installation	\N		0	1472545734
+544	0	gradeexport_xls	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545734
+545	0	gradeexport_xls	2016052300	2016052300	Plugin installed	\N		0	1472545734
+546	0	gradeexport_xml	\N	2016052300	Starting plugin installation	\N		0	1472545734
+547	0	gradeexport_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545734
+548	0	gradeexport_xml	2016052300	2016052300	Plugin installed	\N		0	1472545734
+549	0	gradeimport_csv	\N	2016052300	Starting plugin installation	\N		0	1472545734
+550	0	gradeimport_csv	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545734
+551	0	gradeimport_csv	2016052300	2016052300	Plugin installed	\N		0	1472545735
+552	0	gradeimport_direct	\N	2016052300	Starting plugin installation	\N		0	1472545735
+553	0	gradeimport_direct	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545735
+554	0	gradeimport_direct	2016052300	2016052300	Plugin installed	\N		0	1472545735
+555	0	gradeimport_xml	\N	2016052300	Starting plugin installation	\N		0	1472545735
+556	0	gradeimport_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545735
+557	0	gradeimport_xml	2016052300	2016052300	Plugin installed	\N		0	1472545735
+558	0	gradereport_grader	\N	2016052300	Starting plugin installation	\N		0	1472545735
+559	0	gradereport_grader	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545735
+560	0	gradereport_grader	2016052300	2016052300	Plugin installed	\N		0	1472545735
+561	0	gradereport_history	\N	2016052300	Starting plugin installation	\N		0	1472545735
+562	0	gradereport_history	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545735
+563	0	gradereport_history	2016052300	2016052300	Plugin installed	\N		0	1472545735
+564	0	gradereport_outcomes	\N	2016052300	Starting plugin installation	\N		0	1472545735
+565	0	gradereport_outcomes	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545735
+566	0	gradereport_outcomes	2016052300	2016052300	Plugin installed	\N		0	1472545735
+567	0	gradereport_overview	\N	2016052300	Starting plugin installation	\N		0	1472545735
+568	0	gradereport_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545736
+569	0	gradereport_overview	2016052300	2016052300	Plugin installed	\N		0	1472545736
+570	0	gradereport_singleview	\N	2016052300	Starting plugin installation	\N		0	1472545736
+571	0	gradereport_singleview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545736
+572	0	gradereport_singleview	2016052300	2016052300	Plugin installed	\N		0	1472545736
+573	0	gradereport_user	\N	2016052300	Starting plugin installation	\N		0	1472545736
+574	0	gradereport_user	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545736
+575	0	gradereport_user	2016052300	2016052300	Plugin installed	\N		0	1472545736
+576	0	gradingform_guide	\N	2016052300	Starting plugin installation	\N		0	1472545736
+577	0	gradingform_guide	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545736
+578	0	gradingform_guide	2016052300	2016052300	Plugin installed	\N		0	1472545736
+579	0	gradingform_rubric	\N	2016052300	Starting plugin installation	\N		0	1472545736
+580	0	gradingform_rubric	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545736
+581	0	gradingform_rubric	2016052300	2016052300	Plugin installed	\N		0	1472545737
+582	0	mnetservice_enrol	\N	2016052300	Starting plugin installation	\N		0	1472545737
+583	0	mnetservice_enrol	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+584	0	mnetservice_enrol	2016052300	2016052300	Plugin installed	\N		0	1472545737
+585	0	webservice_rest	\N	2016052300	Starting plugin installation	\N		0	1472545737
+586	0	webservice_rest	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+587	0	webservice_rest	2016052300	2016052300	Plugin installed	\N		0	1472545737
+588	0	webservice_soap	\N	2016052300	Starting plugin installation	\N		0	1472545737
+589	0	webservice_soap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+590	0	webservice_soap	2016052300	2016052300	Plugin installed	\N		0	1472545737
+591	0	webservice_xmlrpc	\N	2016052300	Starting plugin installation	\N		0	1472545737
+592	0	webservice_xmlrpc	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+593	0	webservice_xmlrpc	2016052300	2016052300	Plugin installed	\N		0	1472545737
+594	0	repository_alfresco	\N	2016052300	Starting plugin installation	\N		0	1472545737
+595	0	repository_alfresco	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+596	0	repository_alfresco	2016052300	2016052300	Plugin installed	\N		0	1472545737
+597	0	repository_areafiles	\N	2016052300	Starting plugin installation	\N		0	1472545737
+598	0	repository_areafiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545737
+599	0	repository_areafiles	2016052300	2016052300	Plugin installed	\N		0	1472545737
+600	0	repository_boxnet	\N	2016052300	Starting plugin installation	\N		0	1472545737
+601	0	repository_boxnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+602	0	repository_boxnet	2016052300	2016052300	Plugin installed	\N		0	1472545738
+603	0	repository_coursefiles	\N	2016052300	Starting plugin installation	\N		0	1472545738
+604	0	repository_coursefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+605	0	repository_coursefiles	2016052300	2016052300	Plugin installed	\N		0	1472545738
+606	0	repository_dropbox	\N	2016052300	Starting plugin installation	\N		0	1472545738
+607	0	repository_dropbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+608	0	repository_dropbox	2016052300	2016052300	Plugin installed	\N		0	1472545738
+609	0	repository_equella	\N	2016052300	Starting plugin installation	\N		0	1472545738
+610	0	repository_equella	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+611	0	repository_equella	2016052300	2016052300	Plugin installed	\N		0	1472545738
+612	0	repository_filesystem	\N	2016052300	Starting plugin installation	\N		0	1472545738
+613	0	repository_filesystem	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+614	0	repository_filesystem	2016052300	2016052300	Plugin installed	\N		0	1472545738
+615	0	repository_flickr	\N	2016052300	Starting plugin installation	\N		0	1472545738
+616	0	repository_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545738
+617	0	repository_flickr	2016052300	2016052300	Plugin installed	\N		0	1472545739
+618	0	repository_flickr_public	\N	2016052300	Starting plugin installation	\N		0	1472545739
+619	0	repository_flickr_public	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+620	0	repository_flickr_public	2016052300	2016052300	Plugin installed	\N		0	1472545739
+621	0	repository_googledocs	\N	2016052300	Starting plugin installation	\N		0	1472545739
+622	0	repository_googledocs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+623	0	repository_googledocs	2016052300	2016052300	Plugin installed	\N		0	1472545739
+624	0	repository_local	\N	2016052300	Starting plugin installation	\N		0	1472545739
+625	0	repository_local	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+626	0	repository_local	2016052300	2016052300	Plugin installed	\N		0	1472545739
+627	0	repository_merlot	\N	2016052300	Starting plugin installation	\N		0	1472545739
+628	0	repository_merlot	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+629	0	repository_merlot	2016052300	2016052300	Plugin installed	\N		0	1472545739
+630	0	repository_picasa	\N	2016052300	Starting plugin installation	\N		0	1472545739
+631	0	repository_picasa	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+632	0	repository_picasa	2016052300	2016052300	Plugin installed	\N		0	1472545739
+633	0	repository_recent	\N	2016052300	Starting plugin installation	\N		0	1472545739
+634	0	repository_recent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545739
+635	0	repository_recent	2016052300	2016052300	Plugin installed	\N		0	1472545740
+636	0	repository_s3	\N	2016052300	Starting plugin installation	\N		0	1472545740
+637	0	repository_s3	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545740
+638	0	repository_s3	2016052300	2016052300	Plugin installed	\N		0	1472545740
+639	0	repository_skydrive	\N	2016052300	Starting plugin installation	\N		0	1472545740
+640	0	repository_skydrive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545740
+641	0	repository_skydrive	2016052300	2016052300	Plugin installed	\N		0	1472545740
+642	0	repository_upload	\N	2016052300	Starting plugin installation	\N		0	1472545740
+643	0	repository_upload	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545740
+644	0	repository_upload	2016052300	2016052300	Plugin installed	\N		0	1472545740
+645	0	repository_url	\N	2016052300	Starting plugin installation	\N		0	1472545740
+646	0	repository_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545740
+647	0	repository_url	2016052300	2016052300	Plugin installed	\N		0	1472545740
+648	0	repository_user	\N	2016052300	Starting plugin installation	\N		0	1472545740
+649	0	repository_user	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545740
+650	0	repository_user	2016052300	2016052300	Plugin installed	\N		0	1472545741
+651	0	repository_webdav	\N	2016052300	Starting plugin installation	\N		0	1472545741
+652	0	repository_webdav	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+653	0	repository_webdav	2016052300	2016052300	Plugin installed	\N		0	1472545741
+654	0	repository_wikimedia	\N	2016052300	Starting plugin installation	\N		0	1472545741
+655	0	repository_wikimedia	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+656	0	repository_wikimedia	2016052300	2016052300	Plugin installed	\N		0	1472545741
+657	0	repository_youtube	\N	2016052300	Starting plugin installation	\N		0	1472545741
+658	0	repository_youtube	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+659	0	repository_youtube	2016052300	2016052300	Plugin installed	\N		0	1472545741
+660	0	portfolio_boxnet	\N	2016052300	Starting plugin installation	\N		0	1472545741
+661	0	portfolio_boxnet	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+662	0	portfolio_boxnet	2016052300	2016052300	Plugin installed	\N		0	1472545741
+663	0	portfolio_download	\N	2016052300	Starting plugin installation	\N		0	1472545741
+664	0	portfolio_download	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+665	0	portfolio_download	2016052300	2016052300	Plugin installed	\N		0	1472545741
+666	0	portfolio_flickr	\N	2016052300	Starting plugin installation	\N		0	1472545741
+667	0	portfolio_flickr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545741
+668	0	portfolio_flickr	2016052300	2016052300	Plugin installed	\N		0	1472545742
+669	0	portfolio_googledocs	\N	2016052300	Starting plugin installation	\N		0	1472545742
+670	0	portfolio_googledocs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+671	0	portfolio_googledocs	2016052300	2016052300	Plugin installed	\N		0	1472545742
+672	0	portfolio_mahara	\N	2016052300	Starting plugin installation	\N		0	1472545742
+673	0	portfolio_mahara	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+674	0	portfolio_mahara	2016052300	2016052300	Plugin installed	\N		0	1472545742
+675	0	portfolio_picasa	\N	2016052300	Starting plugin installation	\N		0	1472545742
+676	0	portfolio_picasa	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+677	0	portfolio_picasa	2016052300	2016052300	Plugin installed	\N		0	1472545742
+678	0	search_solr	\N	2016052300	Starting plugin installation	\N		0	1472545742
+679	0	search_solr	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+680	0	search_solr	2016052300	2016052300	Plugin installed	\N		0	1472545742
+681	0	qbehaviour_adaptive	\N	2016052300	Starting plugin installation	\N		0	1472545742
+682	0	qbehaviour_adaptive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+683	0	qbehaviour_adaptive	2016052300	2016052300	Plugin installed	\N		0	1472545742
+684	0	qbehaviour_adaptivenopenalty	\N	2016052300	Starting plugin installation	\N		0	1472545742
+685	0	qbehaviour_adaptivenopenalty	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545742
+686	0	qbehaviour_adaptivenopenalty	2016052300	2016052300	Plugin installed	\N		0	1472545742
+687	0	qbehaviour_deferredcbm	\N	2016052300	Starting plugin installation	\N		0	1472545743
+688	0	qbehaviour_deferredcbm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+689	0	qbehaviour_deferredcbm	2016052300	2016052300	Plugin installed	\N		0	1472545743
+690	0	qbehaviour_deferredfeedback	\N	2016052300	Starting plugin installation	\N		0	1472545743
+691	0	qbehaviour_deferredfeedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+692	0	qbehaviour_deferredfeedback	2016052300	2016052300	Plugin installed	\N		0	1472545743
+693	0	qbehaviour_immediatecbm	\N	2016052300	Starting plugin installation	\N		0	1472545743
+694	0	qbehaviour_immediatecbm	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+695	0	qbehaviour_immediatecbm	2016052300	2016052300	Plugin installed	\N		0	1472545743
+696	0	qbehaviour_immediatefeedback	\N	2016052300	Starting plugin installation	\N		0	1472545743
+697	0	qbehaviour_immediatefeedback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+698	0	qbehaviour_immediatefeedback	2016052300	2016052300	Plugin installed	\N		0	1472545743
+699	0	qbehaviour_informationitem	\N	2016052300	Starting plugin installation	\N		0	1472545743
+700	0	qbehaviour_informationitem	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+701	0	qbehaviour_informationitem	2016052300	2016052300	Plugin installed	\N		0	1472545743
+702	0	qbehaviour_interactive	\N	2016052300	Starting plugin installation	\N		0	1472545743
+703	0	qbehaviour_interactive	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+704	0	qbehaviour_interactive	2016052300	2016052300	Plugin installed	\N		0	1472545743
+705	0	qbehaviour_interactivecountback	\N	2016052300	Starting plugin installation	\N		0	1472545743
+706	0	qbehaviour_interactivecountback	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+707	0	qbehaviour_interactivecountback	2016052300	2016052300	Plugin installed	\N		0	1472545743
+708	0	qbehaviour_manualgraded	\N	2016052300	Starting plugin installation	\N		0	1472545743
+709	0	qbehaviour_manualgraded	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545743
+710	0	qbehaviour_manualgraded	2016052300	2016052300	Plugin installed	\N		0	1472545744
+711	0	qbehaviour_missing	\N	2016052300	Starting plugin installation	\N		0	1472545744
+712	0	qbehaviour_missing	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+713	0	qbehaviour_missing	2016052300	2016052300	Plugin installed	\N		0	1472545744
+714	0	qformat_aiken	\N	2016052300	Starting plugin installation	\N		0	1472545744
+715	0	qformat_aiken	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+716	0	qformat_aiken	2016052300	2016052300	Plugin installed	\N		0	1472545744
+717	0	qformat_blackboard_six	\N	2016052300	Starting plugin installation	\N		0	1472545744
+718	0	qformat_blackboard_six	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+719	0	qformat_blackboard_six	2016052300	2016052300	Plugin installed	\N		0	1472545744
+720	0	qformat_examview	\N	2016052300	Starting plugin installation	\N		0	1472545744
+721	0	qformat_examview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+722	0	qformat_examview	2016052300	2016052300	Plugin installed	\N		0	1472545744
+723	0	qformat_gift	\N	2016052300	Starting plugin installation	\N		0	1472545744
+724	0	qformat_gift	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+725	0	qformat_gift	2016052300	2016052300	Plugin installed	\N		0	1472545744
+726	0	qformat_missingword	\N	2016052300	Starting plugin installation	\N		0	1472545744
+727	0	qformat_missingword	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+728	0	qformat_missingword	2016052300	2016052300	Plugin installed	\N		0	1472545744
+729	0	qformat_multianswer	\N	2016052300	Starting plugin installation	\N		0	1472545744
+730	0	qformat_multianswer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545744
+731	0	qformat_multianswer	2016052300	2016052300	Plugin installed	\N		0	1472545745
+732	0	qformat_webct	\N	2016052300	Starting plugin installation	\N		0	1472545745
+733	0	qformat_webct	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+734	0	qformat_webct	2016052300	2016052300	Plugin installed	\N		0	1472545745
+735	0	qformat_xhtml	\N	2016052300	Starting plugin installation	\N		0	1472545745
+736	0	qformat_xhtml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+737	0	qformat_xhtml	2016052300	2016052300	Plugin installed	\N		0	1472545745
+738	0	qformat_xml	\N	2016052300	Starting plugin installation	\N		0	1472545745
+739	0	qformat_xml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+740	0	qformat_xml	2016052300	2016052300	Plugin installed	\N		0	1472545745
+741	0	tool_assignmentupgrade	\N	2016052300	Starting plugin installation	\N		0	1472545745
+742	0	tool_assignmentupgrade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+743	0	tool_assignmentupgrade	2016052300	2016052300	Plugin installed	\N		0	1472545745
+744	0	tool_availabilityconditions	\N	2016052300	Starting plugin installation	\N		0	1472545745
+745	0	tool_availabilityconditions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+746	0	tool_availabilityconditions	2016052300	2016052300	Plugin installed	\N		0	1472545745
+747	0	tool_behat	\N	2016052300	Starting plugin installation	\N		0	1472545745
+748	0	tool_behat	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+749	0	tool_behat	2016052300	2016052300	Plugin installed	\N		0	1472545745
+750	0	tool_capability	\N	2016052300	Starting plugin installation	\N		0	1472545745
+751	0	tool_capability	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545745
+752	0	tool_capability	2016052300	2016052300	Plugin installed	\N		0	1472545746
+753	0	tool_cohortroles	\N	2016052300	Starting plugin installation	\N		0	1472545746
+754	0	tool_cohortroles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+755	0	tool_cohortroles	2016052300	2016052300	Plugin installed	\N		0	1472545746
+756	0	tool_customlang	\N	2016052300	Starting plugin installation	\N		0	1472545746
+757	0	tool_customlang	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+758	0	tool_customlang	2016052300	2016052300	Plugin installed	\N		0	1472545746
+759	0	tool_dbtransfer	\N	2016052300	Starting plugin installation	\N		0	1472545746
+760	0	tool_dbtransfer	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+761	0	tool_dbtransfer	2016052300	2016052300	Plugin installed	\N		0	1472545746
+762	0	tool_filetypes	\N	2016052300	Starting plugin installation	\N		0	1472545746
+763	0	tool_filetypes	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+764	0	tool_filetypes	2016052300	2016052300	Plugin installed	\N		0	1472545746
+765	0	tool_generator	\N	2016052300	Starting plugin installation	\N		0	1472545746
+766	0	tool_generator	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+767	0	tool_generator	2016052300	2016052300	Plugin installed	\N		0	1472545746
+768	0	tool_health	\N	2016052300	Starting plugin installation	\N		0	1472545746
+769	0	tool_health	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545746
+770	0	tool_health	2016052300	2016052300	Plugin installed	\N		0	1472545746
+771	0	tool_innodb	\N	2016052300	Starting plugin installation	\N		0	1472545747
+772	0	tool_innodb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+773	0	tool_innodb	2016052300	2016052300	Plugin installed	\N		0	1472545747
+774	0	tool_installaddon	\N	2016052300	Starting plugin installation	\N		0	1472545747
+775	0	tool_installaddon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+776	0	tool_installaddon	2016052300	2016052300	Plugin installed	\N		0	1472545747
+777	0	tool_langimport	\N	2016052300	Starting plugin installation	\N		0	1472545747
+778	0	tool_langimport	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+779	0	tool_langimport	2016052300	2016052300	Plugin installed	\N		0	1472545747
+780	0	tool_log	\N	2016052300	Starting plugin installation	\N		0	1472545747
+781	0	tool_log	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+782	0	tool_log	2016052300	2016052300	Plugin installed	\N		0	1472545747
+783	0	tool_lp	\N	2016052300	Starting plugin installation	\N		0	1472545747
+784	0	tool_lp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+785	0	tool_lp	2016052300	2016052300	Plugin installed	\N		0	1472545747
+786	0	tool_lpmigrate	\N	2016052300	Starting plugin installation	\N		0	1472545747
+787	0	tool_lpmigrate	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+788	0	tool_lpmigrate	2016052300	2016052300	Plugin installed	\N		0	1472545747
+789	0	tool_messageinbound	\N	2016052300	Starting plugin installation	\N		0	1472545747
+790	0	tool_messageinbound	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545747
+791	0	tool_messageinbound	2016052300	2016052300	Plugin installed	\N		0	1472545748
+792	0	tool_mobile	\N	2016052300	Starting plugin installation	\N		0	1472545748
+793	0	tool_mobile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545748
+794	0	tool_mobile	2016052300	2016052300	Plugin installed	\N		0	1472545748
+795	0	tool_monitor	\N	2016052305	Starting plugin installation	\N		0	1472545748
+796	0	tool_monitor	2016052305	2016052305	Upgrade savepoint reached	\N		0	1472545748
+797	0	tool_monitor	2016052305	2016052305	Plugin installed	\N		0	1472545748
+798	0	tool_multilangupgrade	\N	2016052300	Starting plugin installation	\N		0	1472545748
+799	0	tool_multilangupgrade	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545748
+800	0	tool_multilangupgrade	2016052300	2016052300	Plugin installed	\N		0	1472545749
+801	0	tool_phpunit	\N	2016052300	Starting plugin installation	\N		0	1472545749
+802	0	tool_phpunit	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545749
+803	0	tool_phpunit	2016052300	2016052300	Plugin installed	\N		0	1472545749
+804	0	tool_profiling	\N	2016052300	Starting plugin installation	\N		0	1472545749
+805	0	tool_profiling	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545749
+806	0	tool_profiling	2016052300	2016052300	Plugin installed	\N		0	1472545749
+807	0	tool_recyclebin	\N	2016052300	Starting plugin installation	\N		0	1472545749
+808	0	tool_recyclebin	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545749
+809	0	tool_recyclebin	2016052300	2016052300	Plugin installed	\N		0	1472545749
+810	0	tool_replace	\N	2016052300	Starting plugin installation	\N		0	1472545749
+811	0	tool_replace	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545749
+812	0	tool_replace	2016052300	2016052300	Plugin installed	\N		0	1472545749
+813	0	tool_spamcleaner	\N	2016052300	Starting plugin installation	\N		0	1472545750
+814	0	tool_spamcleaner	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545750
+815	0	tool_spamcleaner	2016052300	2016052300	Plugin installed	\N		0	1472545750
+816	0	tool_task	\N	2016052300	Starting plugin installation	\N		0	1472545750
+817	0	tool_task	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545750
+818	0	tool_task	2016052300	2016052300	Plugin installed	\N		0	1472545750
+819	0	tool_templatelibrary	\N	2016052300	Starting plugin installation	\N		0	1472545750
+820	0	tool_templatelibrary	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545750
+821	0	tool_templatelibrary	2016052300	2016052300	Plugin installed	\N		0	1472545750
+822	0	tool_unsuproles	\N	2016052300	Starting plugin installation	\N		0	1472545750
+823	0	tool_unsuproles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545750
+824	0	tool_unsuproles	2016052300	2016052300	Plugin installed	\N		0	1472545750
+825	0	tool_uploadcourse	\N	2016052300	Starting plugin installation	\N		0	1472545751
+826	0	tool_uploadcourse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545751
+827	0	tool_uploadcourse	2016052300	2016052300	Plugin installed	\N		0	1472545751
+828	0	tool_uploaduser	\N	2016052300	Starting plugin installation	\N		0	1472545751
+829	0	tool_uploaduser	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545751
+830	0	tool_uploaduser	2016052300	2016052300	Plugin installed	\N		0	1472545751
+831	0	tool_xmldb	\N	2016052300	Starting plugin installation	\N		0	1472545751
+832	0	tool_xmldb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545751
+833	0	tool_xmldb	2016052300	2016052300	Plugin installed	\N		0	1472545751
+834	0	cachestore_file	\N	2016052300	Starting plugin installation	\N		0	1472545751
+835	0	cachestore_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545751
+836	0	cachestore_file	2016052300	2016052300	Plugin installed	\N		0	1472545751
+837	0	cachestore_memcache	\N	2016052300	Starting plugin installation	\N		0	1472545752
+838	0	cachestore_memcache	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545752
+839	0	cachestore_memcache	2016052300	2016052300	Plugin installed	\N		0	1472545752
+840	0	cachestore_memcached	\N	2016052300	Starting plugin installation	\N		0	1472545752
+841	0	cachestore_memcached	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545752
+842	0	cachestore_memcached	2016052300	2016052300	Plugin installed	\N		0	1472545752
+843	0	cachestore_mongodb	\N	2016052300	Starting plugin installation	\N		0	1472545752
+844	0	cachestore_mongodb	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545752
+845	0	cachestore_mongodb	2016052300	2016052300	Plugin installed	\N		0	1472545752
+846	0	cachestore_session	\N	2016052300	Starting plugin installation	\N		0	1472545752
+847	0	cachestore_session	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545752
+848	0	cachestore_session	2016052300	2016052300	Plugin installed	\N		0	1472545753
+849	0	cachestore_static	\N	2016052300	Starting plugin installation	\N		0	1472545753
+850	0	cachestore_static	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545753
+851	0	cachestore_static	2016052300	2016052300	Plugin installed	\N		0	1472545753
+852	0	cachelock_file	\N	2016052300	Starting plugin installation	\N		0	1472545753
+853	0	cachelock_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545753
+854	0	cachelock_file	2016052300	2016052300	Plugin installed	\N		0	1472545753
+855	0	theme_base	\N	2016052300	Starting plugin installation	\N		0	1472545753
+856	0	theme_base	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545753
+857	0	theme_base	2016052300	2016052300	Plugin installed	\N		0	1472545753
+858	0	theme_bootstrapbase	\N	2016052300	Starting plugin installation	\N		0	1472545754
+859	0	theme_bootstrapbase	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545754
+860	0	theme_bootstrapbase	2016052300	2016052300	Plugin installed	\N		0	1472545754
+861	0	theme_canvas	\N	2016052300	Starting plugin installation	\N		0	1472545754
+862	0	theme_canvas	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545754
+863	0	theme_canvas	2016052300	2016052300	Plugin installed	\N		0	1472545754
+864	0	theme_clean	\N	2016052300	Starting plugin installation	\N		0	1472545754
+865	0	theme_clean	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545754
+866	0	theme_clean	2016052300	2016052300	Plugin installed	\N		0	1472545754
+867	0	theme_more	\N	2016052300	Starting plugin installation	\N		0	1472545754
+868	0	theme_more	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545754
+869	0	theme_more	2016052300	2016052300	Plugin installed	\N		0	1472545755
+870	0	assignsubmission_comments	\N	2016052300	Starting plugin installation	\N		0	1472545755
+871	0	assignsubmission_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545755
+872	0	assignsubmission_comments	2016052300	2016052300	Plugin installed	\N		0	1472545755
+873	0	assignsubmission_file	\N	2016052300	Starting plugin installation	\N		0	1472545755
+874	0	assignsubmission_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545755
+875	0	assignsubmission_file	2016052300	2016052300	Plugin installed	\N		0	1472545755
+876	0	assignsubmission_onlinetext	\N	2016052300	Starting plugin installation	\N		0	1472545755
+877	0	assignsubmission_onlinetext	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545755
+878	0	assignsubmission_onlinetext	2016052300	2016052300	Plugin installed	\N		0	1472545755
+879	0	assignfeedback_comments	\N	2016052300	Starting plugin installation	\N		0	1472545755
+880	0	assignfeedback_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+881	0	assignfeedback_comments	2016052300	2016052300	Plugin installed	\N		0	1472545756
+882	0	assignfeedback_editpdf	\N	2016052300	Starting plugin installation	\N		0	1472545756
+883	0	assignfeedback_editpdf	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+884	0	assignfeedback_editpdf	2016052300	2016052300	Plugin installed	\N		0	1472545756
+885	0	assignfeedback_file	\N	2016052300	Starting plugin installation	\N		0	1472545756
+886	0	assignfeedback_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+887	0	assignfeedback_file	2016052300	2016052300	Plugin installed	\N		0	1472545756
+888	0	assignfeedback_offline	\N	2016052300	Starting plugin installation	\N		0	1472545756
+889	0	assignfeedback_offline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+890	0	assignfeedback_offline	2016052300	2016052300	Plugin installed	\N		0	1472545756
+891	0	assignment_offline	\N	2016052300	Starting plugin installation	\N		0	1472545756
+892	0	assignment_offline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+893	0	assignment_offline	2016052300	2016052300	Plugin installed	\N		0	1472545756
+894	0	assignment_online	\N	2016052300	Starting plugin installation	\N		0	1472545756
+895	0	assignment_online	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545756
+896	0	assignment_online	2016052300	2016052300	Plugin installed	\N		0	1472545757
+897	0	assignment_upload	\N	2016052300	Starting plugin installation	\N		0	1472545757
+898	0	assignment_upload	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+899	0	assignment_upload	2016052300	2016052300	Plugin installed	\N		0	1472545757
+900	0	assignment_uploadsingle	\N	2016052300	Starting plugin installation	\N		0	1472545757
+901	0	assignment_uploadsingle	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+902	0	assignment_uploadsingle	2016052300	2016052300	Plugin installed	\N		0	1472545757
+903	0	booktool_exportimscp	\N	2016052300	Starting plugin installation	\N		0	1472545757
+904	0	booktool_exportimscp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+905	0	booktool_exportimscp	2016052300	2016052300	Plugin installed	\N		0	1472545757
+906	0	booktool_importhtml	\N	2016052300	Starting plugin installation	\N		0	1472545757
+907	0	booktool_importhtml	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+908	0	booktool_importhtml	2016052300	2016052300	Plugin installed	\N		0	1472545757
+909	0	booktool_print	\N	2016052300	Starting plugin installation	\N		0	1472545757
+910	0	booktool_print	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+911	0	booktool_print	2016052300	2016052300	Plugin installed	\N		0	1472545757
+912	0	datafield_checkbox	\N	2016052300	Starting plugin installation	\N		0	1472545757
+913	0	datafield_checkbox	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545757
+914	0	datafield_checkbox	2016052300	2016052300	Plugin installed	\N		0	1472545757
+915	0	datafield_date	\N	2016052300	Starting plugin installation	\N		0	1472545757
+916	0	datafield_date	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+917	0	datafield_date	2016052300	2016052300	Plugin installed	\N		0	1472545758
+918	0	datafield_file	\N	2016052300	Starting plugin installation	\N		0	1472545758
+919	0	datafield_file	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+920	0	datafield_file	2016052300	2016052300	Plugin installed	\N		0	1472545758
+921	0	datafield_latlong	\N	2016052300	Starting plugin installation	\N		0	1472545758
+922	0	datafield_latlong	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+923	0	datafield_latlong	2016052300	2016052300	Plugin installed	\N		0	1472545758
+924	0	datafield_menu	\N	2016052300	Starting plugin installation	\N		0	1472545758
+925	0	datafield_menu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+926	0	datafield_menu	2016052300	2016052300	Plugin installed	\N		0	1472545758
+927	0	datafield_multimenu	\N	2016052300	Starting plugin installation	\N		0	1472545758
+928	0	datafield_multimenu	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+929	0	datafield_multimenu	2016052300	2016052300	Plugin installed	\N		0	1472545758
+930	0	datafield_number	\N	2016052300	Starting plugin installation	\N		0	1472545758
+931	0	datafield_number	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+932	0	datafield_number	2016052300	2016052300	Plugin installed	\N		0	1472545758
+933	0	datafield_picture	\N	2016052300	Starting plugin installation	\N		0	1472545758
+934	0	datafield_picture	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+935	0	datafield_picture	2016052300	2016052300	Plugin installed	\N		0	1472545758
+936	0	datafield_radiobutton	\N	2016052300	Starting plugin installation	\N		0	1472545758
+937	0	datafield_radiobutton	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545758
+938	0	datafield_radiobutton	2016052300	2016052300	Plugin installed	\N		0	1472545759
+939	0	datafield_text	\N	2016052300	Starting plugin installation	\N		0	1472545759
+940	0	datafield_text	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+941	0	datafield_text	2016052300	2016052300	Plugin installed	\N		0	1472545759
+942	0	datafield_textarea	\N	2016052300	Starting plugin installation	\N		0	1472545759
+943	0	datafield_textarea	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+944	0	datafield_textarea	2016052300	2016052300	Plugin installed	\N		0	1472545759
+945	0	datafield_url	\N	2016052300	Starting plugin installation	\N		0	1472545759
+946	0	datafield_url	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+947	0	datafield_url	2016052300	2016052300	Plugin installed	\N		0	1472545759
+948	0	datapreset_imagegallery	\N	2016052300	Starting plugin installation	\N		0	1472545759
+949	0	datapreset_imagegallery	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+950	0	datapreset_imagegallery	2016052300	2016052300	Plugin installed	\N		0	1472545759
+951	0	ltiservice_memberships	\N	2016052300	Starting plugin installation	\N		0	1472545759
+952	0	ltiservice_memberships	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+953	0	ltiservice_memberships	2016052300	2016052300	Plugin installed	\N		0	1472545759
+954	0	ltiservice_profile	\N	2016052300	Starting plugin installation	\N		0	1472545759
+955	0	ltiservice_profile	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545759
+956	0	ltiservice_profile	2016052300	2016052300	Plugin installed	\N		0	1472545760
+957	0	ltiservice_toolproxy	\N	2016052300	Starting plugin installation	\N		0	1472545760
+958	0	ltiservice_toolproxy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+959	0	ltiservice_toolproxy	2016052300	2016052300	Plugin installed	\N		0	1472545760
+960	0	ltiservice_toolsettings	\N	2016052300	Starting plugin installation	\N		0	1472545760
+961	0	ltiservice_toolsettings	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+962	0	ltiservice_toolsettings	2016052300	2016052300	Plugin installed	\N		0	1472545760
+963	0	quiz_grading	\N	2016052300	Starting plugin installation	\N		0	1472545760
+964	0	quiz_grading	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+965	0	quiz_grading	2016052300	2016052300	Plugin installed	\N		0	1472545760
+966	0	quiz_overview	\N	2016052300	Starting plugin installation	\N		0	1472545760
+967	0	quiz_overview	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+968	0	quiz_overview	2016052300	2016052300	Plugin installed	\N		0	1472545760
+969	0	quiz_responses	\N	2016052300	Starting plugin installation	\N		0	1472545760
+970	0	quiz_responses	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+971	0	quiz_responses	2016052300	2016052300	Plugin installed	\N		0	1472545760
+972	0	quiz_statistics	\N	2016052300	Starting plugin installation	\N		0	1472545760
+973	0	quiz_statistics	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545760
+974	0	quiz_statistics	2016052300	2016052300	Plugin installed	\N		0	1472545761
+975	0	quizaccess_delaybetweenattempts	\N	2016052300	Starting plugin installation	\N		0	1472545761
+976	0	quizaccess_delaybetweenattempts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+977	0	quizaccess_delaybetweenattempts	2016052300	2016052300	Plugin installed	\N		0	1472545761
+978	0	quizaccess_ipaddress	\N	2016052300	Starting plugin installation	\N		0	1472545761
+979	0	quizaccess_ipaddress	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+980	0	quizaccess_ipaddress	2016052300	2016052300	Plugin installed	\N		0	1472545761
+981	0	quizaccess_numattempts	\N	2016052300	Starting plugin installation	\N		0	1472545761
+982	0	quizaccess_numattempts	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+983	0	quizaccess_numattempts	2016052300	2016052300	Plugin installed	\N		0	1472545761
+984	0	quizaccess_openclosedate	\N	2016052300	Starting plugin installation	\N		0	1472545761
+985	0	quizaccess_openclosedate	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+986	0	quizaccess_openclosedate	2016052300	2016052300	Plugin installed	\N		0	1472545761
+987	0	quizaccess_password	\N	2016052300	Starting plugin installation	\N		0	1472545761
+988	0	quizaccess_password	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+989	0	quizaccess_password	2016052300	2016052300	Plugin installed	\N		0	1472545761
+990	0	quizaccess_safebrowser	\N	2016052300	Starting plugin installation	\N		0	1472545761
+991	0	quizaccess_safebrowser	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+992	0	quizaccess_safebrowser	2016052300	2016052300	Plugin installed	\N		0	1472545761
+993	0	quizaccess_securewindow	\N	2016052300	Starting plugin installation	\N		0	1472545761
+994	0	quizaccess_securewindow	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+995	0	quizaccess_securewindow	2016052300	2016052300	Plugin installed	\N		0	1472545761
+996	0	quizaccess_timelimit	\N	2016052300	Starting plugin installation	\N		0	1472545761
+997	0	quizaccess_timelimit	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545761
+998	0	quizaccess_timelimit	2016052300	2016052300	Plugin installed	\N		0	1472545762
+999	0	scormreport_basic	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1000	0	scormreport_basic	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1001	0	scormreport_basic	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1002	0	scormreport_graphs	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1003	0	scormreport_graphs	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1004	0	scormreport_graphs	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1005	0	scormreport_interactions	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1006	0	scormreport_interactions	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1007	0	scormreport_interactions	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1008	0	scormreport_objectives	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1009	0	scormreport_objectives	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1010	0	scormreport_objectives	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1011	0	workshopform_accumulative	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1012	0	workshopform_accumulative	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1013	0	workshopform_accumulative	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1014	0	workshopform_comments	\N	2016052300	Starting plugin installation	\N		0	1472545762
+1015	0	workshopform_comments	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545762
+1016	0	workshopform_comments	2016052300	2016052300	Plugin installed	\N		0	1472545762
+1017	0	workshopform_numerrors	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1018	0	workshopform_numerrors	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1019	0	workshopform_numerrors	2016052300	2016052300	Plugin installed	\N		0	1472545763
+1020	0	workshopform_rubric	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1021	0	workshopform_rubric	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1022	0	workshopform_rubric	2016052300	2016052300	Plugin installed	\N		0	1472545763
+1023	0	workshopallocation_manual	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1024	0	workshopallocation_manual	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1025	0	workshopallocation_manual	2016052300	2016052300	Plugin installed	\N		0	1472545763
+1026	0	workshopallocation_random	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1027	0	workshopallocation_random	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1028	0	workshopallocation_random	2016052300	2016052300	Plugin installed	\N		0	1472545763
+1029	0	workshopallocation_scheduled	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1030	0	workshopallocation_scheduled	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1031	0	workshopallocation_scheduled	2016052300	2016052300	Plugin installed	\N		0	1472545763
+1032	0	workshopeval_best	\N	2016052300	Starting plugin installation	\N		0	1472545763
+1033	0	workshopeval_best	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545763
+1034	0	workshopeval_best	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1035	0	atto_accessibilitychecker	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1036	0	atto_accessibilitychecker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1037	0	atto_accessibilitychecker	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1038	0	atto_accessibilityhelper	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1039	0	atto_accessibilityhelper	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1040	0	atto_accessibilityhelper	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1041	0	atto_align	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1042	0	atto_align	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1043	0	atto_align	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1044	0	atto_backcolor	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1045	0	atto_backcolor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1046	0	atto_backcolor	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1047	0	atto_bold	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1048	0	atto_bold	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1049	0	atto_bold	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1050	0	atto_charmap	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1051	0	atto_charmap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1052	0	atto_charmap	2016052300	2016052300	Plugin installed	\N		0	1472545764
+1053	0	atto_clear	\N	2016052300	Starting plugin installation	\N		0	1472545764
+1054	0	atto_clear	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545764
+1055	0	atto_clear	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1056	0	atto_collapse	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1057	0	atto_collapse	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1058	0	atto_collapse	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1059	0	atto_emoticon	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1060	0	atto_emoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1061	0	atto_emoticon	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1062	0	atto_equation	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1063	0	atto_equation	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1064	0	atto_equation	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1065	0	atto_fontcolor	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1066	0	atto_fontcolor	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1067	0	atto_fontcolor	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1068	0	atto_html	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1069	0	atto_html	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1070	0	atto_html	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1071	0	atto_image	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1072	0	atto_image	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1073	0	atto_image	2016052300	2016052300	Plugin installed	\N		0	1472545765
+1074	0	atto_indent	\N	2016052300	Starting plugin installation	\N		0	1472545765
+1075	0	atto_indent	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545765
+1076	0	atto_indent	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1077	0	atto_italic	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1078	0	atto_italic	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1079	0	atto_italic	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1080	0	atto_link	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1081	0	atto_link	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1082	0	atto_link	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1083	0	atto_managefiles	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1084	0	atto_managefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1085	0	atto_managefiles	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1086	0	atto_media	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1087	0	atto_media	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1088	0	atto_media	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1089	0	atto_noautolink	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1090	0	atto_noautolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1091	0	atto_noautolink	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1092	0	atto_orderedlist	\N	2016052300	Starting plugin installation	\N		0	1472545766
+1093	0	atto_orderedlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545766
+1094	0	atto_orderedlist	2016052300	2016052300	Plugin installed	\N		0	1472545766
+1095	0	atto_rtl	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1096	0	atto_rtl	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1097	0	atto_rtl	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1098	0	atto_strike	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1099	0	atto_strike	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1100	0	atto_strike	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1101	0	atto_subscript	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1102	0	atto_subscript	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1103	0	atto_subscript	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1104	0	atto_superscript	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1105	0	atto_superscript	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1106	0	atto_superscript	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1107	0	atto_table	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1108	0	atto_table	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1109	0	atto_table	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1110	0	atto_title	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1111	0	atto_title	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1112	0	atto_title	2016052300	2016052300	Plugin installed	\N		0	1472545767
+1113	0	atto_underline	\N	2016052300	Starting plugin installation	\N		0	1472545767
+1114	0	atto_underline	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545767
+1115	0	atto_underline	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1116	0	atto_undo	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1117	0	atto_undo	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1118	0	atto_undo	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1119	0	atto_unorderedlist	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1120	0	atto_unorderedlist	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1121	0	atto_unorderedlist	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1122	0	tinymce_ctrlhelp	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1123	0	tinymce_ctrlhelp	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1124	0	tinymce_ctrlhelp	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1125	0	tinymce_managefiles	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1126	0	tinymce_managefiles	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1127	0	tinymce_managefiles	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1128	0	tinymce_moodleemoticon	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1129	0	tinymce_moodleemoticon	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1130	0	tinymce_moodleemoticon	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1131	0	tinymce_moodleimage	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1132	0	tinymce_moodleimage	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1133	0	tinymce_moodleimage	2016052300	2016052300	Plugin installed	\N		0	1472545768
+1134	0	tinymce_moodlemedia	\N	2016052300	Starting plugin installation	\N		0	1472545768
+1135	0	tinymce_moodlemedia	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545768
+1136	0	tinymce_moodlemedia	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1137	0	tinymce_moodlenolink	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1138	0	tinymce_moodlenolink	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1139	0	tinymce_moodlenolink	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1140	0	tinymce_pdw	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1141	0	tinymce_pdw	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1142	0	tinymce_pdw	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1143	0	tinymce_spellchecker	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1144	0	tinymce_spellchecker	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1145	0	tinymce_spellchecker	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1146	0	tinymce_wrap	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1147	0	tinymce_wrap	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1148	0	tinymce_wrap	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1149	0	logstore_database	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1150	0	logstore_database	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1151	0	logstore_database	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1152	0	logstore_legacy	\N	2016052300	Starting plugin installation	\N		0	1472545769
+1153	0	logstore_legacy	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545769
+1154	0	logstore_legacy	2016052300	2016052300	Plugin installed	\N		0	1472545769
+1155	0	logstore_standard	\N	2016052300	Starting plugin installation	\N		0	1472545770
+1156	0	logstore_standard	2016052300	2016052300	Upgrade savepoint reached	\N		0	1472545770
+1157	0	logstore_standard	2016052300	2016052300	Plugin installed	\N		0	1472545770
+1158	0	local_activity_bookmark	\N	2015070800	Starting plugin installation	\N		0	1472545770
+1159	0	local_activity_bookmark	2015070800	2015070800	Upgrade savepoint reached	\N		0	1472545770
+1160	0	local_activity_bookmark	2015070800	2015070800	Plugin installed	\N		0	1472545770
+1161	0	local_messaging	\N	2014081800	Starting plugin installation	\N		0	1472545770
+1162	0	local_messaging	2014081800	2014081800	Upgrade savepoint reached	\N		0	1472545770
+1163	0	local_messaging	2014081800	2014081800	Plugin installed	\N		0	1472545770
 \.
 
 
@@ -71384,7 +71417,7 @@ COPY phpu_upgrade_log (id, type, plugin, version, targetversion, info, details, 
 -- Name: phpu_upgrade_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_upgrade_log_id_seq', 397000, false);
+SELECT pg_catalog.setval('phpu_upgrade_log_id_seq', 396000, false);
 
 
 --
@@ -71399,7 +71432,7 @@ COPY phpu_url (id, course, name, intro, introformat, externalurl, display, displ
 -- Name: phpu_url_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_url_id_seq', 398000, false);
+SELECT pg_catalog.setval('phpu_url_id_seq', 384000, false);
 
 
 --
@@ -71407,8 +71440,8 @@ SELECT pg_catalog.setval('phpu_url_id_seq', 398000, false);
 --
 
 COPY phpu_user (id, auth, confirmed, policyagreed, deleted, suspended, mnethostid, username, password, idnumber, firstname, lastname, email, emailstop, icq, skype, yahoo, aim, msn, phone1, phone2, institution, department, address, city, country, lang, calendartype, theme, timezone, firstaccess, lastaccess, lastlogin, currentlogin, lastip, secret, picture, url, description, descriptionformat, mailformat, maildigest, maildisplay, autosubscribe, trackforums, timecreated, timemodified, trustbitmask, imagealt, lastnamephonetic, firstnamephonetic, middlename, alternatename) FROM stdin;
-1	manual	1	0	0	0	1	guest	$2y$10$BYmLkTrrLfCzCJSyHh/wzOkPYLlagSyz2GtSK1.t55ckPw3go.Xjy		Guest user	 	root@localhost	0													en	gregorian		99	0	0	0	0			0		This user is a special user that allows read-only access to some courses.	1	1	0	2	1	0	0	1471529331	0	\N	\N	\N	\N	\N
-2	manual	1	0	0	0	1	admin	$2y$10$5AhtAI1iscwXJ7kDUsKvEOi/RNPOWYYUJDsyEALXo7zqzB4.AHB1y		Admin	User	admin@example.com	0													en	gregorian		99	0	0	0	0	0.0.0.0		0		\N	1	1	0	1	1	0	0	1471529331	0	\N	\N	\N	\N	\N
+1	manual	1	0	0	0	1	guest	$2y$10$9rgt59gCsE.airkN5j66aOP3fnvbix6BCS5EiYyo5.sC9cj4Guz5y		Guest user	 	root@localhost	0													en	gregorian		99	0	0	0	0			0		This user is a special user that allows read-only access to some courses.	1	1	0	2	1	0	0	1472545680	0	\N	\N	\N	\N	\N
+2	manual	1	0	0	0	1	admin	$2y$10$STVnubhWR.7qOswqlfL5B.kz/i5bt0TFqWg5PCbsbwfFpXgH0/1OC		Admin	User	admin@example.com	0													en	gregorian		99	0	0	0	0	0.0.0.0		0		\N	1	1	0	1	1	0	0	1472545680	0	\N	\N	\N	\N	\N
 \.
 
 
@@ -71424,7 +71457,7 @@ COPY phpu_user_devices (id, userid, appid, name, model, platform, version, pushi
 -- Name: phpu_user_devices_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_devices_id_seq', 400000, false);
+SELECT pg_catalog.setval('phpu_user_devices_id_seq', 385000, false);
 
 
 --
@@ -71439,14 +71472,14 @@ COPY phpu_user_enrolments (id, status, enrolid, userid, timestart, timeend, modi
 -- Name: phpu_user_enrolments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_enrolments_id_seq', 401000, false);
+SELECT pg_catalog.setval('phpu_user_enrolments_id_seq', 386000, false);
 
 
 --
 -- Name: phpu_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_id_seq', 399000, false);
+SELECT pg_catalog.setval('phpu_user_id_seq', 100000, false);
 
 
 --
@@ -71461,7 +71494,7 @@ COPY phpu_user_info_category (id, name, sortorder) FROM stdin;
 -- Name: phpu_user_info_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_info_category_id_seq', 402000, false);
+SELECT pg_catalog.setval('phpu_user_info_category_id_seq', 387000, false);
 
 
 --
@@ -71476,7 +71509,7 @@ COPY phpu_user_info_data (id, userid, fieldid, data, dataformat) FROM stdin;
 -- Name: phpu_user_info_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_info_data_id_seq', 403000, false);
+SELECT pg_catalog.setval('phpu_user_info_data_id_seq', 388000, false);
 
 
 --
@@ -71491,7 +71524,7 @@ COPY phpu_user_info_field (id, shortname, name, datatype, description, descripti
 -- Name: phpu_user_info_field_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_info_field_id_seq', 404000, false);
+SELECT pg_catalog.setval('phpu_user_info_field_id_seq', 389000, false);
 
 
 --
@@ -71506,7 +71539,7 @@ COPY phpu_user_lastaccess (id, userid, courseid, timeaccess) FROM stdin;
 -- Name: phpu_user_lastaccess_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_lastaccess_id_seq', 405000, false);
+SELECT pg_catalog.setval('phpu_user_lastaccess_id_seq', 390000, false);
 
 
 --
@@ -71521,7 +71554,7 @@ COPY phpu_user_password_history (id, userid, hash, timecreated) FROM stdin;
 -- Name: phpu_user_password_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_password_history_id_seq', 406000, false);
+SELECT pg_catalog.setval('phpu_user_password_history_id_seq', 391000, false);
 
 
 --
@@ -71536,7 +71569,7 @@ COPY phpu_user_password_resets (id, userid, timerequested, timererequested, toke
 -- Name: phpu_user_password_resets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_password_resets_id_seq', 407000, false);
+SELECT pg_catalog.setval('phpu_user_password_resets_id_seq', 392000, false);
 
 
 --
@@ -71551,7 +71584,7 @@ COPY phpu_user_preferences (id, userid, name, value) FROM stdin;
 -- Name: phpu_user_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_preferences_id_seq', 408000, false);
+SELECT pg_catalog.setval('phpu_user_preferences_id_seq', 393000, false);
 
 
 --
@@ -71566,7 +71599,7 @@ COPY phpu_user_private_key (id, script, value, userid, instance, iprestriction, 
 -- Name: phpu_user_private_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_user_private_key_id_seq', 409000, false);
+SELECT pg_catalog.setval('phpu_user_private_key_id_seq', 394000, false);
 
 
 --
@@ -71589,14 +71622,14 @@ COPY phpu_videoquanda_answers (id, questionid, userid, timecreated, timemodified
 -- Name: phpu_videoquanda_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_videoquanda_answers_id_seq', 411000, false);
+SELECT pg_catalog.setval('phpu_videoquanda_answers_id_seq', 396000, false);
 
 
 --
 -- Name: phpu_videoquanda_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_videoquanda_id_seq', 410000, false);
+SELECT pg_catalog.setval('phpu_videoquanda_id_seq', 395000, false);
 
 
 --
@@ -71611,7 +71644,7 @@ COPY phpu_videoquanda_questions (id, instanceid, userid, timecreated, timemodifi
 -- Name: phpu_videoquanda_questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_videoquanda_questions_id_seq', 412000, false);
+SELECT pg_catalog.setval('phpu_videoquanda_questions_id_seq', 397000, false);
 
 
 --
@@ -71634,7 +71667,7 @@ COPY phpu_vocabcards_card (id, wordid, ownerid, groupid, assignerid, status, pho
 -- Name: phpu_vocabcards_card_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_vocabcards_card_id_seq', 414000, false);
+SELECT pg_catalog.setval('phpu_vocabcards_card_id_seq', 399000, false);
 
 
 --
@@ -71649,14 +71682,14 @@ COPY phpu_vocabcards_feedback (id, cardid, userid, feedback, timecreated, timemo
 -- Name: phpu_vocabcards_feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_vocabcards_feedback_id_seq', 415000, false);
+SELECT pg_catalog.setval('phpu_vocabcards_feedback_id_seq', 400000, false);
 
 
 --
 -- Name: phpu_vocabcards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_vocabcards_id_seq', 413000, false);
+SELECT pg_catalog.setval('phpu_vocabcards_id_seq', 398000, false);
 
 
 --
@@ -71671,7 +71704,7 @@ COPY phpu_vocabcards_syllabus (id, courseid, sectionid, word, creatorid, timecre
 -- Name: phpu_vocabcards_syllabus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_vocabcards_syllabus_id_seq', 416000, false);
+SELECT pg_catalog.setval('phpu_vocabcards_syllabus_id_seq', 401000, false);
 
 
 --
@@ -71686,7 +71719,7 @@ COPY phpu_wiki (id, course, name, intro, introformat, timecreated, timemodified,
 -- Name: phpu_wiki_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_id_seq', 417000, false);
+SELECT pg_catalog.setval('phpu_wiki_id_seq', 402000, false);
 
 
 --
@@ -71701,7 +71734,7 @@ COPY phpu_wiki_links (id, subwikiid, frompageid, topageid, tomissingpage) FROM s
 -- Name: phpu_wiki_links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_links_id_seq', 418000, false);
+SELECT pg_catalog.setval('phpu_wiki_links_id_seq', 403000, false);
 
 
 --
@@ -71716,7 +71749,7 @@ COPY phpu_wiki_locks (id, pageid, sectionname, userid, lockedat) FROM stdin;
 -- Name: phpu_wiki_locks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_locks_id_seq', 419000, false);
+SELECT pg_catalog.setval('phpu_wiki_locks_id_seq', 404000, false);
 
 
 --
@@ -71731,7 +71764,7 @@ COPY phpu_wiki_pages (id, subwikiid, title, cachedcontent, timecreated, timemodi
 -- Name: phpu_wiki_pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_pages_id_seq', 420000, false);
+SELECT pg_catalog.setval('phpu_wiki_pages_id_seq', 405000, false);
 
 
 --
@@ -71746,7 +71779,7 @@ COPY phpu_wiki_subwikis (id, wikiid, groupid, userid) FROM stdin;
 -- Name: phpu_wiki_subwikis_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_subwikis_id_seq', 421000, false);
+SELECT pg_catalog.setval('phpu_wiki_subwikis_id_seq', 406000, false);
 
 
 --
@@ -71761,7 +71794,7 @@ COPY phpu_wiki_synonyms (id, subwikiid, pageid, pagesynonym) FROM stdin;
 -- Name: phpu_wiki_synonyms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_synonyms_id_seq', 422000, false);
+SELECT pg_catalog.setval('phpu_wiki_synonyms_id_seq', 407000, false);
 
 
 --
@@ -71776,7 +71809,7 @@ COPY phpu_wiki_versions (id, pageid, content, contentformat, version, timecreate
 -- Name: phpu_wiki_versions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_wiki_versions_id_seq', 423000, false);
+SELECT pg_catalog.setval('phpu_wiki_versions_id_seq', 408000, false);
 
 
 --
@@ -71799,7 +71832,7 @@ COPY phpu_workshop_aggregations (id, workshopid, userid, gradinggrade, timegrade
 -- Name: phpu_workshop_aggregations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_aggregations_id_seq', 425000, false);
+SELECT pg_catalog.setval('phpu_workshop_aggregations_id_seq', 410000, false);
 
 
 --
@@ -71814,7 +71847,7 @@ COPY phpu_workshop_assessments (id, submissionid, reviewerid, weight, timecreate
 -- Name: phpu_workshop_assessments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_assessments_id_seq', 426000, false);
+SELECT pg_catalog.setval('phpu_workshop_assessments_id_seq', 411000, false);
 
 
 --
@@ -71829,7 +71862,7 @@ COPY phpu_workshop_assessments_old (id, workshopid, submissionid, userid, timecr
 -- Name: phpu_workshop_assessments_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_assessments_old_id_seq', 427000, false);
+SELECT pg_catalog.setval('phpu_workshop_assessments_old_id_seq', 412000, false);
 
 
 --
@@ -71844,7 +71877,7 @@ COPY phpu_workshop_comments_old (id, workshopid, assessmentid, userid, timecreat
 -- Name: phpu_workshop_comments_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_comments_old_id_seq', 428000, false);
+SELECT pg_catalog.setval('phpu_workshop_comments_old_id_seq', 413000, false);
 
 
 --
@@ -71859,7 +71892,7 @@ COPY phpu_workshop_elements_old (id, workshopid, elementno, description, scale, 
 -- Name: phpu_workshop_elements_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_elements_old_id_seq', 429000, false);
+SELECT pg_catalog.setval('phpu_workshop_elements_old_id_seq', 414000, false);
 
 
 --
@@ -71874,7 +71907,7 @@ COPY phpu_workshop_grades (id, assessmentid, strategy, dimensionid, grade, peerc
 -- Name: phpu_workshop_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_grades_id_seq', 430000, false);
+SELECT pg_catalog.setval('phpu_workshop_grades_id_seq', 415000, false);
 
 
 --
@@ -71889,14 +71922,14 @@ COPY phpu_workshop_grades_old (id, workshopid, assessmentid, elementno, feedback
 -- Name: phpu_workshop_grades_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_grades_old_id_seq', 431000, false);
+SELECT pg_catalog.setval('phpu_workshop_grades_old_id_seq', 416000, false);
 
 
 --
 -- Name: phpu_workshop_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_id_seq', 424000, false);
+SELECT pg_catalog.setval('phpu_workshop_id_seq', 409000, false);
 
 
 --
@@ -71911,7 +71944,7 @@ COPY phpu_workshop_old (id, course, name, description, wtype, nelements, nattach
 -- Name: phpu_workshop_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_old_id_seq', 432000, false);
+SELECT pg_catalog.setval('phpu_workshop_old_id_seq', 417000, false);
 
 
 --
@@ -71926,7 +71959,7 @@ COPY phpu_workshop_rubrics_old (id, workshopid, elementno, rubricno, description
 -- Name: phpu_workshop_rubrics_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_rubrics_old_id_seq', 433000, false);
+SELECT pg_catalog.setval('phpu_workshop_rubrics_old_id_seq', 418000, false);
 
 
 --
@@ -71941,7 +71974,7 @@ COPY phpu_workshop_stockcomments_old (id, workshopid, elementno, comments, newpl
 -- Name: phpu_workshop_stockcomments_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_stockcomments_old_id_seq', 434000, false);
+SELECT pg_catalog.setval('phpu_workshop_stockcomments_old_id_seq', 419000, false);
 
 
 --
@@ -71956,7 +71989,7 @@ COPY phpu_workshop_submissions (id, workshopid, example, authorid, timecreated, 
 -- Name: phpu_workshop_submissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_submissions_id_seq', 435000, false);
+SELECT pg_catalog.setval('phpu_workshop_submissions_id_seq', 420000, false);
 
 
 --
@@ -71971,7 +72004,7 @@ COPY phpu_workshop_submissions_old (id, workshopid, userid, title, timecreated, 
 -- Name: phpu_workshop_submissions_old_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshop_submissions_old_id_seq', 436000, false);
+SELECT pg_catalog.setval('phpu_workshop_submissions_old_id_seq', 421000, false);
 
 
 --
@@ -71986,7 +72019,7 @@ COPY phpu_workshopallocation_scheduled (id, workshopid, enabled, submissionend, 
 -- Name: phpu_workshopallocation_scheduled_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopallocation_scheduled_id_seq', 437000, false);
+SELECT pg_catalog.setval('phpu_workshopallocation_scheduled_id_seq', 422000, false);
 
 
 --
@@ -72001,7 +72034,7 @@ COPY phpu_workshopeval_best_settings (id, workshopid, comparison) FROM stdin;
 -- Name: phpu_workshopeval_best_settings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopeval_best_settings_id_seq', 438000, false);
+SELECT pg_catalog.setval('phpu_workshopeval_best_settings_id_seq', 423000, false);
 
 
 --
@@ -72016,7 +72049,7 @@ COPY phpu_workshopform_accumulative (id, workshopid, sort, description, descript
 -- Name: phpu_workshopform_accumulative_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_accumulative_id_seq', 439000, false);
+SELECT pg_catalog.setval('phpu_workshopform_accumulative_id_seq', 424000, false);
 
 
 --
@@ -72031,7 +72064,7 @@ COPY phpu_workshopform_comments (id, workshopid, sort, description, descriptionf
 -- Name: phpu_workshopform_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_comments_id_seq', 440000, false);
+SELECT pg_catalog.setval('phpu_workshopform_comments_id_seq', 425000, false);
 
 
 --
@@ -72046,7 +72079,7 @@ COPY phpu_workshopform_numerrors (id, workshopid, sort, description, description
 -- Name: phpu_workshopform_numerrors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_numerrors_id_seq', 441000, false);
+SELECT pg_catalog.setval('phpu_workshopform_numerrors_id_seq', 426000, false);
 
 
 --
@@ -72061,7 +72094,7 @@ COPY phpu_workshopform_numerrors_map (id, workshopid, nonegative, grade) FROM st
 -- Name: phpu_workshopform_numerrors_map_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_numerrors_map_id_seq', 442000, false);
+SELECT pg_catalog.setval('phpu_workshopform_numerrors_map_id_seq', 427000, false);
 
 
 --
@@ -72084,14 +72117,14 @@ COPY phpu_workshopform_rubric_config (id, workshopid, layout) FROM stdin;
 -- Name: phpu_workshopform_rubric_config_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_rubric_config_id_seq', 444000, false);
+SELECT pg_catalog.setval('phpu_workshopform_rubric_config_id_seq', 429000, false);
 
 
 --
 -- Name: phpu_workshopform_rubric_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_rubric_id_seq', 443000, false);
+SELECT pg_catalog.setval('phpu_workshopform_rubric_id_seq', 428000, false);
 
 
 --
@@ -72106,7 +72139,7 @@ COPY phpu_workshopform_rubric_levels (id, dimensionid, grade, definition, defini
 -- Name: phpu_workshopform_rubric_levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('phpu_workshopform_rubric_levels_id_seq', 445000, false);
+SELECT pg_catalog.setval('phpu_workshopform_rubric_levels_id_seq', 430000, false);
 
 
 --

@@ -1,0 +1,37 @@
+diff --git a/course/lib.php b/course/lib.php
+index 994b37e..c1efedc 100644
+--- a/course/lib.php
++++ b/course/lib.php
+@@ -2863,6 +2863,7 @@ function update_course($data, $editoroptions = NULL) {
+         'objectid' => $course->id,
+         'context' => context_course::instance($course->id),
+         'other' => array('shortname' => $course->shortname,
++                         'old_vle_course_id' => $oldcourse->idnumber,
+                          'fullname' => $course->fullname)
+     ));
+ 
+diff --git a/group/lib.php b/group/lib.php
+index 3f8de4e..6285095 100644
+--- a/group/lib.php
++++ b/group/lib.php
+@@ -396,6 +396,8 @@ function groups_update_group($data, $editform = false, $editoroptions = false) {
+         $data = file_postupdate_standard_editor($data, 'description', $editoroptions, $context, 'group', 'description', $data->id);
+     }
+ 
++    $old_vle_group_id = $DB->get_field('groups', 'idnumber', ['id' => $data->id], MUST_EXIST);
++
+     $DB->update_record('groups', $data);
+ 
+     // Invalidate the group data.
+@@ -412,6 +414,11 @@ function groups_update_group($data, $editform = false, $editoroptions = false) {
+         'context' => $context,
+         'objectid' => $group->id
+     );
++
++    $params['other'] = [
++        'old_vle_group_id' => $old_vle_group_id,
++    ];
++
+     $event = \core\event\group_updated::create($params);
+     $event->add_record_snapshot('groups', $group);
+     $event->trigger();
