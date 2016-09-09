@@ -71,7 +71,7 @@
       when: moodle_pgsql_dbr.changed
 
     - name: Migrate Django database
-      command: "{{ venv_py2 }}/bin/python2.7 /vagrant/manage.py migrate"
+      command: "{{ venv_py2 }}/bin/python2.7 /vagrant/manage.py migrate --noinput"
 
     - name: Migrate Moodle database and purge Moodle caches
       command: "chdir=/vagrant/moodle /usr/bin/php admin/cli/{{ item }}"
