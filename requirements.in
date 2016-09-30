@@ -11,5 +11,6 @@ unipath
 django-cron
 requests
 ndg-httpsclient
+pyopenssl==16.0.0
 django-js-reverse
 django-mptt
