@@ -179,3 +179,5 @@ INTO_OAUTH_USERDATA = {
     'first_name': 'first_name',
     'last_name': 'last_name',
 }
+
+MESSAGING_SEARCH_RESULTS_PER_PAGE = 5
