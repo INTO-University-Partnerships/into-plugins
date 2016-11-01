@@ -1,8 +1,7 @@
 django>=1.8,<1.9
-django-cms>=3.3,<3.4
-djangorestframework>=3.3,<3.4
+django-cms>=3.4,<3.5
+djangorestframework>=3.5,<3.6
 django-oauth-toolkit==0.9.0
-django-reversion==1.9.3
 mysqlclient
 psycopg2
 djangocms-style
