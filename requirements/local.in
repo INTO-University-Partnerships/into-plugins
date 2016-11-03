@@ -6,6 +6,7 @@ pytest-cache
 coverage
 psycopg2
 pep8
+flake8
 yolk3k
 httpie
 pip-tools
