@@ -93,7 +93,7 @@
     - name: Install global npm packages
       shell: |
         source {{ nvm_dir }}/nvm.sh
-        npm install -g bower npm-check-updates gulp@3.9.1 eslint@2.11.1 eslint-plugin-react@5.1.1
+        npm install -g bower npm-check-updates gulp@3.9.1 eslint@3.9.0 eslint-plugin-react@6.4.1
       args:
         executable: /bin/bash
 
