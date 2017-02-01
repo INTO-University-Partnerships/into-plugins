@@ -2,6 +2,7 @@
 .vagrant
 *.pyc
 *.log
+*.js.map
 settings.py
 node_modules/
 staticfiles/

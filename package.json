@@ -1,23 +1,20 @@
 {
+  "scripts": {
+    "clean": "rimraf static/js/build/",
+    "build-messaging": "webpack -p --env.app=messaging --env.subapp=messaging --env.min",
+    "watch-messaging": "webpack --env.app=messaging --env.subapp=messaging --watch",
+    "build-notifications": "webpack -p --env.app=messaging --env.subapp=notifications --env.min",
+    "watch-notifications": "webpack --env.app=messaging --env.subapp=notifications --watch"
+  },
   "devDependencies": {
-    "babel-preset-es2015": "6.18.0",
-    "babel-preset-react": "6.16.0",
-    "babelify": "7.3.0",
-    "browserify": "13.1.1",
-    "del": "2.2.2",
-    "envify": "3.4.1",
-    "eslint": "3.9.0",
-    "eslint-plugin-react": "6.4.1",
-    "gulp": "3.9.1",
-    "gulp-eslint": "3.0.1",
-    "gulp-if": "2.0.1",
-    "gulp-notify": "2.2.0",
-    "gulp-plumber": "1.1.0",
-    "gulp-streamify": "1.0.2",
-    "gulp-uglify": "2.0.0",
-    "gulp-util": "3.0.7",
-    "lodash": "4.16.5",
-    "vinyl-source-stream": "1.1.0",
-    "watchify": "3.7.0"
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-react": "6.22.0",
+    "eslint": "3.14.1",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-react": "6.9.0",
+    "rimraf": "2.5.4",
+    "webpack": "2.2.1"
   }
 }
