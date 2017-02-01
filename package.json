@@ -1,10 +1,11 @@
 {
   "scripts": {
     "clean": "rimraf static/js/build/",
-    "build-messaging": "webpack -p --env.app=messaging --env.subapp=messaging --env.min",
+    "build-messaging": "webpack -p --env.app=messaging --env.subapp=messaging --env.min && webpack --env.app=messaging --env.subapp=messaging",
     "watch-messaging": "webpack --env.app=messaging --env.subapp=messaging --watch",
-    "build-notifications": "webpack -p --env.app=messaging --env.subapp=notifications --env.min",
-    "watch-notifications": "webpack --env.app=messaging --env.subapp=notifications --watch"
+    "build-notifications": "webpack -p --env.app=messaging --env.subapp=notifications --env.min && webpack --env.app=messaging --env.subapp=notifications",
+    "watch-notifications": "webpack --env.app=messaging --env.subapp=notifications --watch",
+    "build-all": "npm-run-all build-messaging build-notifications"
   },
   "devDependencies": {
     "babel-core": "6.22.1",
@@ -14,6 +15,7 @@
     "eslint": "3.14.1",
     "eslint-loader": "1.6.1",
     "eslint-plugin-react": "6.9.0",
+    "npm-run-all": "4.0.1",
     "rimraf": "2.5.4",
     "webpack": "2.2.1"
   }
